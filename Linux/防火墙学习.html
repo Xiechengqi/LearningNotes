@@ -1,0 +1,2211 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>防火墙学习笔记 · 日常学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Python/" />
+    
+    
+    <link rel="prev" href="通过Linux开机启动项展开学习.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../网络学习资源整理/">
+            
+                <a href="../网络学习资源整理/">
+            
+                    
+                    网络学习资源整理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../网络学习资源整理/技术学习.html">
+            
+                <a href="../网络学习资源整理/技术学习.html">
+            
+                    
+                    技术学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../网络学习资源整理/运维博客.html">
+            
+                <a href="../网络学习资源整理/运维博客.html">
+            
+                    
+                    运维博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../网络学习资源整理/工具.html">
+            
+                <a href="../网络学习资源整理/工具.html">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../网络学习资源整理/静态博客模板.html">
+            
+                <a href="../网络学习资源整理/静态博客模板.html">
+            
+                    
+                    静态博客模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../网络学习资源整理/静态网站pages服务.html">
+            
+                <a href="../网络学习资源整理/静态网站pages服务.html">
+            
+                    
+                    静态网站pages服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../网络学习资源整理/静态pages的CI和CD.html">
+            
+                <a href="../网络学习资源整理/静态pages的CI和CD.html">
+            
+                    
+                    静态pages的CI和CD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../网络学习资源整理/Hugo学习.html">
+            
+                <a href="../网络学习资源整理/Hugo学习.html">
+            
+                    
+                    Hugo学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../心灵鸡汤/">
+            
+                <a href="../心灵鸡汤/">
+            
+                    
+                    心灵鸡汤
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../心灵鸡汤/心灵鸡汤.html">
+            
+                <a href="../心灵鸡汤/心灵鸡汤.html">
+            
+                    
+                    语录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Linux常用命令.html">
+            
+                <a href="Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Linux小知识.html">
+            
+                <a href="Linux小知识.html">
+            
+                    
+                    平时 linux 遇到的问题解决办法和扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Linux性能相关常用命令.html">
+            
+                <a href="Linux性能相关常用命令.html">
+            
+                    
+                    Linux性能相关常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Linux各种安装下载慢解决方法.html">
+            
+                <a href="Linux各种安装下载慢解决方法.html">
+            
+                    
+                    Linux各种安装下载慢解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="APT-剖析详解.html">
+            
+                <a href="APT-剖析详解.html">
+            
+                    
+                    APT 原理剖析、详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Linux主机、虚拟机和docker网络配置.html">
+            
+                <a href="Linux主机、虚拟机和docker网络配置.html">
+            
+                    
+                    Linux 主机、虚拟机和docker网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Linux文件系统学习.html">
+            
+                <a href="Linux文件系统学习.html">
+            
+                    
+                    Linux文件系统学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="Linux用户和用户组管理.html">
+            
+                <a href="Linux用户和用户组管理.html">
+            
+                    
+                    Linux用户和用户组管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="Linux用户增删改等学习.html">
+            
+                <a href="Linux用户增删改等学习.html">
+            
+                    
+                    Linux用户增删改等学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="Linux程序存放目录.html">
+            
+                <a href="Linux程序存放目录.html">
+            
+                    
+                    Linux程序存放目录.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="Linux编译安装软件包详解.html">
+            
+                <a href="Linux编译安装软件包详解.html">
+            
+                    
+                    Linux C/C++ 软件包编译、安装原理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="SSH详解.html">
+            
+                <a href="SSH详解.html">
+            
+                    
+                    SSH 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="Tomcat和Ngnix和Apache.html">
+            
+                <a href="Tomcat和Ngnix和Apache.html">
+            
+                    
+                    Tomcat和Ngnix和Apache.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="UbuntuSoftwareInstall.html">
+            
+                <a href="UbuntuSoftwareInstall.html">
+            
+                    
+                    Ubuntu 软件包安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="YAML-配置文件语言.html">
+            
+                <a href="YAML-配置文件语言.html">
+            
+                    
+                    YAML 配置文件语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="bin目录详解.html">
+            
+                <a href="bin目录详解.html">
+            
+                    
+                    bin目录详解.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="ffmpeg详解.html">
+            
+                <a href="ffmpeg详解.html">
+            
+                    
+                    ffmpeg学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="trans命令.html">
+            
+                <a href="trans命令.html">
+            
+                    
+                    trans命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="yum和rpm.html">
+            
+                <a href="yum和rpm.html">
+            
+                    
+                    Yum 和 RPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                <a href="从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                    
+                    Linux环境变量详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="新创建主机常用初始化配置.html">
+            
+                <a href="新创建主机常用初始化配置.html">
+            
+                    
+                    新建主机常用初始化配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="正则表达式学习.html">
+            
+                <a href="正则表达式学习.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="通过Linux开机启动项展开学习.html">
+            
+                <a href="通过Linux开机启动项展开学习.html">
+            
+                    
+                    Linux开机启动项学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.24" data-path="防火墙学习.html">
+            
+                <a href="防火墙学习.html">
+            
+                    
+                    防火墙学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Python/BeautifulSoup.md">
+            
+                <span>
+            
+                    
+                    Python3 BeautifulSoup 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Python/Django.html">
+            
+                <a href="../Python/Django.html">
+            
+                    
+                    Python Django 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Python/IPython使用技巧.html">
+            
+                <a href="../Python/IPython使用技巧.html">
+            
+                    
+                    IPython 使用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Python/Numpy.html">
+            
+                <a href="../Python/Numpy.html">
+            
+                    
+                    Python Numpy 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Python/Python小知识.html">
+            
+                <a href="../Python/Python小知识.html">
+            
+                    
+                    Python 学习遇到的问题解决或扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Python/Python模块管理总结.html">
+            
+                <a href="../Python/Python模块管理总结.html">
+            
+                    
+                    Python 模块管理总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../Python/flask学习.md">
+            
+                <span>
+            
+                    
+                    Flask 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../Python/matplotlib.html">
+            
+                <a href="../Python/matplotlib.html">
+            
+                    
+                    matplotlib.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../Python/re正则表达式.html">
+            
+                <a href="../Python/re正则表达式.html">
+            
+                    
+                    re正则表达式.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../Python/图形界面学习.html">
+            
+                <a href="../Python/图形界面学习.html">
+            
+                    
+                    图形界面学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../Python/常用图像库学习.html">
+            
+                <a href="../Python/常用图像库学习.html">
+            
+                    
+                    Python3 常用图像库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../Python/进阶学习.html">
+            
+                <a href="../Python/进阶学习.html">
+            
+                    
+                    Python3 进阶学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Shell/">
+            
+                <a href="../Shell/">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Shell/shell小知识.html">
+            
+                <a href="../Shell/shell小知识.html">
+            
+                    
+                    Shell小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Shell/Shell奇淫技巧.html">
+            
+                <a href="../Shell/Shell奇淫技巧.html">
+            
+                    
+                    Shell奇淫技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Shell/Linux文本操作三大利器-grep、sed、awk.html">
+            
+                <a href="../Shell/Linux文本操作三大利器-grep、sed、awk.html">
+            
+                    
+                    grep、sed、awk 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Shell/Shell文本处理常用工具补遗.html">
+            
+                <a href="../Shell/Shell文本处理常用工具补遗.html">
+            
+                    
+                    Shell文本处理常用工具补遗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Shell/句子解析.html">
+            
+                <a href="../Shell/句子解析.html">
+            
+                    
+                    句子解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Shell/识别是否是root用户.html">
+            
+                <a href="../Shell/识别是否是root用户.html">
+            
+                    
+                    识别是否是root用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Shell/识别系统.html">
+            
+                <a href="../Shell/识别系统.html">
+            
+                    
+                    识别系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Vim/Vim小知识.html">
+            
+                <a href="../Vim/Vim小知识.html">
+            
+                    
+                    Vim小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Vim/Vim编辑器再学习.html">
+            
+                <a href="../Vim/Vim编辑器再学习.html">
+            
+                    
+                    Vim编辑器再学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Vim/VimScript学习笔记.html">
+            
+                <a href="../Vim/VimScript学习笔记.html">
+            
+                    
+                    VimScript 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Vim/YouCompleteMe安装.html">
+            
+                <a href="../Vim/YouCompleteMe安装.html">
+            
+                    
+                    YouCompleteMe安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Vim/vimrc示例1.html">
+            
+                <a href="../Vim/vimrc示例1.html">
+            
+                    
+                    vimrc示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Vim/vimrc备份.html">
+            
+                <a href="../Vim/vimrc备份.html">
+            
+                    
+                    vimrc备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../Vim/Tmux快捷键.html">
+            
+                <a href="../Vim/Tmux快捷键.html">
+            
+                    
+                    Tmux快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Ansible/">
+            
+                <a href="../Ansible/">
+            
+                    
+                    Ansible
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Ansible/术语表.html">
+            
+                <a href="../Ansible/术语表.html">
+            
+                    
+                    术语表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Ansible/Ansible必知单词.html">
+            
+                <a href="../Ansible/Ansible必知单词.html">
+            
+                    
+                    Ansible 常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Ansible/Ansible学习.html">
+            
+                <a href="../Ansible/Ansible学习.html">
+            
+                    
+                    Ansible 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Ansible/Ansible常用模板.html">
+            
+                <a href="../Ansible/Ansible常用模板.html">
+            
+                    
+                    Ansible常用模板.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Docker/Docker基础学习.html">
+            
+                <a href="../Docker/Docker基础学习.html">
+            
+                    
+                    Docker 基础学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Docker/Docker小知识.html">
+            
+                <a href="../Docker/Docker小知识.html">
+            
+                    
+                    Docker 小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Docker/Docker必知单词.html">
+            
+                <a href="../Docker/Docker必知单词.html">
+            
+                    
+                    Docker 学习中的单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Git/git学习.html">
+            
+                <a href="../Git/git学习.html">
+            
+                    
+                    Git 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Git/git小技巧.html">
+            
+                <a href="../Git/git小技巧.html">
+            
+                    
+                    Git 小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Zabbix/">
+            
+                <a href="../Zabbix/">
+            
+                    
+                    Zabbix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Zabbix/Docker安装配置Zabbix.html">
+            
+                <a href="../Zabbix/Docker安装配置Zabbix.html">
+            
+                    
+                    Docker 安装配置 Zabbix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Zabbix/术语单词.html">
+            
+                <a href="../Zabbix/术语单词.html">
+            
+                    
+                    Zabbix 中常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Zabbix/重置密码.html">
+            
+                <a href="../Zabbix/重置密码.html">
+            
+                    
+                    重置 Zabbix 账户密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../KVM/">
+            
+                <a href="../KVM/">
+            
+                    
+                    KVM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../KVM/安装配置.html">
+            
+                <a href="../KVM/安装配置.html">
+            
+                    
+                    常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../KVM/虚拟机网络配置.html">
+            
+                <a href="../KVM/虚拟机网络配置.html">
+            
+                    
+                    Bridged 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Mysql/Ubuntu安装Navicat.html">
+            
+                <a href="../Mysql/Ubuntu安装Navicat.html">
+            
+                    
+                    Ubuntu 安装及配置 Navicat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Mysql/忘记root密码.html">
+            
+                <a href="../Mysql/忘记root密码.html">
+            
+                    
+                    如何替换已忘记的 root 密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Nginx/Nginx学习笔记.html">
+            
+                <a href="../Nginx/Nginx学习笔记.html">
+            
+                    
+                    Nginx 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../NoClass/">
+            
+                <a href="../NoClass/">
+            
+                    
+                    闲知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../NoClass/容易读错的IT术语.html">
+            
+                <a href="../NoClass/容易读错的IT术语.html">
+            
+                    
+                    容易读错的IT术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../NoClass/Linux-electron-tutorial.html">
+            
+                <a href="../NoClass/Linux-electron-tutorial.html">
+            
+                    
+                    Linux electron 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../NoClass/MarkdownSkills.html">
+            
+                <a href="../NoClass/MarkdownSkills.html">
+            
+                    
+                    记录 Markdown 的各种小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../NoClass/RaspeberryPi.html">
+            
+                <a href="../NoClass/RaspeberryPi.html">
+            
+                    
+                    使用树莓派 3B 遇到的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../NoClass/华为国产手机芯片SoC.html">
+            
+                <a href="../NoClass/华为国产手机芯片SoC.html">
+            
+                    
+                    华为国产手机芯片SoC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../NoClass/图片格式详解及其对比.html">
+            
+                <a href="../NoClass/图片格式详解及其对比.html">
+            
+                    
+                    图片格式详解及其对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="../NoClass/计算机小知识.html">
+            
+                <a href="../NoClass/计算机小知识.html">
+            
+                    
+                    记录一些计算机的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="../NoClass/诗词.html">
+            
+                <a href="../NoClass/诗词.html">
+            
+                    
+                    诗词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../OS/">
+            
+                <a href="../OS/">
+            
+                    
+                    OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../OS/学习笔记.html">
+            
+                <a href="../OS/学习笔记.html">
+            
+                    
+                    操作系统学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../OS/术语单词.html">
+            
+                <a href="../OS/术语单词.html">
+            
+                    
+                    OS 专业词语解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../OS/SoCCPU.html">
+            
+                <a href="../OS/SoCCPU.html">
+            
+                    
+                    SoC 与 CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Tomcat/">
+            
+                <a href="../Tomcat/">
+            
+                    
+                    Tomcat
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Tomcat/Tomcat 学习.html">
+            
+                <a href="../Tomcat/Tomcat 学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Tomcat/Tomcat学习.html">
+            
+                <a href="../Tomcat/Tomcat学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../VPS/">
+            
+                <a href="../VPS/">
+            
+                    
+                    VPS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../VPS/AWS_lightsail.html">
+            
+                <a href="../VPS/AWS_lightsail.html">
+            
+                    
+                    AWS LightSail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                <a href="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                    
+                    GCP VM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../VPS/ECS和VPS等等.html">
+            
+                <a href="../VPS/ECS和VPS等等.html">
+            
+                    
+                    ECS和VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../ComputerComposition/">
+            
+                <a href="../ComputerComposition/">
+            
+                    
+                    ComputerComposition
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../ComputerComposition/学习笔记.html">
+            
+                <a href="../ComputerComposition/学习笔记.html">
+            
+                    
+                    计算机组成原理学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../ComputerNetwork/">
+            
+                <a href="../ComputerNetwork/">
+            
+                    
+                    ComputerNetwork
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../ComputerNetwork/ProWords.html">
+            
+                <a href="../ComputerNetwork/ProWords.html">
+            
+                    
+                    术语单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../ComputerNetwork/学习笔记.html">
+            
+                <a href="../ComputerNetwork/学习笔记.html">
+            
+                    
+                    计算机网络学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../ComputerNetwork/小知识.html">
+            
+                <a href="../ComputerNetwork/小知识.html">
+            
+                    
+                    学习计算机网络中的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" data-path="../NoClass/浏览器架构简析.md">
+            
+                <span>
+            
+                    
+                    浏览器架构简析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../毕业论文/">
+            
+                <a href="../毕业论文/">
+            
+                    
+                    毕业论文
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../毕业论文/开题报告.html">
+            
+                <a href="../毕业论文/开题报告.html">
+            
+                    
+                    开题报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >防火墙学习笔记</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p>&#x4E4B;&#x524D;&#x5F88;&#x5C11;&#x4F1A;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x9632;&#x706B;&#x5899;&#xFF0C;&#x4E5F;&#x4E00;&#x76F4;&#x61D2;&#x5F97;&#x7CFB;&#x7EDF;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#xFF0C;&#x5C24;&#x5176;&#x5728; VPS &#x914D;&#x7F6E;&#x5B89;&#x5168;&#x7EC4;&#x65F6;&#xFF0C;&#x53EA;&#x80FD;&#x7167;&#x7740;&#x6559;&#x7A0B;&#x6539;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x660E;&#x767D;&#x5565;&#x610F;&#x601D;&#xFF0C;&#x603B;&#x5F52;&#x8FD8;&#x662F;&#x592A;&#x83DC;&#x548C;&#x592A;&#x61D2;&#xFF01;&#x6700;&#x8FD1;&#x63A5;&#x89E6; zabbix &#xFF0C;&#x770B;&#x6765;&#x4E0D;&#x5F97;&#x4E0D;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#x4E86;</p>
+</blockquote>
+<h1 id="&#x9632;&#x706B;&#x5899;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"><a name="&#x9632;&#x706B;&#x5899;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;" class="plugin-anchor" href="#&#x9632;&#x706B;&#x5899;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9632;&#x706B;&#x5899;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;</h1>
+<h2 id="&#x80CC;&#x666F;&#x8865;&#x5145;"><a name="&#x80CC;&#x666F;&#x8865;&#x5145;" class="plugin-anchor" href="#&#x80CC;&#x666F;&#x8865;&#x5145;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x80CC;&#x666F;&#x8865;&#x5145;</h2>
+<h3 id="selinux&#x3001;netfilter&#x3001;iptables&#x3001;firewall-&#x548C;-ufw&#x4E94;&#x8005;&#x5173;&#x7CFB;"><a name="selinux&#x3001;netfilter&#x3001;iptables&#x3001;firewall-&#x548C;-ufw&#x4E94;&#x8005;&#x5173;&#x7CFB;" class="plugin-anchor" href="#selinux&#x3001;netfilter&#x3001;iptables&#x3001;firewall-&#x548C;-ufw&#x4E94;&#x8005;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>SELinux&#x3001;Netfilter&#x3001;iptables&#x3001;firewall &#x548C; ufw&#x4E94;&#x8005;&#x5173;&#x7CFB;</h3>
+<ol>
+<li>SELinux ( Security-Enhanced Linux&#xFF0C;&#x5B89;&#x5168;&#x589E;&#x5F3A;&#x5F0F; Linux ) &#x662F;&#x4E00;&#x4E2A; Linux &#x5185;&#x6838;&#x7684;&#x5B89;&#x5168;&#x6A21;&#x5757;&#xFF0C;&#x5176;&#x63D0;&#x4F9B;&#x4E86;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5B89;&#x5168;&#x7B56;&#x7565;&#x673A;&#x5236;</li>
+<li>netfilter &#x662F; Linux &#x5185;&#x6838;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x6846;&#x67B6;&#xFF0C;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x5305;&#x3002;&#x4E0D;&#x4EC5;&#x5177;&#x6709;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x8F6C;&#x6362;&#xFF08; NAT &#xFF09;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E5F;&#x5177;&#x5907;&#x6570;&#x636E;&#x5305;&#x5185;&#x5BB9;&#x4FEE;&#x6539;&#x3001;&#x4EE5;&#x53CA;&#x6570;&#x636E;&#x5305;&#x8FC7;&#x6EE4;&#x7B49;&#x9632;&#x706B;&#x5899;&#x529F;&#x80FD;&#x3002;&#x5229;&#x7528;&#x8FD0;&#x4F5C;&#x4E8E;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x7684;&#x5E94;&#x7528;&#x8F6F;&#x4EF6;&#xFF0C;&#x5982; iptables&#x3001;ebtables &#x548C; arptables &#x7B49;&#xFF0C;&#x6765;&#x63A7;&#x5236; netfilter&#xFF0C;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x8005;&#x53EF;&#x4EE5;&#x7BA1;&#x7406;&#x901A;&#x8FC7; Linux &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5404;&#x79CD;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x5305;</li>
+<li>iptables &#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x7528;&#x6765;&#x914D;&#x7F6E; netfilter &#x9632;&#x706B;&#x5899;</li>
+<li>firewall &#x662F; centos7+&#x3001;RHEL7+&#x3001;Fedora &#x91CC;&#x9762;&#x65B0;&#x7684;&#x9632;&#x706B;&#x5899;&#x7BA1;&#x7406;&#x547D;&#x4EE4;</li>
+<li>ufw &#x662F; Ubuntu &#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7684;&#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;&#x5DE5;&#x5177;</li>
+</ol>
+<blockquote>
+<ul>
+<li>SELinux &#x662F;&#x7F8E;&#x56FD;&#x56FD;&#x5BB6;&#x5B89;&#x5168;&#x5C40; (NSA ) &#x5BF9;&#x4E8E;&#x5F3A;&#x5236;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x662F; Linux &#x5386;&#x53F2;&#x4E0A;&#x6700;&#x6770;&#x51FA;&#x7684;&#x65B0;&#x5B89;&#x5168;&#x5B50;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x9632;&#x706B;&#x5899;&#x8BBE;&#x7F6E;&#x7684;&#xFF0C;&#x4F46;&#x5B83;&#x5BF9; Linux &#x7CFB;&#x7EDF;&#x7684;&#x5B89;&#x5168;&#x5F88;&#x6709;&#x7528;&#x3002;Linux &#x5185;&#x6838; ( Kernel ) &#x4ECE; 2.6 &#x5C31;&#x6709;&#x4E86;SELinux</li>
+<li>ufw&#x3001;firewall &#x5176;&#x5B9E;&#x90FD;&#x662F;&#x5BF9; iptables &#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x5E95;&#x5C42;&#x6267;&#x884C;&#x7684;&#x90FD;&#x662F; iptables &#x547D;&#x4EE4;&#xFF1B;iptables &#x8C03;&#x7528;&#x5185;&#x6838;&#x6A21;&#x5757; netfilter &#x5B9E;&#x65BD;&#x771F;&#x6B63;&#x7684;&#x64CD;&#x4F5C;</li>
+</ul>
+</blockquote>
+<h3 id="etcservices&#x6587;&#x4EF6;&#x8BE6;&#x89E3;"><a name="etcservices&#x6587;&#x4EF6;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#etcservices&#x6587;&#x4EF6;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a><code>/etc/services</code>&#x6587;&#x4EF6;&#x8BE6;&#x89E3;</h3>
+<blockquote>
+<ul>
+<li><code>/etc/services</code> &#x6587;&#x4EF6;&#x5305;&#x542B;&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#x548C;&#x5B83;&#x4EEC;&#x6620;&#x5C04;&#x7AEF;&#x53E3;&#x7684;&#x5217;&#x8868;&#xFF1B;inetd &#x6216; xinetd ( Internet &#x5B88;&#x62A4;&#x7A0B;&#x5E8F; ) &#x4F1A;&#x67E5;&#x770B;&#x8FD9;&#x4E9B;&#x7EC6;&#x8282;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x6570;&#x636E;&#x5305;&#x5230;&#x8FBE;&#x5404;&#x81EA;&#x7684;&#x7AEF;&#x53E3;&#x6216;&#x670D;&#x52A1;&#x6709;&#x9700;&#x6C42;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x8C03;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x7A0B;&#x5E8F;</li>
+<li>&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF1A;<code>service-name    port/protocol   [aliases..]  [#comment]</code><ul>
+<li>service-name &#x662F;&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#x7684;&#x540D;&#x79F0;&#x3002;&#x4F8B;&#x5982; telnet&#x3001;ftp &#x7B49;</li>
+<li>port/protocol &#x662F;&#x7F51;&#x7EDC;&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x7684;&#x7AEF;&#x53E3;&#xFF08;&#x4E00;&#x4E2A;&#x6570;&#x503C; &#xFF09;&#x548C;&#x670D;&#x52A1;&#x901A;&#x4FE1;&#x4F7F;&#x7528;&#x7684;&#x534F;&#x8BAE;&#xFF08; TCP/UDP &#xFF09;</li>
+<li>alias &#x662F;&#x670D;&#x52A1;&#x7684;&#x522B;&#x540D;</li>
+<li>comment &#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5230;&#x670D;&#x52A1;&#x7684;&#x6CE8;&#x91CA;&#x6216;&#x8BF4;&#x660E;&#xFF0C;&#x4EE5; # &#x6807;&#x8BB0;&#x5F00;&#x5934;</li>
+<li>&#x6700;&#x540E;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x7528; [ ] &#x8868;&#x793A;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<div align="cneter">
+<img src="images/firewall_services.jpg"><br>sudo vim /etc/services
+</div>
+
+
+<h2 id="selinux"><a name="selinux" class="plugin-anchor" href="#selinux"><i class="fa fa-link" aria-hidden="true"></i></a>SELinux</h2>
+<ul>
+<li><strong>&#x5F88;&#x591A;&#x6559;&#x7A0B;&#x5B89;&#x88C5;&#x914D;&#x7F6E;&#x7684;&#x65F6;&#x5019;&#x4E00;&#x4E0A;&#x6765;&#x5C31;&#x8BA9;&#x6211;&#x4EEC;&#x5173;&#x4E86; SELinux&#xFF0C;&#x77E5;&#x4E4E;&#x56DE;&#x7B54;</strong><ul>
+<li>SELinux &#x7B56;&#x7565;&#x662F;&#x767D;&#x540D;&#x5355;&#x539F;&#x5219;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x9700;&#x8981;&#x975E;&#x5E38;&#x6E05;&#x695A;&#x4F60;&#x7684;&#x5404;&#x9879;&#x64CD;&#x4F5C;&#x90FD;&#x9700;&#x8981;&#x54EA;&#x4E9B;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF0C;&#x8FD9;&#x4E2A;&#x597D;&#x50CF;&#x6570;&#x91CF;&#x6709;&#x70B9;&#x591A;&#x4E86;</li>
+<li>&#x4E0D;&#x5916;&#x4E4E;&#x4E0D;&#x61C2;&#x600E;&#x4E48;&#x7528;&#xFF0C;&#x5173;&#x4E86;&#x4E00;&#x4E86;&#x767E;&#x4E86;&#xFF0C;&#x61C2;&#x600E;&#x4E48;&#x7528;&#x7684;&#x4E0D;&#x60F3;&#x6298;&#x817E;&#xFF0C;&#x8FD8;&#x662F;&#x5173;&#x4E86;&#x4E00;&#x4E86;&#x767E;&#x4E86;</li>
+<li>&#x56E0;&#x4E3A;&#x5B83;&#x5728;&#x672C;&#x6765;&#x5DF2;&#x7ECF;&#x5F88;&#x5B89;&#x5168;&#x7684; Linux &#x4E0A;&#xFF0C;&#x51CC;&#x9A7E;&#x4E8E; root &#x6743;&#x9650;&#x4E4B;&#x4E0A;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E86;&#x5F88;&#x591A;&#x989D;&#x5916;&#x7684;&#x6761;&#x6761;&#x6846;&#x6846;&#xFF1B;&#x5982;&#x679C;&#x4F60;&#x4E86;&#x89E3;&#x8FD9;&#x4E9B;&#x6761;&#x6761;&#x6846;&#x6846;&#xFF0C;&#x90A3;&#x8FD8;&#x597D;&#xFF1B;&#x4F46;&#x5982;&#x679C;&#x4E0D;&#x4E86;&#x89E3;&#xFF0C;&#x90A3; SELinux &#x53EF;&#x80FD;&#x5E76;&#x6CA1;&#x6709;&#x5E2E;&#x4EC0;&#x4E48;&#x5FD9;&#xFF0C;&#x5374;&#x7ED9;&#x4F60;&#x5E26;&#x6765;&#x4E86;&#x5F88;&#x591A;&#x4E0D;&#x786E;&#x5B9A;&#x56E0;&#x7D20;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-shell"># &#x67E5;&#x770B; SELinux &#x662F;&#x5426;&#x8FD0;&#x884C;
+getenforce                
+# disabled&#xFF1A;&#x8868;&#x793A; selinux &#x5173;&#x95ED;&#xFF0C;&#x6CA1;&#x6709;&#x542F;&#x52A8;&#xFF1B;&#x5176;&#x4ED6;&#x4E24;&#x79CD; ( enforcing&#x3001;permissive ) &#x5747;&#x8868;&#x793A; selinux &#x542F;&#x52A8;&#x4E86;&#xFF0C;&#x53EA;&#x662F;&#x8FD0;&#x884C;&#x7684;&#x6A21;&#x5F0F;&#x4E0D;&#x4E00;&#x6837;
+
+# &#x5173;&#x95ED;SELinux
+
+# &#x4E34;&#x65F6;&#x751F;&#x6548;&#xFF0C;&#x91CD;&#x542F;&#x673A;&#x5668;&#x540E;&#x5931;&#x6548;
+# &#x547D;&#x4EE4;&#x4E34;&#x65F6;&#x751F;&#x6548;&#xFF1A;
+setenforce 0 
+#            1 &#x542F;&#x7528;
+#           0 &#x544A;&#x8B66;&#xFF0C;&#x4E0D;&#x542F;&#x7528;
+
+# &#x6C38;&#x4E45;&#x751F;&#x6548;
+# &#x64CD;&#x4F5C;&#x524D;&#x5148;&#x5907;&#x4EFD;
+cp /etc/selinux/config /etc/selinux/config.bak
+# &#x66F4;&#x6539; setlinux &#x7EA7;&#x522B;
+sed -i &apos;s/SELINUX=enforcing/\SELINUX=disabled/&apos; /etc/selinux/config
+ # &#x6216; 
+vim /etc/selinux/config
+# &#x4FEE;&#x6539;SELINUX=disabled
+# &#x4F7F;&#x7528;&#x914D;&#x7F6E;&#x751F;&#x6548;
+reboot 
+# &#x6216;
+setenforce 0        #&#x4F7F;&#x914D;&#x7F6E;&#x7ACB;&#x5373;&#x751F;&#x6548;
+</code></pre>
+<h2 id="netfilter"><a name="netfilter" class="plugin-anchor" href="#netfilter"><i class="fa fa-link" aria-hidden="true"></i></a>netfilter</h2>
+<ul>
+<li><p>netfilter &#x662F; Linux &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6838;&#x5FC3;&#x5C42;&#x5185;&#x90E8;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5305;&#x5904;&#x7406;&#x6A21;&#x5757;</p>
+<h2 id="iptables"><a name="iptables" class="plugin-anchor" href="#iptables"><i class="fa fa-link" aria-hidden="true"></i></a>iptables</h2>
+</li>
+<li><p>&#x5728; Linux &#x751F;&#x6001;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;iptables &#x662F;&#x4F7F; &#x7528;&#x5F88;&#x5E7F;&#x6CDB;&#x7684;&#x9632;&#x706B;&#x5899;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#xFF0C;&#x5B83;&#x57FA;&#x4E8E;&#x5185;&#x6838;&#x7684;&#x5305;&#x8FC7;&#x6EE4;&#x6846;&#x67B6;&#xFF08;packet filtering framework&#xFF09; netfilter</p>
+</li>
+<li>iptables &#x662F;&#x8FD0;&#x884C;&#x5728;&#x7528;&#x6237;&#x6001;&#x7684;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x901A;&#x8FC7; netlink &#x548C;&#x5185;&#x6838;&#x7684; netfilter &#x6846;&#x67B6;&#x6253;&#x4EA4;&#x9053;</li>
+<li>iptables &#x662F; Linux &#x4E0B;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x7684;&#x5E94;&#x7528;&#x5C42;&#x9632;&#x706B;&#x5899;&#x5DE5;&#x5177;, &#x8BF4;&#x5230; iptables &#x5FC5;&#x7136;&#x63D0;&#x5230;Netfilter&#xFF0C;iptables &#x662F;&#x5E94;&#x7528;&#x5C42;&#x7684;&#xFF0C;&#x5176;&#x5B9E;&#x8D28;&#x662F;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x7684;&#x914D;&#x7F6E;&#x5DE5;&#x5177;&#xFF0C;&#x800C;&#x6838;&#x5FC3;&#x7684;&#x6570;&#x636E;&#x5305;&#x62E6;&#x622A;&#x548C;&#x8F6C;&#x53D1;&#x662F; Netfiler</li>
+</ul>
+<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-shell"># &#x5B89;&#x88C5; iptables
+yum install iptables-serices -y
+# &#x67E5;&#x770B;&#x9632;&#x706B;&#x5899;&#x72B6;&#x6001;&#xFF1A;
+service iptables status
+# &#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;&#xFF08;&#x6C38;&#x4E45;&#x6027;,&#x91CD;&#x542F;&#x673A;&#x5668;&#x540E;&#x4E5F;&#x4F1A;&#x4FDD;&#x6301;&#x751F;&#x6548;)
+chkconfig iptables off
+# &#x5F00;&#x542F;&#x9632;&#x706B;&#x5899; (&#x6C38;&#x4E45;&#x6027;,&#x91CD;&#x542F;&#x673A;&#x5668;&#x540E;&#x4E5F;&#x4F1A;&#x4FDD;&#x6301;&#x751F;&#x6548;&#xFF09;
+chkconfig iptables on
+# &#x4E34;&#x65F6;&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;&#xFF08;&#x91CD;&#x542F;&#x673A;&#x5668;&#x540E;&#x5931;&#x6548;)
+service iptables off
+# &#x4E34;&#x65F6;&#x5F00;&#x542F;&#x9632;&#x706B;&#x5899;&#xFF08;&#x91CD;&#x542F;&#x673A;&#x5668;&#x540E;&#x5931;&#x6548;)
+service iptables on
+</code></pre>
+<p><strong><a href="https://liqiang.io/post/dive-in-iptables" target="_blank">iptables &#x6DF1;&#x5EA6;&#x8BE6;&#x89E3;</a></strong></p>
+<h2 id="firewall"><a name="firewall" class="plugin-anchor" href="#firewall"><i class="fa fa-link" aria-hidden="true"></i></a>firewall</h2>
+<blockquote>
+<ul>
+<li>firewall &#x7684;&#x5E95;&#x5C42;&#x662F;&#x4F7F;&#x7528; iptables &#x8FDB;&#x884C;&#x6570;&#x636E;&#x8FC7;&#x6EE4;&#xFF0C;&#x5EFA;&#x7ACB;&#x5728; iptables &#x4E4B;&#x4E0A;</li>
+<li>firewall &#x662F;&#x52A8;&#x6001;&#x9632;&#x706B;&#x5899;&#xFF0C;&#x4F7F;&#x7528;&#x4E86; D-BUS &#x65B9;&#x5F0F;&#xFF0C;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E0D;&#x4F1A;&#x7834;&#x574F;&#x5DF2;&#x6709;&#x7684;&#x6570;&#x636E;&#x94FE;&#x63A5;</li>
+</ul>
+</blockquote>
+<h3 id="firewalld"><a name="firewalld" class="plugin-anchor" href="#firewalld"><i class="fa fa-link" aria-hidden="true"></i></a>firewalld</h3>
+<ul>
+<li>firewalld - Dynamic Firewall Manager</li>
+</ul>
+<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-shell"># &#x5B89;&#x88C5; firewall 
+yum install firewalld firewall-config -y
+# &#x542F;&#x52A8;&#x9632;&#x706B;&#x5899;
+systemctl start firewalld.service
+# &#x505C;&#x6B62;&#x9632;&#x706B;&#x5899;/&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;
+systemctl stop firewalld.service
+# &#x91CD;&#x542F;&#x9632;&#x706B;&#x5899;
+systemctl restart firewalld.service
+# &#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x542F;&#x7528;&#x9632;&#x706B;&#x5899;
+systemctl enable firewalld.service
+# &#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x4E0D;&#x542F;&#x52A8;&#x9632;&#x706B;&#x5899;
+systemctl disable firewalld.service
+</code></pre>
+<h4 id="&#x914D;&#x7F6E;"><a name="&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;</h4>
+<ul>
+<li>&#x4FEE;&#x6539; firewall &#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;<strong>firewall-config ( &#x56FE;&#x5F62;&#x5316; )&#x3001;firewall-cmd ( &#x547D;&#x4EE4;&#x884C; )&#x3001;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5185;&#x4FEE;&#x6539;</strong></li>
+<li>firewalld &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x4EE5; xml &#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x5B58;&#x50A8;&#x5728; <code>/usr/lib/firewalld/</code>&#xFF08;&#x7528;&#x6237; &#x548C; <code>/etc/firewalld/</code> &#x76EE;&#x5F55;&#x4E2D;</li>
+</ul>
+<h3 id="firewall-cmd"><a name="firewall-cmd" class="plugin-anchor" href="#firewall-cmd"><i class="fa fa-link" aria-hidden="true"></i></a>firewall-cmd</h3>
+<ul>
+<li>firewall - cmd is the command line client of the firewalld daemon. It provides interface to manage runtime and permanent configuration.</li>
+</ul>
+<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-shell"># &#x67E5;&#x770B; firewall &#x72B6;&#x6001;
+firewall-cmd --state
+# &#x5217;&#x51FA;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;&#x53F7;
+firewall-cmd --zone=public --list-ports
+# &#x65B0;&#x589E;&#x5F00;&#x653E;&#x7AEF;&#x53E3;&#x53F7;
+firewall-cmd [--zone=&lt;zone&gt;] --add-port=&lt;port&gt;[-&lt;port&gt;]/&lt;protocol&gt; [--timeout=&lt;seconds&gt;] [--permanent]
+# &#x4F8B;&#x5982;&#xFF1A;
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+#&#x8BF4;&#x660E;:
+# --zone &#x7F51;&#x7EDC;&#x533A;&#x57DF;&#x5B9A;&#x4E49;&#x4E86;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x7684;&#x53EF;&#x4FE1;&#x7B49;&#x7EA7;
+#       &#x963B;&#x585E;&#x533A;&#x57DF;&#xFF08;block&#xFF09;&#xFF1A;&#x4EFB;&#x4F55;&#x4F20;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x5305;&#x90FD;&#x5C06;&#x88AB;&#x963B;&#x6B62;
+#       &#x5DE5;&#x4F5C;&#x533A;&#x57DF;&#xFF08;work&#xFF09;&#xFF1A;&#x76F8;&#x4FE1;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x5176;&#x4ED6;&#x8BA1;&#x7B97;&#x673A;&#xFF0C;&#x4E0D;&#x4F1A;&#x635F;&#x5BB3;&#x4F60;&#x7684;&#x8BA1;&#x7B97;&#x673A;
+#       &#x5BB6;&#x5EAD;&#x533A;&#x57DF;&#xFF08;home&#xFF09;&#xFF1A;&#x76F8;&#x4FE1;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x5176;&#x4ED6;&#x8BA1;&#x7B97;&#x673A;&#xFF0C;&#x4E0D;&#x4F1A;&#x635F;&#x5BB3;&#x4F60;&#x7684;&#x8BA1;&#x7B97;&#x673A;
+#       &#x516C;&#x5171;&#x533A;&#x57DF;&#xFF08;public&#xFF09;&#xFF1A;&#x4E0D;&#x76F8;&#x4FE1;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x4EFB;&#x4F55;&#x8BA1;&#x7B97;&#x673A;&#xFF0C;&#x53EA;&#x6709;&#x9009;&#x62E9;&#x63A5;&#x53D7;&#x4F20;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;
+#       &#x9694;&#x79BB;&#x533A;&#x57DF;&#xFF08;DMZ&#xFF09;&#xFF1A;&#x4E5F;&#x79F0;&#x4E3A;&#x975E;&#x519B;&#x4E8B;&#x533A;&#x57DF;&#xFF0C;&#x5185;&#x5916;&#x7F51;&#x7EDC;&#x4E4B;&#x95F4;&#x589E;&#x52A0;&#x7684;&#x4E00;&#x5C42;&#x7F51;&#x7EDC;&#xFF0C;&#x8D77;&#x5230;&#x7F13;&#x51B2;&#x4F5C;&#x7528;&#x3002;&#x5BF9;&#x4E8E;&#x9694;&#x79BB;&#x533A;&#x57DF;&#xFF0C;&#x53EA;&#x80FD;&#x9009;&#x62E9;&#x63A5;&#x53D7;&#x4F20;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;
+#       &#x4FE1;&#x4EFB;&#x533A;&#x57DF;&#xFF08;trusted&#xFF09;&#xFF1A;&#x6240;&#x6709;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;
+#       &#x4E22;&#x5F03;&#x533A;&#x57DF;&#xFF08;drop&#xFF09;&#xFF1A;&#x4EFB;&#x4F55;&#x4F20;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x90FD;&#x88AB;&#x62D2;&#x7EDD;
+#       &#x5185;&#x90E8;&#x533A;&#x57DF;&#xFF08;internal&#xFF09;&#xFF1A;&#x4FE1;&#x4EFB;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x5176;&#x4ED6;&#x8BA1;&#x7B97;&#x673A;&#xFF0C;&#x4E0D;&#x4F1A;&#x635F;&#x5BB3;&#x4F60;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x3002;&#x53EA;&#x6709;&#x9009;&#x62E9;&#x63A5;&#x53D7;&#x4F20;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;
+#       &#x5916;&#x90E8;&#x533A;&#x57DF;&#xFF08;external&#xFF09;&#xFF1A;&#x4E0D;&#x76F8;&#x4FE1;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x5176;&#x4ED6;&#x8BA1;&#x7B97;&#x673A;&#xFF0C;&#x4E0D;&#x4F1A;&#x635F;&#x5BB3;&#x4F60;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x3002;&#x53EA;&#x6709;&#x9009;&#x62E9;&#x63A5;&#x53D7;&#x4F20;&#x5165;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;
+# --add-port=80/tcp &#x6DFB;&#x52A0;&#x7AEF;&#x53E3;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;&#x7AEF;&#x53E3;&#x6216;&#x7AEF;&#x53E3;&#x8303;&#x56F4;/&#x534F;&#x8BAE;(udp/tcp)
+# --permanent &#x6C38;&#x4E45;&#x751F;&#x6548;&#xFF0C;&#x6CA1;&#x6709;&#x6B64;&#x53C2;&#x6570;&#x91CD;&#x542F;&#x540E;&#x5931;&#x6548;
+# &#x67E5;&#x770B;
+firewall-cmd --zone=public --query-port=80/tcp
+# &#x5220;&#x9664;
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
+# &#x67E5;&#x770B;&#x5F53;&#x524D;&#x6D3B;&#x52A8;&#x7684;&#x533A;&#x57DF;,&#x5E76;&#x9644;&#x5E26;&#x4E00;&#x4E2A;&#x76EE;&#x524D;&#x5206;&#x914D;&#x7ED9;&#x5B83;&#x4EEC;&#x7684;&#x63A5;&#x53E3;&#x5217;&#x8868;
+firewall-cmd --get-active-zones
+# &#x67E5;&#x770B;&#x9ED8;&#x8BA4;&#x533A;&#x57DF;
+firewall-cmd --get-default-zone
+# &#x67E5;&#x770B;&#x6240;&#x6709;&#x53EF;&#x7528;&#x533A;&#x57DF;
+firewall-cmd --get-zones
+# &#x5217;&#x51FA;&#x6307;&#x5B9A;&#x57DF;&#x7684;&#x6240;&#x6709;&#x8BBE;&#x7F6E;
+firewall-cmd --zone=public --list-all
+# &#x5217;&#x51FA;&#x6240;&#x6709;&#x9884;&#x8BBE;&#x670D;&#x52A1;
+firewall-cmd --get-services
+# (&#x8FD9;&#x6837;&#x5C06;&#x5217;&#x51FA; /usr/lib/firewalld/services/ &#x4E2D;&#x7684;&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;&#x3002;&#x6CE8;&#x610F;:&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x4EE5;&#x670D;&#x52A1;&#x672C;&#x8EAB;&#x547D;&#x540D;&#x7684;service-name. xml)
+# &#x5217;&#x51FA;&#x6240;&#x6709;&#x533A;&#x57DF;&#x7684;&#x8BBE;&#x7F6E;
+firewall-cmd --list-all-zones
+# &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x533A;&#x57DF;
+firewall-cmd --set-default-zone=dmz
+# &#x8BBE;&#x7F6E;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x533A;&#x57DF;
+firewall-cmd --permanent --zone=internal --add-source=192.168.122.0/24
+# (--permanent&#x53C2;&#x6570;&#x8868;&#x793A;&#x6C38;&#x4E45;&#x751F;&#x6548;&#x8BBE;&#x7F6E;,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;--zone&#x53C2;&#x6570;,&#x90A3;&#x4E48;&#x4F1A;&#x52A0;&#x5165;&#x9ED8;&#x8BA4;&#x533A;&#x57DF;)
+# &#x5220;&#x9664;&#x6307;&#x5B9A;&#x533A;&#x57DF;&#x4E2D;&#x7684;&#x7F51;&#x8DEF;&#x5730;&#x5740;
+# firewall-cmd --permanent --zone=internal --remove-source=192.168.122.0/24
+# &#x6DFB;&#x52A0;&#x3001;&#x6539;&#x53D8;&#x3001;&#x5220;&#x9664;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;
+firewall-cmd --permanent --zone=internal --add-interface=eth0
+firewall-cmd --permanent --zone=internal --change-interface=eth0
+firewall-cmd --permanent --zone=internal --remove-interface=eth0
+# &#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;&#x670D;&#x52A1;
+firewall-cmd --permanent --zone=public --add-service=smtp
+firewall-cmd --permanent --zone=public --remove-service=smtp
+# &#x5217;&#x51FA;&#x3001;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;&#x7AEF;&#x53E3;
+firewall-cmd --zone=public --list-ports
+firewall-cmd --permanent --zone=public --add-port=8080/tcp
+firewall-cmd --permanent --zone=public --remove-port=8080/tcp
+# &#x91CD;&#x65B0;&#x8F7D;&#x5165;&#xFF0C;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x5B8C; firewall-cmd &#x90FD;&#x5E94;&#x8BE5; reload &#x4E00;&#x6B21;
+# &#x6CE8;&#x610F;: &#x8FD9;&#x5E76;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#x5DF2;&#x7ECF;&#x5EFA;&#x7ACB;&#x7684;&#x8FDE;&#x63A5;,&#x5982;&#x679C;&#x6253;&#x7B97;&#x4E2D;&#x65AD;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528; --complete-reload &#x9009;&#x9879;
+firewall-cmd --reload
+</code></pre>
+<div align="cneter">
+<img src="images/firewall_zone.jpg"><br>zone &#x4FE1;&#x4EFB;&#x7B49;&#x7EA7;&#x8BE6;&#x89E3;
+</div>
+
+
+<h2 id="ufw---uncomplicated-firewall---&#x7B80;&#x6613;&#x9632;&#x706B;&#x5899;"><a name="ufw---uncomplicated-firewall---&#x7B80;&#x6613;&#x9632;&#x706B;&#x5899;" class="plugin-anchor" href="#ufw---uncomplicated-firewall---&#x7B80;&#x6613;&#x9632;&#x706B;&#x5899;"><i class="fa fa-link" aria-hidden="true"></i></a>ufw - uncomplicated firewall - &#x7B80;&#x6613;&#x9632;&#x706B;&#x5899;</h2>
+<blockquote>
+<ul>
+<li>ufw &#x662F;&#x4E00;&#x4E2A; <strong>Arch Linux&#x3001;Debian &#x6216; Ubuntu</strong> &#x4E2D;&#x7BA1;&#x7406;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x7684;&#x524D;&#x7AEF;&#xFF1B;ufw &#x9ED8;&#x8BA4;&#x5305;&#x542B;&#x5728; Ubuntu &#x4E2D;&#xFF0C;&#x4F46;&#x5728; Arch &#x548C; Debian &#x4E2D;&#x9700;&#x8981;&#x81EA;&#x884C;&#x5B89;&#x88C5;</li>
+<li>ufw &#x662F;&#x57FA;&#x4E8E; iptables &#x5B9E;&#x73B0;&#x7684;&#x9632;&#x706B;&#x5899;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x6240;&#x4EE5;&#x5B9E;&#x9645;&#x4E0A; ufw &#x4FEE;&#x6539;&#x7684;&#x662F; iptables &#x7684;&#x89C4;&#x5219;</li>
+</ul>
+</blockquote>
+<h4 id="&#x914D;&#x7F6E;"><a name="&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;</h4>
+<blockquote>
+<ul>
+<li><code>/etc/ufw</code> - &#x4E00;&#x4E9B; ufw &#x7684;&#x73AF;&#x5883;&#x8BBE;&#x5B9A;&#x6587;&#x4EF6;</li>
+<li><code>/etc/sysctl.conf</code> - &#x82E5;&#x5F00;&#x542F;ufw&#x4E4B; &#x540E;&#xFF0C;<code>/etc/ufw/sysctl.conf</code>&#x4F1A;&#x8986;&#x76D6;&#x9ED8;&#x8BA4;&#x7684;<code>/etc/sysctl.conf</code>&#x6587;&#x4EF6;&#xFF0C;&#x82E5;&#x4F60;&#x539F;&#x6765;&#x7684;<code>/etc/sysctl.conf</code>&#x505A;&#x4E86;&#x4FEE;&#x6539;&#xFF0C;&#x542F;&#x52A8;ufw&#x540E;&#xFF0C;&#x82E5;<code>/etc/ufw/sysctl.conf</code>&#x4E2D;&#x6709;&#x65B0;&#x8D4B;&#x503C;&#xFF0C;&#x5219;&#x4F1A;&#x8986;&#x76D6;<code>/etc/sysctl.conf</code>&#x7684;&#xFF0C;&#x5426;&#x5219;&#x8FD8;&#x4EE5;<code>/etc /sysctl.conf</code>&#x4E3A;&#x51C6;</li>
+<li><code>/etc/default/ufw</code> - &#x5F53;&#x7136;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539;<code>/etc/default/ufw</code>&#x4E2D;&#x7684;<code>IPT_SYSCTL=</code>&#x6761;&#x76EE;&#x6765;&#x8BBE;&#x7F6E;&#x4F7F;&#x7528;&#x54EA;&#x4E2A; sysctrl.conf</li>
+</ul>
+</blockquote>
+<h4 id="&#x5907;&#x4EFD;&#x8FD8;&#x539F;&#x89C4;&#x5219;"><a name="&#x5907;&#x4EFD;&#x8FD8;&#x539F;&#x89C4;&#x5219;" class="plugin-anchor" href="#&#x5907;&#x4EFD;&#x8FD8;&#x539F;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5907;&#x4EFD;/&#x8FD8;&#x539F;&#x89C4;&#x5219;</h4>
+<blockquote>
+<ul>
+<li>ufw &#x7684;&#x6240;&#x6709;&#x89C4;&#x5219;&#x6587;&#x4EF6;&#x90FD;&#x5728;&#x8DEF;&#x5F84;<code>/etc/ufw/</code>&#xFF0C;&#x5176;&#x4E2D;<code>before.rules</code>&#x89C4;&#x5219;&#x4E3A;  ufw &#x5728;&#x8FD0;&#x884C;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x5219;&#x4E4B;&#x524D;&#x8FD0;&#x884C;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x76F8;&#x5E94;&#x7684;<code>before6.rules</code>&#x5BF9;&#x5E94; IPV6&#xFF1B;<code>after.rules</code>&#x4E3A; ufw &#x542F;&#x7528;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x4E4B;&#x540E;&#x8FD0;&#x884C;&#x7684;&#x89C4;&#x5219;&#xFF1B;<code>user.rules</code>&#x5373;&#x4E3A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x5219;<ul>
+<li>&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x76F4;&#x63A5;&#x5907;&#x4EFD;&#x8FD9;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5907;&#x4EFD;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#xFF0C;&#x9700;&#x8981;&#x5907;&#x4EFD;&#x7684;&#x6587;&#x4EF6;&#x6709;&#xFF1A;</li>
+<li><code>/etc/ufw/*.rules</code></li>
+<li><code>/lib/ufw/*.rules</code></li>
+<li><code>/etc/default/ufw</code>  <em>&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x8FC7;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x5907;&#x4EFD;</em></li>
+<li>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;<code>sudo ufw reload</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-shell"> # &#x5B89;&#x88C5; ufw
+ sudo apt-get install ufw
+ # &#x67E5;&#x770B;&#x9632;&#x706B;&#x5899;&#x72B6;&#x6001;
+sudo ufw status
+# &#x542F;&#x52A8;&#x3001;&#x5173;&#x95ED;&#x3001;&#x67E5;&#x770B;&#x72B6;&#x6001;&#x3001;&#x5F00;&#x673A;&#x542F;&#x52A8;&#x3001;&#x5F00;&#x673A;&#x4E0D;&#x542F;&#x52A8;&#x9632;&#x706B;&#x5899;
+systemctl start|stop|status|enable|disable ufw
+# &#x5F00;&#x673A;&#x542F;&#x52A8;&#x3001;&#x5F00;&#x673A;&#x4E0D;&#x542F;&#x52A8;&#x9632;&#x706B;&#x5899;  ( &#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x662F; disable )
+sudo ufw enable|disable
+# &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7B56;&#x7565;&#xFF0C;&#x5373;&#x4E3A;&#x62D2;&#x7EDD;&#x6240;&#x6709;&#x4F20;&#x5165;&#x8FDE;&#x63A5;&#xFF0C;&#x5141;&#x8BB8;&#x6240;&#x6709;&#x4F20;&#x51FA;&#x94FE;&#x63A5;
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+# &#x5141;&#x8BB8;/&#x62D2;&#x7EDD;&#x8BBF;&#x95EE; 20 &#x7AEF;&#x53E3;&#xFF0C;20 &#x540E;&#x53EF;&#x8DDF; /tcp &#x6216; /udp&#xFF0C;&#x8868;&#x793A; tcp &#x6216; udp &#x5C01;&#x5305;
+sudo ufw allow/deny 20[/tcp|/udp]
+# &#x5220;&#x9664;&#x4E0A;&#x9762;&#x5B9A;&#x4E49;&#x7684;&#x201C;&#x5141;&#x8BB8;/&#x62D2;&#x7EDD;&#x8BBF;&#x95EE; 20 &#x7AEF;&#x53E3;&#x201D;&#x7684;&#x89C4;&#x5219;
+sudo ufw delete allow/deny 20[/tcp|/udp]
+# ufw &#x7684; allow &#x4E0D;&#x52A0; in/out &#x5141;&#x8BB8;&#x8FDE;&#x63A5;&#x9ED8;&#x8BA4;&#x662F;&#x6307;&#x5141;&#x8BB8;&#x5165;&#x7AD9;&#x8FDE;&#x63A5;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6307;&#x5B9A;&#x5141;&#x8BB8;&#x51FA;&#x7AD9;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x4E0A; out&#xFF0C;&#x5982;&#xFF1A;
+sudo ufw allow in port        #&#x5141;&#x8BB8; port &#x5165;&#x7AD9;
+sudo ufw allow out port     #&#x5141;&#x8BB8; port &#x51FA;&#x7AD9;
+# &#x5141;&#x8BB8;/&#x62D2;&#x7EDD;&#x8BBF;&#x95EE;&#x67D0;&#x4E2A; service &#x7684;&#x7AEF;&#x53E3; ( &#x5728;  /etc/services &#x6587;&#x4EF6;&#x4E2D;&#x67E5;&#x770B; service )&#xFF0C;&#x5220;&#x9664;&#x540C;&#x524D;&#x9762;&#x52A0; delete
+# ufw &#x901A;&#x8FC7; /etc/services &#x6587;&#x4EF6;&#x5F97;&#x5230; service &#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x53F7;
+sudo ufw allow/deny [service]
+# &#x4F8B;&#x5982;
+sudo ufw allow http       &lt;==&gt;       sudo ufw allow 80/tcp
+# &#x8BBE;&#x7F6E;&#x5916;&#x6765;&#x8BBF;&#x95EE;&#x9ED8;&#x8BA4;&#x5141;&#x8BB8;/&#x62D2;&#x7EDD;
+sudo ufw default allow/deny
+# &#x5141;&#x8BB8;/&#x62D2;&#x7EDD;&#x7279;&#x5B9A;&#x7AEF;&#x53E3;&#x8303;&#x56F4;&#x8FDE;&#x63A5;
+sudo ufw allow/deny 1000:2000[/tcp|/udp]
+# &#x5141;&#x8BB8;/&#x62D2;&#x7EDD;&#x7279;&#x5B9A; IP&#xFF0C;&#x5220;&#x9664;&#x540C;&#x524D;&#x9762;&#x52A0; delete
+sudo ufw allow/deny from 192.168.254.254
+# &#x5141;&#x8BB8;/&#x62D2;&#x7EDD;&#x7279;&#x5B9A; IP &#x7279;&#x5B9A;&#x7AEF;&#x53E3;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x5220;&#x9664;&#x540C;&#x524D;&#x9762;&#x52A0; delete
+sudo ufw allow/deny from 111.111.111.111 to any port 22
+# &#x5141;&#x8BB8;/&#x62D2;&#x7EDD;&#x81EA;10.0.1.0/10 &#x7684; tcp &#x5C01;&#x5305;&#x8BBF;&#x95EE;&#x672C;&#x673A;&#x7684; 25 &#x7AEF;&#x53E3;&#xFF0C;&#x5220;&#x9664;&#x540C;&#x524D;&#x9762;&#x52A0; delete
+sudo ufw allow/deny proto tcp from 10.0.1.0/10 to 127.0.0.1 port 25
+# &#x67E5;&#x770B;&#x6240;&#x6709;&#x89C4;&#x5219;&#x7684;&#x89C4;&#x5219;&#x53F7;
+sudo ufw status numbered
+# &#x5220;&#x9664;&#x89C4;&#x5219;&#x7F16;&#x53F7;&#x6216;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x5B9E;&#x9645;&#x89C4;&#x5219;
+delete num/rule
+# &#x91CD;&#x7F6E;&#x9632;&#x706B;&#x5899;
+# &#x8BE5;&#x547D;&#x4EE4;&#x5C06;&#x7981;&#x7528; ufw&#xFF0C;&#x5220;&#x9664;&#x6240;&#x6709;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x6240;&#x6709;&#x89C4;&#x5219;&#x5C06;&#x88AB;&#x91CD;&#x8BBE;&#x4E3A;&#x5B89;&#x88C5;&#x65F6;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E0D;&#x8FC7;&#x9ED8;&#x8BA4;&#x8BE5;&#x547D;&#x4EE4;&#x4F1A;&#x5BF9;&#x5DF2;&#x7ECF;&#x8BBE;&#x7F6E;&#x7684;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x5907;&#x4EFD;
+sudo ufw reset
+# &#x6279;&#x91CF;&#x7981;&#x6B62; IP&#xFF0C;file.txt &#x91CC;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x7981;&#x6B62;&#x7684; IP &#x5217;&#x8868;
+while read line; do sudo ufw deny from $line; done &lt; file.txt
+# &#x91CD;&#x542F; ufw &#x4F7F;&#x5F97;&#x65B0;&#x89C4;&#x5219;&#x751F;&#x6548;
+sudo ufw reload
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-01-04 15:54:38 </span> </footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="通过Linux开机启动项展开学习.html" class="navigation navigation-prev " aria-label="Previous page: Linux开机启动项学习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Python/" class="navigation navigation-next " aria-label="Next page: Python">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"防火墙学习笔记","level":"1.4.24","depth":2,"next":{"title":"Python","level":"1.5","depth":1,"path":"Python/README.md","ref":"Python/README.md","articles":[{"title":"Python3 BeautifulSoup 学习记录","level":"1.5.1","depth":2,"path":"Python/BeautifulSoup.md","ref":"Python/BeautifulSoup.md","articles":[]},{"title":"Python Django 学习笔记","level":"1.5.2","depth":2,"path":"Python/Django.md","ref":"Python/Django.md","articles":[]},{"title":"IPython 使用技巧","level":"1.5.3","depth":2,"path":"Python/IPython使用技巧.md","ref":"Python/IPython使用技巧.md","articles":[]},{"title":"Python Numpy 学习","level":"1.5.4","depth":2,"path":"Python/Numpy.md","ref":"Python/Numpy.md","articles":[]},{"title":"Python 学习遇到的问题解决或扩展小知识","level":"1.5.5","depth":2,"path":"Python/Python小知识.md","ref":"Python/Python小知识.md","articles":[]},{"title":"Python 模块管理总结","level":"1.5.6","depth":2,"path":"Python/Python模块管理总结.md","ref":"Python/Python模块管理总结.md","articles":[]},{"title":"Flask 学习","level":"1.5.7","depth":2,"path":"Python/flask学习.md","ref":"Python/flask学习.md","articles":[]},{"title":"matplotlib.md","level":"1.5.8","depth":2,"path":"Python/matplotlib.md","ref":"Python/matplotlib.md","articles":[]},{"title":"re正则表达式.md","level":"1.5.9","depth":2,"path":"Python/re正则表达式.md","ref":"Python/re正则表达式.md","articles":[]},{"title":"图形界面学习.md","level":"1.5.10","depth":2,"path":"Python/图形界面学习.md","ref":"Python/图形界面学习.md","articles":[]},{"title":"Python3 常用图像库","level":"1.5.11","depth":2,"path":"Python/常用图像库学习.md","ref":"Python/常用图像库学习.md","articles":[]},{"title":"Python3 进阶学习笔记","level":"1.5.12","depth":2,"path":"Python/进阶学习.md","ref":"Python/进阶学习.md","articles":[]}]},"previous":{"title":"Linux开机启动项学习","level":"1.4.23","depth":2,"path":"Linux/通过Linux开机启动项展开学习.md","ref":"Linux/通过Linux开机启动项展开学习.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Linux/防火墙学习.md","mtime":"2020-01-04T07:54:38.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-28T02:57:41.582Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

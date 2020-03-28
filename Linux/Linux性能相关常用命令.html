@@ -1,0 +1,2820 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Linux性能相关常用命令 · 日常学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Linux各种安装下载慢解决方法.html" />
+    
+    
+    <link rel="prev" href="Linux小知识.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../网络学习资源整理/">
+            
+                <a href="../网络学习资源整理/">
+            
+                    
+                    网络学习资源整理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../网络学习资源整理/技术学习.html">
+            
+                <a href="../网络学习资源整理/技术学习.html">
+            
+                    
+                    技术学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../网络学习资源整理/运维博客.html">
+            
+                <a href="../网络学习资源整理/运维博客.html">
+            
+                    
+                    运维博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../网络学习资源整理/工具.html">
+            
+                <a href="../网络学习资源整理/工具.html">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../网络学习资源整理/静态博客模板.html">
+            
+                <a href="../网络学习资源整理/静态博客模板.html">
+            
+                    
+                    静态博客模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../网络学习资源整理/静态网站pages服务.html">
+            
+                <a href="../网络学习资源整理/静态网站pages服务.html">
+            
+                    
+                    静态网站pages服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../网络学习资源整理/静态pages的CI和CD.html">
+            
+                <a href="../网络学习资源整理/静态pages的CI和CD.html">
+            
+                    
+                    静态pages的CI和CD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../网络学习资源整理/Hugo学习.html">
+            
+                <a href="../网络学习资源整理/Hugo学习.html">
+            
+                    
+                    Hugo学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../心灵鸡汤/">
+            
+                <a href="../心灵鸡汤/">
+            
+                    
+                    心灵鸡汤
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../心灵鸡汤/心灵鸡汤.html">
+            
+                <a href="../心灵鸡汤/心灵鸡汤.html">
+            
+                    
+                    语录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Linux常用命令.html">
+            
+                <a href="Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Linux小知识.html">
+            
+                <a href="Linux小知识.html">
+            
+                    
+                    平时 linux 遇到的问题解决办法和扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="Linux性能相关常用命令.html">
+            
+                <a href="Linux性能相关常用命令.html">
+            
+                    
+                    Linux性能相关常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Linux各种安装下载慢解决方法.html">
+            
+                <a href="Linux各种安装下载慢解决方法.html">
+            
+                    
+                    Linux各种安装下载慢解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="APT-剖析详解.html">
+            
+                <a href="APT-剖析详解.html">
+            
+                    
+                    APT 原理剖析、详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Linux主机、虚拟机和docker网络配置.html">
+            
+                <a href="Linux主机、虚拟机和docker网络配置.html">
+            
+                    
+                    Linux 主机、虚拟机和docker网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Linux文件系统学习.html">
+            
+                <a href="Linux文件系统学习.html">
+            
+                    
+                    Linux文件系统学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="Linux用户和用户组管理.html">
+            
+                <a href="Linux用户和用户组管理.html">
+            
+                    
+                    Linux用户和用户组管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="Linux用户增删改等学习.html">
+            
+                <a href="Linux用户增删改等学习.html">
+            
+                    
+                    Linux用户增删改等学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="Linux程序存放目录.html">
+            
+                <a href="Linux程序存放目录.html">
+            
+                    
+                    Linux程序存放目录.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="Linux编译安装软件包详解.html">
+            
+                <a href="Linux编译安装软件包详解.html">
+            
+                    
+                    Linux C/C++ 软件包编译、安装原理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="SSH详解.html">
+            
+                <a href="SSH详解.html">
+            
+                    
+                    SSH 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="Tomcat和Ngnix和Apache.html">
+            
+                <a href="Tomcat和Ngnix和Apache.html">
+            
+                    
+                    Tomcat和Ngnix和Apache.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="UbuntuSoftwareInstall.html">
+            
+                <a href="UbuntuSoftwareInstall.html">
+            
+                    
+                    Ubuntu 软件包安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="YAML-配置文件语言.html">
+            
+                <a href="YAML-配置文件语言.html">
+            
+                    
+                    YAML 配置文件语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="bin目录详解.html">
+            
+                <a href="bin目录详解.html">
+            
+                    
+                    bin目录详解.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="ffmpeg详解.html">
+            
+                <a href="ffmpeg详解.html">
+            
+                    
+                    ffmpeg学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="trans命令.html">
+            
+                <a href="trans命令.html">
+            
+                    
+                    trans命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="yum和rpm.html">
+            
+                <a href="yum和rpm.html">
+            
+                    
+                    Yum 和 RPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                <a href="从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                    
+                    Linux环境变量详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="新创建主机常用初始化配置.html">
+            
+                <a href="新创建主机常用初始化配置.html">
+            
+                    
+                    新建主机常用初始化配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="正则表达式学习.html">
+            
+                <a href="正则表达式学习.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="通过Linux开机启动项展开学习.html">
+            
+                <a href="通过Linux开机启动项展开学习.html">
+            
+                    
+                    Linux开机启动项学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="防火墙学习.html">
+            
+                <a href="防火墙学习.html">
+            
+                    
+                    防火墙学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Python/BeautifulSoup.md">
+            
+                <span>
+            
+                    
+                    Python3 BeautifulSoup 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Python/Django.html">
+            
+                <a href="../Python/Django.html">
+            
+                    
+                    Python Django 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Python/IPython使用技巧.html">
+            
+                <a href="../Python/IPython使用技巧.html">
+            
+                    
+                    IPython 使用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Python/Numpy.html">
+            
+                <a href="../Python/Numpy.html">
+            
+                    
+                    Python Numpy 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Python/Python小知识.html">
+            
+                <a href="../Python/Python小知识.html">
+            
+                    
+                    Python 学习遇到的问题解决或扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Python/Python模块管理总结.html">
+            
+                <a href="../Python/Python模块管理总结.html">
+            
+                    
+                    Python 模块管理总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../Python/flask学习.md">
+            
+                <span>
+            
+                    
+                    Flask 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../Python/matplotlib.html">
+            
+                <a href="../Python/matplotlib.html">
+            
+                    
+                    matplotlib.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../Python/re正则表达式.html">
+            
+                <a href="../Python/re正则表达式.html">
+            
+                    
+                    re正则表达式.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../Python/图形界面学习.html">
+            
+                <a href="../Python/图形界面学习.html">
+            
+                    
+                    图形界面学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../Python/常用图像库学习.html">
+            
+                <a href="../Python/常用图像库学习.html">
+            
+                    
+                    Python3 常用图像库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../Python/进阶学习.html">
+            
+                <a href="../Python/进阶学习.html">
+            
+                    
+                    Python3 进阶学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Shell/">
+            
+                <a href="../Shell/">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Shell/shell小知识.html">
+            
+                <a href="../Shell/shell小知识.html">
+            
+                    
+                    Shell小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Shell/Shell奇淫技巧.html">
+            
+                <a href="../Shell/Shell奇淫技巧.html">
+            
+                    
+                    Shell奇淫技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Shell/Linux文本操作三大利器-grep、sed、awk.html">
+            
+                <a href="../Shell/Linux文本操作三大利器-grep、sed、awk.html">
+            
+                    
+                    grep、sed、awk 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Shell/Shell文本处理常用工具补遗.html">
+            
+                <a href="../Shell/Shell文本处理常用工具补遗.html">
+            
+                    
+                    Shell文本处理常用工具补遗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Shell/句子解析.html">
+            
+                <a href="../Shell/句子解析.html">
+            
+                    
+                    句子解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Shell/识别是否是root用户.html">
+            
+                <a href="../Shell/识别是否是root用户.html">
+            
+                    
+                    识别是否是root用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Shell/识别系统.html">
+            
+                <a href="../Shell/识别系统.html">
+            
+                    
+                    识别系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Vim/Vim小知识.html">
+            
+                <a href="../Vim/Vim小知识.html">
+            
+                    
+                    Vim小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Vim/Vim编辑器再学习.html">
+            
+                <a href="../Vim/Vim编辑器再学习.html">
+            
+                    
+                    Vim编辑器再学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Vim/VimScript学习笔记.html">
+            
+                <a href="../Vim/VimScript学习笔记.html">
+            
+                    
+                    VimScript 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Vim/YouCompleteMe安装.html">
+            
+                <a href="../Vim/YouCompleteMe安装.html">
+            
+                    
+                    YouCompleteMe安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Vim/vimrc示例1.html">
+            
+                <a href="../Vim/vimrc示例1.html">
+            
+                    
+                    vimrc示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Vim/vimrc备份.html">
+            
+                <a href="../Vim/vimrc备份.html">
+            
+                    
+                    vimrc备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../Vim/Tmux快捷键.html">
+            
+                <a href="../Vim/Tmux快捷键.html">
+            
+                    
+                    Tmux快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Ansible/">
+            
+                <a href="../Ansible/">
+            
+                    
+                    Ansible
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Ansible/术语表.html">
+            
+                <a href="../Ansible/术语表.html">
+            
+                    
+                    术语表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Ansible/Ansible必知单词.html">
+            
+                <a href="../Ansible/Ansible必知单词.html">
+            
+                    
+                    Ansible 常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Ansible/Ansible学习.html">
+            
+                <a href="../Ansible/Ansible学习.html">
+            
+                    
+                    Ansible 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Ansible/Ansible常用模板.html">
+            
+                <a href="../Ansible/Ansible常用模板.html">
+            
+                    
+                    Ansible常用模板.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Docker/Docker基础学习.html">
+            
+                <a href="../Docker/Docker基础学习.html">
+            
+                    
+                    Docker 基础学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Docker/Docker小知识.html">
+            
+                <a href="../Docker/Docker小知识.html">
+            
+                    
+                    Docker 小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Docker/Docker必知单词.html">
+            
+                <a href="../Docker/Docker必知单词.html">
+            
+                    
+                    Docker 学习中的单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Git/git学习.html">
+            
+                <a href="../Git/git学习.html">
+            
+                    
+                    Git 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Git/git小技巧.html">
+            
+                <a href="../Git/git小技巧.html">
+            
+                    
+                    Git 小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Zabbix/">
+            
+                <a href="../Zabbix/">
+            
+                    
+                    Zabbix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Zabbix/Docker安装配置Zabbix.html">
+            
+                <a href="../Zabbix/Docker安装配置Zabbix.html">
+            
+                    
+                    Docker 安装配置 Zabbix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Zabbix/术语单词.html">
+            
+                <a href="../Zabbix/术语单词.html">
+            
+                    
+                    Zabbix 中常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Zabbix/重置密码.html">
+            
+                <a href="../Zabbix/重置密码.html">
+            
+                    
+                    重置 Zabbix 账户密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../KVM/">
+            
+                <a href="../KVM/">
+            
+                    
+                    KVM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../KVM/安装配置.html">
+            
+                <a href="../KVM/安装配置.html">
+            
+                    
+                    常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../KVM/虚拟机网络配置.html">
+            
+                <a href="../KVM/虚拟机网络配置.html">
+            
+                    
+                    Bridged 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Mysql/Ubuntu安装Navicat.html">
+            
+                <a href="../Mysql/Ubuntu安装Navicat.html">
+            
+                    
+                    Ubuntu 安装及配置 Navicat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Mysql/忘记root密码.html">
+            
+                <a href="../Mysql/忘记root密码.html">
+            
+                    
+                    如何替换已忘记的 root 密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Nginx/Nginx学习笔记.html">
+            
+                <a href="../Nginx/Nginx学习笔记.html">
+            
+                    
+                    Nginx 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../NoClass/">
+            
+                <a href="../NoClass/">
+            
+                    
+                    闲知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../NoClass/容易读错的IT术语.html">
+            
+                <a href="../NoClass/容易读错的IT术语.html">
+            
+                    
+                    容易读错的IT术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../NoClass/Linux-electron-tutorial.html">
+            
+                <a href="../NoClass/Linux-electron-tutorial.html">
+            
+                    
+                    Linux electron 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../NoClass/MarkdownSkills.html">
+            
+                <a href="../NoClass/MarkdownSkills.html">
+            
+                    
+                    记录 Markdown 的各种小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../NoClass/RaspeberryPi.html">
+            
+                <a href="../NoClass/RaspeberryPi.html">
+            
+                    
+                    使用树莓派 3B 遇到的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../NoClass/华为国产手机芯片SoC.html">
+            
+                <a href="../NoClass/华为国产手机芯片SoC.html">
+            
+                    
+                    华为国产手机芯片SoC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../NoClass/图片格式详解及其对比.html">
+            
+                <a href="../NoClass/图片格式详解及其对比.html">
+            
+                    
+                    图片格式详解及其对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="../NoClass/计算机小知识.html">
+            
+                <a href="../NoClass/计算机小知识.html">
+            
+                    
+                    记录一些计算机的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="../NoClass/诗词.html">
+            
+                <a href="../NoClass/诗词.html">
+            
+                    
+                    诗词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../OS/">
+            
+                <a href="../OS/">
+            
+                    
+                    OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../OS/学习笔记.html">
+            
+                <a href="../OS/学习笔记.html">
+            
+                    
+                    操作系统学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../OS/术语单词.html">
+            
+                <a href="../OS/术语单词.html">
+            
+                    
+                    OS 专业词语解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../OS/SoCCPU.html">
+            
+                <a href="../OS/SoCCPU.html">
+            
+                    
+                    SoC 与 CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Tomcat/">
+            
+                <a href="../Tomcat/">
+            
+                    
+                    Tomcat
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Tomcat/Tomcat 学习.html">
+            
+                <a href="../Tomcat/Tomcat 学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Tomcat/Tomcat学习.html">
+            
+                <a href="../Tomcat/Tomcat学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../VPS/">
+            
+                <a href="../VPS/">
+            
+                    
+                    VPS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../VPS/AWS_lightsail.html">
+            
+                <a href="../VPS/AWS_lightsail.html">
+            
+                    
+                    AWS LightSail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                <a href="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                    
+                    GCP VM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../VPS/ECS和VPS等等.html">
+            
+                <a href="../VPS/ECS和VPS等等.html">
+            
+                    
+                    ECS和VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../ComputerComposition/">
+            
+                <a href="../ComputerComposition/">
+            
+                    
+                    ComputerComposition
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../ComputerComposition/学习笔记.html">
+            
+                <a href="../ComputerComposition/学习笔记.html">
+            
+                    
+                    计算机组成原理学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../ComputerNetwork/">
+            
+                <a href="../ComputerNetwork/">
+            
+                    
+                    ComputerNetwork
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../ComputerNetwork/ProWords.html">
+            
+                <a href="../ComputerNetwork/ProWords.html">
+            
+                    
+                    术语单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../ComputerNetwork/学习笔记.html">
+            
+                <a href="../ComputerNetwork/学习笔记.html">
+            
+                    
+                    计算机网络学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../ComputerNetwork/小知识.html">
+            
+                <a href="../ComputerNetwork/小知识.html">
+            
+                    
+                    学习计算机网络中的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" data-path="../NoClass/浏览器架构简析.md">
+            
+                <span>
+            
+                    
+                    浏览器架构简析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../毕业论文/">
+            
+                <a href="../毕业论文/">
+            
+                    
+                    毕业论文
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../毕业论文/开题报告.html">
+            
+                <a href="../毕业论文/开题报告.html">
+            
+                    
+                    开题报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Linux性能相关常用命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="linux-&#x6027;&#x80FD;&#x76F8;&#x5173;&#x5E38;&#x7528;&#x547D;&#x4EE4;---linux-performance"><a name="linux-&#x6027;&#x80FD;&#x76F8;&#x5173;&#x5E38;&#x7528;&#x547D;&#x4EE4;---linux-performance" class="plugin-anchor" href="#linux-&#x6027;&#x80FD;&#x76F8;&#x5173;&#x5E38;&#x7528;&#x547D;&#x4EE4;---linux-performance"><i class="fa fa-link" aria-hidden="true"></i></a>Linux &#x6027;&#x80FD;&#x76F8;&#x5173;&#x5E38;&#x7528;&#x547D;&#x4EE4; - Linux Performance</h1>
+<blockquote>
+<ul>
+<li>&#x4E3B;&#x8981;&#x4EE5;Ubuntu 18.04 LTS &#x4E3A;&#x4F8B;&#xFF0C;&#x547D;&#x4EE4;&#x5728; Linux &#x4E0D;&#x540C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x7565;&#x6709;&#x5DEE;&#x522B;</li>
+<li><a href="http://www.brendangregg.com/linuxperf.html" target="_blank">&#x300A;BPF Performance Tools&#x300B;</a></li>
+<li><a href="https://github.com/shfshanyue/op-note/blob/master/linux-monitor.md" target="_blank">linux &#x6307;&#x6807;&#x76D1;&#x63A7;&#x5C0F;&#x8BB0;</a></li>
+</ul>
+</blockquote>
+<div align="center">
+<img src="images/AnalysisAndTools.png"><br> Linux &#x6027;&#x80FD;&#x5206;&#x6790;&#x5DE5;&#x5177;
+</div>
+
+<div align="center">
+<img src="images/PerformanceObservabilityTools.png"><br> Linux &#x6027;&#x80FD;&#x89C2;&#x6D4B;&#x5DE5;&#x5177;
+</div>
+
+<div align="center">
+<img src="images/linux_benchmarking_tools.png"><br> Linux &#x6027;&#x80FD;&#x6D4B;&#x8BC4;&#x5DE5;&#x5177;
+</div>
+
+<div align="center">
+<img src="images/linux_observability_sar.png"><br> Linux
+</div>
+
+<div align="center">
+<img src="images/perf-tools_2016.png"><br> Linux
+</div>
+
+<div align="center">
+<img src="images/bcc_tracing_tools.png"><br> Linux
+</div>
+
+<h2 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="plugin-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x5F55;</h2>
+<ul>
+<li><a href="#top-top">top</a> - <code>CPU</code> <code>DRAM</code></li>
+<li><a href="#netstat-top">netstat</a> - <code>Sockets</code> <code>TCP\UDP</code> <code>IP</code> <code>Ethernet</code></li>
+<li><a href="#ip-top">ip</a> - <code>Ethernet</code></li>
+<li><a href="">nload</a> -</li>
+<li><a href="#iostat-top">iostat</a> - <code>Block Device Interface</code> <code>I/O Controller</code></li>
+<li><a href="#iotop">iotop</a></li>
+<li><a href="#iopp">iopp</a></li>
+<li><a href="#lsof-top">lsof</a></li>
+<li><a href="#ps-top">ps</a></li>
+<li><a href="#free-top">free</a> - <code>Virtual Memory</code></li>
+<li><a href="#pidstat-top">pidstat</a> - <code>CPU</code></li>
+<li><a href="#vmstat-top">vmstat</a> - <code>System Call InterFace</code> <code>Scheduler</code> <code>Virtual Memory</code></li>
+<li><a href="#dstat-top">dstat</a> - <code>CPU</code> <code>Virtual Memory</code> <code>Disk</code> <code>Port</code></li>
+<li><a href="#brctl">brctl</a> - <strong><code>&#x7F51;&#x6865;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</code></strong></li>
+<li>mpstat - CPU</li>
+<li>perf - CPU</li>
+<li>tcpdump - Ethernet</li>
+<li>nicstat - Ethernet</li>
+<li>dtrace - Ethernet</li>
+<li>ping - Port</li>
+<li>dastat - Port</li>
+<li>dtrace - Port</li>
+<li>dastat - Disk</li>
+<li>dtrace - Disk</li>
+<li>perl</li>
+<li>ipconfig</li>
+<li>slabtop</li>
+<li>nicstat</li>
+<li>nmcli conn show -a</li>
+<li>nmcli conn show &apos;&#x8FDE;&#x63A5;&#x540D;&#x79F0;&apos;</li>
+</ul>
+<h2 id="vmstat-top"><a name="vmstat-top" class="plugin-anchor" href="#vmstat-top"><i class="fa fa-link" aria-hidden="true"></i></a>vmstat <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>Virtual Meomory Statistics, Report virtual memory statistics</p>
+</blockquote>
+<ul>
+<li><strong>&#x5BF9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x3001;&#x8FDB;&#x7A0B;&#x3001;CPU&#x6D3B;&#x52A8;&#x8FDB;&#x884C;&#x76D1;&#x63A7;&#xFF0C;&#x4F4E;&#x5F00;&#x9500;&#x7684;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x89C2;&#x5BDF;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x8DB3;&#x4E4B;&#x5904;&#x662F;&#x65E0;&#x6CD5;&#x5BF9;&#x67D0;&#x4E2A;&#x8FDB;&#x7A0B;&#x8FDB;&#x884C;&#x6DF1;&#x5165;&#x5206;&#x6790;</strong></li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><a name="&#x4F7F;&#x7528;&#x6280;&#x5DE7;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x6280;&#x5DE7;</h3>
+<ul>
+<li>vmstat &#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4F4E;&#x5F00;&#x9500;&#x5DE5;&#x5177;&#xFF0C;&#x5728;&#x975E;&#x5E38;&#x9AD8;&#x8D1F;&#x8377;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x67E5;&#x770B;&#x5E76;&#x76D1;&#x63A7;&#x7CFB;&#x7EDF;&#x7684;&#x5065;&#x5EB7;&#x60C5;&#x51B5;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x7A97;&#x53E3;&#x8FD8;&#x662F;&#x80FD;&#x591F;&#x4F7F;&#x7528; vmstat &#x8F93;&#x51FA;&#x7ED3;&#x679C;</li>
+</ul>
+<h2 id="pidstat-top"><a name="pidstat-top" class="plugin-anchor" href="#pidstat-top"><i class="fa fa-link" aria-hidden="true"></i></a>pidstat <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>Report statistics for Linux tasks</p>
+</blockquote>
+<ul>
+<li><strong>&#x76D1;&#x63A7;&#x5168;&#x90E8;&#x6216;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x7684; cpu&#x3001;&#x5185;&#x5B58;&#x3001;&#x7EBF;&#x7A0B;&#x3001;&#x8BBE;&#x5907; IO &#x7B49;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x7684;&#x5360;&#x7528;&#x60C5;&#x51B5;</strong></li>
+<li><code>pidstat [&#x9009;&#x9879;] [&#x65F6;&#x95F4;] [&#x6B21;&#x6570;]</code></li>
+<li><p>[&#x9009;&#x9879;]</p>
+<ul>
+<li><code>-u</code> - &#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x663E;&#x793A;&#x5404;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684; CPU &#x4F7F;&#x7528;&#x7EDF;&#x8BA1;</li>
+<li><code>-r</code> - &#x663E;&#x793A;&#x5404;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x7EDF;&#x8BA1;</li>
+<li><code>-d</code> - &#x663E;&#x793A;&#x5404;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684; IO &#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li><code>-p &lt;pid&gt;</code> - &#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x53F7;</li>
+<li><code>-w</code> - &#x663E;&#x793A;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x60C5;&#x51B5;</li>
+<li><code>-t</code> - &#x663E;&#x793A;&#x9009;&#x62E9;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x5916;&#x7684;&#x989D;&#x5916;&#x4FE1;&#x606F;</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-shell">pidstat                                              # &#x663E;&#x793A;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x7684; CPU &#x4F7F;&#x7528;&#x7387;
+pidstat -r                                          # &#x8F93;&#x51FA;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7EDF;&#x8BA1;
+pidstat -d -p 1 1 5                         # &#x6BCF;&#x9694;&#x4E00;&#x79D2;&#xFF0C;&#x4E00;&#x5171;&#x8F93;&#x51FA; 5 &#x6B21;&#x8FDB;&#x7A0B; ID &#x4E3A; 1 &#x7684; IO &#x7EDF;&#x8BA1;&#x4FE1;&#x606F;
+pidstat -t -p 1                                # &#x663E;&#x793A;&#x9009;&#x62E9;&#x4EFB;&#x52A1; ( pid =1 )&#x7684;&#x7EBF;&#x7A0B;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x5916;&#x7684;&#x989D;&#x5916;&#x4FE1;&#x606F;
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><a name="&#x4F7F;&#x7528;&#x6280;&#x5DE7;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x6280;&#x5DE7;</h3>
+<ul>
+<li>pidstat &#x9996;&#x6B21;&#x8FD0;&#x884C;&#x65F6;&#x663E;&#x793A;&#x81EA;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x5F00;&#x59CB;&#x7684;&#x5404;&#x9879;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#xFF0C;&#x4E4B;&#x540E;&#x8FD0;&#x884C; pidstat &#x5C06;&#x663E;&#x793A;&#x81EA;&#x4E0A;&#x6B21;&#x8FD0;&#x884C;&#x8BE5;&#x547D;&#x4EE4;&#x4EE5;&#x540E;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7EDF;&#x8BA1;&#x7684;&#x6B21;&#x6570;&#x548C;&#x65F6;&#x95F4;&#x6765;&#x83B7;&#x5F97;&#x6240;&#x9700;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;</li>
+<li>pidstat &#x662F; sysstat &#x8F6F;&#x4EF6;&#x5957;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;sysstat &#x5305;&#x542B;&#x5F88;&#x591A;&#x76D1;&#x63A7; linux &#x7CFB;&#x7EDF;&#x72B6;&#x6001;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x4ECE;&#x5927;&#x591A;&#x6570; linux &#x53D1;&#x884C;&#x7248;&#x7684;&#x8F6F;&#x4EF6;&#x6E90;&#x4E2D;&#x83B7;&#x5F97;</li>
+<li>&#x5B89;&#x88C5;&#xFF1A;<code>sudo apt install sysstat</code> &#x6216; <code>yum install sysstat</code></li>
+</ul>
+<h3 id="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><a name="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</h3>
+<p> <strong><code>pidstat</code></strong></p>
+<pre><code class="lang-shell">Linux 4.15.0-66-generic (xcq)     Friday, November 08, 2019     _x86_64_    (8 CPU)
+
+08:41:58 CST   UID       PID    %usr   %system  %guest   %wait    %CPU   CPU  Command
+08:41:58 CST     0             1        0.05        0.17          0.00        0.03        0.22        7        systemd
+08:41:58 CST     0             7        0.00        0.00          0.00        0.00        0.00        0        ksoftirqd/0
+08:41:58 CST     0             8        0.03        0.29          0.00        0.06        0.32        3        rcu_sched
+08:41:58 CST     0            16       0.00       0.00           0.00        0.00        0.00        1        ksoftirqd/1
+08:41:58 CST     0            22       0.00       0.00           0.00        0.00        0.00        2        ksoftirqd/2
+08:41:58 CST     0            28       0.00       0.00           0.00        0.01        0.00        3        ksoftirqd/3
+08:41:58 CST     0            34       0.00       0.00           0.00        0.00        0.00        4        ksoftirqd/4
+</code></pre>
+<ul>
+<li><code>UID</code> - &#x7528;&#x6237; ID</li>
+<li><code>PID</code> - &#x8FDB;&#x7A0B; ID</li>
+<li><code>%usr</code> - &#x8FDB;&#x7A0B;&#x5728;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x5360;&#x7528; CPU &#x7684;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>%system</code> - &#x8FDB;&#x7A0B;&#x5728;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x5360;&#x7528; CPU &#x7684;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>%guest</code> - &#x4EFB;&#x52A1;&#x82B1;&#x8D39;&#x5728;&#x865A;&#x62DF;&#x673A;&#x4E0A;&#x7684; CPU &#x4F7F;&#x7528;&#x7387;&#xFF08; &#x8FD0;&#x884C;&#x5728;&#x865A;&#x62DF;&#x5904;&#x7406;&#x5668; &#xFF09;</li>
+<li><code>%CPU</code> - &#x4EFB;&#x52A1;&#x603B;&#x7684; CPU &#x4F7F;&#x7528;&#x7387;</li>
+<li><code>CPU</code> - &#x6B63;&#x5728;&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x5904;&#x7406;&#x5668;&#x7F16;&#x53F7;</li>
+<li><code>Command</code> - &#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x547D;&#x4EE4;&#x540D;&#x79F0;</li>
+</ul>
+<p><strong><code>pidstat -r</code></strong></p>
+<pre><code class="lang-shell">Linux 4.15.0-66-generic (xcq)     Friday, November 08, 2019     _x86_64_    (8 CPU)
+
+08:55:44 CST   UID       PID  minflt/s  majflt/s     VSZ       RSS    %MEM        Command
+08:55:44 CST     0             1      8.72          0.04       225880    9476    0.12              systemd
+08:55:44 CST     0           299   5.12          0.17       174836   46424   0.58        systemd-journal
+</code></pre>
+<ul>
+<li><code>minflt/s</code> - &#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x65F6;&#x6BCF;&#x79D2;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x8981;&#x9519;&#x8BEF;&#x7684;&#x6570;&#x76EE;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E0D;&#x8981;&#x6C42;&#x4ECE;&#x78C1;&#x76D8;&#x8F7D;&#x5165;&#x5185;&#x5B58;&#x9875;&#x9762;</li>
+<li><code>majflt/s</code> - &#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x65F6;&#x6BCF;&#x79D2;&#x51FA;&#x73B0;&#x7684;&#x4E3B;&#x8981;&#x9519;&#x8BEF;&#x7684;&#x6570;&#x76EE;&#xFF0C;&#x8FD9;&#x4E9B;&#x8981;&#x6C42;&#x4ECE;&#x78C1;&#x76D8;&#x8F7D;&#x5165;&#x5185;&#x5B58;&#x9875;&#x9762;</li>
+<li><code>VSZ</code> - &#x865A;&#x62DF;&#x5730;&#x5740;&#x5927;&#x5C0F;&#xFF0C;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x7684;&#x4F7F;&#x7528; KB</li>
+<li><code>RSS</code> - &#x957F;&#x671F;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#xFF0C;&#x4EFB;&#x52A1;&#x7684;&#x4E0D;&#x53EF;&#x4EA4;&#x6362;&#x7269;&#x7406;&#x5185;&#x5B58;&#x7684;&#x4F7F;&#x7528;&#x91CF; KB<ul>
+<li><code>%MEM</code> - &#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x7684;&#x7269;&#x7406;&#x5185;&#x5B58;&#x767E;&#x5206;&#x6BD4;&#xFF0C;<code>top</code>&#x547D;&#x4EE4;&#x4E5F;&#x4F1A;&#x8F93;&#x51FA;&#x8BE5;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li><code>Command</code> - task &#x547D;&#x4EE4;&#x540D;</li>
+</ul>
+<p><strong><code>pidstat -d</code></strong></p>
+<pre><code class="lang-shelll">Linux 4.15.0-66-generic (xcq)     Friday, November 08, 2019     _x86_64_    (8 CPU)
+
+09:01:44 CST   UID       PID     kB_rd/s   kB_wr/s   kB_ccwr/s    iodelay      Command
+09:01:44 CST     0             1        -1.00          -1.00             -1.00            713             systemd
+09:01:44 CST     0            61       -1.00          -1.00             -1.00              8                kworker/2:1
+09:01:44 CST     0           219      -1.00          -1.00             -1.00            228             kworker/u16:3
+</code></pre>
+<ul>
+<li><code>kB_rd/s</code> - &#x8FDB;&#x7A0B;&#x6BCF;&#x79D2;&#x4ECE;&#x78C1;&#x76D8;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;&#x91CF;( kB )</li>
+<li><code>kB_wr/s</code> - &#x8FDB;&#x7A0B;&#x6BCF;&#x79D2;&#x5411;&#x78C1;&#x76D8;&#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x91CF;(kB )</li>
+<li><code>kB_ccwr/s</code> - &#x4EFB;&#x52A1;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x88AB;&#x53D6;&#x6D88;&#x7684;&#x901F;&#x7387;&#xFF08; KB &#xFF09;( &#x5F53;&#x4EFB;&#x52A1;&#x622A;&#x65AD;&#x810F;&#x7684; pagecache &#x7684;&#x65F6;&#x5019;&#x4F1A;&#x53D1;&#x751F;  )</li>
+</ul>
+<p><strong><code>pidstat -t</code></strong></p>
+<pre><code class="lang-shell">Linux 4.15.0-66-generic (xcq)     Friday, November 08, 2019     _x86_64_    (8 CPU)
+
+09:13:48 CST   UID      TGID       TID    %usr   %system  %guest   %wait    %CPU   CPU  Command
+09:13:48 CST     0             1             -        0.03         0.12          0.00          0.04          0.15       4      systemd
+09:13:48 CST     0             -             1        0.03         0.12          0.00          0.04          0.15       4      |__systemd
+09:13:48 CST     0             2             -        0.00         0.00          0.00          0.00          0.00       7      kthreadd
+</code></pre>
+<ul>
+<li><code>TGID</code> - &#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x6807;&#x8BC6;</li>
+<li><code>TID</code> - &#x7EBF;&#x7A0B; ID</li>
+</ul>
+<p><strong><code>pidstat -w</code></strong></p>
+<pre><code class="lang-shell">Linux 4.15.0-66-generic (xcq)     Friday, November 08, 2019     _x86_64_    (8 CPU)
+
+09:17:57 CST   UID       PID   cswch/s nvcswch/s      Command
+09:17:57 CST     0             1     29.38         0.13                  systemd
+09:17:57 CST     0             2      0.09          0.00                  kthreadd
+</code></pre>
+<ul>
+<li><code>Cswch/s</code> - &#x6BCF;&#x79D2;&#x4E3B;&#x52A8;&#x4EFB;&#x52A1;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x6570;&#x91CF;</li>
+<li><code>Nvcswch/s</code> - &#x6BCF;&#x79D2;&#x88AB;&#x52A8;&#x4EFB;&#x52A1;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x6570;&#x91CF;</li>
+</ul>
+<h2 id="iostat-top"><a name="iostat-top" class="plugin-anchor" href="#iostat-top"><i class="fa fa-link" aria-hidden="true"></i></a>iostat <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>Report Central Processing Unit (CPU) statistics and input/output statistics for devices and partitions</p>
+</blockquote>
+<ul>
+<li><strong>&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x76D1;&#x63A7;&#x78C1;&#x76D8;</strong></li>
+<li><code>iostat [&#x9009;&#x9879;] [&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF08;&#x79D2;&#xFF09;] [&#x8F93;&#x51FA;&#x6B21;&#x6570;]</code></li>
+<li>[&#x9009;&#x9879;]<ul>
+<li><code>-c</code> - &#x663E;&#x793A; CPU &#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li><code>-d</code> - &#x663E;&#x793A;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li><code>-k</code> - &#x4EE5; KB &#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;</li>
+<li><code>-m</code> - &#x4EE5; M &#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;</li>
+<li><code>-N</code> - &#x663E;&#x793A;&#x78C1;&#x76D8;&#x9635;&#x5217; ( LVM ) &#x4FE1;&#x606F;</li>
+<li><code>-n</code> - &#x663E;&#x793A; NFS &#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li><code>-p</code> - &#x663E;&#x793A;&#x78C1;&#x76D8;&#x548C;&#x5206;&#x533A;&#x7684;&#x60C5;&#x51B5;</li>
+<li><code>-t</code> - &#x663E;&#x793A;&#x7EC8;&#x7AEF;&#x548C; CPU &#x7684;&#x4FE1;&#x606F;</li>
+<li><code>-x</code> - &#x663E;&#x793A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</li>
+<li><code>-V</code> - &#x663E;&#x793A;&#x7248;&#x672C;&#x4FE1;&#x606F;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-shell">iostat -x                                           # &#x6253;&#x5370;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x8BE6;&#x7EC6;&#x72B6;&#x6001;
+iostat -d 2 10                                 # &#x6BCF;&#x9694; 2 &#x79D2;&#x6253;&#x5370;&#x4E00;&#x6B21;&#x78C1;&#x76D8;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x5171;&#x6253;&#x5370; 10 &#x6B21;
+</code></pre>
+<h3 id="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><a name="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</h3>
+<p><strong><code>iostat</code></strong></p>
+<pre><code class="lang-shell"># CentOS 7
+iostat
+Linux 3.10.0-514.26.2.el7.x86_64 (iZuf62pye4v8osus1bsqgjZ)     Thursday, November 07, 2019     _x86_64_    (1 CPU)
+
+avg-cpu:  %user   %nice %system %iowait    %steal   %idle
+                      0.49        0.00    0.29               0.13         0.00       99.09
+
+Device:    tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+vda          4.18         0.82              72.32           1690217  148491664
+</code></pre>
+<ul>
+<li><code>avg-cpu</code> - &#x548C; top &#x8F93;&#x51FA;&#x7B2C;&#x4E09;&#x884C;&#x4E00;&#x6837;<ul>
+<li><code>%user</code> - CPU &#x5904;&#x5728;&#x7528;&#x6237;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x65F6;&#x95F4;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>%nice</code> - CPU &#x5904;&#x5728;&#x5E26; NICE &#x503C;&#x7684;&#x7528;&#x6237;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x65F6;&#x95F4;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>%system</code> - CPU &#x5904;&#x5728;&#x7CFB;&#x7EDF;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x65F6;&#x95F4;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>%iowait</code> - CPU &#x7B49;&#x5F85;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x5B8C;&#x6210;&#x65F6;&#x95F4;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002;<strong>&#x5982;&#x679C;&#x8BE5;&#x503C;&#x8F83;&#x9AD8;&#xFF0C;&#x8868;&#x793A;&#x78C1;&#x76D8;&#x5B58;&#x5728; I/O &#x74F6;&#x9888;</strong></li>
+<li><code>%steal</code> - &#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#x7EF4;&#x62A4;&#x53E6;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x5904;&#x7406;&#x5668;&#x65F6;&#xFF0C;&#x865A;&#x62DF; CPU &#x7684;&#x65E0;&#x610F;&#x8BC6;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>%idle</code> - CPU &#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x767E;&#x5206;&#x6BD4;</li>
+</ul>
+</li>
+<li><code>Device</code><ul>
+<li><code>tps</code> - &#x6BCF;&#x79D2; I/O &#x6570;&#xFF08; &#x5373; IOPS&#xFF0C;&#x78C1;&#x76D8;&#x8FDE;&#x7EED;&#x8BFB;&#x548C;&#x8FDE;&#x7EED;&#x5199;&#x4E4B;&#x548C; &#xFF09;</li>
+<li><code>kB_read/s</code> - &#x6BCF;&#x79D2;&#x4ECE;&#x78C1;&#x76D8;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; KB/s</li>
+<li><code>kB_wrtn/s</code> - &#x6BCF;&#x79D2;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x7684;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; KB/s</li>
+<li><code>kB_read</code> - &#x4ECE;&#x78C1;&#x76D8;&#x8BFB;&#x51FA;&#x7684;&#x6570;&#x636E;&#x603B;&#x6570;&#xFF0C;&#x5355;&#x4F4D; KB</li>
+<li><code>kB_wrtn</code> - &#x5199;&#x5165;&#x78C1;&#x76D8;&#x7684;&#x7684;&#x6570;&#x636E;&#x603B;&#x6570;&#xFF0C;&#x5355;&#x4F4D; KB</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>iostat -x</code></strong></p>
+<pre><code class="lang-shell"># CentOS 7
+iostat -x
+Linux 3.10.0-514.26.2.el7.x86_64 (iZuf62pye4v8osus1bsqgjZ)     Thursday, November 07, 2019     _x86_64_    (1 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.49    0.00    0.29    0.13    0.00   99.09
+
+Device:         rrqm/s   wrqm/s     r/s        w/s     rkB/s    wkB/s       avgrq-sz    avgqu-sz   await       r_await       w_await   svctm  %util
+vda                 0.00         0.54            0.04    4.14     0.82      72.32         34.97          0.01             2.06          4.43              2.03             0.35     0.15
+</code></pre>
+<ul>
+<li><code>Device</code> - &#x8BBE;&#x5907;&#x540D;&#x79F0;</li>
+<li><code>rrqm/s</code> - &#x6BCF;&#x79D2;&#x5408;&#x5E76;&#x5230;&#x8BBE;&#x5907;&#x7684;&#x8BFB;&#x53D6;&#x8BF7;&#x6C42;&#x6570;</li>
+<li><code>wrqm/s</code> - &#x6BCF;&#x79D2;&#x5408;&#x5E76;&#x5230;&#x8BBE;&#x5907;&#x7684;&#x5199;&#x8BF7;&#x6C42;&#x6570;</li>
+<li><code>r/s</code> - &#x6BCF;&#x79D2;&#x5411;&#x78C1;&#x76D8;&#x53D1;&#x8D77;&#x7684;&#x8BFB;&#x64CD;&#x4F5C;&#x6570;</li>
+<li><code>w/s</code> - &#x6BCF;&#x79D2;&#x5411;&#x78C1;&#x76D8;&#x53D1;&#x8D77;&#x7684;&#x5199;&#x64CD;&#x4F5C;&#x6570;</li>
+<li><code>rkB/s</code> - &#x6BCF;&#x79D2;&#x8BFB; K &#x5B57;&#x8282;&#x6570;</li>
+<li><code>wkB/s</code> - &#x6BCF;&#x79D2;&#x5199; K &#x5B57;&#x8282;&#x6570;</li>
+<li><code>avgrq-sz</code> - &#x5E73;&#x5747;&#x6BCF;&#x6B21;&#x8BBE;&#x5907; I/O &#x64CD;&#x4F5C;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;</li>
+<li><code>avgqu-sz</code> - &#x5E73;&#x5747; I/O &#x961F;&#x5217;&#x957F;&#x5EA6;</li>
+<li><code>await</code> - &#x5E73;&#x5747;&#x6BCF;&#x6B21;&#x8BBE;&#x5907; I/O &#x64CD;&#x4F5C;&#x7684;&#x7B49;&#x5F85;&#x65F6;&#x95F4; ( &#x6BEB;&#x79D2; )&#x3002;<strong>&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x7CFB;&#x7EDF; I/O &#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x5E94;&#x8BE5;&#x4F4E;&#x4E8E; 5ms&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E; 10ms &#x5C31;&#x6BD4;&#x8F83;&#x5927;&#x4E86;</strong></li>
+<li><code>r_await</code> - &#x6BCF;&#x4E2A;&#x8BFB;&#x64CD;&#x4F5C;&#x5E73;&#x5747;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;&#xFF1B;&#x4E0D;&#x4EC5;&#x5305;&#x62EC;&#x786C;&#x76D8;&#x8BBE;&#x5907;&#x8BFB;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x4E86;&#x5728; kernel &#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x7684;&#x65F6;&#x95F4;</li>
+<li><code>w_await</code> - &#x6BCF;&#x4E2A;&#x5199;&#x64CD;&#x4F5C;&#x5E73;&#x5747;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;&#xFF1B;&#x4E0D;&#x4EC5;&#x5305;&#x62EC;&#x786C;&#x76D8;&#x8BBE;&#x5907;&#x5199;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x4E86;&#x5728; kernel &#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#x7684;&#x65F6;&#x95F4;</li>
+<li><code>svctm</code> - &#x5E73;&#x5747;&#x6BCF;&#x6B21;&#x8BBE;&#x5907; I/O &#x64CD;&#x4F5C;&#x7684;&#x670D;&#x52A1;&#x65F6;&#x95F4; ( &#x6BEB;&#x79D2; )&#xFF08; &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x4E0D;&#x53EF;&#x4FE1;&#xFF01;&#xFF09;</li>
+<li><code>%util</code> - &#x4E00;&#x79D2;&#x4E2D;&#x6709;&#x767E;&#x5206;&#x4E4B;&#x591A;&#x5C11;&#x7684;&#x65F6;&#x95F4;&#x7528;&#x4E8E; I/O &#x64CD;&#x4F5C;&#xFF0C;&#x5373;&#x88AB; IO &#x6D88;&#x8017;&#x7684; CPU &#x767E;&#x5206;&#x6BD4;&#x3002;<strong>&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x53C2;&#x6570;&#x662F; 100% &#x8868;&#x793A;&#x8BBE;&#x5907;&#x5DF2;&#x7ECF;&#x63A5;&#x8FD1;&#x6EE1;&#x8D1F;&#x8377;&#x8FD0;&#x884C;&#x4E86;</strong></li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><a name="&#x4F7F;&#x7528;&#x6280;&#x5DE7;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x6280;&#x5DE7;</h3>
+<blockquote>
+<ul>
+<li>&#x9664;&#x4E86;&#x5173;&#x6CE8;&#x6307;&#x6807;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x66F4;&#x9700;&#x8981;&#x7ED3;&#x5408;&#x90E8;&#x7F72;&#x7684;&#x4E1A;&#x52A1;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;&#x5BF9;&#x4E8E;&#x78C1;&#x76D8;&#x968F;&#x673A;&#x8BFB;&#x5199;&#x9891;&#x7E41;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x6BD4;&#x5982;&#x56FE;&#x7247;&#x5B58;&#x53D6;&#x3001;&#x6570;&#x636E;&#x5E93;&#x3001;&#x90AE;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x7B49;&#xFF0C;&#x6B64;&#x7C7B;&#x4E1A;&#x52A1;&#x5417;&#xFF0C;tps &#x624D;&#x662F;&#x5173;&#x952E;&#x70B9;&#x3002;&#x5BF9;&#x4E8E;&#x987A;&#x5E8F;&#x8BFB;&#x5199;&#x9891;&#x7E41;&#x7684;&#x4E1A;&#x52A1;&#xFF0C;&#x9700;&#x8981;&#x4F20;&#x8F93;&#x5927;&#x5757;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x5982;&#x89C6;&#x9891;&#x70B9;&#x64AD;&#x3001;&#x6587;&#x4EF6;&#x540C;&#x6B65;&#xFF0C;&#x5173;&#x6CE8;&#x7684;&#x662F;&#x78C1;&#x76D8;&#x7684;&#x541E;&#x5410;&#x91CF;</li>
+<li>&#x5982;&#x679C; <code>%util</code> &#x63A5;&#x8FD1; 100%&#xFF0C;&#x8BF4;&#x660E;&#x4EA7;&#x751F;&#x7684; I/O &#x8BF7;&#x6C42;&#x592A;&#x591A;&#xFF0C;I/O &#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x6EE1;&#x8D1F;&#x8377;&#xFF0C;&#x8BE5;&#x78C1;&#x76D8;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x74F6;&#x9888;</li>
+<li>&#x5982;&#x679C; <code>svctm</code> &#x6BD4;&#x8F83;&#x63A5;&#x8FD1; <code>await</code>&#xFF0C;&#x8BF4;&#x660E; I/O &#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x7B49;&#x5F85;&#x65F6;&#x95F4;</li>
+<li>&#x5982;&#x679C; <code>await</code> &#x8FDC;&#x5927;&#x4E8E; <code>svctm</code>&#xFF0C;&#x8BF4;&#x660E; I/O &#x961F;&#x5217;&#x592A;&#x957F;&#xFF0C;I/O &#x54CD;&#x5E94;&#x592A;&#x6162;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x4F18;&#x5316;</li>
+<li>&#x5982;&#x679C; <code>avgqu-sz</code> &#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x4E5F;&#x8868;&#x793A;&#x6709;&#x5927;&#x91CF; I/O &#x5728;&#x7B49;&#x5F85;</li>
+</ul>
+</blockquote>
+<h2 id="iotop-top"><a name="iotop-top" class="plugin-anchor" href="#iotop-top"><i class="fa fa-link" aria-hidden="true"></i></a>iotop <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<p><strong>``</strong></p>
+<h2 id="iopp-top"><a name="iopp-top" class="plugin-anchor" href="#iopp-top"><i class="fa fa-link" aria-hidden="true"></i></a>iopp <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<ul>
+<li>iopp &#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x65E0;&#x975E;&#x662F;&#x904D;&#x5386; <code>/proc/pid/io</code> &#x6587;&#x4EF6;&#xFF0C;&#x8BFB;&#x53D6;&#x51FA;&#x7ED3;&#x679C;&#x540E;&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x8FDB;&#x4E00;&#x6B65;&#x8BA1;&#x7B97;&#x5F97;&#x51FA;</li>
+</ul>
+<p><strong><code>&#x5B89;&#x88C5;</code></strong></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x7F16;&#x8BD1;&#x5DE5;&#x5177;</span>
+$ yum install cmake
+$ apt-get install cmake
+<span class="hljs-comment"># &#x7F16;&#x8BD1;&#x5B89;&#x88C5; iopp&#xFF0C;&#x6700;&#x597D;&#x5207;&#x6362;&#x5230; root &#x4E0B;&#x6267;&#x884C;</span>
+$ git <span class="hljs-built_in">clone</span> https://github.com/markwkm/iopp.git
+$ <span class="hljs-built_in">cd</span> iopp
+$ cmake CMakeLists.txt
+$ make &amp;&amp; make install
+</code></pre>
+<p><strong><code>&#x8BF4;&#x660E;</code></strong></p>
+<pre><code class="lang-bash">$ iopp --help
+usage: iopp -h|--help
+usage: iopp [-ci] [-k|-m] [delay [count]]
+            -c, --command display full <span class="hljs-built_in">command</span> line       <span class="hljs-comment">#&#x663E;&#x793A;&#x5B8C;&#x6574;&#x547D;&#x4EE4;&#x884C;</span>
+            -h, --help display <span class="hljs-built_in">help</span>                       <span class="hljs-comment">#&#x663E;&#x793A;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</span>
+            -i, --idle hides idle processes               <span class="hljs-comment">#&#x9690;&#x85CF;&#x7A7A;&#x95F2;&#x8FDB;&#x7A0B;</span>
+            -k, --kilobytes display data <span class="hljs-keyword">in</span> kilobytes     <span class="hljs-comment">#&#x4EE5;KB&#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;&#x6570;&#x636E;</span>
+            -m, --megabytes display data <span class="hljs-keyword">in</span> megabytes     <span class="hljs-comment">#&#x4EE5;MB&#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;&#x6570;&#x636E;</span>
+            -u, --human-readable display data <span class="hljs-keyword">in</span> kilo-, mega-, or giga-bytes <span class="hljs-comment">#&#x4EE5;&#x65B9;&#x4FBF;&#x8BFB;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x6570;&#x636E;</span>
+</code></pre>
+<p><strong><code>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</code></strong></p>
+<pre><code class="lang-bash">$ iopp -i -k -c 1
+  pid    rchar    wchar    syscr    syscw      rkb      wkb     cwkb <span class="hljs-built_in">command</span>
+  pid    rchar    wchar    syscr    syscw      rkb      wkb     cwkb <span class="hljs-built_in">command</span>
+15103       63        0        0        0        0        0        0 iopp
+  pid    rchar    wchar    syscr    syscw      rkb      wkb     cwkb <span class="hljs-built_in">command</span>
+15103       63        0        0        0        0        0        0 iopp
+  pid    rchar    wchar    syscr    syscw      rkb      wkb     cwkb <span class="hljs-built_in">command</span>
+ 4483        0     1372        0        0        0     1384        0 /opt/google/chrome/chrome
+15103       63        0        0        0        0        0        0 iopp
+  pid    rchar    wchar    syscr    syscw      rkb      wkb     cwkb <span class="hljs-built_in">command</span>
+ 4147        0        1        0        0        0        0        0 /usr/bin/python3
+ 4483        0        0        0        0        0        4        0 /opt/google/chrome/chrome
+</code></pre>
+<ul>
+<li><p>pid &#x8FDB;&#x7A0B;ID</p>
+</li>
+<li><p>rchar &#x5C06;&#x8981;&#x4ECE;&#x78C1;&#x76D8;&#x8BFB;&#x53D6;&#x7684;&#x5B57;&#x8282;&#x6570;</p>
+</li>
+<li>wchar &#x5DF2;&#x7ECF;&#x5199;&#x5165;&#x6216;&#x5E94;&#x8BE5;&#x8981;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x7684;&#x5B57;&#x8282;</li>
+<li>syscr &#x8BFB;I/O&#x6B21;&#x6570;</li>
+<li>syscw &#x5199;I/O&#x6B21;&#x6570;</li>
+<li>rbytes &#x771F;&#x6B63;&#x4ECE;&#x78C1;&#x76D8;&#x8BFB;&#x53D6;&#x7684;&#x5B57;&#x8282;&#x6570;</li>
+<li>wbytes &#x771F;&#x6B63;&#x5199;&#x5165;&#x5230;&#x78C1;&#x76D8;&#x7684;&#x5B57;&#x8282;&#x6570;</li>
+<li>cwbytes &#x56E0;&#x4E3A;&#x6E05;&#x7A7A;&#x9875;&#x9762;&#x7F13;&#x5B58;&#x800C;&#x5BFC;&#x81F4;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x64CD;&#x4F5C;&#x7684;&#x5B57;&#x8282;&#x6570;</li>
+<li>command &#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;</li>
+</ul>
+<h2 id="ps-top"><a name="ps-top" class="plugin-anchor" href="#ps-top"><i class="fa fa-link" aria-hidden="true"></i></a>ps <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>report a snapshot of the current processes</p>
+</blockquote>
+<ul>
+<li><code>ps [&#x9009;&#x9879;]</code></li>
+<li>[&#x9009;&#x9879;]</li>
+</ul>
+<ul>
+<li>ps&#x547D;&#x4EE4;&#x652F;&#x6301;&#x4E09;&#x79CD;&#x4F7F;&#x7528;&#x7684;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;<ol>
+<li>UNIX &#x98CE;&#x683C;&#xFF0C;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5E76;&#x4E14;&#x9009;&#x9879;&#x524D;&#x5FC5;&#x987B;&#x6709;&#x201C;-&#x201D;&#x8FDE;&#x5B57;&#x7B26;</li>
+<li>BSD &#x98CE;&#x683C;&#xFF0C;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4F46;&#x662F;&#x9009;&#x9879;&#x524D;&#x4E0D;&#x80FD;&#x6709;&#x201C;-&#x201D;&#x8FDE;&#x5B57;&#x7B26;</li>
+<li>GNU &#x98CE;&#x683C;&#x7684;&#x957F;&#x9009;&#x9879;&#xFF0C;&#x9009;&#x9879;&#x524D;&#x6709;&#x4E24;&#x4E2A;&#x201C;-&#x201D;&#x8FDE;&#x5B57;&#x7B26;</li>
+</ol>
+</li>
+</ul>
+<p><strong>&#x5E38;&#x7528;&#x547D;&#x4EE4;</strong></p>
+<p>ps aux</p>
+<p>ps -ef</p>
+<p>ps axjf</p>
+<p>ps axms</p>
+<p>ps axZ</p>
+<p>ps -U root -u root u</p>
+<h2 id="lsof-top"><a name="lsof-top" class="plugin-anchor" href="#lsof-top"><i class="fa fa-link" aria-hidden="true"></i></a>lsof <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>list open files</p>
+</blockquote>
+<ul>
+<li>lsof &#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x6709;&#xFF1A;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x3001;&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x6587;&#x4EF6;&#x3001;&#x5B57;&#x7B26;&#x6216;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x3001;(&#x51FD;&#x6570;)&#x5171;&#x4EAB;&#x5E93;&#x3001;&#x7BA1;&#x9053;&#x3001;&#x547D;&#x540D;&#x7BA1;&#x9053;&#x3001;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x3001;&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#xFF08;NFS file&#x3001;&#x7F51;&#x7EDC;  socket&#x3001;unix &#x57DF;&#x540D; socket &#xFF09;&#x3001;&#x8FD8;&#x6709;&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7B49;&#x7B49;</li>
+<li><code>lsof [&#x9009;&#x9879;]</code></li>
+<li>[&#x9009;&#x9879;]
+<code>-a</code> - &#x4F7F;&#x7528; AND &#x903B;&#x8F91;&#xFF0C;&#x5408;&#x5E76;&#x9009;&#x9879;&#x8F93;&#x51FA;&#x5185;&#x5BB9;
+<code>-c</code> - &#x5217;&#x51FA;&#x540D;&#x79F0;&#x4EE5;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x5F00;&#x5934;&#x7684;&#x8FDB;&#x7A0B;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;
+<code>-d</code> - &#x5217;&#x51FA;&#x6253;&#x5F00;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7684;&#x8FDB;&#x7A0B;
+<code>+d</code> - &#x5217;&#x51FA;&#x76EE;&#x5F55;&#x4E0B;&#x88AB;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;
+<code>+D</code> - &#x9012;&#x5F52;&#x5217;&#x51FA;&#x76EE;&#x5F55;&#x4E0B;&#x88AB;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;
+<code>-n</code> - &#x5217;&#x51FA;&#x4F7F;&#x7528; NFS &#x7684;&#x6587;&#x4EF6;
+<code>-u</code> - &#x5217;&#x51FA;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;
+<code>-p</code> - &#x5217;&#x51FA;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x53F7;&#x6240;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;
+<code>-i</code> - &#x5217;&#x51FA;&#x6253;&#x5F00;&#x7684;&#x5957;&#x63A5;&#x5B57;</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-shell">lsof -i                                          # &#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;
+lsof -i :80                                   # &#x5217;&#x51FA; 80 &#x7AEF;&#x53E3;&#x76EE;&#x524D;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;
+lsof -i tcp                                   # &#x5217;&#x51FA;&#x6240;&#x6709;&#x7684; TCP &#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;
+lsof -i udp                                 # &#x5217;&#x51FA;&#x6240;&#x6709;&#x7684; UDP &#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;
+lsof -i tcp:80                            # &#x5217;&#x51FA; 80 &#x7AEF;&#x53E3; TCP &#x534F;&#x8BAE;&#x7684;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;
+lsof -i udp:25                          # &#x5217;&#x51FA; 25 &#x7AEF;&#x53E3; UDP &#x534F;&#x8BAE;&#x7684;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;
+lsof -c ngin                              # &#x5217;&#x51FA;&#x4EE5; ngin &#x5F00;&#x5934;&#x7684;&#x8FDB;&#x7A0B;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;
+lsof -p 20711                          # &#x5217;&#x51FA;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;
+lsof -u xcq                                # &#x5217;&#x51FA;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;
+lsof -u xcq -i tcp                    # &#x5C06;&#x6240;&#x6709;&#x7684; TCP &#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;&#x548C;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x4FE1;&#x606F;&#x4E00;&#x8D77;&#x8F93;&#x51FA;
+lsof -a -u uasp -i tcp            # &#x5C06;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x4FE1;&#x606F;&#xFF0C;&#x540C;&#x65F6;&#x662F; TCP &#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x4FE1;&#x606F;&#x7684;&#x4E00;&#x8D77;&#x8F93;&#x51FA;&#xFF1B;&#x6CE8;&#x610F;&#x548C;&#x4E0A;&#x4E00;&#x6761;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;
+lsof +d /usr/local/                # &#x5217;&#x51FA;&#x76EE;&#x5F55;&#x4E0B;&#x88AB;&#x8FDB;&#x7A0B;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;
+lsof +D /usr/local/                # &#x9012;&#x5F52;&#x641C;&#x7D22;&#x76EE;&#x5F55;&#x4E0B;&#x88AB;&#x8FDB;&#x7A0B;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;&#x5217;&#x8868;
+
+lsof -i @peida.linux:20,21,22,80 -r 3                     
+# &#x5217;&#x51FA;&#x76EE;&#x524D;&#x8FDE;&#x63A5;&#x5230;&#x4E3B;&#x673A; peida.linux &#x4E0A;&#x7AEF;&#x53E3;&#x4E3A; 20&#xFF0C;21&#xFF0C;22&#xFF0C;80&#x76F8;&#x5173;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#xFF0C;&#x4E14;&#x6BCF;&#x9694; 3 &#x79D2;&#x4E0D;&#x65AD;&#x7684;&#x6267;&#x884C; lsof &#x6307;&#x4EE4;
+</code></pre>
+<h3 id="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><a name="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</h3>
+<p><strong><code>lsof</code></strong></p>
+<pre><code class="lang-shell">sudo lsof
+COMMAND    PID  TID          USER   FD       TYPE         DEVICE   SIZE/OFF       NODE             NAME
+systemd      1                            root   cwd       DIR               8,2         4096                      2                 /
+systemd      1                            root   rtd         DIR                8,2         4096                      2                 /
+systemd      1                            root   txt          REG              8,2       1595792        46137607         /lib/systemd/systemd
+systemd      1                            root   mem     REG              8,2       1700792        46137433         /lib/x86_64-linux-gnu/libm-2.27.so
+systemd      1                            root   mem     REG              8,2        121016          46137523         /lib/x86_64-linux-gnu/libudev.so.1.6.9
+systemd      1                            root   mem     REG              8,2         84032           46139105          /lib/x86_64-linux-gnu/libgpg-error.so.0.22.0
+systemd      1                            root   mem     REG              8,2         43304           46139138          /lib/x86_64-linux-gnu/libjson-c.so.3.0.1
+systemd      1                            root   mem     REG              8,2         34872           21766670           /usr/lib/x86_64-linux-gnu/libargon2.so.0
+systemd      1                            root   mem     REG              8,2        432640          46137584           /lib/x86_64-linux-gnu/libdevmapper.so.1.02.1
+. . .
+</code></pre>
+<ul>
+<li><code>COMMAND</code> - &#x8FDB;&#x7A0B;&#x7684;&#x540D;&#x79F0;</li>
+<li><code>PID</code> - &#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;</li>
+<li><code>TID</code> - &#x7EBF;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;</li>
+<li><code>USER</code> - &#x8FDB;&#x7A0B;&#x6240;&#x6709;&#x8005;</li>
+<li><code>FD</code> - &#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x8BC6;&#x522B;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x4E00;&#x822C;&#x6709;&#x4EE5;&#x4E0B;&#x53D6;&#x503C;<ul>
+<li><code>cwd</code> - &#x8868;&#x793A; current work dirctory&#xFF0C;&#x5373;&#xFF1A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x662F;&#x8BE5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7684;&#x76EE;&#x5F55;</li>
+<li><code>txt</code> - &#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x662F;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x672C;&#x8EAB;&#x6216;&#x5171;&#x4EAB;&#x5E93;</li>
+<li><code>lnn</code> - library references ( AIX )</li>
+<li><code>er</code> - FD information error ( see NAME column )</li>
+<li><code>jld</code> - jail directory ( FreeBSD )</li>
+<li><code>ltx</code> - shared library text ( code and data )</li>
+<li><code>mxx</code> - hex memory-mapped type number xx</li>
+<li><code>m86</code> - DOS Merge mapped file</li>
+<li><code>mem</code> - memory-mapped file</li>
+<li><code>mmap</code> - memory-mapped device</li>
+<li><code>pd</code> - parent directory</li>
+<li><code>rtd</code> - root directory</li>
+<li><code>tr</code> - kernel trace file ( OpenBSD )</li>
+<li><code>v86</code> - VP/ix mapped file</li>
+<li><code>0</code> - &#x8868;&#x793A;&#x6807;&#x51C6;&#x8F93;&#x51FA;</li>
+<li><code>1</code> - &#x8868;&#x793A;&#x6807;&#x51C6;&#x8F93;&#x5165;</li>
+<li><code>2</code> - &#x8868;&#x793A;&#x6807;&#x51C6;&#x9519;&#x8BEF;</li>
+</ul>
+</li>
+<li><code>TYPE</code> - &#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;<ul>
+<li><code>DIR</code> - &#x8868;&#x793A;&#x76EE;&#x5F55;</li>
+<li><code>CHR</code> - &#x8868;&#x793A;&#x5B57;&#x7B26;&#x7C7B;&#x578B;</li>
+<li><code>BLK</code> - &#x5757;&#x8BBE;&#x5907;&#x7C7B;&#x578B;</li>
+<li><code>UNIX</code> - UNIX &#x57DF;&#x5957;&#x63A5;&#x5B57;</li>
+<li><code>FIFO</code> - &#x5148;&#x8FDB;&#x5148;&#x51FA; ( FIFO ) &#x961F;&#x5217;</li>
+<li><code>IPv4</code> - &#x7F51;&#x9645;&#x534F;&#x8BAE; ( IP ) &#x5957;&#x63A5;&#x5B57;</li>
+</ul>
+</li>
+<li><code>DEVICE</code> - &#x6307;&#x5B9A;&#x78C1;&#x76D8;&#x7684;&#x540D;&#x79F0;</li>
+<li><code>SIZE/OFF</code> - &#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;</li>
+<li><code>NODE</code> - &#x7D22;&#x5F15;&#x8282;&#x70B9;&#xFF08; &#x6587;&#x4EF6;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6807;&#x8BC6; &#xFF09;</li>
+<li><code>NAME</code> - &#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7684;&#x786E;&#x5207;&#x540D;&#x79F0;</li>
+</ul>
+<h2 id="netstat-top"><a name="netstat-top" class="plugin-anchor" href="#netstat-top"><i class="fa fa-link" aria-hidden="true"></i></a>netstat <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships</p>
+</blockquote>
+<ul>
+<li>&#x663E;&#x793A;&#x4E0E; IP&#x3001;TCP&#x3001;UDP &#x548C; ICMP &#x534F;&#x8BAE;&#x76F8;&#x5173;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x53EF;&#x7528;&#x4E8E;&#x68C0;&#x9A8C;&#x672C;&#x673A;&#x5404;&#x7AEF;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x60C5;&#x51B5;</li>
+<li><code>netstat [&#x9009;&#x9879;]</code></li>
+<li><p>[&#x9009;&#x9879;]</p>
+<ul>
+<li><code>-a</code> - &#x663E;&#x793A;&#x6240;&#x6709;&#x9009;&#x9879;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x663E;&#x793A; LISTEN &#x76F8;&#x5173;</li>
+<li><code>-t</code> - &#x4EC5;&#x663E;&#x793A; tcp &#x76F8;&#x5173;&#x9009;&#x9879;</li>
+<li><code>-u</code> - &#x4EC5;&#x663E;&#x793A; udp &#x76F8;&#x5173;&#x9009;&#x9879;</li>
+<li><code>-n</code> - &#x62D2;&#x7EDD;&#x663E;&#x793A;&#x522B;&#x540D;&#xFF0C;&#x80FD;&#x663E;&#x793A;&#x6570;&#x5B57;&#x7684;&#x5168;&#x90E8;&#x8F6C;&#x5316;&#x6210;&#x6570;&#x5B57;</li>
+<li><code>-l</code> - &#x4EC5;&#x663E;&#x793A;&#x6B63;&#x5728; Listen&#xFF08; &#x76D1;&#x542C; &#xFF09;&#x7684;&#x670D;&#x52A1;&#x72B6;&#x6001;</li>
+<li><code>-p</code> - &#x663E;&#x793A;&#x5EFA;&#x7ACB;&#x76F8;&#x5173;&#x8FDE;&#x63A5;&#x7684;&#x7A0B;&#x5E8F;&#x540D;</li>
+<li><code>-r</code> - &#x663E;&#x793A;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#xFF0C;&#x8DEF;&#x7531;&#x8868;</li>
+<li><code>-e</code> - &#x663E;&#x793A;&#x6269;&#x5C55;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982; uid &#x7B49;</li>
+<li><code>-s</code> - &#x6309;&#x5404;&#x4E2A;&#x534F;&#x8BAE;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;</li>
+<li><code>-c</code> - &#x6BCF;&#x9694;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x65F6;&#x95F4;&#xFF0C;&#x6267;&#x884C;&#x8BE5; netstat &#x547D;&#x4EE4;</li>
+<li><code>-i</code> - &#x663E;&#x793A;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x4FE1;&#x606F;</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+</li>
+</ul>
+<pre><code class="lang-shell">  netstat -antp                                      # &#x4EE5;&#x6570;&#x5B57;&#x7684;&#x5F62;&#x5F0F;&#x663E;&#x793A;&#x6240;&#x6709;&#x7684; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x5E76;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x7A0B;&#x5E8F;&#x6240;&#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;&#x53F7;
+  netstat -anup                                     # &#x4EE5;&#x6570;&#x5B57;&#x7684;&#x5F62;&#x5F0F;&#x663E;&#x793A;&#x6240;&#x6709;&#x7684; UDP &#x8FDE;&#x63A5;&#xFF0C;&#x5E76;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x7A0B;&#x5E8F;&#x6240;&#x76D1;&#x542C;&#x7684;&#x7AEF;&#x53E3;&#x53F7;
+  netstat -st                                            # &#x7EDF;&#x8BA1; TCP &#x534F;&#x8BAE;&#x76F8;&#x5173;&#x7684;&#x7F51;&#x7EDC;&#x7EDF;&#x8BA1;&#x6570;&#x636E;
+  netstat -rn                                           # &#x6253;&#x5370;&#x5185;&#x6838;&#x8DEF;&#x7531;&#x4FE1;&#x606F;
+  netstat -ie                                            # &#x663E;&#x793A;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x4FE1;&#x606F;
+
+  # &#x7EDF;&#x8BA1;&#x4E2D;&#x5F53;&#x524D; TCP &#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x6570;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5927;&#x81F4;&#x77E5;&#x9053;&#x670D;&#x52A1;&#x5668; TCP &#x8FDE;&#x63A5;&#x5F53;&#x524D;&#x7684;&#x5065;&#x5EB7;&#x72B6;&#x6001;
+  netstat -n | awk &apos;/^tcp/{++state[$NF]}; END{for(key in state) print key, &quot;\t&quot;, state[key]}&apos;
+
+  # &#x7EDF;&#x8BA1;&#x8FDE;&#x63A5;&#x67D0;&#x670D;&#x52A1;&#x7AEF;&#x53E3;&#x6700;&#x591A;&#x7684; IP &#x5730;&#x5740;
+  netstat -nat | grep &quot;:80&quot; | awk &apos;{print $5}&apos; | awk -F: &apos;{print $1}&apos; | sort | uniq -c | sort -nr | head -20
+</code></pre>
+<h3 id="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><a name="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</h3>
+<p><strong><code>netstat -a</code></strong></p>
+<pre><code class="lang-shell">  netstat -a
+      Active Internet connections (servers and established)
+    Proto  Recv-Q   Send-Q             Local Address           Foreign Address              State      
+    tcp        0                  0                          0.0.0.0:http              0.0.0.0:*                             LISTEN     
+    tcp        0                  0                          0.0.0.0:https            0.0.0.0:*                             LISTEN     
+    tcp        0                  0                          jellythink:https      39.154.11.104:8543      ESTABLISHED
+    tcp        0                  0                          jellythink:50398    100.100.30.25:http        ESTABLISHED
+. . . .                    
+    Active UNIX domain sockets (servers and established)
+    Proto RefCnt Flags       Type       State         I-Node   Path
+    unix  9      [ ]         DGRAM                    6897     /dev/log
+    unix  2      [ ]         DGRAM                    9721     /run/systemd/shutdownd
+    unix  3      [ ]         STREAM     CONNECTED     11477    
+    unix  3      [ ]         STREAM     CONNECTED     11478    /run/systemd/journal/stdout
+    unix  3      [ ]         STREAM     CONNECTED     11234    /run/systemd/journal/stdout
+. . . .
+</code></pre>
+<ul>
+<li><code>Active Internet connections (servers and established)</code> - &#x79F0;&#x4E3A;&#x6709;&#x6E90; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x5305;&#x62EC; TCP &#x548C; UDP &#x7B49;&#x7684;&#x8BE6;&#x7EC6;&#x72B6;&#x6001;</li>
+<li><code>Active UNIX domain sockets (servers and established)</code> - &#x79F0;&#x4E3A;&#x6709;&#x6E90; Unix &#x57DF;&#x5957;&#x63A5;&#x53E3;&#xFF08; &#x548C;&#x7F51;&#x7EDC;&#x5957;&#x63A5;&#x5B57;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x672C;&#x673A;&#x901A;&#x4FE1;&#xFF0C;&#x6027;&#x80FD;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x4E00;&#x500D; &#xFF09;</li>
+<li>&#x6709;&#x6E90; TCP &#x8FDE;&#x63A5;&#x5B57;&#x6BB5;&#x8BE6;&#x89E3;&#xFF1A;<ul>
+<li><code>Proto</code> - &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684;&#x534F;&#x8BAE;&#xFF1B;&#x5982; TCP&#x3001;UDP</li>
+<li><code>Recv-Q</code> - &#x7F51;&#x7EDC;&#x63A5;&#x6536;&#x961F;&#x5217;</li>
+<li><code>Send-Q</code> - &#x7F51;&#x7EDC;&#x53D1;&#x9001;&#x961F;&#x5217;&#xFF1B;&#x63A5;&#x6536;&#x961F;&#x5217;&#x548C;&#x53D1;&#x9001;&#x961F;&#x5217;&#x4E00;&#x822C;&#x90FD;&#x5E94;&#x8BE5;&#x662F; 0&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x5219;&#x8868;&#x793A;&#x6570;&#x636E;&#x5305;&#x6B63;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x5806;&#x79EF;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6BD4;&#x8F83;&#x5C11;&#x89C1;</li>
+<li><code>Local Address</code> - &#x672C;&#x673A;&#x7684; ip:port&#xFF08; &#x6CE8;&#x610F;&#x6B64;&#x5904; 127.0.0.1 &#x9ED8;&#x8BA4;&#x663E;&#x793A;&#x4E3B;&#x673A;&#x540D;&#xFF0C;0.0.0.0 &#x9ED8;&#x8BA4;&#x663E;&#x793A; *&#xFF0C;&#x7AEF;&#x53E3;&#x53EF;&#x80FD;&#x663E;&#x793A;&#x522B;&#x540D;&#x3002;&#x82E5;&#x5F3A;&#x5236;&#x663E;&#x793A;&#x6570;&#x5B57;&#xFF0C;&#x52A0; <code>-n</code> &#x53C2;&#x6570; &#xFF09;</li>
+<li><code>Foreign Address</code> - &#x5BF9;&#x7AEF; ip:port&#xFF1B;&#x4E0E; Local Address &#x89C4;&#x5219;&#x76F8;&#x540C;</li>
+<li><code>State</code> - &#x5F53;&#x524D;&#x5957;&#x63A5;&#x5B57;&#x7684;&#x7F51;&#x7EDC;&#x72B6;&#x6001;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x72B6;&#x6001;&#xFF1A;<ul>
+<li><code>LISTEN</code> - &#x76D1;&#x542C;&#x6765;&#x81EA;&#x5176;&#x5B83; TCP &#x7AEF;&#x53E3;&#x7684;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;</li>
+<li><code>SYN-SENT</code> - &#x518D;&#x53D1;&#x9001;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x540E;&#x7B49;&#x5F85;&#x5339;&#x914D;&#x7684;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF08;&#x5982;&#x679C;&#x6709;&#x5927;&#x91CF;&#x8FD9;&#x6837;&#x7684;&#x72B6;&#x6001;&#x5305;&#xFF0C;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x4E2D;&#x62DB;&#x4E86;&#xFF09;</li>
+<li><code>SYN-RECEIVED</code> - &#x518D;&#x6536;&#x5230;&#x548C;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x540E;&#x7B49;&#x5F85;&#x5BF9;&#x65B9;&#x5BF9;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x7684;&#x786E;&#x8BA4;&#xFF08;&#x5982;&#x6709;&#x5927;&#x91CF;&#x6B64;&#x72B6;&#x6001;&#xFF0C;&#x4F30;&#x8BA1;&#x88AB;flood&#x653B;&#x51FB;&#x4E86;&#xFF09;</li>
+<li><code>ESTABLISHED</code> - &#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6253;&#x5F00;&#x7684;&#x8FDE;&#x63A5;</li>
+<li><code>FIN-WAIT-1</code> - &#x7B49;&#x5F85;&#x8FDC;&#x7A0B;TCP&#x8FDE;&#x63A5;&#x4E2D;&#x65AD;&#x8BF7;&#x6C42;&#xFF0C;&#x6216;&#x5148;&#x524D;&#x7684;&#x8FDE;&#x63A5;&#x4E2D;&#x65AD;&#x8BF7;&#x6C42;&#x7684;&#x786E;&#x8BA4;</li>
+<li><code>FIN-WAIT-2</code> - &#x4ECE;&#x8FDC;&#x7A0B;TCP&#x7B49;&#x5F85;&#x8FDE;&#x63A5;&#x4E2D;&#x65AD;&#x8BF7;&#x6C42;</li>
+<li><code>CLOSE-WAIT</code> - &#x7B49;&#x5F85;&#x4ECE;&#x672C;&#x5730;&#x7528;&#x6237;&#x53D1;&#x6765;&#x7684;&#x8FDE;&#x63A5;&#x4E2D;&#x65AD;&#x8BF7;&#x6C42;</li>
+<li><code>CLOSING</code> - &#x7B49;&#x5F85;&#x8FDC;&#x7A0B;TCP&#x5BF9;&#x8FDE;&#x63A5;&#x4E2D;&#x65AD;&#x7684;&#x786E;&#x8BA4;</li>
+<li><code>LAST-ACK</code> - &#x7B49;&#x5F85;&#x539F;&#x6765;&#x7684;&#x53D1;&#x5411;&#x8FDC;&#x7A0B;TCP&#x7684;&#x8FDE;&#x63A5;&#x4E2D;&#x65AD;&#x8BF7;&#x6C42;&#x7684;&#x786E;&#x8BA4;&#xFF08;&#x4E0D;&#x662F;&#x4EC0;&#x4E48;&#x597D;&#x4E1C;&#x897F;&#xFF0C;&#x6B64;&#x9879;&#x51FA;&#x73B0;&#xFF0C;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x88AB;&#x653B;&#x51FB;&#xFF09;</li>
+<li><code>TIME-WAIT</code> - &#x7B49;&#x5F85;&#x8DB3;&#x591F;&#x7684;&#x65F6;&#x95F4;&#x4EE5;&#x786E;&#x4FDD;&#x8FDC;&#x7A0B;TCP&#x63A5;&#x6536;&#x5230;&#x8FDE;&#x63A5;&#x4E2D;&#x65AD;&#x8BF7;&#x6C42;&#x7684;&#x786E;&#x8BA4;</li>
+<li><code>CLOSED</code> - &#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8FDE;&#x63A5;&#x72B6;&#x6001;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>netstat -rn</code></strong></p>
+<pre><code class="lang-shell">netstat -rn
+&#x5185;&#x6838; IP &#x8DEF;&#x7531;&#x8868;
+Destination         Gateway                   Genmask         Flags   MSS  Window  irtt   Iface
+0.0.0.0                   192.168.152.1         0.0.0.0               UG        0             0            0     wlo1
+169.254.0.0         0.0.0.0                        255.255.0.0     U           0             0            0     wlo1
+172.17.0.0            0.0.0.0                       255.255.0.0      U          0             0             0    docker0
+192.168.152.0     0.0.0.0                       255.255.248.0 U          0             0            0     wlo1
+</code></pre>
+<ul>
+<li><code>Destination</code> - &#x76EE;&#x6807;&#x7F51;&#x7EDC;&#x6216;&#x76EE;&#x6807;&#x4E3B;&#x673A;</li>
+<li><code>Gateway</code> - &#x7F51;&#x5173;&#x5730;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5C31;&#x663E;&#x793A;&#x661F;&#x53F7;</li>
+<li><code>Genmask</code> - &#x7F51;&#x7EDC;&#x63A9;&#x7801;&#xFF0C;0.0.0.0 &#x8868;&#x793A;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;</li>
+<li><code>Flags</code> - &#x6807;&#x5FD7;&#x4F4D;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x5E38;&#x7528;&#x53D6;&#x503C;&#xFF1A;<ul>
+<li><code>U</code> - &#x8868;&#x793A;&#x8BE5;&#x8DEF;&#x7531;&#x662F;&#x542F;&#x52A8;&#x7684;</li>
+<li><code>H</code> - &#x76EE;&#x6807;&#x662F;&#x4E00;&#x90E8;&#x4E3B;&#x673A;&#xFF08; IP &#xFF09;&#x800C;&#x975E;&#x7F51;&#x57DF;</li>
+<li><code>G</code> - &#x9700;&#x8981;&#x900F;&#x8FC7;&#x5916;&#x90E8;&#x7684;&#x4E3B;&#x673A;&#xFF08; gateway &#xFF09;&#x6765;&#x8F6C;&#x9012;&#x5C01;&#x5305;</li>
+</ul>
+</li>
+<li><code>Iface</code> - &#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x540D;</li>
+</ul>
+<h2 id="free-top"><a name="free-top" class="plugin-anchor" href="#free-top"><i class="fa fa-link" aria-hidden="true"></i></a>free <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>Display amount of free and used memory in the system</p>
+</blockquote>
+<ul>
+<li>&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x4E2D;&#x5DF2;&#x7528;&#x548C;&#x672A;&#x7528;&#x7684;&#x7269;&#x7406;&#x5185;&#x5B58;&#x3001;&#x4EA4;&#x6362;&#x5185;&#x5B58;&#x3001;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x548C;&#x5185;&#x6838;&#x4F7F;&#x7528;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x603B;&#x548C;</li>
+<li><code>free [&#x9009;&#x9879;]</code></li>
+<li>[&#x9009;&#x9879;]<ul>
+<li><code>-k</code> - &#x4EE5; KB &#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li><code>-m</code> - &#x4EE5; MB &#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li><code>-g</code> - &#x4EE5; GB &#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li><code>-h</code> - &#x4EE5;&#x4EBA;&#x7C7B;&#x53CB;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><a name="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</h3>
+<pre><code class="lang-shell">free -h
+                      total        used        free      shared  buff/cache   available
+Mem:           7.7G        5.5G        637M      735M        1.5G            1.3G
+Swap:          7.9G        495M        7.4G
+</code></pre>
+<ul>
+<li><code>total</code> - &#x5185;&#x5B58;&#x603B;&#x6570;&#xFF0C;&#x7269;&#x7406;&#x5185;&#x5B58;&#x603B;&#x6570;</li>
+<li><code>Mem</code> - &#x7269;&#x7406;&#x5185;&#x5B58;</li>
+<li><code>used</code> - &#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x6570;</li>
+<li><code>free</code> - &#x7A7A;&#x95F2;&#x7684;&#x5185;&#x5B58;&#x6570;</li>
+<li><code>shared</code> - &#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x5171;&#x4EAB;&#x7684;&#x5185;&#x5B58;&#x603B;&#x989D;</li>
+<li><code>buffers</code> - &#x7F13;&#x51B2;&#x5185;&#x5B58;&#x6570;</li>
+<li><code>cached</code> - &#x7F13;&#x5B58;&#x5185;&#x5B58;&#x6570;</li>
+<li><code>Swap</code> - &#x4EA4;&#x6362;&#x5206;&#x533A;&#xFF0C;&#x865A;&#x62DF;&#x5185;&#x5B58;</li>
+</ul>
+<blockquote>
+<ul>
+<li>total = used + free + buff + cache</li>
+<li>buffer &#x662F;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x8981;&#x8F93;&#x51FA;&#x5230; disk&#xFF08; &#x5757;&#x8BBE;&#x5907; &#xFF09;&#x7684;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x800C; cache &#x662F;&#x5B58;&#x653E;&#x4ECE; disk &#x4E0A;&#x8BFB;&#x51FA;&#x7684;&#x6570;&#x636E;<ul>
+<li>A buffer is something that has yet to be &quot;written&quot; to disk</li>
+<li>A cache is something that has been &quot;read&quot; from the disk and stored for later use</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="top-top"><a name="top-top" class="plugin-anchor" href="#top-top"><i class="fa fa-link" aria-hidden="true"></i></a>top <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<blockquote>
+<p>Display Linux processes</p>
+</blockquote>
+<ul>
+<li>&#x663E;&#x793A;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x8FDB;&#x7A0B;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x62EC;&#x8FDB;&#x7A0B; ID&#x3001;&#x5185;&#x5B58;&#x5360;&#x7528;&#x7387;&#x3001;CPU &#x5360;&#x7528;&#x7387;&#x7B49;</li>
+<li><code>top [&#x9009;&#x9879;] ([&#x53C2;&#x6570;])</code></li>
+<li>[&#x9009;&#x9879;]  ( [&#x53C2;&#x6570;] )<ul>
+<li><code>-b</code> - &#x6279;&#x5904;&#x7406;</li>
+<li><code>-c</code> - &#x663E;&#x793A;&#x8FDB;&#x7A0B;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570; ( &#x9ED8;&#x8BA4;&#x53EA;&#x6709;&#x8FDB;&#x7A0B;&#x540D; )</li>
+<li><code>-I</code> - &#x5FFD;&#x7565;&#x5931;&#x6548;&#x8FC7;&#x7A0B;</li>
+<li><code>-s</code> - &#x4FDD;&#x5BC6;&#x6A21;&#x5F0F;</li>
+<li><code>-S</code> - &#x7D2F;&#x79EF;&#x6A21;&#x5F0F;</li>
+<li><code>-d&lt;&#x65F6;&#x95F4;&gt;</code> - &#x8BBE;&#x7F6E;&#x66F4;&#x65B0;&#x95F4;&#x9694;&#x65F6;&#x95F4;</li>
+<li><code>-u&lt;&#x7528;&#x6237;&#x540D;&gt;</code> - &#x6307;&#x5B9A;&#x7528;&#x6237;&#x540D;</li>
+<li><code>-p&lt;&#x8FDB;&#x7A0B;&#x53F7;&gt;</code> - &#x6307;&#x5B9A;&#x8FDB;&#x7A0B;</li>
+<li><code>-n&lt;&#x6B21;&#x6570;&gt;</code> - &#x5FAA;&#x73AF;&#x663E;&#x793A;&#x7684;&#x6B21;&#x6570;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+<pre><code>top         #&#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;
+top -b      #&#x4EE5;&#x6279;&#x5904;&#x7406;&#x6A21;&#x5F0F;&#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x4FE1;&#x606F;
+top -S      #&#x4EE5;&#x7D2F;&#x79EF;&#x6A21;&#x5F0F;&#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x4FE1;&#x606F;
+top -n 2   #&#x8BBE;&#x7F6E;&#x4FE1;&#x606F;&#x66F4;&#x65B0;&#x6B21;&#x6570;,&#x8868;&#x793A;&#x66F4;&#x65B0; 2 &#x6B21;&#x540E;&#x7EC8;&#x6B62;&#x66F4;&#x65B0;&#x663E;&#x793A;
+top -d -3   #&#x8BBE;&#x7F6E;&#x4FE1;&#x606F;&#x66F4;&#x65B0;&#x65F6;&#x95F4;,&#x8868;&#x793A;&#x66F4;&#x65B0;&#x5468;&#x671F;&#x4E3A; 3 &#x79D2;
+top -p 1138  #&#x663E;&#x793A;&#x8FDB;&#x7A0B;&#x53F7;&#x4E3A;1138 &#x7684;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;&#xFF0C;CPU&#x3001;&#x5185;&#x5B58;&#x5360;&#x7528;&#x7387;&#x7B49;
+</code></pre><h3 id="&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><a name="&#x4F7F;&#x7528;&#x6280;&#x5DE7;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x6280;&#x5DE7;</h3>
+<ul>
+<li>&#x8FDB;&#x7A0B;&#x5B57;&#x6BB5;&#x6392;&#x5E8F;<ul>
+<li>&#x9ED8;&#x8BA4;&#x8FDB;&#x5165; top &#x65F6;&#xFF0C;&#x5404;&#x8FDB;&#x7A0B;&#x662F;&#x6309;&#x7167; CPU &#x7684;&#x5360;&#x7528;&#x91CF;&#x6765;&#x6392;&#x5E8F;&#x7684;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x8FD9;&#x79CD;&#x6392;&#x5E8F;&#xFF1A;</li>
+<li><code>M</code> &#x952E; - &#x6839;&#x636E;&#x9A7B;&#x7559;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</li>
+<li><code>P</code> &#x952E; - &#x6839;&#x636E; CPU &#x4F7F;&#x7528;&#x767E;&#x5206;&#x6BD4;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</li>
+<li><code>T</code> &#x952E; - &#x6839;&#x636E;&#x65F6;&#x95F4; / &#x7D2F;&#x8BA1;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</li>
+</ul>
+</li>
+<li>&#x591A;&#x6838; CPU &#x76D1;&#x63A7;<ul>
+<li>&#x5728; top &#x57FA;&#x672C;&#x89C6;&#x56FE;&#x4E2D;&#xFF0C;&#x7B2C;&#x4E09;&#x884C;&#x8868;&#x793A; CPU &#x72B6;&#x6001;&#x4FE1;&#x606F;&#xFF1B;&#x8FD9;&#x91CC;&#x663E;&#x793A;&#x6570;&#x636E;&#x662F;&#x6240;&#x6709; CPU &#x7684;&#x5E73;&#x5747;&#x503C;&#xFF08; avg-cpu &#xFF09;&#xFF0C;&#x591A;&#x6838; CPU &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6309; <code>1</code> &#x952E;&#x6765;&#x5C55;&#x5F00;&#x663E;&#x793A;&#x6BCF;&#x4E2A; CPU &#x72B6;&#x6001;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><a name="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</h3>
+<p><strong>`top</strong>&lt;/top&gt;</p>
+<pre><code class="lang-shell"> $ top
+top - 11:32:24 up  6:37,  0 users,  load average: 0.50, 0.55, 0.52
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.3 us,  1.4 sy,  0.2 ni, 93.3 id,  0.7 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  8055256 total,   444928 free,  4203968 used,  3406360 buff/cache
+KiB Swap:  8275964 total,  8273784 free,     2180 used.  3538032 avail Mem 
+
+  PID  USER      PR  NI    VIRT      RES     SHR  S  %CPU %MEM     TIME+ COMMAND                                                             
+    1     root        20   0     18508    3188   2776 S     0.0         0.0            0:00.21 bash                                                                
+   10    root        20   0    36484    2940    2540 R     0.0         0.0           0:00.01 top
+</code></pre>
+<ul>
+<li><strong>&#x7B2C;&#x4E00;&#x884C;&#xFF1A;&#x4E0E; <code>uptime</code> &#x8F93;&#x51FA;&#x7684;&#x4FE1;&#x606F;&#x4E00;&#x6837;</strong><ul>
+<li><code>11:32:24</code> - &#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4; </li>
+<li><code>up  6:37</code> -  &#x7CFB;&#x7EDF;&#x5DF2;&#x8FD0;&#x884C;&#x65F6;&#x95F4;</li>
+<li><code>0 users</code> - &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7CFB;&#x7EDF;&#x7684;&#x7EC8;&#x7AEF;&#x6570; &#x7CFB;&#x7EDF;&#x8D1F;&#x8F7D;</li>
+<li><code>load average: 0.50, 0.55, 0.52</code> - &#x540E;&#x9762;&#x7684;&#x4E09;&#x4E2A;&#x6570;&#x5206;&#x522B;&#x662F; 1 &#x5206;&#x949F;&#x3001;5 &#x5206;&#x949F;&#x3001;15 &#x5206;&#x949F;&#x7684;&#x8D1F;&#x8F7D;&#x60C5;&#x51B5;&#xFF1B;&#x5982;&#x679C;&#x5E73;&#x5747;&#x8D1F;&#x8F7D;&#x503C;&#x5927;&#x4E8E; 0.7 * CPU &#x5185;&#x6838;&#x6570;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5F15;&#x8D77;&#x5173;&#x6CE8;</li>
+<li><strong>&#x7B2C;&#x4E8C;&#x884C;&#xFF1A;&#x8868;&#x793A;&#x8FDB;&#x7A0B;&#x6570;&#x4FE1;&#x606F;</strong></li>
+<li><code>2 total</code> - &#x603B;&#x8FDB;&#x7A0B;&#x6570;</li>
+<li><code>1 running</code> - &#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;&#x6570;</li>
+<li><code>1 sleeping</code> - &#x6B63;&#x5728;&#x7761;&#x7720;&#x7684;&#x8FDB;&#x7A0B;&#x6570;</li>
+<li><code>0 stopped</code> - &#x505C;&#x6B62;&#x7684;&#x8FDB;&#x7A0B;&#x6570;</li>
+<li><code>0 zombie</code> - &#x50F5;&#x5C38;&#x8FDB;&#x7A0B;&#x6570;</li>
+<li><strong>&#x7B2C;&#x4E09;&#x884C;&#xFF1A;&#x8868;&#x793A; CPU &#x72B6;&#x6001;&#x4FE1;&#x606F;</strong></li>
+<li>&#x8FD9;&#x91CC;&#x663E;&#x793A;&#x6570;&#x636E;&#x662F;&#x6240;&#x6709; CPU &#x7684;&#x5E73;&#x5747;&#x503C;&#x3002;&#x591A;&#x6838; CPU &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6309; <code>1</code> &#x952E;&#x6765;&#x5C55;&#x5F00;&#x663E;&#x793A;&#x6BCF;&#x4E2A; CPU &#x72B6;&#x6001;</li>
+<li><code>4.3 us</code> - &#x7528;&#x6237;&#x7A7A;&#x95F4;&#x5360;&#x7528; CPU &#x767E;&#x5206;&#x6BD4;</li>
+<li><code>1.4 sy</code> - &#x5185;&#x6838;&#x7A7A;&#x95F4;&#x5360;&#x7528; CPU &#x767E;&#x5206;&#x6BD4;</li>
+<li><code>0.2 ni</code> - &#x7528;&#x6237;&#x8FDB;&#x7A0B;&#x7A7A;&#x95F4;&#x5185;&#x6539;&#x53D8;&#x8FC7;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x8FDB;&#x7A0B;&#x5360;&#x7528; CPU &#x767E;&#x5206;&#x6BD4;</li>
+<li><code>93.3 id</code> - CPU &#x7A7A;&#x95F2;&#x7387;</li>
+<li><code>0.7 wa</code> - &#x7B49;&#x5F85; IO &#x7684; CPU &#x65F6;&#x95F4;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>0.0 hi</code> - &#x786C;&#x4E2D;&#x65AD;&#xFF08; Hardware IRQ &#xFF09;&#x5360;&#x7528; CPU &#x7684;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>0.0 si</code> - &#x8F6F;&#x4E2D;&#x65AD;&#xFF08; Software Interrupts &#xFF09;&#x5360;&#x7528; CPU &#x7684;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>0.0 st</code> - &#x8FD9;&#x4E2A;&#x865A;&#x62DF;&#x673A;&#x88AB; hypervisor &#x5077;&#x53BB;&#x7684; CPU &#x65F6;&#x95F4;&#xFF08; &#x8BD1;&#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x5F53;&#x524D;&#x5904;&#x4E8E;&#x4E00;&#x4E2A; hypervisor &#x4E0B;&#x7684; vm&#xFF0C;&#x5B9E;&#x9645;&#x4E0A; hypervisor &#x4E5F;&#x662F;&#x8981;&#x6D88;&#x8017;&#x4E00;&#x90E8;&#x5206; CPU &#x5904;&#x7406;&#x65F6;&#x95F4;&#x7684; &#xFF09;</li>
+<li><strong>&#x7B2C;&#x56DB;&#x884C;&#xFF1A;&#x7269;&#x7406;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x4FE1;&#x606F;</strong></li>
+<li><code>8055256 total</code> - &#x7269;&#x7406;&#x5185;&#x5B58;&#x603B;&#x91CF;</li>
+<li><code>444928 free</code> - &#x4F7F;&#x7528;&#x7684;&#x7269;&#x7406;&#x5185;&#x5B58;&#x603B;&#x91CF;</li>
+<li><code>4203968 used</code>- &#x7A7A;&#x95F2;&#x5185;&#x5B58;&#x603B;&#x91CF;</li>
+<li><code>3406360 buff/cache</code> - &#x7528;&#x4F5C;&#x5185;&#x6838;&#x7F13;&#x51B2; / &#x7F13;&#x5B58;&#x7684;&#x5185;&#x5B58;&#x91CF;</li>
+<li><strong>&#x7B2C;&#x4E94;&#x884C;&#xFF1A;&#x4EA4;&#x6362;&#x7A7A;&#x95F4;&#x4F7F;&#x7528;&#x4FE1;&#x606F;</strong></li>
+<li>&#x6211;&#x4EEC;&#x8981;&#x65F6;&#x523B;&#x76D1;&#x63A7;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x7684; used&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x6570;&#x503C;&#x5728;&#x4E0D;&#x65AD;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x8BF4;&#x660E;&#x5185;&#x6838;&#x5728;&#x4E0D;&#x65AD;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x548C; swap &#x7684;&#x6570;&#x636E;&#x4EA4;&#x6362;&#xFF0C;&#x8FD9;&#x662F;&#x771F;&#x6B63;&#x7684;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#x7528;&#x4E86;</li>
+<li><code>8275964 total</code> - &#x4EA4;&#x6362;&#x533A;&#x603B;&#x91CF;</li>
+<li><code>8273784 free</code> - &#x4EA4;&#x6362;&#x533A;&#x7A7A;&#x95F2;&#x91CF;</li>
+<li><code>2180 used</code> - &#x4EA4;&#x6362;&#x533A;&#x4F7F;&#x7528;&#x91CF;</li>
+<li><code>3538032 avail Mem</code> - &#x53EF;&#x7528;&#x4E8E;&#x8FDB;&#x7A0B;&#x4E0B;&#x4E00;&#x6B21;&#x5206;&#x914D;&#x7684;&#x7269;&#x7406;&#x5185;&#x5B58;&#x6570;&#x91CF;</li>
+<li><strong>&#x7B2C;&#x516D;&#x884C;&#xFF1A;&#x7A7A;&#x884C;</strong></li>
+<li><strong>&#x7B2C;&#x4E03;&#x884C;&#xFF1A;&#x5404;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x4FE1;&#x606F;</strong></li>
+<li><code>PID</code> - &#x8FDB;&#x7A0B; id</li>
+<li><code>USER</code> - &#x8FDB;&#x7A0B;&#x6240;&#x6709;&#x8005;</li>
+<li><code>PR</code> - &#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;</li>
+<li><code>NI</code> - nice &#x503C;&#xFF1B;&#x8D8A;&#x5C0F;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#xFF0C;&#x6700;&#x5C0F; -20&#xFF0C;&#x6700;&#x5927; 20&#xFF08; &#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x6700;&#x5927; 19 &#xFF09;</li>
+<li><code>VIRT</code> - &#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x7684;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x603B;&#x91CF;&#xFF0C;&#x5355;&#x4F4D; kb&#xFF1B;VIRT=SWAP+RES</li>
+<li><code>RES</code> - &#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x7684;&#x3001;&#x672A;&#x88AB;&#x6362;&#x51FA;&#x7684;&#x7269;&#x7406;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; kb&#xFF1B;RES=CODE+DATA</li>
+<li><code>SHR</code> - &#x5171;&#x4EAB;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D; kb</li>
+<li><code>S</code> - &#x8FDB;&#x7A0B;&#x72B6;&#x6001;&#xFF1B;D = &#x4E0D;&#x53EF;&#x4E2D;&#x65AD;&#x7684;&#x7761;&#x7720;&#x72B6;&#x6001;&#x3001;R = &#x8FD0;&#x884C;&#x3001;S = &#x7761;&#x7720;&#x3001;T = &#x8DDF;&#x8E2A;/&#x505C;&#x6B62;&#x3001;Z = &#x50F5;&#x5C38;&#x8FDB;&#x7A0B;</li>
+<li><code>%CPU</code> - &#x4E0A;&#x6B21;&#x66F4;&#x65B0;&#x5230;&#x73B0;&#x5728;&#x7684; CPU &#x65F6;&#x95F4;&#x5360;&#x7528;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>%MEM</code> - &#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x7684;&#x7269;&#x7406;&#x5185;&#x5B58;&#x767E;&#x5206;&#x6BD4;</li>
+<li><code>TIME+</code> - &#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x7684; CPU &#x65F6;&#x95F4;&#x603B;&#x8BA1;</li>
+<li><code>COMMAND</code> - &#x547D;&#x4EE4;&#x540D;/&#x547D;&#x4EE4;&#x884C;</li>
+</ul>
+</li>
+</ul>
+<h2 id="ip-top"><a name="ip-top" class="plugin-anchor" href="#ip-top"><i class="fa fa-link" aria-hidden="true"></i></a>ip <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
+<ul>
+<li><p><strong>show / manipulate routing, network devices, interfaces and tunnels</strong></p>
+</li>
+<li><p><code>ip [&#x9009;&#x9879;] &#x5BF9;&#x8C61; { &#x547D;&#x4EE4; | help }</code></p>
+</li>
+<li><p>&#x5E38;&#x7528;&#x5BF9;&#x8C61;</p>
+<ul>
+<li><code>link</code> - &#x7F51;&#x7EDC;&#x8BBE;&#x5907;</li>
+<li><code>address</code> - &#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x534F;&#x8BAE;&#xFF08; IP &#x6216; IPv6 &#xFF09;&#x5730;&#x5740;</li>
+<li><code>addrlabel</code> - &#x534F;&#x8BAE;&#x5730;&#x5740;&#x9009;&#x62E9;&#x7684;&#x6807;&#x7B7E;&#x914D;&#x7F6E;</li>
+<li><code>route</code> - &#x8DEF;&#x7531;&#x8868;&#x6761;&#x76EE;</li>
+<li><code>rule</code> - &#x8DEF;&#x7531;&#x7B56;&#x7565;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x89C4;&#x5219;</li>
+</ul>
+</li>
+<li><p>&#x5E38;&#x7528;&#x9009;&#x9879;</p>
+<ul>
+<li><code>-V&#xFF0C;-Version</code> - &#x663E;&#x793A;&#x6307;&#x4EE4;&#x7248;&#x672C;&#x4FE1;&#x606F;</li>
+<li><code>-s&#xFF0C;-stats&#xFF0C;statistics</code> - &#x8F93;&#x51FA;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</li>
+<li><code>-h&#xFF0C;-human&#xFF0C;-human-readable</code> - &#x8F93;&#x51FA;&#x4EBA;&#x7C7B;&#x53EF;&#x8BFB;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x548C;&#x540E;&#x7F00;</li>
+<li><code>-o&#xFF0C;-oneline</code> - &#x5C06;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#x8F93;&#x51FA;&#x5230;&#x4E00;&#x884C;&#xFF0C;&#x7528; <code>\</code> &#x5B57;&#x7B26;&#x66FF;&#x6362;&#x6362;&#x884C;&#x7B26;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-shell">                                                                       # ip address - &#x8BBE;&#x5B9A;&#x4E0E; IP &#x6709;&#x5173;&#x7684;&#x5404;&#x9879;&#x53C2;&#x6570;&#xFF0C;&#x5305;&#x62EC; netmask&#xFF0C; broadcast &#x7B49;
+
+ip addr show                             # &#x663E;&#x793A;&#x7F51;&#x5361;&#x53CA;&#x914D;&#x7F6E;&#x7684;&#x5730;&#x5740;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x53EF;&#x7528; ip a s &#x6216; ip a
+# ip address [add|del] [IP&#x53C2;&#x6570;] [dev &#x8BBE;&#x5907;&#x540D;] [&#x76F8;&#x5173;&#x53C2;&#x6570;]
+# [add|del]&#xFF1A;&#x8FDB;&#x884C;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x7684;&#x589E;&#x52A0;(add)&#x6216;&#x5220;&#x9664;(del)&#x8BBE;&#x5B9A;
+# [IP &#x53C2;&#x6570;] &#xFF1A;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x7F51;&#x57DF;&#x7684;&#x8BBE;&#x5B9A;&#xFF0C;&#x4F8B;&#x5982; 192.168.100.100/24 &#x4E4B;&#x7C7B;&#x7684;&#x8BBE;&#x5B9A;
+# [dev &#x8BBE;&#x5907;&#x540D;]&#xFF1A;IP &#x53C2;&#x6570;&#x6240;&#x8981;&#x8BBE;&#x5B9A;&#x7684;&#x8BBE;&#x5907;&#xFF0C;&#x4F8B;&#x5982;eth0, eth1&#x7B49;
+# [&#x76F8;&#x5173;&#x53C2;&#x6570;]&#xFF1A;
+          # broadcast&#xFF1A;&#x8BBE;&#x5B9A;&#x5E7F;&#x64AD;&#x4F4D;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x5B9A;&#x503C;&#x662F; + &#x8868;&#x793A;&#x8BA9;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;
+          # label&#xFF1A;&#x8BE5;&#x8BBE;&#x5907;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x4F8B;&#x5982;eth0:0
+          # scope&#xFF1A;&#x8FD9;&#x4E2A;&#x8BBE;&#x5907;&#x7684;&#x9886;&#x57DF;&#xFF0C;&#x9ED8;&#x8BA4;global&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x5927;&#x7C7B;
+                    # global&#xFF1A;&#x5141;&#x8BB8;&#x6765;&#x81EA;&#x6240;&#x6709;&#x6765;&#x6E90;&#x7684;&#x8FDE;&#x7EBF;
+                    # site&#xFF1A;&#x4EC5;&#x652F;&#x6301;IPv6 &#xFF0C;&#x4EC5;&#x5141;&#x8BB8;&#x672C;&#x4E3B;&#x673A;&#x7684;&#x8FDE;&#x63A5;
+                    # link&#xFF1A;&#x4EC5;&#x5141;&#x8BB8;&#x672C;&#x8BBE;&#x5907;&#x81EA;&#x6211;&#x8FDE;&#x63A5;
+                    # host&#xFF1A;&#x4EC5;&#x5141;&#x8BB8;&#x672C;&#x4E3B;&#x673A;&#x5185;&#x90E8;&#x7684;&#x8FDE;&#x63A5;          
+ip addr add 192.168.0.50/255.255.255.0 dev eth0       # &#x4E3A;&#x7F51;&#x5361;&#x5206;&#x914D; IP &#x5730;&#x5740;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x7F51;&#x7EDC;&#x4FE1;&#x606F;
+ip addr add broadcast 192.168.0.255 dev eth0             # &#x8BBE;&#x7F6E;&#x5E7F;&#x64AD;&#x5730;&#x5740;
+ip addr add 192.168.0.20/24 dev eth0 label eth0:1     # &#x6DFB;&#x52A0; eth0 &#x7F51;&#x5361;&#x522B;&#x540D;
+ip addr del 192.168.0.10/24 dev eth0                                # &#x5220;&#x9664;&#x7F51;&#x5361;&#x4E2D;&#x914D;&#x7F6E;&#x7684; IP &#x5730;&#x5740;
+
+
+# ip link - &#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x4E0E;&#x8BBE;&#x5907;( device )&#x6709;&#x5173;&#x7684;&#x76F8;&#x5173;&#x8BBE;&#x5B9A;&#xFF0C;&#x5305;&#x62EC; MTU &#x4EE5;&#x53CA;&#x8BE5;&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684; MAC &#x7B49;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x542F;&#x52A8; ( up ) &#x6216;&#x5173;&#x95ED; ( down ) &#x67D0;&#x4E2A;&#x7F51;&#x7EDC;&#x8BBE;&#x5907;
+
+ip -s link                                      # &#x663E;&#x793A;&#x6240;&#x6709;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;
+ip link set eth0 up                   # &#x542F;&#x7528;&#x7F51;&#x5361;&#x540D;&#x4E3A; etho0 &#x7684;&#x7F51;&#x5361;
+ip link set eth0 down             # &#x7981;&#x7528;&#x7F51;&#x5361;
+ip link set eth0 mtu 1000     # &#x66F4;&#x6539; MTU &#x4E3A; 1000 bytes
+ip link set ent0 name eth1  # &#x66F4;&#x6539;&#x7F51;&#x5361;&#x540D;&#x5B57;
+
+
+                                  # ip route -  &#x8DEF;&#x7531;&#x914D;&#x7F6E;,&#x529F;&#x80FD;&#x51E0;&#x4E4E;&#x4E0E; route &#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;
+
+ip route show                            # &#x67E5;&#x770B;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x53EF;&#x7528; ip r s &#x6216; ip r
+ip route get 119.75.216.20   # &#x901A;&#x8FC7; IP &#x5730;&#x5740;&#x67E5;&#x8BE2;&#x8DEF;&#x7531;&#x5305;&#x4ECE;&#x54EA;&#x6761;&#x8DEF;&#x7531;&#x6765;
+# ip route [add|del] [IP&#x6216;&#x7F51;&#x57DF;] [via gateway] [dev &#x8BBE;&#x5907;]
+          # [add|del]&#xFF1A;&#x589E;&#x52A0; ( add ) &#x6216;&#x5220;&#x9664; ( del ) &#x8DEF;&#x7531;
+          # [IP&#x6216;&#x7F51;&#x57DF;]&#xFF1A;&#x53EF;&#x4F7F;&#x7528; 192.168.50.0/24 &#x4E4B;&#x7C7B;&#x7684;&#x7F51;&#x57DF;&#x6216;&#x8005;&#x662F;&#x5355;&#x7EAF;&#x7684; IP 
+          # [via gateway]&#xFF1A;&#x4ECE;&#x54EA;&#x4E2A; gateway &#x51FA;&#x53BB;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x9700;&#x8981;
+          # [dev &#x8BBE;&#x5907;&#x540D;]&#xFF1A;&#x6240;&#x8981;&#x8BBE;&#x5B9A;&#x7684;&#x8BBE;&#x5907;&#xFF0C;&#x4F8B;&#x5982; eth0, eth1 &#x7B49;
+ip route add default via 192.168.0.150/24                          #  &#x4FEE;&#x6539;&#x5F53;&#x524D;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;&#x4E3A; 192.168.0.150
+ip route add 172.16.32.32 via 192.168.0.150/24 dev eth0          # &#x6DFB;&#x52A0;&#x7279;&#x5B9A;&#x7F51;&#x5361;&#x7684;&#x8DEF;&#x7531;&#xFF0C;&#x589E;&#x52A0;&#x901A;&#x5F80;&#x5916;&#x90E8;&#x8DEF;&#x7531;
+ip route del 192.168.0.150/24                   # &#x5220;&#x9664;&#x8DEF;&#x7531;
+ip route flush cache                # &#x5237;&#x65B0;&#x8DEF;&#x7531;&#x8868;
+
+
+# &#x68C0;&#x67E5;&#x6240;&#x6709;&#x7684; ARP &#x8BB0;&#x5F55;
+ip neigh
+</code></pre>
+<h3 id="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><a name="&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x8BE6;&#x89E3;</h3>
+<p><strong><code>ip address</code></strong></p>
+<pre><code class="lang-shell">ip address
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:1e:4f:c8:43:fc brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.24/24 brd 192.168.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+  3: wlo1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether a4:02:b9:54:3f:80 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.158.164/21 brd 192.168.159.255 scope global dynamic noprefixroute wlo1
+       valid_lft 3378sec preferred_lft 3378sec
+    inet6 fe80::1b3d:9f06:efac:3878/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+</code></pre>
+<ul>
+<li><p>&#x7CFB;&#x7EDF;&#x6709;&#x4E09;&#x4E2A;&#x63A5;&#x53E3;&#xFF1A;lo &#x3001;eth0 &#x548C; wlo1&#xFF0C;lo &#x662F;&#x73AF;&#x56DE;&#x63A5;&#x53E3;&#xFF0C;eth0 &#x8FD9;&#x4E2A;&#x666E;&#x901A;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#xFF0C;wlo1 &#x662F; wifi &#x63A5;&#x53E3;</p>
+<ul>
+<li><code>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;</code> <ul>
+<li><code>BROADCAST</code> - &#x8868;&#x793A;&#x8BE5;&#x63A5;&#x53E3;&#x652F;&#x6301;&#x5E7F;&#x64AD;</li>
+<li><code>MULTICAST</code> - &#x8868;&#x793A;&#x8BE5;&#x63A5;&#x53E3;&#x652F;&#x6301;&#x591A;&#x64AD;</li>
+<li><code>UP</code> - &#x8868;&#x793A;&#x8BE5;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x5DF2;&#x542F;&#x7528;</li>
+<li><code>LOWER_UP</code> - &#x8868;&#x793A;&#x7F51;&#x7EDC;&#x7535;&#x7F06;&#x5DF2;&#x63D2;&#x5165;&#xFF0C;&#x8BBE;&#x5907;&#x5DF2;&#x8FDE;&#x63A5;&#x81F3;&#x7F51;&#x7EDC;</li>
+</ul>
+</li>
+<li><code>mtu 1500</code> - &#x6700;&#x5927;&#x4F20;&#x8F93;&#x5355;&#x4F4D;&#xFF08; &#x6570;&#x636E;&#x5305;&#x5927;&#x5C0F; &#xFF09;&#x4E3A; 1500 &#x5B57;&#x8282;</li>
+<li><code>qdisc pfifo_fast</code> - &#x7528;&#x4E8E;&#x6570;&#x636E;&#x5305;&#x6392;&#x961F;</li>
+<li><code>state UP</code> - &#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x5DF2;&#x542F;&#x7528;</li>
+<li><code>qlen 1000</code> - &#x4F20;&#x8F93;&#x961F;&#x5217;&#x957F;&#x5EA6;</li>
+<li><code>link/ether 00:1e:4f:c8:43:fc</code> - &#x63A5;&#x53E3;&#x7684; MAC&#xFF08; &#x786C;&#x4EF6; &#xFF09;&#x5730;&#x5740;</li>
+<li><code>brd ff:ff:ff:ff:ff:ff</code> - &#x5E7F;&#x64AD;&#x5730;&#x5740;</li>
+<li><code>inet 192.168.0.24/24</code> - IPv4 &#x5730;&#x5740;</li>
+<li><code>brd 192.168.0.255</code> - &#x5E7F;&#x64AD;&#x5730;&#x5740;</li>
+<li><code>scope global</code> - &#x5168;&#x5C40;&#x6709;&#x6548;</li>
+<li><code>dynamic noprefixroute wlo1</code> - &#x5730;&#x5740;&#x662F;&#x52A8;&#x6001;&#x5206;&#x914D;&#x7684;</li>
+<li><code>valid_lft forever</code> - IPv4 &#x5730;&#x5740;&#x7684;&#x6709;&#x6548;&#x4F7F;&#x7528;&#x671F;&#x9650;</li>
+<li><code>preferred_lft 3378sec</code> - IPv4 &#x5730;&#x5740;&#x7684;&#x9996;&#x9009;&#x751F;&#x5B58;&#x671F;</li>
+<li><code>inet6 fe80::1b3d:9f06:efac:3878/64</code> - IPv6 &#x5730;&#x5740;</li>
+<li><code>scope link</code> - &#x4EC5;&#x5728;&#x6B64;&#x8BBE;&#x5907;&#x4E0A;&#x6709;&#x6548;</li>
+<li><code>valid_lft forever</code> - IPv6 &#x5730;&#x5740;&#x7684;&#x6709;&#x6548;&#x4F7F;&#x7528;&#x671F;&#x9650;</li>
+<li><code>preferred_lft forever</code> - IPv6 &#x5730;&#x5740;&#x7684;&#x9996;&#x9009;&#x751F;&#x5B58;&#x671F;</li>
+</ul>
+<p><strong><code>ip route</code></strong></p>
+<pre><code class="lang-shell">ip route
+default via 192.168.152.1 dev wlo1 proto dhcp metric 600 
+169.254.0.0/16 dev wlo1 scope link metric 1000 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+192.168.152.0/21 dev wlo1 proto kernel scope link src 192.168.158.164 metric 600
+</code></pre>
+</li>
+<li><p>&#x7B2C;&#x4E00;&#x6761;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x8DEF;&#x7531;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x8981;&#x6539;&#x52A8;&#x5B83;</p>
+</li>
+<li><code>metric 1002</code> - &#x8DF3;&#x8DC3;&#x8BA1;&#x6570;&#xFF0C;&#x786E;&#x5B9A;&#x7F51;&#x5173;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x9ED8;&#x8BA4; 20&#xFF0C;&#x6570;&#x503C;&#x8D8A;&#x5C0F;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;</li>
+<li><code>proto kernel</code> - &#x8BE5;&#x8DEF;&#x7531;&#x7684;&#x534F;&#x8BAE;&#xFF0C;&#x4E3B;&#x8981;&#x6709; redirect&#xFF0C;kernel&#xFF0C;boot&#xFF0C;static&#xFF0C;ra &#x7B49;&#xFF0C;&#x5176;&#x4E2D; kernel &#x6307;&#x7684;&#x662F;&#x76F4;&#x63A5;&#x7531;&#x6838;&#x5FC3;&#x5224;&#x65AD;&#x81EA;&#x52A8;&#x8BBE;&#x5B9A;</li>
+</ul>
+<p><strong><code>ip -s link</code></strong></p>
+<pre><code class="lang-shell">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX: bytes  packets  errors  dropped overrun mcast   
+    12421814   19572    0       0       0       0       
+    TX: bytes  packets  errors  dropped carrier collsns 
+    12421814   19572    0       0       0       0       
+2: eno1: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether ec:8e:b5:44:4a:1c brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast   
+    0          0        0       0       0       0       
+    TX: bytes  packets  errors  dropped carrier collsns 
+    0          0        0       0       0       0 
+3: wlo1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DORMANT group default qlen 1000
+    link/ether a4:02:b9:54:3f:80 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast   
+    429373334  837924   0       0       0       0       
+    TX: bytes  packets  errors  dropped carrier collsns 
+    23895841   143531   0       0       0       0
+</code></pre>
+<p><strong><code>ip -s -s link eno1</code></strong></p>
+<pre><code class="lang-shell">2: eno1: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether ec:8e:b5:44:4a:1c brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast   
+    0          0        0       0       0       0       
+    RX errors: length   crc     frame   fifo    missed
+               0        0       0       0       0       
+    TX: bytes  packets  errors  dropped carrier collsns 
+    0          0        0       0       0       0       
+    TX errors: aborted  fifo   window heartbeat transns
+               0        0       0       0       1
+</code></pre>
+<ul>
+<li><code>RX</code> - &#x8868;&#x793A;&#x63A5;&#x6536;</li>
+<li><code>TX</code> - &#x8868;&#x793A;&#x53D1;&#x9001;</li>
+<li><code>bytes</code> - &#x63A5;&#x6536;/&#x53D1;&#x9001;&#x7684;&#x5B57;&#x8282;&#x6570;</li>
+<li><code>packets</code> - &#x63A5;&#x6536;/&#x53D1;&#x9001;&#x7684;&#x5305;&#x6570;</li>
+<li><code>errors</code> - &#x63A5;&#x6536;/&#x53D1;&#x9001;&#x7684;&#x5E26;&#x6709;&#x9519;&#x8BEF;&#x7684;&#x5305;&#x603B;&#x6570;</li>
+<li><code>dropped</code> - &#x7531;&#x4E8E;&#x5904;&#x7406;&#x8D44;&#x6E90;&#x4E0D;&#x8DB3;&#x5BFC;&#x81F4;&#x63A5;&#x6536;/&#x53D1;&#x9001;&#x7684;&#x4E22;&#x5F03;&#x7684;&#x5305;&#x6570;</li>
+<li><code>overrun</code> - &#x56E0;&#x63A5;&#x6536;&#x6EA2;&#x51FA;&#xFF08; &#x73AF;&#x5F62;&#x7F13;&#x51B2;&#x533A; &#xFF09;&#x5BFC;&#x81F4;&#x4E22;&#x5931;&#x7684;&#x5305;&#xFF1B;&#x901A;&#x5E38;&#x5982;&#x679C;&#x63A5;&#x53E3;&#x6EA2;&#x51FA;&#xFF0C;&#x5219;&#x8868;&#x793A;&#x5185;&#x6838;&#x4E2D;&#x5B58;&#x5728;&#x4E25;&#x91CD;&#x95EE;&#x9898;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8BE5;&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x5904;&#x7406;&#x8BBE;&#x5907;&#x592A;&#x6162;</li>
+<li><code>mcast</code> - &#x63A5;&#x6536;&#x5230;&#x7684;&#x591A;&#x64AD;&#x5305;&#x6570;</li>
+<li><code>carrier</code> - &#x56E0;&#x6570;&#x636E;&#x94FE;&#x8DEF;&#x9519;&#x8BEF;&#x5BFC;&#x81F4;&#x53D1;&#x9001;&#x5931;&#x8D25;&#x7684;&#x5305;&#x6570;</li>
+<li><code>collsns</code> - &#x56E0;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x53D1;&#x9001;&#x51B2;&#x7A81;&#x800C;&#x5BFC;&#x81F4;&#x7684;&#x5931;&#x8D25;&#x6570;</li>
+</ul>
+<h2 id="brctl"><a name="brctl" class="plugin-anchor" href="#brctl"><i class="fa fa-link" aria-hidden="true"></i></a><a href="#&#x76EE;&#x5F55;">brctl</a></h2>
+<ul>
+<li><p>brctl &#x7528;&#x6765;&#x7BA1;&#x7406;&#x4EE5;&#x592A;&#x7F51;&#x6865;&#xFF0C;&#x5728;&#x5185;&#x6838;&#x4E2D;&#x5EFA;&#x7ACB;&#xFF0C;&#x7EF4;&#x62A4;&#xFF0C;&#x68C0;&#x67E5;&#x7F51;&#x6865;&#x914D;&#x7F6E;</p>
+</li>
+<li><p><strong><code>brctl [&#x547D;&#x4EE4;]</code></strong></p>
+</li>
+</ul>
+<h3 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-bash">$ brctl addbr [name] 
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;name&#x7684;&#x6865;&#x63A5;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;</span>
+$ brctl delbr [name]  
+<span class="hljs-comment"># &#x5220;&#x9664;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;name&#x7684;&#x6865;&#x63A5;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#xFF0C;&#x6865;&#x63A5;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x5FC5;&#x987B;&#x5148;down&#x6389;&#x540E;&#x624D;&#x80FD;&#x5220;&#x9664;</span>
+$ brctl show          
+<span class="hljs-comment"># &#x663E;&#x793A;&#x76EE;&#x524D;&#x6240;&#x6709;&#x7684;&#x6865;&#x63A5;&#x63A5;&#x53E3;</span>
+$ brctl addif [brname] [ifname]
+<span class="hljs-comment"># &#x628A;&#x4E00;&#x4E2A;&#x7269;&#x7406;&#x63A5;&#x53E3;ifname&#x52A0;&#x5165;&#x6865;&#x63A5;&#x63A5;&#x53E3;brname&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x4ECE;ifname&#x6536;&#x5230;&#x7684;&#x5E27;&#x90FD;&#x5C06;&#x88AB;&#x5904;&#x7406;&#xFF0C;&#x5C31;&#x50CF;&#x7F51;&#x6865;&#x5904;&#x7406;&#x7684;&#x4E00;&#x6837;&#x3002;&#x6240;&#x6709;&#x53D1;&#x5F80;brname&#x7684;&#x5E27;&#xFF0C;ifname&#x5C31;&#x50CF;&#x8F93;&#x51FA;&#x63A5;&#x53E3;&#x4E00;&#x6837;&#x3002;&#x5F53;&#x7269;&#x7406;&#x4EE5;&#x592A;&#x7F51;&#x52A0;&#x5165;&#x7F51;&#x6865;&#x540E;&#xFF0C;&#x636E;&#x5904;&#x4E8E;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x914D;&#x7F6E;IP</span>
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-01-04 15:54:38 </span> </footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Linux小知识.html" class="navigation navigation-prev " aria-label="Previous page: 平时 linux 遇到的问题解决办法和扩展小知识">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Linux各种安装下载慢解决方法.html" class="navigation navigation-next " aria-label="Next page: Linux各种安装下载慢解决方法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Linux性能相关常用命令","level":"1.4.3","depth":2,"next":{"title":"Linux各种安装下载慢解决方法","level":"1.4.4","depth":2,"path":"Linux/Linux各种安装下载慢解决方法.md","ref":"Linux/Linux各种安装下载慢解决方法.md","articles":[]},"previous":{"title":"平时 linux 遇到的问题解决办法和扩展小知识","level":"1.4.2","depth":2,"path":"Linux/Linux小知识.md","ref":"Linux/Linux小知识.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Linux/Linux性能相关常用命令.md","mtime":"2020-01-04T07:54:38.944Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-28T02:57:41.582Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

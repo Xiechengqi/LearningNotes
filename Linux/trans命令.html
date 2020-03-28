@@ -1,0 +1,2332 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>trans命令 · 日常学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="yum和rpm.html" />
+    
+    
+    <link rel="prev" href="ffmpeg详解.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../网络学习资源整理/">
+            
+                <a href="../网络学习资源整理/">
+            
+                    
+                    网络学习资源整理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../网络学习资源整理/技术学习.html">
+            
+                <a href="../网络学习资源整理/技术学习.html">
+            
+                    
+                    技术学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../网络学习资源整理/运维博客.html">
+            
+                <a href="../网络学习资源整理/运维博客.html">
+            
+                    
+                    运维博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../网络学习资源整理/工具.html">
+            
+                <a href="../网络学习资源整理/工具.html">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../网络学习资源整理/静态博客模板.html">
+            
+                <a href="../网络学习资源整理/静态博客模板.html">
+            
+                    
+                    静态博客模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../网络学习资源整理/静态网站pages服务.html">
+            
+                <a href="../网络学习资源整理/静态网站pages服务.html">
+            
+                    
+                    静态网站pages服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../网络学习资源整理/静态pages的CI和CD.html">
+            
+                <a href="../网络学习资源整理/静态pages的CI和CD.html">
+            
+                    
+                    静态pages的CI和CD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../网络学习资源整理/Hugo学习.html">
+            
+                <a href="../网络学习资源整理/Hugo学习.html">
+            
+                    
+                    Hugo学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../心灵鸡汤/">
+            
+                <a href="../心灵鸡汤/">
+            
+                    
+                    心灵鸡汤
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../心灵鸡汤/心灵鸡汤.html">
+            
+                <a href="../心灵鸡汤/心灵鸡汤.html">
+            
+                    
+                    语录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Linux常用命令.html">
+            
+                <a href="Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Linux小知识.html">
+            
+                <a href="Linux小知识.html">
+            
+                    
+                    平时 linux 遇到的问题解决办法和扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Linux性能相关常用命令.html">
+            
+                <a href="Linux性能相关常用命令.html">
+            
+                    
+                    Linux性能相关常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Linux各种安装下载慢解决方法.html">
+            
+                <a href="Linux各种安装下载慢解决方法.html">
+            
+                    
+                    Linux各种安装下载慢解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="APT-剖析详解.html">
+            
+                <a href="APT-剖析详解.html">
+            
+                    
+                    APT 原理剖析、详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Linux主机、虚拟机和docker网络配置.html">
+            
+                <a href="Linux主机、虚拟机和docker网络配置.html">
+            
+                    
+                    Linux 主机、虚拟机和docker网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Linux文件系统学习.html">
+            
+                <a href="Linux文件系统学习.html">
+            
+                    
+                    Linux文件系统学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="Linux用户和用户组管理.html">
+            
+                <a href="Linux用户和用户组管理.html">
+            
+                    
+                    Linux用户和用户组管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="Linux用户增删改等学习.html">
+            
+                <a href="Linux用户增删改等学习.html">
+            
+                    
+                    Linux用户增删改等学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="Linux程序存放目录.html">
+            
+                <a href="Linux程序存放目录.html">
+            
+                    
+                    Linux程序存放目录.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="Linux编译安装软件包详解.html">
+            
+                <a href="Linux编译安装软件包详解.html">
+            
+                    
+                    Linux C/C++ 软件包编译、安装原理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="SSH详解.html">
+            
+                <a href="SSH详解.html">
+            
+                    
+                    SSH 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="Tomcat和Ngnix和Apache.html">
+            
+                <a href="Tomcat和Ngnix和Apache.html">
+            
+                    
+                    Tomcat和Ngnix和Apache.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="UbuntuSoftwareInstall.html">
+            
+                <a href="UbuntuSoftwareInstall.html">
+            
+                    
+                    Ubuntu 软件包安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="YAML-配置文件语言.html">
+            
+                <a href="YAML-配置文件语言.html">
+            
+                    
+                    YAML 配置文件语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="bin目录详解.html">
+            
+                <a href="bin目录详解.html">
+            
+                    
+                    bin目录详解.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="ffmpeg详解.html">
+            
+                <a href="ffmpeg详解.html">
+            
+                    
+                    ffmpeg学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.18" data-path="trans命令.html">
+            
+                <a href="trans命令.html">
+            
+                    
+                    trans命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="yum和rpm.html">
+            
+                <a href="yum和rpm.html">
+            
+                    
+                    Yum 和 RPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                <a href="从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                    
+                    Linux环境变量详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="新创建主机常用初始化配置.html">
+            
+                <a href="新创建主机常用初始化配置.html">
+            
+                    
+                    新建主机常用初始化配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="正则表达式学习.html">
+            
+                <a href="正则表达式学习.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="通过Linux开机启动项展开学习.html">
+            
+                <a href="通过Linux开机启动项展开学习.html">
+            
+                    
+                    Linux开机启动项学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="防火墙学习.html">
+            
+                <a href="防火墙学习.html">
+            
+                    
+                    防火墙学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Python/BeautifulSoup.md">
+            
+                <span>
+            
+                    
+                    Python3 BeautifulSoup 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Python/Django.html">
+            
+                <a href="../Python/Django.html">
+            
+                    
+                    Python Django 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Python/IPython使用技巧.html">
+            
+                <a href="../Python/IPython使用技巧.html">
+            
+                    
+                    IPython 使用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Python/Numpy.html">
+            
+                <a href="../Python/Numpy.html">
+            
+                    
+                    Python Numpy 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Python/Python小知识.html">
+            
+                <a href="../Python/Python小知识.html">
+            
+                    
+                    Python 学习遇到的问题解决或扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Python/Python模块管理总结.html">
+            
+                <a href="../Python/Python模块管理总结.html">
+            
+                    
+                    Python 模块管理总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../Python/flask学习.md">
+            
+                <span>
+            
+                    
+                    Flask 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../Python/matplotlib.html">
+            
+                <a href="../Python/matplotlib.html">
+            
+                    
+                    matplotlib.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../Python/re正则表达式.html">
+            
+                <a href="../Python/re正则表达式.html">
+            
+                    
+                    re正则表达式.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../Python/图形界面学习.html">
+            
+                <a href="../Python/图形界面学习.html">
+            
+                    
+                    图形界面学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../Python/常用图像库学习.html">
+            
+                <a href="../Python/常用图像库学习.html">
+            
+                    
+                    Python3 常用图像库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../Python/进阶学习.html">
+            
+                <a href="../Python/进阶学习.html">
+            
+                    
+                    Python3 进阶学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Shell/">
+            
+                <a href="../Shell/">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Shell/shell小知识.html">
+            
+                <a href="../Shell/shell小知识.html">
+            
+                    
+                    Shell小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Shell/Shell奇淫技巧.html">
+            
+                <a href="../Shell/Shell奇淫技巧.html">
+            
+                    
+                    Shell奇淫技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Shell/Linux文本操作三大利器-grep、sed、awk.html">
+            
+                <a href="../Shell/Linux文本操作三大利器-grep、sed、awk.html">
+            
+                    
+                    grep、sed、awk 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Shell/Shell文本处理常用工具补遗.html">
+            
+                <a href="../Shell/Shell文本处理常用工具补遗.html">
+            
+                    
+                    Shell文本处理常用工具补遗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Shell/句子解析.html">
+            
+                <a href="../Shell/句子解析.html">
+            
+                    
+                    句子解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Shell/识别是否是root用户.html">
+            
+                <a href="../Shell/识别是否是root用户.html">
+            
+                    
+                    识别是否是root用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Shell/识别系统.html">
+            
+                <a href="../Shell/识别系统.html">
+            
+                    
+                    识别系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Vim/Vim小知识.html">
+            
+                <a href="../Vim/Vim小知识.html">
+            
+                    
+                    Vim小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Vim/Vim编辑器再学习.html">
+            
+                <a href="../Vim/Vim编辑器再学习.html">
+            
+                    
+                    Vim编辑器再学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Vim/VimScript学习笔记.html">
+            
+                <a href="../Vim/VimScript学习笔记.html">
+            
+                    
+                    VimScript 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Vim/YouCompleteMe安装.html">
+            
+                <a href="../Vim/YouCompleteMe安装.html">
+            
+                    
+                    YouCompleteMe安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../Vim/vimrc示例1.html">
+            
+                <a href="../Vim/vimrc示例1.html">
+            
+                    
+                    vimrc示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../Vim/vimrc备份.html">
+            
+                <a href="../Vim/vimrc备份.html">
+            
+                    
+                    vimrc备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../Vim/Tmux快捷键.html">
+            
+                <a href="../Vim/Tmux快捷键.html">
+            
+                    
+                    Tmux快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Ansible/">
+            
+                <a href="../Ansible/">
+            
+                    
+                    Ansible
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Ansible/术语表.html">
+            
+                <a href="../Ansible/术语表.html">
+            
+                    
+                    术语表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Ansible/Ansible必知单词.html">
+            
+                <a href="../Ansible/Ansible必知单词.html">
+            
+                    
+                    Ansible 常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Ansible/Ansible学习.html">
+            
+                <a href="../Ansible/Ansible学习.html">
+            
+                    
+                    Ansible 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Ansible/Ansible常用模板.html">
+            
+                <a href="../Ansible/Ansible常用模板.html">
+            
+                    
+                    Ansible常用模板.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Docker/Docker基础学习.html">
+            
+                <a href="../Docker/Docker基础学习.html">
+            
+                    
+                    Docker 基础学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Docker/Docker小知识.html">
+            
+                <a href="../Docker/Docker小知识.html">
+            
+                    
+                    Docker 小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Docker/Docker必知单词.html">
+            
+                <a href="../Docker/Docker必知单词.html">
+            
+                    
+                    Docker 学习中的单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Git/git学习.html">
+            
+                <a href="../Git/git学习.html">
+            
+                    
+                    Git 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Git/git小技巧.html">
+            
+                <a href="../Git/git小技巧.html">
+            
+                    
+                    Git 小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Zabbix/">
+            
+                <a href="../Zabbix/">
+            
+                    
+                    Zabbix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Zabbix/Docker安装配置Zabbix.html">
+            
+                <a href="../Zabbix/Docker安装配置Zabbix.html">
+            
+                    
+                    Docker 安装配置 Zabbix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Zabbix/术语单词.html">
+            
+                <a href="../Zabbix/术语单词.html">
+            
+                    
+                    Zabbix 中常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Zabbix/重置密码.html">
+            
+                <a href="../Zabbix/重置密码.html">
+            
+                    
+                    重置 Zabbix 账户密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../KVM/">
+            
+                <a href="../KVM/">
+            
+                    
+                    KVM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../KVM/安装配置.html">
+            
+                <a href="../KVM/安装配置.html">
+            
+                    
+                    常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../KVM/虚拟机网络配置.html">
+            
+                <a href="../KVM/虚拟机网络配置.html">
+            
+                    
+                    Bridged 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Mysql/Ubuntu安装Navicat.html">
+            
+                <a href="../Mysql/Ubuntu安装Navicat.html">
+            
+                    
+                    Ubuntu 安装及配置 Navicat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Mysql/忘记root密码.html">
+            
+                <a href="../Mysql/忘记root密码.html">
+            
+                    
+                    如何替换已忘记的 root 密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Nginx/Nginx学习笔记.html">
+            
+                <a href="../Nginx/Nginx学习笔记.html">
+            
+                    
+                    Nginx 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../NoClass/">
+            
+                <a href="../NoClass/">
+            
+                    
+                    闲知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../NoClass/容易读错的IT术语.html">
+            
+                <a href="../NoClass/容易读错的IT术语.html">
+            
+                    
+                    容易读错的IT术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../NoClass/Linux-electron-tutorial.html">
+            
+                <a href="../NoClass/Linux-electron-tutorial.html">
+            
+                    
+                    Linux electron 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../NoClass/MarkdownSkills.html">
+            
+                <a href="../NoClass/MarkdownSkills.html">
+            
+                    
+                    记录 Markdown 的各种小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../NoClass/RaspeberryPi.html">
+            
+                <a href="../NoClass/RaspeberryPi.html">
+            
+                    
+                    使用树莓派 3B 遇到的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../NoClass/华为国产手机芯片SoC.html">
+            
+                <a href="../NoClass/华为国产手机芯片SoC.html">
+            
+                    
+                    华为国产手机芯片SoC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../NoClass/图片格式详解及其对比.html">
+            
+                <a href="../NoClass/图片格式详解及其对比.html">
+            
+                    
+                    图片格式详解及其对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="../NoClass/计算机小知识.html">
+            
+                <a href="../NoClass/计算机小知识.html">
+            
+                    
+                    记录一些计算机的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="../NoClass/诗词.html">
+            
+                <a href="../NoClass/诗词.html">
+            
+                    
+                    诗词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../OS/">
+            
+                <a href="../OS/">
+            
+                    
+                    OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../OS/学习笔记.html">
+            
+                <a href="../OS/学习笔记.html">
+            
+                    
+                    操作系统学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../OS/术语单词.html">
+            
+                <a href="../OS/术语单词.html">
+            
+                    
+                    OS 专业词语解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="../OS/SoCCPU.html">
+            
+                <a href="../OS/SoCCPU.html">
+            
+                    
+                    SoC 与 CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Tomcat/">
+            
+                <a href="../Tomcat/">
+            
+                    
+                    Tomcat
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Tomcat/Tomcat 学习.html">
+            
+                <a href="../Tomcat/Tomcat 学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Tomcat/Tomcat学习.html">
+            
+                <a href="../Tomcat/Tomcat学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../VPS/">
+            
+                <a href="../VPS/">
+            
+                    
+                    VPS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../VPS/AWS_lightsail.html">
+            
+                <a href="../VPS/AWS_lightsail.html">
+            
+                    
+                    AWS LightSail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                <a href="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                    
+                    GCP VM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" data-path="../VPS/ECS和VPS等等.html">
+            
+                <a href="../VPS/ECS和VPS等等.html">
+            
+                    
+                    ECS和VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../ComputerComposition/">
+            
+                <a href="../ComputerComposition/">
+            
+                    
+                    ComputerComposition
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../ComputerComposition/学习笔记.html">
+            
+                <a href="../ComputerComposition/学习笔记.html">
+            
+                    
+                    计算机组成原理学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../ComputerNetwork/">
+            
+                <a href="../ComputerNetwork/">
+            
+                    
+                    ComputerNetwork
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../ComputerNetwork/ProWords.html">
+            
+                <a href="../ComputerNetwork/ProWords.html">
+            
+                    
+                    术语单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../ComputerNetwork/学习笔记.html">
+            
+                <a href="../ComputerNetwork/学习笔记.html">
+            
+                    
+                    计算机网络学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../ComputerNetwork/小知识.html">
+            
+                <a href="../ComputerNetwork/小知识.html">
+            
+                    
+                    学习计算机网络中的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" data-path="../NoClass/浏览器架构简析.md">
+            
+                <span>
+            
+                    
+                    浏览器架构简析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../毕业论文/">
+            
+                <a href="../毕业论文/">
+            
+                    
+                    毕业论文
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../毕业论文/开题报告.html">
+            
+                <a href="../毕业论文/开题报告.html">
+            
+                    
+                    开题报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >trans命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="trans-&#x547D;&#x4EE4;&#x8BE6;&#x89E3;"><a name="trans-&#x547D;&#x4EE4;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#trans-&#x547D;&#x4EE4;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/soimort/translate-shell" target="_blank">trans</a> &#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h1>
+<p><img src="images/trans.jpg" alt=""></p>
+<h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
+<h3 id="&#x8F6C;&#x6362;&#x5230;&#x7279;&#x5B9A;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362;&#x5230;&#x4E2D;&#x6587;&#x548C;&#x65E5;&#x6587;"><a name="&#x8F6C;&#x6362;&#x5230;&#x7279;&#x5B9A;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362;&#x5230;&#x4E2D;&#x6587;&#x548C;&#x65E5;&#x6587;" class="plugin-anchor" href="#&#x8F6C;&#x6362;&#x5230;&#x7279;&#x5B9A;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362;&#x5230;&#x4E2D;&#x6587;&#x548C;&#x65E5;&#x6587;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x6362;&#x5230;&#x7279;&#x5B9A;&#x8BED;&#x8A00;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362;&#x5230;&#x4E2D;&#x6587;&#x548C;&#x65E5;&#x6587;</h3>
+<pre><code class="lang-shell">$ trans :en+ja Hello
+Hello
+&#x3053;&#x3093;&#x306B;&#x3061;&#x306F;
+(Kon&apos;nichiwa)
+Hello&#x7684;&#x5B9A;&#x4E49;
+[ English -&gt; &#x65E5;&#x672C;&#x8A9E; ]
+&#x611F;&#x53F9;&#x8BCD;
+    &#x3082;&#x3057;&#x3082;&#x3057;&#xFF01;
+        Hello!
+    &#x4ECA;&#x65E5;&#x306F;!
+        Hi!, Hello!, Good afternoon!, Good day!
+Hello
+    &#x3053;&#x3093;&#x306B;&#x3061;&#x306F;, &#x3082;&#x3057;&#x3082;&#x3057;
+</code></pre>
+<h3 id="&#x6307;&#x5B9A;&#x5F85;&#x8F6C;&#x6362;&#x7684;&#x6E90;&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x8A00;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#x786E;&#x5B9A;&#x624B;&#x7D19;&#x662F;&#x4E2D;&#x6587;&#x6216;&#x65E5;&#x6587;"><a name="&#x6307;&#x5B9A;&#x5F85;&#x8F6C;&#x6362;&#x7684;&#x6E90;&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x8A00;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#x786E;&#x5B9A;&#x624B;&#x7D19;&#x662F;&#x4E2D;&#x6587;&#x6216;&#x65E5;&#x6587;" class="plugin-anchor" href="#&#x6307;&#x5B9A;&#x5F85;&#x8F6C;&#x6362;&#x7684;&#x6E90;&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x8A00;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#x786E;&#x5B9A;&#x624B;&#x7D19;&#x662F;&#x4E2D;&#x6587;&#x6216;&#x65E5;&#x6587;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6307;&#x5B9A;&#x5F85;&#x8F6C;&#x6362;&#x7684;&#x6E90;&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x8A00;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#x786E;&#x5B9A;&#x201C;&#x624B;&#x7D19;&#x201D;&#x662F;&#x4E2D;&#x6587;&#x6216;&#x65E5;&#x6587;</h3>
+<pre><code class="lang-shell">$ trans ja: &#x624B;&#x7D19;
+&#x624B;&#x7D19;
+(Tegami)
+&#x4E00;&#x5C01;&#x4FE1;
+(Y&#x12B; f&#x113;ng x&#xEC;n)
+&#x624B;&#x7D19; &#x7684;&#x7FFB;&#x8BD1;
+[ &#x65E5;&#x672C;&#x8A9E; -&gt; &#x7B80;&#x4F53;&#x4E2D;&#x6587; ]
+&#x624B;&#x7D19;
+    &#x4E00;&#x5C01;&#x4FE1;, &#x4FE1;
+$ trans en: &#x624B;&#x7D19;
+&#x624B;&#x7D19;
+&#x624B;&#x7EB8;
+(Sh&#x1D2;uzh&#x1D0;)
+&#x624B;&#x7D19; &#x7684;&#x7FFB;&#x8BD1;
+[ English -&gt; &#x7B80;&#x4F53;&#x4E2D;&#x6587; ]
+&#x624B;&#x7EB8;
+    &#x624B;&#x7EB8;
+</code></pre>
+<h3 id="&#x8F6C;&#x6362;&#x4E00;&#x4E2A;&#x53E5;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362;-hello-world"><a name="&#x8F6C;&#x6362;&#x4E00;&#x4E2A;&#x53E5;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362;-hello-world" class="plugin-anchor" href="#&#x8F6C;&#x6362;&#x4E00;&#x4E2A;&#x53E5;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362;-hello-world"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6C;&#x6362;&#x4E00;&#x4E2A;&#x53E5;&#x5B50;&#xFF0C;&#x4F8B;&#x5982;&#x8F6C;&#x6362; &#x201C;Hello world&#x201D;</h3>
+<blockquote>
+<p>&#x82E5;&#x4E0D;&#x52A0;&#x5F15;&#x53F7;&#xFF0C;&#x5219;&#x662F;&#x4EE5;&#x5355;&#x4E2A;&#x8BCD;&#x9010;&#x4E2A;&#x7FFB;&#x8BD1;</p>
+</blockquote>
+<pre><code class="lang-shell">$ trans en: &apos;Hello world&apos;
+Hello world
+&#x4F60;&#x597D;&#xFF0C;&#x4E16;&#x754C;
+(N&#x1D0; h&#x1CE;o, sh&#xEC;ji&#xE8;)
+Hello world &#x7684;&#x7FFB;&#x8BD1;
+[ English -&gt; &#x7B80;&#x4F53;&#x4E2D;&#x6587; ]
+Hello world
+    &#x4F60;&#x597D;&#xFF0C;&#x4E16;&#x754C;, &#x4F60;&#x597D;&#x4E16;&#x754C;
+
+# &#x591A;&#x884C;&#x53E5;&#x5B50;&#x7FFB;&#x8BD1;
+$ trans en: &apos;Hello
+world&apos;
+</code></pre>
+<p>&#x8BED;&#x8A00;&#x548C;&#x76F8;&#x5173;&#x7684;&#x66F4;&#x591A;&#x7EC6;&#x8282;&#xFF0C;&#x53C2;&#x89C1;<a href="https://github.com/soimort/translate-shell/wiki/Languages" target="_blank">wiki: Languages</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Language</th>
+<th style="text-align:center">Code</th>
+<th style="text-align:center">Language</th>
+<th style="text-align:center">Code</th>
+<th style="text-align:center">Language</th>
+<th style="text-align:center">Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Afrikaans_language" target="_blank">Afrikaans</a></strong> <br> <strong>Afrikaans</strong></td>
+<td style="text-align:center"><strong><code>af</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hebrew_language" target="_blank">Hebrew</a></strong> <br> <strong>&#x5E2;&#x5B4;&#x5D1;&#x5B0;&#x5E8;&#x5B4;&#x5D9;&#x5EA;</strong></td>
+<td style="text-align:center"><strong><code>he</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Portuguese_language" target="_blank">Portuguese</a></strong> <br> <strong>Portugu&#xEA;s</strong></td>
+<td style="text-align:center"><strong><code>pt</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Albanian_language" target="_blank">Albanian</a></strong> <br> <strong>Shqip</strong></td>
+<td style="text-align:center"><strong><code>sq</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hill_Mari" target="_blank">Hill Mari</a></strong> <br> <strong>&#x41A;&#x44B;&#x440;&#x44B;&#x43A; &#x43C;&#x430;&#x440;&#x44B;</strong></td>
+<td style="text-align:center"><strong><code>mrj</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Punjabi_language" target="_blank">Punjabi</a></strong> <br> <strong>&#xA2A;&#xA70;&#xA1C;&#xA3E;&#xA2C;&#xA40;</strong></td>
+<td style="text-align:center"><strong><code>pa</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Amharic_language" target="_blank">Amharic</a></strong> <br> <strong>&#x12A0;&#x121B;&#x122D;&#x129B;</strong></td>
+<td style="text-align:center"><strong><code>am</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hindi_language" target="_blank">Hindi</a></strong> <br> <strong>&#x939;&#x93F;&#x928;&#x94D;&#x926;&#x940;</strong></td>
+<td style="text-align:center"><strong><code>hi</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Quer&#xE9;taro_Otomi" target="_blank">Quer&#xE9;taro Otomi</a></strong> <br> <strong>H&#xF1;&#x105;&#xF1;ho</strong></td>
+<td style="text-align:center"><strong><code>otq</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Arabic_language" target="_blank">Arabic</a></strong> <br> <strong>&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</strong></td>
+<td style="text-align:center"><strong><code>ar</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hmong_language" target="_blank">Hmong</a></strong> <br> <strong>Hmoob</strong></td>
+<td style="text-align:center"><strong><code>hmn</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Romanian_language" target="_blank">Romanian</a></strong> <br> <strong>Rom&#xE2;n&#x103;</strong></td>
+<td style="text-align:center"><strong><code>ro</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Armenian_language" target="_blank">Armenian</a></strong> <br> <strong>&#x540;&#x561;&#x575;&#x565;&#x580;&#x565;&#x576;</strong></td>
+<td style="text-align:center"><strong><code>hy</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hmong_Daw" target="_blank">Hmong Daw</a></strong> <br> <strong>Hmoob Daw</strong></td>
+<td style="text-align:center"><strong><code>mww</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Russian_language" target="_blank">Russian</a></strong> <br> <strong>&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</strong></td>
+<td style="text-align:center"><strong><code>ru</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Azerbaijani_language" target="_blank">Azerbaijani</a></strong> <br> <strong>Az&#x259;rbaycanca</strong></td>
+<td style="text-align:center"><strong><code>az</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hungarian_language" target="_blank">Hungarian</a></strong> <br> <strong>Magyar</strong></td>
+<td style="text-align:center"><strong><code>hu</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Samoan_language" target="_blank">Samoan</a></strong> <br> <strong>Gagana S&#x101;moa</strong></td>
+<td style="text-align:center"><strong><code>sm</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Bashkir_language" target="_blank">Bashkir</a></strong> <br> <strong>&#x431;&#x430;&#x448;&#x4A1;&#x43E;&#x440;&#x442; &#x442;&#x435;&#x43B;&#x435;</strong></td>
+<td style="text-align:center"><strong><code>ba</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Icelandic_language" target="_blank">Icelandic</a></strong> <br> <strong>&#xCD;slenska</strong></td>
+<td style="text-align:center"><strong><code>is</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Scots_Gaelic" target="_blank">Scots Gaelic</a></strong> <br> <strong>G&#xE0;idhlig</strong></td>
+<td style="text-align:center"><strong><code>gd</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Basque_language" target="_blank">Basque</a></strong> <br> <strong>Euskara</strong></td>
+<td style="text-align:center"><strong><code>eu</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Igbo_language" target="_blank">Igbo</a></strong> <br> <strong>Igbo</strong></td>
+<td style="text-align:center"><strong><code>ig</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Serbian_(Cyrillic" target="_blank">Serbian (Cyrillic)</a>)</strong> <br> <strong>&#x441;&#x440;&#x43F;&#x441;&#x43A;&#x438;</strong></td>
+<td style="text-align:center"><strong><code>sr-Cyrl</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Belarusian_language" target="_blank">Belarusian</a></strong> <br> <strong>&#x431;&#x435;&#x43B;&#x430;&#x440;&#x443;&#x441;&#x43A;&#x430;&#x44F;</strong></td>
+<td style="text-align:center"><strong><code>be</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Indonesian_language" target="_blank">Indonesian</a></strong> <br> <strong>Bahasa Indonesia</strong></td>
+<td style="text-align:center"><strong><code>id</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Serbian_(Latin" target="_blank">Serbian (Latin)</a>)</strong> <br> <strong>srpski</strong></td>
+<td style="text-align:center"><strong><code>sr-Latn</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Bengali_language" target="_blank">Bengali</a></strong> <br> <strong>&#x9AC;&#x9BE;&#x982;&#x9B2;&#x9BE;</strong></td>
+<td style="text-align:center"><strong><code>bn</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Irish_language" target="_blank">Irish</a></strong> <br> <strong>Gaeilge</strong></td>
+<td style="text-align:center"><strong><code>ga</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Sesotho_language" target="_blank">Sesotho</a></strong> <br> <strong>Sesotho</strong></td>
+<td style="text-align:center"><strong><code>st</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Bosnian_language" target="_blank">Bosnian</a></strong> <br> <strong>Bosanski</strong></td>
+<td style="text-align:center"><strong><code>bs</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Italian_language" target="_blank">Italian</a></strong> <br> <strong>Italiano</strong></td>
+<td style="text-align:center"><strong><code>it</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Shona_language" target="_blank">Shona</a></strong> <br> <strong>chiShona</strong></td>
+<td style="text-align:center"><strong><code>sn</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Bulgarian_language" target="_blank">Bulgarian</a></strong> <br> <strong>&#x431;&#x44A;&#x43B;&#x433;&#x430;&#x440;&#x441;&#x43A;&#x438;</strong></td>
+<td style="text-align:center"><strong><code>bg</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Japanese_language" target="_blank">Japanese</a></strong> <br> <strong>&#x65E5;&#x672C;&#x8A9E;</strong></td>
+<td style="text-align:center"><strong><code>ja</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Sindhi_language" target="_blank">Sindhi</a></strong> <br> <strong>&#x633;&#x646;&#x68C;&#x64A;</strong></td>
+<td style="text-align:center"><strong><code>sd</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Cantonese_language" target="_blank">Cantonese</a></strong> <br> <strong>&#x7CB5;&#x8A9E;</strong></td>
+<td style="text-align:center"><strong><code>yue</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Javanese_language" target="_blank">Javanese</a></strong> <br> <strong>Basa Jawa</strong></td>
+<td style="text-align:center"><strong><code>jv</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Sinhala_language" target="_blank">Sinhala</a></strong> <br> <strong>&#xDC3;&#xDD2;&#xD82;&#xDC4;&#xDBD;</strong></td>
+<td style="text-align:center"><strong><code>si</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Catalan_language" target="_blank">Catalan</a></strong> <br> <strong>Catal&#xE0;</strong></td>
+<td style="text-align:center"><strong><code>ca</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Kannada_language" target="_blank">Kannada</a></strong> <br> <strong>&#xC95;&#xCA8;&#xCCD;&#xCA8;&#xCA1;</strong></td>
+<td style="text-align:center"><strong><code>kn</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Slovak_language" target="_blank">Slovak</a></strong> <br> <strong>Sloven&#x10D;ina</strong></td>
+<td style="text-align:center"><strong><code>sk</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Cebuano_language" target="_blank">Cebuano</a></strong> <br> <strong>Cebuano</strong></td>
+<td style="text-align:center"><strong><code>ceb</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Kazakh_language" target="_blank">Kazakh</a></strong> <br> <strong>&#x49A;&#x430;&#x437;&#x430;&#x49B; &#x442;&#x456;&#x43B;&#x456;</strong></td>
+<td style="text-align:center"><strong><code>kk</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Slovenian_language" target="_blank">Slovenian</a></strong> <br> <strong>Sloven&#x161;&#x10D;ina</strong></td>
+<td style="text-align:center"><strong><code>sl</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Chichewa_language" target="_blank">Chichewa</a></strong> <br> <strong>Nyanja</strong></td>
+<td style="text-align:center"><strong><code>ny</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Khmer_language" target="_blank">Khmer</a></strong> <br> <strong>&#x1797;&#x17B6;&#x179F;&#x17B6;&#x1781;&#x17D2;&#x1798;&#x17C2;&#x179A;</strong></td>
+<td style="text-align:center"><strong><code>km</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Somali_language" target="_blank">Somali</a></strong> <br> <strong>Soomaali</strong></td>
+<td style="text-align:center"><strong><code>so</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Chinese_Simplified" target="_blank">Chinese Simplified</a></strong> <br> <strong>&#x7B80;&#x4F53;&#x4E2D;&#x6587;</strong></td>
+<td style="text-align:center"><strong><code>zh-CN</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Klingon_language" target="_blank">Klingon</a></strong> <br> <strong>tlhIngan Hol</strong></td>
+<td style="text-align:center"><strong><code>tlh</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Spanish_language" target="_blank">Spanish</a></strong> <br> <strong>Espa&#xF1;ol</strong></td>
+<td style="text-align:center"><strong><code>es</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Chinese_Traditional" target="_blank">Chinese Traditional</a></strong> <br> <strong>&#x6B63;&#x9AD4;&#x4E2D;&#x6587;</strong></td>
+<td style="text-align:center"><strong><code>zh-TW</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Klingon_(pIqaD" target="_blank">Klingon (pIqaD)</a>)</strong> <br> <strong>&#xF8E4;&#xF8D7;&#xF8DC;&#xF8D0;&#xF8DB; &#xF8D6;&#xF8DD;&#xF8D9;</strong></td>
+<td style="text-align:center"><strong><code>tlh-Qaak</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Sundanese_language" target="_blank">Sundanese</a></strong> <br> <strong>Basa Sunda</strong></td>
+<td style="text-align:center"><strong><code>su</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Corsican_language" target="_blank">Corsican</a></strong> <br> <strong>Corsu</strong></td>
+<td style="text-align:center"><strong><code>co</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Korean_language" target="_blank">Korean</a></strong> <br> <strong>&#xD55C;&#xAD6D;&#xC5B4;</strong></td>
+<td style="text-align:center"><strong><code>ko</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Swahili_language" target="_blank">Swahili</a></strong> <br> <strong>Kiswahili</strong></td>
+<td style="text-align:center"><strong><code>sw</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Croatian_language" target="_blank">Croatian</a></strong> <br> <strong>Hrvatski</strong></td>
+<td style="text-align:center"><strong><code>hr</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Kurdish_language" target="_blank">Kurdish</a></strong> <br> <strong>Kurd&#xEE;</strong></td>
+<td style="text-align:center"><strong><code>ku</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Swedish_language" target="_blank">Swedish</a></strong> <br> <strong>Svenska</strong></td>
+<td style="text-align:center"><strong><code>sv</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Czech_language" target="_blank">Czech</a></strong> <br> <strong>&#x10C;e&#x161;tina</strong></td>
+<td style="text-align:center"><strong><code>cs</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Kyrgyz_language" target="_blank">Kyrgyz</a></strong> <br> <strong>&#x41A;&#x44B;&#x440;&#x433;&#x44B;&#x437;&#x447;&#x430;</strong></td>
+<td style="text-align:center"><strong><code>ky</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Tahitian_language" target="_blank">Tahitian</a></strong> <br> <strong>Reo Tahiti</strong></td>
+<td style="text-align:center"><strong><code>ty</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Danish_language" target="_blank">Danish</a></strong> <br> <strong>Dansk</strong></td>
+<td style="text-align:center"><strong><code>da</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Lao_language" target="_blank">Lao</a></strong> <br> <strong>&#xEA5;&#xEB2;&#xEA7;</strong></td>
+<td style="text-align:center"><strong><code>lo</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Tajik_language" target="_blank">Tajik</a></strong> <br> <strong>&#x422;&#x43E;&#x4B7;&#x438;&#x43A;&#x4E3;</strong></td>
+<td style="text-align:center"><strong><code>tg</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Dutch_language" target="_blank">Dutch</a></strong> <br> <strong>Nederlands</strong></td>
+<td style="text-align:center"><strong><code>nl</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Latin_language" target="_blank">Latin</a></strong> <br> <strong>Latina</strong></td>
+<td style="text-align:center"><strong><code>la</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Tamil_language" target="_blank">Tamil</a></strong> <br> <strong>&#xBA4;&#xBAE;&#xBBF;&#xBB4;&#xBCD;</strong></td>
+<td style="text-align:center"><strong><code>ta</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Eastern_Mari" target="_blank">Eastern Mari</a></strong> <br> <strong>&#x41E;&#x43B;&#x44B;&#x43A; &#x43C;&#x430;&#x440;&#x438;&#x439;</strong></td>
+<td style="text-align:center"><strong><code>mhr</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Latvian_language" target="_blank">Latvian</a></strong> <br> <strong>Latvie&#x161;u</strong></td>
+<td style="text-align:center"><strong><code>lv</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Tatar_language" target="_blank">Tatar</a></strong> <br> <strong>&#x442;&#x430;&#x442;&#x430;&#x440;&#x447;&#x430;</strong></td>
+<td style="text-align:center"><strong><code>tt</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Emoji_language" target="_blank">Emoji</a></strong> <br> <strong>Emoji</strong></td>
+<td style="text-align:center"><strong><code>emj</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Lithuanian_language" target="_blank">Lithuanian</a></strong> <br> <strong>Lietuvi&#x173;</strong></td>
+<td style="text-align:center"><strong><code>lt</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Telugu_language" target="_blank">Telugu</a></strong> <br> <strong>&#xC24;&#xC46;&#xC32;&#xC41;&#xC17;&#xC41;</strong></td>
+<td style="text-align:center"><strong><code>te</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/English_language" target="_blank">English</a></strong> <br> <strong>English</strong></td>
+<td style="text-align:center"><strong><code>en</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Luxembourgish_language" target="_blank">Luxembourgish</a></strong> <br> <strong>L&#xEB;tzebuergesch</strong></td>
+<td style="text-align:center"><strong><code>lb</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Thai_language" target="_blank">Thai</a></strong> <br> <strong>&#xE44;&#xE17;&#xE22;</strong></td>
+<td style="text-align:center"><strong><code>th</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Esperanto_language" target="_blank">Esperanto</a></strong> <br> <strong>Esperanto</strong></td>
+<td style="text-align:center"><strong><code>eo</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Macedonian_language" target="_blank">Macedonian</a></strong> <br> <strong>&#x41C;&#x430;&#x43A;&#x435;&#x434;&#x43E;&#x43D;&#x441;&#x43A;&#x438;</strong></td>
+<td style="text-align:center"><strong><code>mk</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Tongan_language" target="_blank">Tongan</a></strong> <br> <strong>Lea faka-Tonga</strong></td>
+<td style="text-align:center"><strong><code>to</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Estonian_language" target="_blank">Estonian</a></strong> <br> <strong>Eesti</strong></td>
+<td style="text-align:center"><strong><code>et</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Malagasy_language" target="_blank">Malagasy</a></strong> <br> <strong>Malagasy</strong></td>
+<td style="text-align:center"><strong><code>mg</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Turkish_language" target="_blank">Turkish</a></strong> <br> <strong>T&#xFC;rk&#xE7;e</strong></td>
+<td style="text-align:center"><strong><code>tr</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Fijian_language" target="_blank">Fijian</a></strong> <br> <strong>Vosa Vakaviti</strong></td>
+<td style="text-align:center"><strong><code>fj</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Malay_language" target="_blank">Malay</a></strong> <br> <strong>Bahasa Melayu</strong></td>
+<td style="text-align:center"><strong><code>ms</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Udmurt_language" target="_blank">Udmurt</a></strong> <br> <strong>&#x443;&#x434;&#x43C;&#x443;&#x440;&#x442;</strong></td>
+<td style="text-align:center"><strong><code>udm</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Filipino_language" target="_blank">Filipino</a></strong> <br> <strong>Tagalog</strong></td>
+<td style="text-align:center"><strong><code>tl</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Malayalam_language" target="_blank">Malayalam</a></strong> <br> <strong>&#xD2E;&#xD32;&#xD2F;&#xD3E;&#xD33;&#xD02;</strong></td>
+<td style="text-align:center"><strong><code>ml</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Ukrainian_language" target="_blank">Ukrainian</a></strong> <br> <strong>&#x423;&#x43A;&#x440;&#x430;&#x457;&#x43D;&#x441;&#x44C;&#x43A;&#x430;</strong></td>
+<td style="text-align:center"><strong><code>uk</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Finnish_language" target="_blank">Finnish</a></strong> <br> <strong>Suomi</strong></td>
+<td style="text-align:center"><strong><code>fi</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Maltese_language" target="_blank">Maltese</a></strong> <br> <strong>Malti</strong></td>
+<td style="text-align:center"><strong><code>mt</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Urdu_language" target="_blank">Urdu</a></strong> <br> <strong>&#x627;&#x64F;&#x631;&#x62F;&#x64F;&#x648;</strong></td>
+<td style="text-align:center"><strong><code>ur</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/French_language" target="_blank">French</a></strong> <br> <strong>Fran&#xE7;ais</strong></td>
+<td style="text-align:center"><strong><code>fr</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Maori_language" target="_blank">Maori</a></strong> <br> <strong>M&#x101;ori</strong></td>
+<td style="text-align:center"><strong><code>mi</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Uzbek_language" target="_blank">Uzbek</a></strong> <br> <strong>O&#x2BB;zbek tili</strong></td>
+<td style="text-align:center"><strong><code>uz</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Frisian_language" target="_blank">Frisian</a></strong> <br> <strong>Frysk</strong></td>
+<td style="text-align:center"><strong><code>fy</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Marathi_language" target="_blank">Marathi</a></strong> <br> <strong>&#x92E;&#x930;&#x93E;&#x920;&#x940;</strong></td>
+<td style="text-align:center"><strong><code>mr</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Vietnamese_language" target="_blank">Vietnamese</a></strong> <br> <strong>Ti&#x1EBF;ng Vi&#x1EC7;t</strong></td>
+<td style="text-align:center"><strong><code>vi</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Galician_language" target="_blank">Galician</a></strong> <br> <strong>Galego</strong></td>
+<td style="text-align:center"><strong><code>gl</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Mongolian_language" target="_blank">Mongolian</a></strong> <br> <strong>&#x41C;&#x43E;&#x43D;&#x433;&#x43E;&#x43B;</strong></td>
+<td style="text-align:center"><strong><code>mn</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Welsh_language" target="_blank">Welsh</a></strong> <br> <strong>Cymraeg</strong></td>
+<td style="text-align:center"><strong><code>cy</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Georgian_language" target="_blank">Georgian</a></strong> <br> <strong>&#x10E5;&#x10D0;&#x10E0;&#x10D7;&#x10E3;&#x10DA;&#x10D8;</strong></td>
+<td style="text-align:center"><strong><code>ka</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Myanmar_language" target="_blank">Myanmar</a></strong> <br> <strong>&#x1019;&#x103C;&#x1014;&#x103A;&#x1019;&#x102C;&#x1005;&#x102C;</strong></td>
+<td style="text-align:center"><strong><code>my</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Xhosa_language" target="_blank">Xhosa</a></strong> <br> <strong>isiXhosa</strong></td>
+<td style="text-align:center"><strong><code>xh</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/German_language" target="_blank">German</a></strong> <br> <strong>Deutsch</strong></td>
+<td style="text-align:center"><strong><code>de</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Nepali_language" target="_blank">Nepali</a></strong> <br> <strong>&#x928;&#x947;&#x92A;&#x93E;&#x932;&#x940;</strong></td>
+<td style="text-align:center"><strong><code>ne</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Yiddish_language" target="_blank">Yiddish</a></strong> <br> <strong>&#x5D9;&#x5D9;&#x5B4;&#x5D3;&#x5D9;&#x5E9;</strong></td>
+<td style="text-align:center"><strong><code>yi</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Greek_language" target="_blank">Greek</a></strong> <br> <strong>&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</strong></td>
+<td style="text-align:center"><strong><code>el</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Norwegian_language" target="_blank">Norwegian</a></strong> <br> <strong>Norsk</strong></td>
+<td style="text-align:center"><strong><code>no</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Yoruba_language" target="_blank">Yoruba</a></strong> <br> <strong>Yor&#xF9;b&#xE1;</strong></td>
+<td style="text-align:center"><strong><code>yo</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Gujarati_language" target="_blank">Gujarati</a></strong> <br> <strong>&#xA97;&#xAC1;&#xA9C;&#xAB0;&#xABE;&#xAA4;&#xAC0;</strong></td>
+<td style="text-align:center"><strong><code>gu</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Papiamento_language" target="_blank">Papiamento</a></strong> <br> <strong>Papiamentu</strong></td>
+<td style="text-align:center"><strong><code>pap</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Yucatec_Maya" target="_blank">Yucatec Maya</a></strong> <br> <strong>M&#xE0;aya T&apos;&#xE0;an</strong></td>
+<td style="text-align:center"><strong><code>yua</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Haitian_Creole" target="_blank">Haitian Creole</a></strong> <br> <strong>Krey&#xF2;l Ayisyen</strong></td>
+<td style="text-align:center"><strong><code>ht</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Pashto_language" target="_blank">Pashto</a></strong> <br> <strong>&#x67E;&#x69A;&#x62A;&#x648;</strong></td>
+<td style="text-align:center"><strong><code>ps</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Zulu_language" target="_blank">Zulu</a></strong> <br> <strong>isiZulu</strong></td>
+<td style="text-align:center"><strong><code>zu</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hausa_language" target="_blank">Hausa</a></strong> <br> <strong>Hausa</strong></td>
+<td style="text-align:center"><strong><code>ha</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Persian_language" target="_blank">Persian</a></strong> <br> <strong>&#x641;&#x627;&#x631;&#x633;&#x6CC;</strong></td>
+<td style="text-align:center"><strong><code>fa</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Hawaiian_language" target="_blank">Hawaiian</a></strong> <br> <strong>&#x2BB;&#x14C;lelo Hawai&#x2BB;i</strong></td>
+<td style="text-align:center"><strong><code>haw</code></strong></td>
+<td style="text-align:center"><strong><a href="http://en.wikipedia.org/wiki/Polish_language" target="_blank">Polish</a></strong> <br> <strong>Polski</strong></td>
+<td style="text-align:center"><strong><code>pl</code></strong></td>
+</tr>
+</tbody>
+</table>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-01-04 15:54:38 </span> </footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ffmpeg详解.html" class="navigation navigation-prev " aria-label="Previous page: ffmpeg学习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="yum和rpm.html" class="navigation navigation-next " aria-label="Next page: Yum 和 RPM">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"trans命令","level":"1.4.18","depth":2,"next":{"title":"Yum 和 RPM","level":"1.4.19","depth":2,"path":"Linux/yum和rpm.md","ref":"Linux/yum和rpm.md","articles":[]},"previous":{"title":"ffmpeg学习","level":"1.4.17","depth":2,"path":"Linux/ffmpeg详解.md","ref":"Linux/ffmpeg详解.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Linux/trans命令.md","mtime":"2020-01-04T07:54:38.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-28T02:57:41.582Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
