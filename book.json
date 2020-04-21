@@ -1,0 +1,68 @@
+{
+    "language":"zh-hans",
+    "title":"日常学习笔记",
+    "description":"日常学习笔记",
+    "plugins": [
+        "-lunr",
+        "-search",
+        "-livereload",
+        "-sharing",
+        "expandable-chapters",
+        "popup",
+        "pageview-count",
+        "code",
+        "back-to-top-button",
+        "hide-element",
+        "github-buttons",
+        "github",
+        "splitter",
+        "search-pro",
+        "anchors",
+        "page-footer-ex",
+        "advanced-emoji",
+        "sharing-plus"
+    ],
+    "pluginsConfig": {
+        "github-buttons": {
+            "buttons": [{
+                    "user": "Xiechengqi",
+                    "repo": "LearningNotes",
+                    "type": "star",
+                    "size": "small",
+                    "count": true
+                }
+            ]
+        },
+        "github": {
+            "url":"https://github.com/Xiechengqi/LearningNotes"
+        },
+     	"page-footer-ex": {
+            "copyright": "[Xiechengqi](https://github.com/Xiechengqi)",
+            "markdown": true,
+            "update_label": "<strong>最新修订时间：</strong>",
+            "update_format": "YYYY-MM-DD HH:mm:ss"
+        },
+       "sharing": {
+       "douban": false,
+       "facebook": false,
+       "google": false,
+       "hatenaBookmark": false,
+       "instapaper": false,
+       "line": false,
+       "linkedin": false,
+       "messenger": false,
+       "pocket": false,
+       "qq": false,
+       "qzone": false,
+       "stumbleupon": false,
+       "twitter": false,
+       "viber": false,
+       "vk": false,
+       "weibo": false,
+       "whatsapp": false
+       },
+       "hide-element": {
+            "elements": [".gitbook-link"]
+       }
+   }
+}
