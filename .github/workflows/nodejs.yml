@@ -23,8 +23,7 @@ jobs:
       env:
         CI: true
     - name: Deploy to Aliyun oss
-    - uses: actions/checkout@master
-    - uses: manyuanrong/setup-ossutil@v1.0
+      uses: manyuanrong/setup-ossutil@v1.0
       with:
         endpoint: "oss-cn-shanghai.aliyuncs.com"
         access-key-id: ${{ secrets.ALI_ACCESS_KEY_ID }}
