@@ -22,7 +22,6 @@ jobs:
         gitbook build
       env:
         CI: true
-    - name: Delply to https://github.com/Xiechengqi/LearningNotes
     - name: Deploy to Aliyun oss
     - uses: actions/checkout@master
     - uses: manyuanrong/setup-ossutil@v1.0
