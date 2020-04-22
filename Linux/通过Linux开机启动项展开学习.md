@@ -1,15 +1,15 @@
 # 通过 Linux 开机启动项学习
 
 ## 目录
-* [**相关文章**](#相关文章top)
-* [**一、简述 Linux 开机启动流程**](#一简述-linux-开机启动流程-top)
-* [**二、开机启动相关文件**](#二开机启动相关文件-top)
-* [**三、Linux 管理守护进程两种方式**](#三Linux-管理守护进程两种方式-top)
-* [**四、设置开机启动方法**](#四设置开机启动方法-top)
+* [**相关文章**](#[相关文章]top)
+* [**一、简述 Linux 开机启动流程**](#一、简述-linux-开机启动流程-top)
+* [**二、开机启动相关文件**](#二、开机启动相关文件-top)
+* [**三、Linux 管理守护进程两种方式**](#三、Linux-管理守护进程两种方式-top)
+* [**四、设置开机启动方法**](#四、设置开机启动方法-top)
 
 ## 【相关文章】[[Top]](#目录)
 
-> * [ - 阮一峰]()
+> * [ 计算机是如何启动的？- 阮一峰](http://www.ruanyifeng.com/blog/2013/02/booting.html)
 > * [Linux 的启动流程 - 阮一峰](http://www.ruanyifeng.com/blog/2013/08/linux_boot_process.html)
 > * [Linux 守护进程的启动方法 - 阮一峰](http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html)
 > * [Systemd 入门教程：命令篇 - 阮一峰](http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html)
@@ -19,7 +19,8 @@
 
 <div align=center>
 <img src="./images/computer_start.png"><br/>
-这个过程不涉及操作系统，只与主板的板载程序有关
+这个过程不涉及操作系统，只与主板的板载程序有关<br/>
+详情可看<a  href="http://www.ruanyifeng.com/blog/2013/02/booting.html">计算机是如何启动的？</a>
 </div>
 
 <div align=center>
@@ -136,15 +137,15 @@ lrwxrwxrwx 1 root root 16 Oct  4 12:56 K01polipo -> ../init.d/polipo
 
 **命名规则**
 
-* 通常在服务的名字后面加上 `d`，即表示守护进程，比如 sshd、teamviewerd、etc
+* 通常在服务的名字后面加上 `d`，即表示守护进程，比如 sshd、teamviewerd 等等
 
 ### 守护进程两种管理方式 
 
-**`service`**
+#### service
 
-**`service sshd start`** ---> **`/etc/init.d/sshd`** ---> **`/usr/sbin/sshd 参数1 参数2 ...`** ---> **`成功启动 ssh`**
+**`service sshd start`** ---> **`加载 /lib/systemd/system/ssh.service`** ---> **`/etc/init.d/sshd`** ---> **`/usr/sbin/sshd 参数1 参数2 ...`** ---> **`成功启动 ssh`**
 
-* `相关文件` - `/etc/init.d`、`/usr/sbin/service`、etc
+* `相关文件` - `/etc/init.d`、`/usr/sbin/service` 等等
 * `which service`   - `/usr/sbin/service`
 * `file service` - `POSIX shell script`
 * `file /etc/init.d/ssh` - `POSIX shell script` - `/etc/init.d` 目录下全是守护进程的执行脚本
@@ -153,9 +154,9 @@ lrwxrwxrwx 1 root root 16 Oct  4 12:56 K01polipo -> ../init.d/polipo
 * 所以，`service mysql start` 其实就是 `/etc/init.d/mysql start`
 * `/etc/init.d` 目录存在是为了封装直接使用命令操控守护进程传入各种参数等操作过程，通过查看该目录下脚本，简化言之就是通过调用 `/usr/bin`、`/usr/sbin/`等目录下守护进程对应可执行文件并传以各种参数，达到只需要 `/etc/init.d/xxx start|stop|reload|....` 就可以操控守护进程的目的
 
-**`systemctl`**
+#### systemctl
 
-* `相关文件` - `/etc/systemd/system`、`/lib/systemd/system`(ubuntu)、`/usr/lib/systemd/system`(RedHat)、etc
+* `相关文件` - `/etc/systemd/system`、`/lib/systemd/system`(ubuntu)、`/usr/lib/systemd/system`(RedHat) 等等
 * 可使用 `man systemd.unit` 查看各个文件解释
 * systemctl 是 Linux 系统最新初始化系统的守护进程 **systemd**  对应的进程管理命令
 * 对于那些支持 systemd 的软件，安装的时候，会自动在 `/usr/lib/systemd/system` 目录添加一个配置文件
@@ -163,7 +164,7 @@ lrwxrwxrwx 1 root root 16 Oct  4 12:56 K01polipo -> ../init.d/polipo
 
 ## 四、设置开机启动方法 [[Top]](#目录)
 
-### 1. 编辑`/etc/rc.local`文件
+### 1、 编辑`/etc/rc.local`文件
 
 > 没有的话自己创建
 
@@ -185,7 +186,7 @@ touch /var/lock/subsys/local
 /usr/local/thttpd/sbin/thttpd  -C /usr/local/thttpd/etc/thttpd.conf
 ```
 
-### 2. 使用 `chkconfig \ systemctl` 命令
+### 2、 使用 `chkconfig \ systemctl` 命令
 
 > 早期的 Linux 版本是用 chkconfig 命令来设置 rc 的 link，设置开机启动项；用 service 命令调用服务的 start、stop、restart、status 等函数。在现在主流 Linux 版本已经将这两个命令合并成一个 systemctl 命令了，映射关系如下:
 
@@ -202,7 +203,7 @@ touch /var/lock/subsys/local
 | 关闭服务 | service httpd stop | systemctl stop httpd.service |
 | 重启服务 | service httpd restart | systemctl restart httpd.service |
 
-### 3. 自己写一个shell脚本
+### 3、自己写一个shell脚本
 
 将写好的脚本（ .sh 文件）放到目录 `/etc/profile.d/` 下，系统启动后就会自动执行该目录下的所有 shell 脚本。
 
@@ -211,7 +212,7 @@ touch /var/lock/subsys/local
 /etc/profile.d 文件夹中文件
 </div>
 
-### 4. 添加一个开机启动服务
+### 4、添加一个开机启动服务
 
 将你的启动脚本复制到` /etc/init.d`目录下，并设置脚本权限, 假设脚本为 test
 

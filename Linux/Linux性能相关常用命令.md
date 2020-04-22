@@ -390,20 +390,19 @@ ps -U root -u root u
 ### 常用命令
 
 ``` shell
-lsof -i                                          # 列出所有的网络连接
-lsof -i :80                                   # 列出 80 端口目前打开的文件列表
-lsof -i tcp                                   # 列出所有的 TCP 网络连接信息
-lsof -i udp                                 # 列出所有的 UDP 网络连接信息
-lsof -i tcp:80                            # 列出 80 端口 TCP 协议的所有连接信息
-lsof -i udp:25                          # 列出 25 端口 UDP 协议的所有连接信息
-lsof -c ngin                              # 列出以 ngin 开头的进程打开的文件列表
-lsof -p 20711                          # 列出指定进程打开的文件列表
-lsof -u xcq                                # 列出指定用户打开的文件列表
-lsof -u xcq -i tcp                    # 将所有的 TCP 网络连接信息和指定用户打开的文件列表信息一起输出
+lsof -i                          # 列出所有的网络连接
+lsof -i :80                       # 列出 80 端口目前打开的文件列表
+lsof -i tcp                     # 列出所有的 TCP 网络连接信息
+lsof -i udp                     # 列出所有的 UDP 网络连接信息
+lsof -i tcp:80             # 列出 80 端口 TCP 协议的所有连接信息
+lsof -i udp:25           # 列出 25 端口 UDP 协议的所有连接信息
+lsof -c ngin           # 列出以 ngin 开头的进程打开的文件列表
+lsof -p 20711              # 列出指定进程打开的文件列表
+lsof -u xcq                      # 列出指定用户打开的文件列表
+lsof -u xcq -i tcp             # 将所有的 TCP 网络连接信息和指定用户打开的文件列表信息一起输出
 lsof -a -u uasp -i tcp            # 将指定用户打开的文件列表信息，同时是 TCP 网络连接信息的一起输出；注意和上一条命令进行对比
-lsof +d /usr/local/                # 列出目录下被进程打开的文件列表
-lsof +D /usr/local/                # 递归搜索目录下被进程打开的文件列表
-
+lsof +d /usr/local/         # 列出目录下被进程打开的文件列表
+lsof +D /usr/local/         # 递归搜索目录下被进程打开的文件列表
 lsof -i @peida.linux:20,21,22,80 -r 3                     
 # 列出目前连接到主机 peida.linux 上端口为 20，21，22，80相关的所有文件信息，且每隔 3 秒不断的执行 lsof 指令
 ```
@@ -481,8 +480,9 @@ systemd      1                            root   mem     REG              8,2   
   * `-c` - 每隔一个固定时间，执行该 netstat 命令
   * `-i` - 显示网卡接口信息
   
-  ### 常用命令
-  
+
+### 常用命令
+
 ``` shell
   netstat -antp                                      # 以数字的形式显示所有的 TCP 连接，并显示对应程序所监听的端口号
   netstat -anup                                     # 以数字的形式显示所有的 UDP 连接，并显示对应程序所监听的端口号
@@ -639,7 +639,7 @@ top -p 1138  #显示进程号为1138 的进程信息，CPU、内存占用率等
 
 ### 命令输出详解
 
-**`top**</top>
+**`top`**
 
  ``` shell
  $ top
@@ -722,9 +722,8 @@ KiB Swap:  8275964 total,  8273784 free,     2180 used.  3538032 avail Mem
 ### 常用命令
 
 ``` shell
-                                                                       # ip address - 设定与 IP 有关的各项参数，包括 netmask， broadcast 等
-                                                                       
-ip addr show                             # 显示网卡及配置的地址信息，也可用 ip a s 或 ip a
+ip address  # 设定与 IP 有关的各项参数，包括 netmask， broadcast 等 
+ip addr show      # 显示网卡及配置的地址信息，也可用 ip a s 或 ip a
 # ip address [add|del] [IP参数] [dev 设备名] [相关参数]
 # [add|del]：进行相关参数的增加(add)或删除(del)设定
 # [IP 参数] ：主要就是网域的设定，例如 192.168.100.100/24 之类的设定
@@ -740,36 +739,32 @@ ip addr show                             # 显示网卡及配置的地址信息�
 ip addr add 192.168.0.50/255.255.255.0 dev eth0       # 为网卡分配 IP 地址以及其他网络信息
 ip addr add broadcast 192.168.0.255 dev eth0             # 设置广播地址
 ip addr add 192.168.0.20/24 dev eth0 label eth0:1     # 添加 eth0 网卡别名
-ip addr del 192.168.0.10/24 dev eth0                                # 删除网卡中配置的 IP 地址
+ip addr del 192.168.0.10/24 dev eth0   # 删除网卡中配置的 IP 地址
 
 
-# ip link - 可以操作与设备( device )有关的相关设定，包括 MTU 以及该网络设备的 MAC 等，也可以启动 ( up ) 或关闭 ( down ) 某个网络设备
+ip link # 可以操作与设备( device )有关的相关设定，包括 MTU 以及该网络设备的 MAC 等，也可以启动 ( up ) 或关闭 ( down ) 某个网络设备
 
-ip -s link                                      # 显示所有网络接口的统计数据
-ip link set eth0 up                   # 启用网卡名为 etho0 的网卡
-ip link set eth0 down             # 禁用网卡
+ip -s link          # 显示所有网络接口的统计数据
+ip link set eth0 up       # 启用网卡名为 etho0 的网卡
+ip link set eth0 down         # 禁用网卡
 ip link set eth0 mtu 1000     # 更改 MTU 为 1000 bytes
 ip link set ent0 name eth1  # 更改网卡名字
 
-
-                                  # ip route -  路由配置,功能几乎与 route 这个命令一样，但是，它还可以进行额外的参数设置
-                                  
-ip route show                            # 查看路由信息，也可用 ip r s 或 ip r
+ip route # 路由配置,功能几乎与 route 这个命令一样，但是，它还可以进行额外的参数设置                        
+ip route show      # 查看路由信息，也可用 ip r s 或 ip r
 ip route get 119.75.216.20   # 通过 IP 地址查询路由包从哪条路由来
 # ip route [add|del] [IP或网域] [via gateway] [dev 设备]
           # [add|del]：增加 ( add ) 或删除 ( del ) 路由
           # [IP或网域]：可使用 192.168.50.0/24 之类的网域或者是单纯的 IP 
           # [via gateway]：从哪个 gateway 出去，不一定需要
           # [dev 设备名]：所要设定的设备，例如 eth0, eth1 等
-ip route add default via 192.168.0.150/24                          #  修改当前默认路由为 192.168.0.150
-ip route add 172.16.32.32 via 192.168.0.150/24 dev eth0          # 添加特定网卡的路由，增加通往外部路由
-ip route del 192.168.0.150/24                   # 删除路由
-ip route flush cache                # 刷新路由表
-
+ip route add default via 192.168.0.150/24    #  修改当前默认路由为 192.168.0.150
+ip route add 172.16.32.32 via 192.168.0.150/24 dev eth0   # 添加特定网卡的路由，增加通往外部路由
+ip route del 192.168.0.150/24            # 删除路由
+ip route flush cache           # 刷新路由表
 
 # 检查所有的 ARP 记录
 ip neigh
-
 ```
 
 ### 命令输出详解
