@@ -25,10 +25,10 @@ jobs:
 
     - name: Deploy to gh-pages branch
       uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: ./_book/
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: ./_book/
 
     - name: Deploy to Aliyun oss
       uses: manyuanrong/setup-ossutil@v1.0
