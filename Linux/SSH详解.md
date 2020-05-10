@@ -32,6 +32,9 @@
 
 **`ssh -vvv <user>@<hostip>`** - 打印最详细的运行情况和调试信息
 
+**`ssh -T git@xxx.com`** - 测试 ssh 密钥连接是否成功
+> 比如测试 github: `ssh -T git@github.com`，gitee: `ssh -T git@gitee.com`
+
 **`ssh <user>@<hostip>`** - 登录 host
 
 **`ssh -J  <跳板机登录用户>@<ip>:<port> <目标机登录用户>@<ip> -p <port> `**- 通过跳板机登录目标机
@@ -62,6 +65,16 @@ scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1 
 
 **`ssh-keygen -t dsa`** - 在`~/.ssh/` 下生成 dsa 公私密钥对
 
+**`ssh-keygen -t rsa -C '电子邮箱'`**
+
+**`ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub`** - 如果您有 OpenSSH 私钥（`id_rsa` 文件），则可以使用以下命令生成 OpenSSH 公钥文件
+ 
+
+**`ssh-keyscan`**
+
+**`ssh-add`**
+
+**`ssh-keysign`**
 **`ssh-copy-id <user>@<hostip>`**  -  默认将本地主机公钥 `~/.ssh/id_rsa.pub ` 添加到远程服务器 `<user>/.ssh/authorized_keys` 文件中，实现无密码登录
 
 **`ssh-copy-id -i <公钥路径>/id_rsa.pub <user>@<hostip>`** - 将本地主机公钥 `公钥路径` 中的 `id_rsa.pub`  添加到远程服务器 `<user>/.ssh/authorized_keys`  文件中，实现无密码登录

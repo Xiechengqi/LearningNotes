@@ -10,9 +10,13 @@
 
 当下持续集成工具不胜枚举，开源的或商业的，可本地安装的或 Sass 的，如：
 
-- 当前最最流行的，一骑绝尘的 Jenkins
-- 与 Github 紧密集成的 Travis CI
-- 有着持续集成 DNA 的 ThoughtWorks GO
-- Atlassian 工具链之一的 Bamboo
-- 与 Gitlab 紧密集成的 Gitlab CI
+- Jenkins
+- Github Action
+- Travis CI
+- Drone
+- Gitlab CI
+- Circle CI
+- CodeShip
+- Bamboo
+- ThoughtWorks GO
 - ……
