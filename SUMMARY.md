@@ -15,9 +15,7 @@
   * [Linux常用命令](Linux/Linux常用命令.md)
   * [平时 linux 遇到的问题解决办法和扩展小知识](Linux/Linux小知识.md)
   * [Linux性能相关常用命令](Linux/Linux性能相关常用命令.md)
-  
   * [Linux各种安装下载慢解决方法](Linux/Linux各种安装下载慢解决方法.md)
-  
   * [APT 原理剖析、详解](Linux/APT-剖析详解.md)
   * [Linux 主机、虚拟机和docker网络配置](Linux/Linux主机、虚拟机和docker网络配置.md)
   * [Linux文件系统学习](Linux/Linux文件系统学习.md)
@@ -38,6 +36,7 @@
   * [正则表达式](Linux/正则表达式学习.md)
   * [Linux开机启动项学习](Linux/通过Linux开机启动项展开学习.md)
   * [防火墙学习笔记](Linux/防火墙学习.md)
+
 * [Python](Python/README.md)
   * [Python 资源大全](Python/Python资源大全.md)
   * [Python3 BeautifulSoup 学习记录](Python/BeautifulSoup.md)
@@ -52,16 +51,16 @@
   * [图形界面学习.md](Python/图形界面学习.md)
   * [Python3 常用图像库](Python/常用图像库学习.md)
   * [Python3 进阶学习笔记](Python/进阶学习.md)
+
 * [Shell](Shell/README.md)
-  
   * [Shell小知识](Shell/shell小知识.md)
   * [Shell奇淫技巧](Shell/Shell奇淫技巧.md)
-  
   * [grep、sed、awk 详解](Shell/Linux文本操作三大利器-grep、sed、awk.md)
   * [Shell文本处理常用工具补遗](Shell/Shell文本处理常用工具补遗.md)
   * [句子解析](Shell/句子解析.md)
   * [识别是否是root用户](Shell/识别是否是root用户.md)
   * [识别系统](Shell/识别系统.md)
+
 * [Vim](Vim/README.md)
   * [Vim小知识](Vim/Vim小知识.md)
   * [Vim编辑器再学习](Vim/Vim编辑器再学习.md)
@@ -85,6 +84,9 @@
   * [Git 速查表](Git/git-cheatsheet.md)
   * [Git 学习笔记](Git/git学习.md)
   * [Git 小技巧](Git/git小技巧.md)
+* [前端](frontend/README.md)
+  * [小知识](frontend/小知识.md)
+  
 * [Redux](Redux/README.md)
 * [Zabbix](Zabbix/README.md)
   * [Docker 安装配置 Zabbix](Zabbix/Docker安装配置Zabbix.md)
@@ -129,5 +131,3 @@
   * [浏览器架构简析](NoClass/浏览器架构简析.md)
 * [毕业论文](毕业论文/README.md)
   * [开题报告](毕业论文/开题报告.md)
-
-
