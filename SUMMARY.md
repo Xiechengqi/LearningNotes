@@ -82,7 +82,7 @@
   * [Docker 小知识](Docker/Docker小知识.md)
   * [Docker 学习中的单词](Docker/Docker必知单词.md)
 * [Git](Git/README.md)
-  
+  * [Git 速查表](Git/git-cheatsheet.md)
   * [Git 学习笔记](Git/git学习.md)
   * [Git 小技巧](Git/git小技巧.md)
 * [Redux](Redux/README.md)

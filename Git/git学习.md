@@ -34,6 +34,7 @@
 * ，后续 `git commit`就是往 master 上提交
 
 ![](./images/git_command.png)
+![](./images/git流程.png)
 
 
 
