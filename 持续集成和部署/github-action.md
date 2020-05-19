@@ -8,6 +8,15 @@
 
 ## 基础知识
 
+Github Action 其实就是开启了一个
+
+## 定时任务
+
+## 手动点击 star 触发 CI
+
+## 使用 ssh 私钥同步到 github、gitee 等远程仓库
+
+
 github action 设置 serects `SSH_PRIVATE_KEY` 时必须完全复制粘贴 `~/.ssh/id_rsa` 内容！！！
 
 ```

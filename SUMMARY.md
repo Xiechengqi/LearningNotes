@@ -87,6 +87,9 @@
 * [前端](frontend/README.md)
   * [小知识](frontend/小知识.md)
   
+* [持续集成和部署](持续集成和部署/README.md)
+  * [Github Action](持续集成和部署/github-action.md)
+
 * [Redux](Redux/README.md)
 * [Zabbix](Zabbix/README.md)
   * [Docker 安装配置 Zabbix](Zabbix/Docker安装配置Zabbix.md)
