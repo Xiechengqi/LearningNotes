@@ -2,24 +2,18 @@
 
 ## 目录
 
+* **[单词解释](#单词解释)**
 * **[Ansible 架构](#ansible架构)**
-
-* **[配置文件 - ansible.cfg](配置文件---ansible.cfg)**
-
+* **[配置文件 - ansible.cfg](配置文件---ansiblecfg)**
 * **[主机清单 - Inventory](#主机清单---inventory)**
-
 * **[模块 - Module](#模块---module)**
-
 * **[变量 - Variable](#变量---variable)**
-
 * **[Ansible 命令 - Ad-Hoc Command](#ansible-命令---ad-hoc-command)**
-
 * **[剧本 - Playbook](#剧本---playbook)**
-
 * **[角色 - Role](#角色---role)**
 
+## 单词解释
 
-> 
 * Ad-Hoc：拉丁文常用语，意为特设的、临时的。Ansible 官方使用 Ad-Hoc Command 作为“临时命令”之意，也就是 Ansible 命令
 * Tasks：任务，由模板定义的操作列表
 * Variables：变量
@@ -42,7 +36,7 @@
 * Ansible 可管理对象：主机和网络设备
 
 
-## 配置文件 - `ansible.cfg`
+## 配置文件 - ansible.cfg
 
 > **配置文件中的几乎所有参数都可以在 Ad-Hoc 命令行和 Playbook 文件中重新赋值**
 
@@ -111,17 +105,26 @@
 
 > 被管理主机 ( managed nodes ) 的清单，inventory 也被称做 hostfile
 
-* inventory 是 `.ini` 格式编写的
-
+* inventory 是 **.ini**  格式编写的
 * 主机清单默认路径为： `/etc/ansible/hosts`
-* 主机清单指定路径方法：
+* 静态主机清单：
   * **Ad-Hoc 命令。**`ansible -i <path>` 或 `ansible-play -i <path>` 
   * **修改 ansible.cfg。**设置 ansible.cfg 中 `[default]` 下的 `inventory`  为指定 `hosts` 文件路径
   * **多个主机清单文件**。先创建一个 `inventory/` 文件夹，然后将 ansible.cfg 中的 `inventory` 设置为 `inventory` 文件夹路径
-* 主机清单动态加载方法：
+* 动态主机清单：
   * 可以用自定义脚本从 CMDB 系统和 Zabbix 监控系统等拉取所有的主机信息，脚本可以使用任何语言编写，但是脚本使用参数有一定的规范并且对脚本执行的结果也有要求，应用时只需要把 ansible.cfg 文件中 `inventory` 设置为执行脚本路径即可
+  * 如果 inventory 文件被标记为可执行，则 Ansible 会假设这是一个动态的 inventory 脚本并且执行它而不是读取它的内容 - `chmod +x 文件名`
+  * 动态 inventory 脚本必须支持两个命令行参数：
+    * `--host=<hostname>` - 列出主机的详细信息
+    * `--list` - 列出群组
 
-### inventory 行为参数
+* 静态主机清单与 动态主机清单结合使用
+
+1. 将动态 inventory 和 静态 inventory 放在同一目录下
+
+2. 在 ansible.cfg 中将 `hostfile` 的值, 指向该目录即可；或在 Ansible 命令行使用 `-i` 参数指定目录
+
+### Inventory 行为参数
 
 |            参数名            |           参数说明           |     默认值      |
 | :--------------------------: | :--------------------------: | :-------------: |
@@ -138,17 +141,9 @@
 |  ansible_python_interpreter  |     主机python解释器路径     | /usr/bin/python |
 |    ansible_*_interpreter     | 类似python解释器的其他语言版 |      None       |
 
+### ansible.cfg 设置 Inventory 行为参数
 
-#### 动态 inventory
-
-* 如果 inventory 文件被标记为可执行，则 Ansible 会假设这是一个动态的 inventory 脚本并且执行它而不是读取它的内容 - `chmod +x 文件名`
-* 动态 inventory 脚本必须支持两个命令行参数：
-  * `--host=<hostname>` - 列出主机的详细信息
-  * `--list` - 列出群组
-
-#### ansible.cfg 设置 Inventory 行为参数默认值
-
-可以在 `[defaults]` 中改变一些行为参数的默认值:
+> 可以在 ansible.cfg 的 `[defaults]` 中改变一些行为参数的默认值:
 
 | inventory 行为参数               | ansible.cfg 选项             |
 | :------------------------------- | :--------------------------- |
@@ -157,45 +152,13 @@
 | ansible_ssh_private_key_file     | private_key_file             |
 | ansible_shell_type, shell 的名称 | executable, shell 的绝对路径 |
 
-#### 静态 Inventory 与 动态 Inventory 结合使用
-
-1、将动态 inventory 和 静态 inventory 放在同一目录下
-
-2、在 ansible.cfg 中将 `hostfile` 的值, 指向该目录即可
-
-## 
-#### 主机变量和群组变量
-
-* Ansible 变量支持布尔型、字符串、列表和字典，但**在 inventory 文件中，只能将变量指定为布尔型和字符串**
-* 以上介绍的 inventory 内置参数其实就是具有特殊意义的 Ansible 变量，可以针对主机定义任意的变量名并指定相应的值
-
-**`主机变量`**
-
-``` ini
-192.168.13.12 color=green
-192.168.13.14 color=red
-```
-
-**`群组变量`**
-
-* **[<group_name>:vars]**
-
-```ini
-[all:var]
-color=green
-```
-
 ## 变量 - Variable
 
-### 主机变量和群组变量文件
+### 变量定义
 
-* 可以为每个主机和群组创建独立的变量文件（YAML 格式）
-* 主机变量文件：`host_vars` 目录中寻找
-* 群组变量文件：`group_vars` 目录中寻找
+* Ansible 变量支持布尔型、字符串、列表和字典
 
->  这个两个目录和 playbook 和 inventory 文件平级
-
-**键值格式 :**
+**列表（键值）格式 :**
 
 ```
 # playbooks/group_vars/production
@@ -205,7 +168,6 @@ db_replica_host: rep.db.com
 db_name: mydb
 db_user: root
 db_pass: 123456
-
 # 访问方法:
 {{ db_primary_host }}
 ```
@@ -224,21 +186,100 @@ db:
     replica:
         host: replica.db.com
         port: 5432
-rabbitmq:
-    host: rabbit.example.com
-    port: 6379
-
 # 访问方法
 {{ db.primary.host }}
 ```
 
-## Ansible 管理被控端的两种方式
+#### 主机清单中定义变量
 
-<div align=center>
-<img src="images/ansible的两种方式.png" />
-</div>
+> 定义主机和群组相关变量
 
->  **Ad-hoc 和 playbook 可以看成是 Linux 下的命令和 shell 脚本之间的关系**
+**主机变量和群组变量**
+
+* **在主机清单文件中，只能将变量指定为布尔型和字符串**
+* 上面介绍的 inventory 行为参数其实就是具有特殊意义的 Ansible 变量，可以针对主机定义任意的变量名并指定相应的值
+
+**`主机变量`**
+
+``` ini
+192.168.13.12 color=green
+192.168.13.14 color=red
+```
+
+**`群组变量`**
+
+* ｀[<group_name>:vars]｀
+
+```ini
+[all:var]
+color=green
+```
+
+**`主机变量和群组变量文件`**
+
+* 可以为每个主机和群组创建独立的变量文件，使用  YAML 格式编写，可以是列表、字典格式
+* 主机变量文件：`host_vars` 目录中寻找；比如 `www.xcq.com` 主机变量文件就是｀host_vars/www.xcq.com`
+* 群组变量文件：`group_vars` 目录中寻找；比如 `web` 群组变量文件就是 `group_vars/web`
+
+>  这个两个目录和 playbook 和 inventory 文件平级
+
+#### Ansible 命令行中定义变量
+
+**`ansible-playbook [xxx.yml] -e [变量名]=[值]`**
+
+> 这样设置的变量拥有最高优先级，可以覆盖已经定义的变量
+
+``` shell
+$ ansible-playbook example.yml -e token=123
+```
+
+
+
+#### Playbook 中定义变量
+
+**`vars` **
+
+``` yaml
+---
+- name: webserver configuration play
+  hosts: webservers
+  vars: 
+    http_port: 80
+    max_clients: 200
+```
+
+**`vars_files`**
+
+```shell
+# playbook
+---
+- name: webserver configuration play
+  hosts: webservers
+  vars: 
+  - nginx.yml
+  
+# nginx.yml
+http_port: 80
+max_clients: 200
+```
+
+#### facts
+
+### 不同方法定义变量的优先级
+
+1. `ansible-playbook [xxx.yml] -e [变量名]=[值]`
+2. 这个优先级排序中没提到的其他方法
+3. 主机清单（在 inventory 文件或 YAML 文件定义的主机和群组变量）
+4. Fact
+5. role 的 defaults/main.yml 文件
+
+### 变量使用
+
+#### Playbook 中使用变量
+
+
+
+#### Template 中使用变量
 
 ## 模块 - Module
 
@@ -265,6 +306,13 @@ tasks:
   - name: ensure apache is at the latest version
      yum: pkg=httpd state=latest
 ```
+
+## Ansible 管理被控端的两种方式
+
+<div align=center>
+<img src="images/ansible的两种方式.png" /><br/>
+Ad-hoc command 和 playbook 可以看成是 Linux 下的命令和 shell 脚本之间的关系
+</div>
 
 ## Ansible 命令 - Ad-Hoc Commands
 
@@ -297,14 +345,45 @@ tasks:
 
 ## 剧本 - Playbooks
 
-![](images/playbook.jpg)
-![](images/playbook.png)
+<div align=center>
+<img src="images/playbook.png" /><br/>
+</div>
+
+<div align=center>
+<img src="images/playbook.jpg" width=70%/><br/>
+    Playbook 语法 - YAML
+</div>
 
 * 一个Playbook 包含一个或多个 Play
 * 一个Play 必须包含 hosts 和 tasks，也可能有 variables、roles、handlers 等
 * 每一个 task 只能包含一个模块
 * playbook 其实就是一个**字典列表**，也就是一个 playbook 就是一个 play 列表
-* Playbooks语法 - YAML
+
+``` yaml
+---
+- name: webserver configuration play
+  hosts: webservers
+  vars: 
+    http_port: 80
+    max_clients: 200
+    
+  tasks:
+  - name: ensure that apache is installed
+    yum: name=httpd state=present
+  
+  - name: write the apache config file
+    template: src=httpd.j2 dest=/etc/httpd.conf
+    notify:
+    - restart apache
+    
+  - name: ensure apache is running
+    service: name=httpd state=started
+    handlers:
+      - name: restart apache
+        service: name=httpd state=restarted
+```
+
+> 当时用 Playbook 进行虚拟化环境初始化时候，可以分为两个 Play 进行。第一个 Play 用于本机运行和创建主机，第二个 Play 用于配置主机
 
 ### Handlers
 
