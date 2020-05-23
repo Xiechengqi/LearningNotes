@@ -1,4 +1,12 @@
-# 记录前端学习
+# 前端
 
 * [Font Awesome 中文网](http://www.fontawesome.com.cn/get-started/)
 * [检测 html、css、javascript 等标签兼容的浏览器版本](https://caniuse.com/)
+* [JS 前端开发月报](https://www.kancloud.cn/jsfront/month/content)
+* [HTML 教程 - 阮一峰](https://wangdoc.com/html/)
+* [CSS 教程 - 阮一峰](https://github.com/wangdoc/css-tutorial/)
+* [JavaScript 教程 - 阮一峰](https://wangdoc.com/javascript/index.html)
+* [ES6 教程 - 阮一峰](https://wangdoc.com/es6/)
+* [Web API 教程 - 阮一峰](https://wangdoc.com/webapi/)
+* [Node 教程 - 阮一峰](https://github.com/wangdoc/node-tutorial)
+* [Git 教程 - 阮一峰](https://github.com/wangdoc/git-tutorial/)

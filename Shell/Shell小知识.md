@@ -2,29 +2,78 @@
 
 ## 目录
 
-* [exit 0 和 exit 1](#exit-0和exit-1-top)
-* [特殊变量](#特殊变量-top)
-* [让一个变量获得命令输出的结果](#让一个变量获得命令输出的结果-top)
-* [`命令 > /dev/null 2 > &1`和`命令 &> /dev/null`](#命令--devnull-2--1和命令--devnull-top)
-* [数值比较](#数值比较-top)
-* [几种数值计算方法](#几种数值计算方法-top)
-* [数值进制间相互转换](#数值进制间相互转换-top)
-* [等号两边不能有空格](#等号两边不能有空格-top)
-* [ $( )、\` \`、${ }、$(( ))、$[ ] 、[ ]、(( )) 和 [[ ]] 详解]（#---------和---详解-top)
-* [用 cat、echo 命令向文件写入](#用-cat-命令向文件写入-top)
-* [杀死一个进程](#杀死一个进程-top)
-* [删除空行](#删除空行-top)
-* [文件去重](#文件去重-top)
-* [截取文件开头几行、末尾几行和中间几行](#截取文件开头几行、末尾几行和中间几行-top)
-* [修改文件以包含当前时间命名](#修改文件以包含当前时间命名-top)
-* [查看当前主机公网 IP](#查看当前主机公网-ip-top)
-* [while 无限循环](while-无限循环-top)
-* [进程查端口，端口查进程](#进程查端口端口查进程-top)
-* [查看其他主机开放的端口](#查看其他主机开放的端口-top)
-* [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行-top)
-* [使用重定向新建文件](#使用重定向新建文件-top)
+* [Shebang 行](#shebang-行)
+* [echo $(命令) 原样输出](#echo-命令-原样输出)
+* [单行命令拆成多行执行](#单行命令拆成多行执行)
+* [exit 0 和 exit 1](#exit-0和exit-1)
+* [特殊变量](#特殊变量)
+* [让一个变量获得命令输出的结果](#让一个变量获得命令输出的结果)
+* [`命令 > /dev/null 2 > &1`和`命令 &> /dev/null`](#命令--devnull-2--1和命令--devnull)
+* [数值比较](#数值比较)
+* [几种数值计算方法](#几种数值计算方法)
+* [数值进制间相互转换](#数值进制间相互转换)
+* [等号两边不能有空格](#等号两边不能有空格)
+* [ $( )、\` \`、${ }、$(( ))、$[ ] 、[ ]、(( )) 和 [[ ]] 详解]（#---------和---详解)
+* [用 cat、echo 命令向文件写入](#用-cat-命令向文件写入)
+* [杀死一个进程](#杀死一个进程)
+* [删除空行](#删除空行)
+* [文件去重](#文件去重)
+* [截取文件开头几行、末尾几行和中间几行](#截取文件开头几行、末尾几行和中间几行)
+* [修改文件以包含当前时间命名](#修改文件以包含当前时间命名)
+* [查看当前主机公网 IP](#查看当前主机公网-ip)
+* [while 无限循环](while-无限循环)
+* [进程查端口，端口查进程](#进程查端口端口查进程)
+* [查看其他主机开放的端口](#查看其他主机开放的端口)
+* [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
+* [使用重定向新建文件](#使用重定向新建文件)
 
-## `exit 0`和`exit 1` [[Top]](#目录)
+
+## Shebang 行
+
+* Shebang 行位于脚本第一行，用于指定解释器，即这个脚本必须通过什么解释器执行
+
+``` bash
+#!/usr/bin/env bash
+# 意思是让 Shell 查找 $PATH 环境变量里面第一个匹配的 bash
+
+# 这样执行脚本时就不用手动指定 Shell 解释器
+$ ./script.sh
+# 若没有 Shebang 行，则需要如下：
+$ bash ./script.sh
+```
+
+## echo $(命令) 原样输出
+
+``` bash
+# echo `命令` 打印的命令的输出是单行的，可以通过添加双引号保持命令的原样格式输出
+$ echo `ls`
+abcdefghij001 abcdefghij002 abcdefghij003 abcdefghij004 abcdefghij005 abcdefghij006 abcdefghij007 abcdefghij008 abcdefghij009 abcdefghij010 abcdefghij011 abcdefghij012 abcdefghij013
+$ echo "`ls`"
+abcdefghij001
+abcdefghij002
+abcdefghij003
+abcdefghij004
+abcdefghij005
+abcdefghij006
+abcdefghij007
+abcdefghij008
+abcdefghij009
+abcdefghij010
+abcdefghij011
+abcdefghij012
+abcdefghij013
+```
+
+## 单行命令拆成多行执行
+
+``` shell
+$ echo foo bar
+# 等同于
+$ echo foo \
+bar
+```
+
+## `exit 0`和`exit 1`
 
 * Linux exit 命令用于退出目前的 shell
 * 执行 exit 可使 shell 以指定的状态值退出
@@ -36,17 +85,23 @@
   <img src="./images/shell_exit.jpg"><br/>Ubuntu shell exit
  </div>
 
-## 特殊变量 [[Top]](#目录)
+## 特殊变量
 
 | $X | 说明 |
 | --- | --- |
 | $? | 最近一次运行命令的结束代码（返回值 0 表示成功，非 0 表示失败） |
 | $$ | 脚本运行的当前进程 ID 号（PID） |
-| $n(n=1,2...) | 传递给该shell脚本的第 n 个参数 |
+| $n(n=1,2...) | 传递给该 shell 脚本的第 n 个参数，参数多于 9 个时候，使用`${10}`形式引用 |
 | $0 | 执行脚本本身的名字 |
 | $# | 传递给脚本参数的个数 |
 | $* | 脚本的所有参数列表,代表"$1 $2 … $n"，即当成一个整体输出，每一个变量参数之间以空格隔开 |
 | $@ | 脚本的所有参数列表,代表"$1" "$2" … "$n" ，即每一个变量参数是独立的 ,也是全部输出 |
+
+* 如果多个参数放在双引号里面，视为一个参数。
+``` bash
+$ ./script.sh "a b"
+a b
+```
 
 ### `$*` 和 `$@`区别
 ``` shell 
@@ -131,7 +186,7 @@ Parameter is 6
   <img src="./images/shell_$.jpg"><br/>$* 示例
  </div>
 
-## 让一个变量获得命令输出的结果 [[Top]](#目录)
+## 让一个变量获得命令输出的结果
 
 ### 1、`$(命令)`表示
 
@@ -149,7 +204,7 @@ i=`ls 123.txt`
 echo $i
 ```
 
-## `命令 > /dev/null 2 > &1`和`命令 &> /dev/null` [[Top]](#目录)
+## `命令 > /dev/null 2 > &1`和`命令 &> /dev/null`
 
 > 解释：无提示（包括 stdin 和 stderr ）执行
 
@@ -204,7 +259,7 @@ $ ls 123.txt > output.txt 2>&1
 > * `1>&2`：将正确转为错误输出
 > * `&>`or`>&`：正确、错误都输出，新式方法
 
- ## 数值比较 [[Top]](#目录)
+ ## 数值比较
 
 | arg1 OP arg2 ( OP ) | 说明 |
 | --- | --- |
@@ -215,7 +270,7 @@ $ ls 123.txt > output.txt 2>&1
 | -gt | arg1 is greater-than arg2 |
 | -ge | arg1 is greater-than-or-equal arg2 |
 
-## 几种数值计算方法 [[Top]](#目录)
+## 几种数值计算方法
 
  ``` shell
  $ ((i=5%2))
@@ -249,7 +304,7 @@ $ ls 123.txt > output.txt 2>&1
  # 0.083
  ```
 
- ## 数值进制间相互转换 [[Top]](#目录)
+ ## 数值进制间相互转换
 
  ``` shell
 # 八进制 12 转换为十进制
@@ -265,7 +320,7 @@ $ echo $((8#12)
 # 10
  ```
 
- ## 等号两边不能有空格 [[Top]](#目录)
+ ## 等号两边不能有空格
 
  <div align=center>
   <img src="./images/nospace1.jpg"><br/>= 含有空格导致无法运行
@@ -275,7 +330,7 @@ $ echo $((8#12)
   <img src="./images/nospace2.jpg"><br/>正确
  </div>
 
- ## $( )、\` \`、${ }、$(( ))、$[ ] 、[ ]、(( )) 和 [[ ]] 详解 [[Top]](#目录)
+ ## $( )、\` \`、${ }、$(( ))、$[ ] 、[ ]、(( )) 和 [[ ]] 详解
 
 |  | 说明 | 举例 | 例子说明 |
 | --- | --- | --- | --- |
@@ -311,7 +366,7 @@ http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=218853&page=7#pid1617953
 
 https://www.cnblogs.com/zejin2008/p/8412680.html
 
-## 用 cat、echo 命令向文件写入 [[Top]](#目录)
+## 用 cat、echo 命令向文件写入
 
 <kbd>**cat**</kbd>
 
@@ -344,7 +399,7 @@ hello
 world' >> hello
 ```
 
-## 杀死一个进程 [[Top]](#目录)
+## 杀死一个进程
 
 1. ps aux | grep 进程名 ---> kill -s 9 进程号
 2. kill -s 9 \`ps aux | grep 进程名 | grep -v grep | awk '{print $2}'\`
@@ -373,7 +428,7 @@ world' >> hello
 |   SIGTERM   |      15      |  默认，发出终止信号   |
 |   SIGSTOP   |  17, 19, 23  | 暂停（等同 Ctrl + Z） |
 
-## 删除空行 [[Top]](#目录)
+## 删除空行
 
 ``` shell
  sed '/^$/d' file
@@ -391,7 +446,7 @@ world' >> hello
 
 
 
-## 文件去重 [[Top]](#目录)
+## 文件去重
 
 ``` shell
 # 1. awk （不排序直接去重，按原顺序输出）
@@ -404,7 +459,7 @@ cat file | sort | uniq
 
 
 
-## 截取文件开头几行、末尾几行和中间几行 [[Top]](#目录)
+## 截取文件开头几行、末尾几行和中间几行
 
 ``` shell
  # 截取前 5 行 - head、sed、awk
@@ -433,7 +488,7 @@ unix  2      [ ACC ]     流        LISTENING     36700    public/pickup
 
 
 
-## 修改文件以包含当前时间命名 [[Top]](#目录)
+## 修改文件以包含当前时间命名
 
 ``` shell
 $ ls
@@ -449,7 +504,7 @@ $ ls
 
 
 
-## 查看当前主机公网 IP [[Top]](#目录)
+## 查看当前主机公网 IP
 
 ``` shell
 # 只返回 ip
@@ -461,7 +516,7 @@ $ curl members.3322.org/dyndns/getip
 $ curl cip.cc
 ```
 
-## while 无限循环 [[Top]](#目录)
+## while 无限循环
 
 ```bash
 while :
@@ -475,7 +530,7 @@ do
 done
 ```
 
-## 进程查端口，端口查进程 [[Top]](#目录)
+## 进程查端口，端口查进程
 
 <kbd>**进程**</kbd> **->** <kbd>**端口**</kbd>
 
@@ -488,7 +543,7 @@ done
 1. <kbd>**lsof -i:\<port\>**</kbd>
 2. <kbd>**sudo netstat -nap | grep \<port\>**</kbd>
 
-## 查看其他主机开放的端口 [[Top]](#目录)
+## 查看其他主机开放的端口
 
 <kbd>**sudo nmap -sS \<ip\>**</kbd>
 
@@ -509,7 +564,7 @@ PORT     STATE  SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 28.81 seconds
 ```
 
-## 快速查看配置文件中有效配置行 [[Top]](#目录)
+## 快速查看配置文件中有效配置行
 
 > 配置文件往往动辄几百行，但可能只有几行是非注释非换行的有效配置，可以使用 egrep -v 排除空行和注释行，快速查看配置文件的有效配置行
 
@@ -518,7 +573,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.81 seconds
 $ egrep -v "(^$|^#)" ./ansible.cfg
 ```
 
-## 使用重定向新建文件 [[Top]](#目录)
+## 使用重定向新建文件
 
 ```bash
 # 比 touch 新建少输入几个字符！

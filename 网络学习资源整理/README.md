@@ -9,6 +9,9 @@
 所以，希望换一种方式“收藏”自己平时学习时遇到的好文和好料！
 
 
+* [Wangdoc - 阮一峰搭建的静态文档生成器](https://github.com/wangdoc/help/blob/master/docs/how-to-create-a-new-repo.md)
+
+* [Markdown 文档生成工具](https://www.cnblogs.com/52fhy/p/10745719.html)
 
 * [github 上整理的 IT 学习资源](https://github.com/jobbole)
 
@@ -21,3 +24,4 @@
 * [http://wttr.in/](http://wttr.in/)
 * [ip.sb](http://ip.sb/)
 * [数据库引擎排行榜](https://db-engines.com/en/ranking)
+* [上海程序员 落户攻略](https://www.cnblogs.com/TankXiao/p/8203819.html)
