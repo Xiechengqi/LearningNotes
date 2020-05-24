@@ -1,0 +1,2703 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Shell小知识 · 日常学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Shell奇淫技巧.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../网络学习资源整理/">
+            
+                <a href="../网络学习资源整理/">
+            
+                    
+                    网络学习资源整理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../网络学习资源整理/技术学习.html">
+            
+                <a href="../网络学习资源整理/技术学习.html">
+            
+                    
+                    技术学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../网络学习资源整理/运维博客.html">
+            
+                <a href="../网络学习资源整理/运维博客.html">
+            
+                    
+                    运维博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../网络学习资源整理/工具.html">
+            
+                <a href="../网络学习资源整理/工具.html">
+            
+                    
+                    工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../网站搭建/README.md">
+            
+                <span>
+            
+                    
+                    网站搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../网站搭建/静态网站生成器.html">
+            
+                <a href="../网站搭建/静态网站生成器.html">
+            
+                    
+                    静态网站生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../网站搭建/静态网站部署.html">
+            
+                <a href="../网站搭建/静态网站部署.html">
+            
+                    
+                    静态网站部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../网站搭建/静态网站的CI和CD.html">
+            
+                <a href="../网站搭建/静态网站的CI和CD.html">
+            
+                    
+                    静态网站的CI和CD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../网站搭建/Hugo学习.html">
+            
+                <a href="../网站搭建/Hugo学习.html">
+            
+                    
+                    Hugo学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../网站搭建/图床.html">
+            
+                <a href="../网站搭建/图床.html">
+            
+                    
+                    图床
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../网站搭建/网盘.html">
+            
+                <a href="../网站搭建/网盘.html">
+            
+                    
+                    网盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../心灵鸡汤/">
+            
+                <a href="../心灵鸡汤/">
+            
+                    
+                    心灵鸡汤
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../心灵鸡汤/心灵鸡汤.html">
+            
+                <a href="../心灵鸡汤/心灵鸡汤.html">
+            
+                    
+                    语录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Linux/Linux常用命令.html">
+            
+                <a href="../Linux/Linux常用命令.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Linux/Linux小知识.html">
+            
+                <a href="../Linux/Linux小知识.html">
+            
+                    
+                    平时 linux 遇到的问题解决办法和扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Linux/Linux性能相关常用命令.html">
+            
+                <a href="../Linux/Linux性能相关常用命令.html">
+            
+                    
+                    Linux性能相关常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Linux/Linux各种安装下载慢解决方法.html">
+            
+                <a href="../Linux/Linux各种安装下载慢解决方法.html">
+            
+                    
+                    Linux各种安装下载慢解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Linux/APT-剖析详解.html">
+            
+                <a href="../Linux/APT-剖析详解.html">
+            
+                    
+                    APT 原理剖析、详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Linux/Linux主机、虚拟机和docker网络配置.html">
+            
+                <a href="../Linux/Linux主机、虚拟机和docker网络配置.html">
+            
+                    
+                    Linux 主机、虚拟机和docker网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../Linux/Linux文件系统学习.html">
+            
+                <a href="../Linux/Linux文件系统学习.html">
+            
+                    
+                    Linux文件系统学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../Linux/Linux用户和用户组管理.html">
+            
+                <a href="../Linux/Linux用户和用户组管理.html">
+            
+                    
+                    Linux用户和用户组管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../Linux/Linux用户增删改等学习.html">
+            
+                <a href="../Linux/Linux用户增删改等学习.html">
+            
+                    
+                    Linux用户增删改等学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../Linux/Linux程序存放目录.html">
+            
+                <a href="../Linux/Linux程序存放目录.html">
+            
+                    
+                    Linux程序存放目录.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../Linux/Linux编译安装软件包详解.html">
+            
+                <a href="../Linux/Linux编译安装软件包详解.html">
+            
+                    
+                    Linux C/C++ 软件包编译、安装原理详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../Linux/SSH详解.html">
+            
+                <a href="../Linux/SSH详解.html">
+            
+                    
+                    SSH 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../Linux/Tomcat和Ngnix和Apache.html">
+            
+                <a href="../Linux/Tomcat和Ngnix和Apache.html">
+            
+                    
+                    Tomcat和Ngnix和Apache.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../Linux/UbuntuSoftwareInstall.html">
+            
+                <a href="../Linux/UbuntuSoftwareInstall.html">
+            
+                    
+                    Ubuntu 软件包安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../Linux/YAML-配置文件语言.html">
+            
+                <a href="../Linux/YAML-配置文件语言.html">
+            
+                    
+                    YAML 配置文件语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../Linux/bin目录详解.html">
+            
+                <a href="../Linux/bin目录详解.html">
+            
+                    
+                    bin目录详解.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../Linux/ffmpeg详解.html">
+            
+                <a href="../Linux/ffmpeg详解.html">
+            
+                    
+                    ffmpeg学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../Linux/trans命令.html">
+            
+                <a href="../Linux/trans命令.html">
+            
+                    
+                    trans命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../Linux/yum和rpm.html">
+            
+                <a href="../Linux/yum和rpm.html">
+            
+                    
+                    Yum 和 RPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../Linux/从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                <a href="../Linux/从BashShell启动“窥探”Linux环境变量相关文件.html">
+            
+                    
+                    Linux环境变量详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" data-path="../Linux/新创建主机常用初始化配置.html">
+            
+                <a href="../Linux/新创建主机常用初始化配置.html">
+            
+                    
+                    新建主机常用初始化配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" data-path="../Linux/正则表达式学习.html">
+            
+                <a href="../Linux/正则表达式学习.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" data-path="../Linux/通过Linux开机启动项展开学习.html">
+            
+                <a href="../Linux/通过Linux开机启动项展开学习.html">
+            
+                    
+                    Linux开机启动项学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.24" data-path="../Linux/防火墙学习.html">
+            
+                <a href="../Linux/防火墙学习.html">
+            
+                    
+                    防火墙学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Python/Python资源大全.html">
+            
+                <a href="../Python/Python资源大全.html">
+            
+                    
+                    Python 资源大全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Python/BeautifulSoup.md">
+            
+                <span>
+            
+                    
+                    Python3 BeautifulSoup 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Python/Django.html">
+            
+                <a href="../Python/Django.html">
+            
+                    
+                    Python Django 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Python/IPython使用技巧.html">
+            
+                <a href="../Python/IPython使用技巧.html">
+            
+                    
+                    IPython 使用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Python/Numpy.html">
+            
+                <a href="../Python/Numpy.html">
+            
+                    
+                    Python Numpy 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Python/Python小知识.html">
+            
+                <a href="../Python/Python小知识.html">
+            
+                    
+                    Python 学习遇到的问题解决或扩展小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Python/Python模块管理总结.html">
+            
+                <a href="../Python/Python模块管理总结.html">
+            
+                    
+                    Python 模块管理总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../Python/flask学习.md">
+            
+                <span>
+            
+                    
+                    Flask 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../Python/matplotlib.html">
+            
+                <a href="../Python/matplotlib.html">
+            
+                    
+                    matplotlib.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../Python/re正则表达式.html">
+            
+                <a href="../Python/re正则表达式.html">
+            
+                    
+                    re正则表达式.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../Python/图形界面学习.html">
+            
+                <a href="../Python/图形界面学习.html">
+            
+                    
+                    图形界面学习.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../Python/常用图像库学习.html">
+            
+                <a href="../Python/常用图像库学习.html">
+            
+                    
+                    Python3 常用图像库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../Python/进阶学习.html">
+            
+                <a href="../Python/进阶学习.html">
+            
+                    
+                    Python3 进阶学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="Shell小知识.html">
+            
+                <a href="Shell小知识.html">
+            
+                    
+                    Shell小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="Shell奇淫技巧.html">
+            
+                <a href="Shell奇淫技巧.html">
+            
+                    
+                    Shell奇淫技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="Linux文本操作三大利器-grep、sed、awk.html">
+            
+                <a href="Linux文本操作三大利器-grep、sed、awk.html">
+            
+                    
+                    grep、sed、awk 详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="Shell文本处理常用工具补遗.html">
+            
+                <a href="Shell文本处理常用工具补遗.html">
+            
+                    
+                    Shell文本处理常用工具补遗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="句子解析.html">
+            
+                <a href="句子解析.html">
+            
+                    
+                    句子解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="识别是否是root用户.html">
+            
+                <a href="识别是否是root用户.html">
+            
+                    
+                    识别是否是root用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="识别系统.html">
+            
+                <a href="识别系统.html">
+            
+                    
+                    识别系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Vim/Vim小知识.html">
+            
+                <a href="../Vim/Vim小知识.html">
+            
+                    
+                    Vim小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Vim/Vim编辑器再学习.html">
+            
+                <a href="../Vim/Vim编辑器再学习.html">
+            
+                    
+                    Vim编辑器再学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Vim/VimScript学习笔记.html">
+            
+                <a href="../Vim/VimScript学习笔记.html">
+            
+                    
+                    VimScript 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Vim/vim从入门到精通[转载].html">
+            
+                <a href="../Vim/vim从入门到精通[转载].html">
+            
+                    
+                    Vim 从入门到精通
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Vim/插件列表.html">
+            
+                <a href="../Vim/插件列表.html">
+            
+                    
+                    Vim 插件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../Vim/YouCompleteMe安装.html">
+            
+                <a href="../Vim/YouCompleteMe安装.html">
+            
+                    
+                    YouCompleteMe安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../Vim/vimrc示例1.html">
+            
+                <a href="../Vim/vimrc示例1.html">
+            
+                    
+                    vimrc示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../Vim/vimrc备份.html">
+            
+                <a href="../Vim/vimrc备份.html">
+            
+                    
+                    vimrc备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../Vim/Tmux快捷键.html">
+            
+                <a href="../Vim/Tmux快捷键.html">
+            
+                    
+                    Tmux快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Ansible/">
+            
+                <a href="../Ansible/">
+            
+                    
+                    Ansible
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Ansible/术语表.html">
+            
+                <a href="../Ansible/术语表.html">
+            
+                    
+                    术语表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Ansible/Ansible必知单词.html">
+            
+                <a href="../Ansible/Ansible必知单词.html">
+            
+                    
+                    Ansible 常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Ansible/Ansible学习.html">
+            
+                <a href="../Ansible/Ansible学习.html">
+            
+                    
+                    Ansible 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Ansible/Ansible常用模板.html">
+            
+                <a href="../Ansible/Ansible常用模板.html">
+            
+                    
+                    Ansible常用模板.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Docker/Docker基础学习.html">
+            
+                <a href="../Docker/Docker基础学习.html">
+            
+                    
+                    Docker 基础学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Docker/Docker小知识.html">
+            
+                <a href="../Docker/Docker小知识.html">
+            
+                    
+                    Docker 小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Docker/Docker必知单词.html">
+            
+                <a href="../Docker/Docker必知单词.html">
+            
+                    
+                    Docker 学习中的单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Git/git-cheatsheet.html">
+            
+                <a href="../Git/git-cheatsheet.html">
+            
+                    
+                    Git 速查表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Git/git学习.html">
+            
+                <a href="../Git/git学习.html">
+            
+                    
+                    Git 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Git/git小技巧.html">
+            
+                <a href="../Git/git小技巧.html">
+            
+                    
+                    Git 小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../frontend/">
+            
+                <a href="../frontend/">
+            
+                    
+                    前端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../frontend/小知识.html">
+            
+                <a href="../frontend/小知识.html">
+            
+                    
+                    小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../持续集成和部署/">
+            
+                <a href="../持续集成和部署/">
+            
+                    
+                    持续集成和部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../持续集成和部署/github-action.html">
+            
+                <a href="../持续集成和部署/github-action.html">
+            
+                    
+                    Github Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Redux/">
+            
+                <a href="../Redux/">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../Zabbix/">
+            
+                <a href="../Zabbix/">
+            
+                    
+                    Zabbix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Zabbix/Docker安装配置Zabbix.html">
+            
+                <a href="../Zabbix/Docker安装配置Zabbix.html">
+            
+                    
+                    Docker 安装配置 Zabbix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Zabbix/术语单词.html">
+            
+                <a href="../Zabbix/术语单词.html">
+            
+                    
+                    Zabbix 中常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../Zabbix/重置密码.html">
+            
+                <a href="../Zabbix/重置密码.html">
+            
+                    
+                    重置 Zabbix 账户密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../KVM/">
+            
+                <a href="../KVM/">
+            
+                    
+                    KVM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../KVM/安装配置.html">
+            
+                <a href="../KVM/安装配置.html">
+            
+                    
+                    常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="../KVM/虚拟机网络配置.html">
+            
+                <a href="../KVM/虚拟机网络配置.html">
+            
+                    
+                    Bridged 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Mysql/">
+            
+                <a href="../Mysql/">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../Mysql/Ubuntu安装Navicat.html">
+            
+                <a href="../Mysql/Ubuntu安装Navicat.html">
+            
+                    
+                    Ubuntu 安装及配置 Navicat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../Mysql/忘记root密码.html">
+            
+                <a href="../Mysql/忘记root密码.html">
+            
+                    
+                    如何替换已忘记的 root 密码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../Nginx/">
+            
+                <a href="../Nginx/">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../Nginx/Nginx学习笔记.html">
+            
+                <a href="../Nginx/Nginx学习笔记.html">
+            
+                    
+                    Nginx 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../NoClass/">
+            
+                <a href="../NoClass/">
+            
+                    
+                    闲知
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" data-path="../NoClass/容易读错的IT术语.html">
+            
+                <a href="../NoClass/容易读错的IT术语.html">
+            
+                    
+                    容易读错的IT术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../NoClass/Linux-electron-tutorial.html">
+            
+                <a href="../NoClass/Linux-electron-tutorial.html">
+            
+                    
+                    Linux electron 学习记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../NoClass/MarkdownSkills.html">
+            
+                <a href="../NoClass/MarkdownSkills.html">
+            
+                    
+                    记录 Markdown 的各种小技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.4" data-path="../NoClass/RaspeberryPi.html">
+            
+                <a href="../NoClass/RaspeberryPi.html">
+            
+                    
+                    使用树莓派 3B 遇到的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.5" data-path="../NoClass/华为国产手机芯片SoC.html">
+            
+                <a href="../NoClass/华为国产手机芯片SoC.html">
+            
+                    
+                    华为国产手机芯片SoC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.6" data-path="../NoClass/图片格式详解及其对比.html">
+            
+                <a href="../NoClass/图片格式详解及其对比.html">
+            
+                    
+                    图片格式详解及其对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.7" data-path="../NoClass/计算机小知识.html">
+            
+                <a href="../NoClass/计算机小知识.html">
+            
+                    
+                    记录一些计算机的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.8" data-path="../NoClass/诗词.html">
+            
+                <a href="../NoClass/诗词.html">
+            
+                    
+                    诗词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../OS/">
+            
+                <a href="../OS/">
+            
+                    
+                    OS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../OS/学习笔记.html">
+            
+                <a href="../OS/学习笔记.html">
+            
+                    
+                    操作系统学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../OS/术语单词.html">
+            
+                <a href="../OS/术语单词.html">
+            
+                    
+                    OS 专业词语解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" data-path="../OS/SoCCPU.html">
+            
+                <a href="../OS/SoCCPU.html">
+            
+                    
+                    SoC 与 CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../Tomcat/">
+            
+                <a href="../Tomcat/">
+            
+                    
+                    Tomcat
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../Tomcat/Tomcat 学习.html">
+            
+                <a href="../Tomcat/Tomcat 学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../Tomcat/Tomcat学习.html">
+            
+                <a href="../Tomcat/Tomcat学习.html">
+            
+                    
+                    Tomcat 学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../VPS/">
+            
+                <a href="../VPS/">
+            
+                    
+                    VPS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../VPS/AWS_lightsail.html">
+            
+                <a href="../VPS/AWS_lightsail.html">
+            
+                    
+                    AWS LightSail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                <a href="../VPS/GCP_VM实例创建和基本配置.html">
+            
+                    
+                    GCP VM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" data-path="../VPS/ECS和VPS等等.html">
+            
+                <a href="../VPS/ECS和VPS等等.html">
+            
+                    
+                    ECS和VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../ComputerComposition/">
+            
+                <a href="../ComputerComposition/">
+            
+                    
+                    ComputerComposition
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../ComputerComposition/学习笔记.html">
+            
+                <a href="../ComputerComposition/学习笔记.html">
+            
+                    
+                    计算机组成原理学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../ComputerNetwork/">
+            
+                <a href="../ComputerNetwork/">
+            
+                    
+                    ComputerNetwork
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../ComputerNetwork/ProWords.html">
+            
+                <a href="../ComputerNetwork/ProWords.html">
+            
+                    
+                    术语单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2" data-path="../ComputerNetwork/学习笔记.html">
+            
+                <a href="../ComputerNetwork/学习笔记.html">
+            
+                    
+                    计算机网络学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.3" data-path="../ComputerNetwork/小知识.html">
+            
+                <a href="../ComputerNetwork/小知识.html">
+            
+                    
+                    学习计算机网络中的小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.4" data-path="../NoClass/浏览器架构简析.md">
+            
+                <span>
+            
+                    
+                    浏览器架构简析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Shell小知识</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="linux-shell-&#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;"><a name="linux-shell-&#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;" class="plugin-anchor" href="#linux-shell-&#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;"><i class="fa fa-link" aria-hidden="true"></i></a>Linux Shell &#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;</h1>
+<h2 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="plugin-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x5F55;</h2>
+<ul>
+<li><a href="#shebang-&#x884C;">Shebang &#x884C;</a></li>
+<li><a href="#echo-&#x547D;&#x4EE4;-&#x539F;&#x6837;&#x8F93;&#x51FA;">echo $(&#x547D;&#x4EE4;) &#x539F;&#x6837;&#x8F93;&#x51FA;</a></li>
+<li><a href="#&#x5355;&#x884C;&#x547D;&#x4EE4;&#x62C6;&#x6210;&#x591A;&#x884C;&#x6267;&#x884C;">&#x5355;&#x884C;&#x547D;&#x4EE4;&#x62C6;&#x6210;&#x591A;&#x884C;&#x6267;&#x884C;</a></li>
+<li><a href="#exit-0&#x548C;exit-1">exit 0 &#x548C; exit 1</a></li>
+<li><a href="#&#x7279;&#x6B8A;&#x53D8;&#x91CF;">&#x7279;&#x6B8A;&#x53D8;&#x91CF;</a></li>
+<li><a href="#&#x8BA9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x83B7;&#x5F97;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;">&#x8BA9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x83B7;&#x5F97;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;</a></li>
+<li><a href="#&#x547D;&#x4EE4;--devnull-2--1&#x548C;&#x547D;&#x4EE4;--devnull"><code>&#x547D;&#x4EE4; &gt; /dev/null 2 &gt; &amp;1</code>&#x548C;<code>&#x547D;&#x4EE4; &amp;&gt; /dev/null</code></a></li>
+<li><a href="#&#x6570;&#x503C;&#x6BD4;&#x8F83;">&#x6570;&#x503C;&#x6BD4;&#x8F83;</a></li>
+<li><a href="#&#x51E0;&#x79CD;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;">&#x51E0;&#x79CD;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#&#x6570;&#x503C;&#x8FDB;&#x5236;&#x95F4;&#x76F8;&#x4E92;&#x8F6C;&#x6362;">&#x6570;&#x503C;&#x8FDB;&#x5236;&#x95F4;&#x76F8;&#x4E92;&#x8F6C;&#x6362;</a></li>
+<li><a href="#&#x7B49;&#x53F7;&#x4E24;&#x8FB9;&#x4E0D;&#x80FD;&#x6709;&#x7A7A;&#x683C;">&#x7B49;&#x53F7;&#x4E24;&#x8FB9;&#x4E0D;&#x80FD;&#x6709;&#x7A7A;&#x683C;</a></li>
+<li>[ $( )&#x3001;` `&#x3001;${ }&#x3001;$(( ))&#x3001;$[ ] &#x3001;[ ]&#x3001;(( )) &#x548C; [[ ]] &#x8BE6;&#x89E3;]&#xFF08;#---------&#x548C;---&#x8BE6;&#x89E3;)</li>
+<li><a href="#&#x7528;-cat-&#x547D;&#x4EE4;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;">&#x7528; cat&#x3001;echo &#x547D;&#x4EE4;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;</a></li>
+<li><a href="#&#x6740;&#x6B7B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;">&#x6740;&#x6B7B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;</a></li>
+<li><a href="#&#x5220;&#x9664;&#x7A7A;&#x884C;">&#x5220;&#x9664;&#x7A7A;&#x884C;</a></li>
+<li><a href="#&#x6587;&#x4EF6;&#x53BB;&#x91CD;">&#x6587;&#x4EF6;&#x53BB;&#x91CD;</a></li>
+<li><a href="#&#x622A;&#x53D6;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x51E0;&#x884C;&#x3001;&#x672B;&#x5C3E;&#x51E0;&#x884C;&#x548C;&#x4E2D;&#x95F4;&#x51E0;&#x884C;">&#x622A;&#x53D6;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x51E0;&#x884C;&#x3001;&#x672B;&#x5C3E;&#x51E0;&#x884C;&#x548C;&#x4E2D;&#x95F4;&#x51E0;&#x884C;</a></li>
+<li><a href="#&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x4EE5;&#x5305;&#x542B;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x547D;&#x540D;">&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x4EE5;&#x5305;&#x542B;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x547D;&#x540D;</a></li>
+<li><a href="#&#x67E5;&#x770B;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x516C;&#x7F51;-ip">&#x67E5;&#x770B;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x516C;&#x7F51; IP</a></li>
+<li><a href="while-&#x65E0;&#x9650;&#x5FAA;&#x73AF;">while &#x65E0;&#x9650;&#x5FAA;&#x73AF;</a></li>
+<li><a href="#&#x8FDB;&#x7A0B;&#x67E5;&#x7AEF;&#x53E3;&#x7AEF;&#x53E3;&#x67E5;&#x8FDB;&#x7A0B;">&#x8FDB;&#x7A0B;&#x67E5;&#x7AEF;&#x53E3;&#xFF0C;&#x7AEF;&#x53E3;&#x67E5;&#x8FDB;&#x7A0B;</a></li>
+<li><a href="#&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;">&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;</a></li>
+<li><a href="#&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;">&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;</a></li>
+<li><a href="#&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;">&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;</a></li>
+</ul>
+<h2 id="exit-&#x9000;&#x51FA;&#x503C;"><a name="exit-&#x9000;&#x51FA;&#x503C;" class="plugin-anchor" href="#exit-&#x9000;&#x51FA;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>exit &#x9000;&#x51FA;&#x503C;</h2>
+<p>0 &#x8868;&#x793A;&#x6B63;&#x5E38;&#xFF0C;1 &#x8868;&#x793A;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;2 &#x8868;&#x793A;&#x7528;&#x6CD5;&#x4E0D;&#x5BF9;&#xFF0C;126 &#x8868;&#x793A;&#x4E0D;&#x662F;&#x53EF;&#x6267;&#x884C;&#x811A;&#x672C;&#xFF0C;127 &#x8868;&#x793A;&#x547D;&#x4EE4;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x3002;&#x5982;&#x679C;&#x811A;&#x672C;&#x88AB;&#x4FE1;&#x53F7; N &#x7EC8;&#x6B62;&#xFF0C;&#x5219;&#x9000;&#x51FA;&#x503C;&#x4E3A; 128 + N&#x3002;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x53EA;&#x8981;&#x9000;&#x51FA;&#x503C;&#x975E; 0&#xFF0C;&#x5C31;&#x8BA4;&#x4E3A;&#x6267;&#x884C;&#x51FA;&#x9519;&#x3002;</p>
+<pre><code class="lang-bash">$ ls &#x53C2;&#x6570; || <span class="hljs-built_in">echo</span> $?
+ls: &#x65E0;&#x6CD5;&#x8BBF;&#x95EE;<span class="hljs-string">&apos;&#x53C2;&#x6570;&apos;</span>: &#x6CA1;&#x6709;&#x90A3;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;
+2
+
+$ ./README.md || <span class="hljs-built_in">echo</span> $?
+bash: ./README.md: &#x6743;&#x9650;&#x4E0D;&#x591F;
+126
+
+$ &#x547D;&#x4EE4; || <span class="hljs-built_in">echo</span> $?
+&#x547D;&#x4EE4;&#xFF1A;&#x672A;&#x627E;&#x5230;&#x547D;&#x4EE4;
+127
+</code></pre>
+<h2 id="shebang-&#x884C;"><a name="shebang-&#x884C;" class="plugin-anchor" href="#shebang-&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a>Shebang &#x884C;</h2>
+<ul>
+<li>Shebang &#x884C;&#x4F4D;&#x4E8E;&#x811A;&#x672C;&#x7B2C;&#x4E00;&#x884C;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x5373;&#x8FD9;&#x4E2A;&#x811A;&#x672C;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x4EC0;&#x4E48;&#x89E3;&#x91CA;&#x5668;&#x6267;&#x884C;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/usr/bin/env bash</span>
+<span class="hljs-comment"># &#x610F;&#x601D;&#x662F;&#x8BA9; Shell &#x67E5;&#x627E; $PATH &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x91CC;&#x9762;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7684; bash</span>
+
+<span class="hljs-comment"># &#x8FD9;&#x6837;&#x6267;&#x884C;&#x811A;&#x672C;&#x65F6;&#x5C31;&#x4E0D;&#x7528;&#x624B;&#x52A8;&#x6307;&#x5B9A; Shell &#x89E3;&#x91CA;&#x5668;</span>
+$ ./script.sh
+<span class="hljs-comment"># &#x82E5;&#x6CA1;&#x6709; Shebang &#x884C;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5982;&#x4E0B;&#xFF1A;</span>
+$ bash ./script.sh
+</code></pre>
+<h2 id="echo-&#x547D;&#x4EE4;-&#x539F;&#x6837;&#x8F93;&#x51FA;"><a name="echo-&#x547D;&#x4EE4;-&#x539F;&#x6837;&#x8F93;&#x51FA;" class="plugin-anchor" href="#echo-&#x547D;&#x4EE4;-&#x539F;&#x6837;&#x8F93;&#x51FA;"><i class="fa fa-link" aria-hidden="true"></i></a>echo $(&#x547D;&#x4EE4;) &#x539F;&#x6837;&#x8F93;&#x51FA;</h2>
+<pre><code class="lang-bash"><span class="hljs-comment"># echo `&#x547D;&#x4EE4;` &#x6253;&#x5370;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x5355;&#x884C;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x53CC;&#x5F15;&#x53F7;&#x4FDD;&#x6301;&#x547D;&#x4EE4;&#x7684;&#x539F;&#x6837;&#x683C;&#x5F0F;&#x8F93;&#x51FA;</span>
+$ <span class="hljs-built_in">echo</span> `ls`
+abcdefghij001 abcdefghij002 abcdefghij003 abcdefghij004 abcdefghij005 abcdefghij006 abcdefghij007 abcdefghij008 abcdefghij009 abcdefghij010 abcdefghij011 abcdefghij012 abcdefghij013
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;`ls`&quot;</span>
+abcdefghij001
+abcdefghij002
+abcdefghij003
+abcdefghij004
+abcdefghij005
+abcdefghij006
+abcdefghij007
+abcdefghij008
+abcdefghij009
+abcdefghij010
+abcdefghij011
+abcdefghij012
+abcdefghij013
+</code></pre>
+<h2 id="&#x5355;&#x884C;&#x547D;&#x4EE4;&#x62C6;&#x6210;&#x591A;&#x884C;&#x6267;&#x884C;"><a name="&#x5355;&#x884C;&#x547D;&#x4EE4;&#x62C6;&#x6210;&#x591A;&#x884C;&#x6267;&#x884C;" class="plugin-anchor" href="#&#x5355;&#x884C;&#x547D;&#x4EE4;&#x62C6;&#x6210;&#x591A;&#x884C;&#x6267;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x884C;&#x547D;&#x4EE4;&#x62C6;&#x6210;&#x591A;&#x884C;&#x6267;&#x884C;</h2>
+<pre><code class="lang-shell">$ echo foo bar
+# &#x7B49;&#x540C;&#x4E8E;
+$ echo foo \
+bar
+</code></pre>
+<h2 id="exit-0&#x548C;exit-1"><a name="exit-0&#x548C;exit-1" class="plugin-anchor" href="#exit-0&#x548C;exit-1"><i class="fa fa-link" aria-hidden="true"></i></a><code>exit 0</code>&#x548C;<code>exit 1</code></h2>
+<ul>
+<li>Linux exit &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x9000;&#x51FA;&#x76EE;&#x524D;&#x7684; shell</li>
+<li>&#x6267;&#x884C; exit &#x53EF;&#x4F7F; shell &#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#x503C;&#x9000;&#x51FA;</li>
+<li>&#x82E5;&#x4E0D;&#x8BBE;&#x7F6E;&#x72B6;&#x6001;&#x503C;&#x53C2;&#x6570;&#xFF0C;&#x5219; shell &#x4EE5;&#x9884;&#x8BBE;&#x503C;&#x9000;&#x51FA;&#xFF1B;&#x72B6;&#x6001;&#x503C; 0 &#x4EE3;&#x8868;&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;&#x5176;&#x4ED6;&#x503C;&#x4EE3;&#x8868;&#x6267;&#x884C;&#x5931;&#x8D25;</li>
+<li>exit &#x4E5F;&#x53EF;&#x7528;&#x5728; script&#xFF0C;&#x79BB;&#x5F00;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684; script&#xFF0C;&#x56DE;&#x5230; shell<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;exit [ &#x72B6;&#x6001;&#x503C; ]</p>
+</blockquote>
+</li>
+</ul>
+<div align="center">
+  <img src="images/shell_exit.jpg"><br>Ubuntu shell exit
+ </div>
+
+<h2 id="&#x7279;&#x6B8A;&#x53D8;&#x91CF;"><a name="&#x7279;&#x6B8A;&#x53D8;&#x91CF;" class="plugin-anchor" href="#&#x7279;&#x6B8A;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x6B8A;&#x53D8;&#x91CF;</h2>
+<table>
+<thead>
+<tr>
+<th>$X</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$?</td>
+<td>&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x7684;&#x7ED3;&#x675F;&#x4EE3;&#x7801;&#xFF08;&#x8FD4;&#x56DE;&#x503C; 0 &#x8868;&#x793A;&#x6210;&#x529F;&#xFF0C;&#x975E; 0 &#x8868;&#x793A;&#x5931;&#x8D25;&#xFF09;</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>&#x811A;&#x672C;&#x8FD0;&#x884C;&#x7684;&#x5F53;&#x524D;&#x8FDB;&#x7A0B; ID &#x53F7;&#xFF08;PID&#xFF09;</td>
+</tr>
+<tr>
+<td>$n(n=1,2...)</td>
+<td>&#x4F20;&#x9012;&#x7ED9;&#x8BE5; shell &#x811A;&#x672C;&#x7684;&#x7B2C; n &#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x591A;&#x4E8E; 9 &#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;<code>${10}</code>&#x5F62;&#x5F0F;&#x5F15;&#x7528;</td>
+</tr>
+<tr>
+<td>$0</td>
+<td>&#x6267;&#x884C;&#x811A;&#x672C;&#x672C;&#x8EAB;&#x7684;&#x540D;&#x5B57;</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>&#x4F20;&#x9012;&#x7ED9;&#x811A;&#x672C;&#x53C2;&#x6570;&#x7684;&#x4E2A;&#x6570;</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>&#x811A;&#x672C;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#x5217;&#x8868;,&#x4EE3;&#x8868;&quot;$1 $2 &#x2026; $n&quot;&#xFF0C;&#x5373;&#x5F53;&#x6210;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x8F93;&#x51FA;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x53C2;&#x6570;&#x4E4B;&#x95F4;&#x4EE5;&#x7A7A;&#x683C;&#x9694;&#x5F00;</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>&#x811A;&#x672C;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#x5217;&#x8868;,&#x4EE3;&#x8868;&quot;$1&quot; &quot;$2&quot; &#x2026; &quot;$n&quot; &#xFF0C;&#x5373;&#x6BCF;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x53C2;&#x6570;&#x662F;&#x72EC;&#x7ACB;&#x7684; ,&#x4E5F;&#x662F;&#x5168;&#x90E8;&#x8F93;&#x51FA;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5982;&#x679C;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x653E;&#x5728;&#x53CC;&#x5F15;&#x53F7;&#x91CC;&#x9762;&#xFF0C;&#x89C6;&#x4E3A;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;<pre><code class="lang-bash">$ ./script.sh <span class="hljs-string">&quot;a b&quot;</span>
+a b
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x548C;-&#x533A;&#x522B;"><a name="&#x548C;-&#x533A;&#x522B;" class="plugin-anchor" href="#&#x548C;-&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a><code>$*</code> &#x548C; <code>$@</code>&#x533A;&#x522B;</h3>
+<pre><code class="lang-shell">#!/bin/bash
+# This script is to verify the difference between $* and $@
+
+echo Dollar Star is $*
+echo &quot;Dollar Star in double quotes is $*&quot;
+
+echo Dollar At is $@
+echo &quot;Dollar At in double quotes is $@&quot;
+
+echo 
+echo &quot;Looping through Dollar Star&quot;
+for i in $*
+do
+    echo &quot;parameter is $i&quot;
+done
+echo 
+echo &quot;Looping through Dollar Star with double quotes&quot;
+for i in &quot;$*&quot;
+do
+    echo &quot;Parameter is $i&quot;
+done 
+
+echo
+echo &quot;Looping through Dollar At&quot;
+for i in $@
+do
+    echo &quot;Parameter is $i&quot;
+done
+echo
+echo &quot;Looping through Dollar At with double quotes&quot;
+for i in &quot;$@&quot;
+do
+    echo &quot;Parameter is $i&quot;
+done
+
+$ bash test.sh 1 2 &quot; 3 4 &quot; 5 6
+Dollar Star is 1 2 3 4 5 6
+Dollar Star in double quotes is 1 2  3 4  5 6
+Dollar At is 1 2 3 4 5 6
+Dollar At in double quotes is 1 2  3 4  5 6
+
+Looping through Dollar Star
+parameter is 1
+parameter is 2
+parameter is 3
+parameter is 4
+parameter is 5
+parameter is 6
+
+Looping through Dollar Star with double quotes
+Parameter is 1 2  3 4  5 6
+
+Looping through Dollar At
+Parameter is 1
+Parameter is 2
+Parameter is 3
+Parameter is 4
+Parameter is 5
+Parameter is 6
+
+Looping through Dollar At with double quotes
+Parameter is 1
+Parameter is 2
+Parameter is  3 4 
+Parameter is 5
+Parameter is 6
+</code></pre>
+<blockquote>
+<ul>
+<li>&#x76F8;&#x540C;&#x70B9;&#x5982;&#x4E0B;&#xFF1A;
+1&#x3001;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x4E0D;&#x4FDD;&#x7559;&#x7A7A;&#x683C;
+2&#x3001;&#x5E26;&#x53CC;&#x5F15;&#x53F7;&#x8F93;&#x51FA;&#x4F1A;&#x4FDD;&#x7559;&#x5E26;&#x5F15;&#x53F7;&#x7684;&#x7A7A;&#x683C;
+3&#x3001;&#x4E0D;&#x5E26;&#x53CC;&#x5F15;&#x53F7;&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E00;&#x6837;&#xFF1A;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5355;&#x72EC;&#x8F93;&#x51FA;</li>
+<li>&#x4E0D;&#x540C;&#x70B9;&#x5982;&#x4E0B;&#xFF1A;
+1&#x3001;&#x5E26;&#x53CC;&#x5F15;&#x53F7;&#x904D;&#x5386;<code>$*</code>&#x76F8;&#x5F53;&#x4E8E;&#x5E26;&#x53CC;&#x5F15;&#x53F7;&#x8F93;&#x51FA;<code>$*</code>
+2&#x3001;&#x5E26;&#x53CC;&#x5F15;&#x53F7;&#x904D;&#x5386;<code>$@</code>&#x5206;&#x522B;&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5E26;&#x53CC;&#x5F15;&#x53F7;&#x7684;&#x53C2;&#x6570;&#x4FDD;&#x7559;&#x7A7A;&#x683C;&#x8F93;&#x51FA;</li>
+</ul>
+</blockquote>
+<p><br></p>
+<div align="center">
+  <img src="images/shell_$.jpg"><br>$* &#x793A;&#x4F8B;
+ </div>
+
+<h2 id="&#x8BA9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x83B7;&#x5F97;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;"><a name="&#x8BA9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x83B7;&#x5F97;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;" class="plugin-anchor" href="#&#x8BA9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x83B7;&#x5F97;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BA9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x83B7;&#x5F97;&#x547D;&#x4EE4;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;</h2>
+<h3 id="1&#x3001;&#x547D;&#x4EE4;&#x8868;&#x793A;"><a name="1&#x3001;&#x547D;&#x4EE4;&#x8868;&#x793A;" class="plugin-anchor" href="#1&#x3001;&#x547D;&#x4EE4;&#x8868;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>1&#x3001;<code>$(&#x547D;&#x4EE4;)</code>&#x8868;&#x793A;</h3>
+<pre><code class="lang-shell">#!/bin/bash
+i=$(ls 123.txt)
+echo $i
+</code></pre>
+<h3 id="2&#x3001;&#x53CD;&#x5F15;&#x53F7;&#x8868;&#x793A;"><a name="2&#x3001;&#x53CD;&#x5F15;&#x53F7;&#x8868;&#x793A;" class="plugin-anchor" href="#2&#x3001;&#x53CD;&#x5F15;&#x53F7;&#x8868;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;&#x53CD;&#x5F15;&#x53F7;&#x8868;&#x793A;</h3>
+<pre><code class="lang-shell">#!/bin/bash
+i=`ls 123.txt`
+echo $i
+</code></pre>
+<h2 id="&#x547D;&#x4EE4;--devnull-2--1&#x548C;&#x547D;&#x4EE4;--devnull"><a name="&#x547D;&#x4EE4;--devnull-2--1&#x548C;&#x547D;&#x4EE4;--devnull" class="plugin-anchor" href="#&#x547D;&#x4EE4;--devnull-2--1&#x548C;&#x547D;&#x4EE4;--devnull"><i class="fa fa-link" aria-hidden="true"></i></a><code>&#x547D;&#x4EE4; &gt; /dev/null 2 &gt; &amp;1</code>&#x548C;<code>&#x547D;&#x4EE4; &amp;&gt; /dev/null</code></h2>
+<blockquote>
+<p>&#x89E3;&#x91CA;&#xFF1A;&#x65E0;&#x63D0;&#x793A;&#xFF08;&#x5305;&#x62EC; stdin &#x548C; stderr &#xFF09;&#x6267;&#x884C;</p>
+</blockquote>
+<p><br></p>
+<div align="center">
+  <img src="images/shell_wj.jpg"><br>
+ </div>
+
+<h3 id="&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;"><a name="&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;" class="plugin-anchor" href="#&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;</h3>
+<ul>
+<li>&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x662F;&#x4E0E;&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x3001;&#x8F93;&#x51FA;&#x5173;&#x8054;&#x7684;&#x6574;&#x6570;&#x3002;&#x5B83;&#x4EEC;&#x7528;&#x6765;&#x8DDF;&#x8E2A;&#x5DF2;&#x6253;&#x5F00;&#x7684;&#x6587;&#x4EF6;</li>
+<li><p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x662F; stidin&#x3001;stdout&#x3001;&#x548C; stderr</p>
+<ul>
+<li>0 &#x2014;&#x2014; stdin&#xFF08;&#x6807;&#x51C6;&#x8F93;&#x5165;&#xFF09;</li>
+<li>1 &#x2014;&#x2014; stdout &#xFF08;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF09;</li>
+<li>2 &#x2014;&#x2014; stderr &#xFF08;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#xFF09;</li>
+</ul>
+</li>
+<li><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x7684;&#x5185;&#x5BB9;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x4E2D;</p>
+</li>
+</ul>
+<p><br></p>
+<div align="center">
+  <img src="images/shell_stdout.jpg"><br>stdout &#xFF08;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF09;
+ </div>
+
+<p> <br></p>
+<div align="center">
+  <img src="images/shell_stderr.jpg"><br>stderr &#xFF08;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#xFF09;
+ </div>
+
+<h3 id="devnull"><a name="devnull" class="plugin-anchor" href="#devnull"><i class="fa fa-link" aria-hidden="true"></i></a><code>/dev/null</code></h3>
+<ul>
+<li><code>/dev/null</code>&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x63A5;&#x6536;&#x5230;&#x7684;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x88AB;&#x4E22;&#x5F03;&#x3002;&#x56E0;&#x6B64;&#xFF0C;null &#x8FD9;&#x4E2A;&#x8BBE;&#x5907;&#x901A;&#x5E38;&#x4E5F;&#x88AB;&#x6210;&#x4E3A;&#x4F4D;&#x6876;&#xFF08; bit bucket &#xFF09;&#x6216;&#x9ED1;&#x6D1E;</li>
+<li><p>&#x91CD;&#x5B9A;&#x5411;&#x64CD;&#x4F5C;&#x7ED9;&#x8FD9;&#x4E2A;<code>/dev/null</code>&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x4E1C;&#x897F;&#x90FD;&#x4F1A;&#x88AB;&#x4E22;&#x5F03;</p>
+<h3 id="&#x6269;&#x5C55;&#x4F7F;&#x7528;"><a name="&#x6269;&#x5C55;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x6269;&#x5C55;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6269;&#x5C55;&#x4F7F;&#x7528;</h3>
+<pre><code class="lang-shell"># &#x5C06; stderr &#x5355;&#x72EC;&#x5B9A;&#x5411;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5C06;stdout&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;
+$ ls 123.txt 1&gt; stdout.txt 2&gt; stderr.txt
+# &#x5C06; stderr &#x8F6C;&#x6362;&#x6210; stdout&#xFF0C;&#x4F7F;&#x5F97; stderr &#x548C; stdout &#x90FD;&#x88AB;&#x91CD;&#x65B0;&#x5B9A;&#x5411;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;
+$ ls 123.txt 1&gt; output.txt 2&gt;&amp;1
+# &#x6216;
+$ ls 123.txt &gt; output.txt 2&gt;&amp;1
+# &#x6216;
+$ ls 123.txt &amp;&gt; output.txt
+# &#x6216;
+$ ls 123.txt &gt;&amp; output.txt
+</code></pre>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><code>&gt;</code> &#x6216; <code>1&gt;</code>&#xFF08;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF09;&#xFF1A;&#x628A; STDOUT &#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;,&#x5C06;&#x9ED8;&#x8BA4;&#x6216;&#x6B63;&#x786E;&#x7684;&#x4F20;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;</li>
+<li><code>2&gt;</code>&#xFF08;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#xFF09;&#xFF1A;&#x628A; STDERR &#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x5C06;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x4F20;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#xFF0C;&#x6B63;&#x786E;&#x7559;&#x4E0B;</li>
+<li><code>2&gt;&amp;1</code>&#xFF1A;&#x5C06;&#x9519;&#x8BEF;&#x8F6C;&#x4E3A;&#x6B63;&#x786E;&#x8F93;&#x51FA;&#xFF0C;&#x8001;&#x5F0F;&#x201C;&#x6D17;&#x94B1;&#x201D;&#x65B9;&#x6CD5;</li>
+<li><code>1&gt;&amp;2</code>&#xFF1A;&#x5C06;&#x6B63;&#x786E;&#x8F6C;&#x4E3A;&#x9519;&#x8BEF;&#x8F93;&#x51FA;</li>
+<li><code>&amp;&gt;</code>or<code>&gt;&amp;</code>&#xFF1A;&#x6B63;&#x786E;&#x3001;&#x9519;&#x8BEF;&#x90FD;&#x8F93;&#x51FA;&#xFF0C;&#x65B0;&#x5F0F;&#x65B9;&#x6CD5;</li>
+</ul>
+</blockquote>
+<h2 id="&#x6570;&#x503C;&#x6BD4;&#x8F83;"><a name="&#x6570;&#x503C;&#x6BD4;&#x8F83;" class="plugin-anchor" href="#&#x6570;&#x503C;&#x6BD4;&#x8F83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x503C;&#x6BD4;&#x8F83;</h2>
+<table>
+<thead>
+<tr>
+<th>arg1 OP arg2 ( OP )</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>arg1 is equal arg2</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>arg1 is not-equal arg2</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>arg1 is less-than arg2</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>arg1 is less-than-or-equal arg2</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>arg1 is greater-than arg2</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>arg1 is greater-than-or-equal arg2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x51E0;&#x79CD;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;"><a name="&#x51E0;&#x79CD;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#&#x51E0;&#x79CD;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51E0;&#x79CD;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</h2>
+<pre><code class="lang-shell"> $ ((i=5%2))
+ $ echo $i            
+ # 1
+
+ $ let i=5%2
+ $ echo $i            
+ # 1
+
+ $ expr 5 % 2
+ # expr &#x4E4B;&#x540E;&#x7684; 5&#xFF0C;%&#xFF0C;2 &#x4E4B;&#x95F4;&#x5FC5;&#x987B;&#x6709;&#x7A7A;&#x683C;&#x5206;&#x5F00;&#x3002;&#x5982;&#x679C;&#x8FDB;&#x884C;&#x4E58;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8FD0;&#x7B97;&#x7B26;&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#xFF0C;&#x5426;&#x5219; Shell &#x4F1A;&#x628A;&#x4E58;&#x53F7;&#x89E3;&#x91CA;&#x4E3A;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x5BFC;&#x81F4;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;
+
+ $ i=$(echo 5%2 | bc)
+ $ echo $i            
+ # 1
+
+  $ i=$(echo &quot;5 2&quot; | awk `{print $1+$2;}`)
+  $ echo $i            
+  # 1
+</code></pre>
+<ul>
+<li><code>let</code>&#xFF0C;<code>expr</code>&#xFF0C;<code>bc</code> &#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6C42;&#x6A21;&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x90FD;&#x662F; <code>%</code>&#xFF0C;&#x800C; <code>let</code> &#x548C; <code>bc</code>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6C42;&#x5E42;&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x524D;&#x8005;&#x662F;<code>**</code>&#xFF0C;&#x540E;&#x8005;&#x662F; <code>^</code></li>
+<li><p><code>(())</code> &#x7684;&#x8FD0;&#x7B97;&#x6548;&#x7387;&#x6700;&#x9AD8;&#xFF0C;&#x800C; <code>let</code> &#x4F5C;&#x4E3A; <code>Shell</code> &#x5185;&#x7F6E;&#x547D;&#x4EE4;&#xFF0C;&#x6548;&#x7387;&#x4E5F;&#x5F88;&#x9AD8;&#xFF0C;&#x4F46;&#x662F; <code>expr</code>&#xFF0C;<code>bc</code>&#xFF0C;<code>awk</code> &#x7684;&#x8BA1;&#x7B97;&#x6548;&#x7387;&#x5C31;&#x6BD4;&#x8F83;&#x4F4E;</p>
+<ul>
+<li><code>let</code> &#x548C; <code>expr</code> &#x90FD;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x6D6E;&#x70B9;&#x8FD0;&#x7B97;&#xFF0C;&#x4F46;&#x662F; <code>bc</code> &#x548C; <code>awk</code> &#x53EF;&#x4EE5;
+``` shell
+$ echo &quot;scale=3; 1/12&quot; | bc<h1 id="0083"><a name="0083" class="plugin-anchor" href="#0083"><i class="fa fa-link" aria-hidden="true"></i></a>0.083</h1>
+</li>
+</ul>
+<p>$ echo &quot;1 12&quot; | awk &apos;{printf(&quot;%0.3f\n&quot;,$1/$2)}&apos;</p>
+<h1 id="0083"><a name="0083" class="plugin-anchor" href="#0083"><i class="fa fa-link" aria-hidden="true"></i></a>0.083</h1>
+<p>```</p>
+<h2 id="&#x6570;&#x503C;&#x8FDB;&#x5236;&#x95F4;&#x76F8;&#x4E92;&#x8F6C;&#x6362;"><a name="&#x6570;&#x503C;&#x8FDB;&#x5236;&#x95F4;&#x76F8;&#x4E92;&#x8F6C;&#x6362;" class="plugin-anchor" href="#&#x6570;&#x503C;&#x8FDB;&#x5236;&#x95F4;&#x76F8;&#x4E92;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x503C;&#x8FDB;&#x5236;&#x95F4;&#x76F8;&#x4E92;&#x8F6C;&#x6362;</h2>
+<p>``` shell</p>
+<h1 id="&#x516B;&#x8FDB;&#x5236;-12-&#x8F6C;&#x6362;&#x4E3A;&#x5341;&#x8FDB;&#x5236;"><a name="&#x516B;&#x8FDB;&#x5236;-12-&#x8F6C;&#x6362;&#x4E3A;&#x5341;&#x8FDB;&#x5236;" class="plugin-anchor" href="#&#x516B;&#x8FDB;&#x5236;-12-&#x8F6C;&#x6362;&#x4E3A;&#x5341;&#x8FDB;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516B;&#x8FDB;&#x5236; 12 &#x8F6C;&#x6362;&#x4E3A;&#x5341;&#x8FDB;&#x5236;</h1>
+<h1 id="&#x65B9;&#x6CD5;&#x4E00;&#x3001;"><a name="&#x65B9;&#x6CD5;&#x4E00;&#x3001;" class="plugin-anchor" href="#&#x65B9;&#x6CD5;&#x4E00;&#x3001;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x4E00;&#x3001;</h1>
+<p>$ echo &quot;obase=8;ibase=10;12&quot; | bc            </p>
+<h1 id="10"><a name="10" class="plugin-anchor" href="#10"><i class="fa fa-link" aria-hidden="true"></i></a>10</h1>
+<h1 id="obase---&#x8FDB;&#x5236;&#x6E90;"><a name="obase---&#x8FDB;&#x5236;&#x6E90;" class="plugin-anchor" href="#obase---&#x8FDB;&#x5236;&#x6E90;"><i class="fa fa-link" aria-hidden="true"></i></a>obase - &#x8FDB;&#x5236;&#x6E90;</h1>
+<h1 id="ibase---&#x8FDB;&#x5236;&#x8F6C;&#x6362;&#x76EE;&#x6807;"><a name="ibase---&#x8FDB;&#x5236;&#x8F6C;&#x6362;&#x76EE;&#x6807;" class="plugin-anchor" href="#ibase---&#x8FDB;&#x5236;&#x8F6C;&#x6362;&#x76EE;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a>ibase - &#x8FDB;&#x5236;&#x8F6C;&#x6362;&#x76EE;&#x6807;</h1>
+<h1 id="bc-&#x547D;&#x4EE4;&#x662F;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x8BA1;&#x7B97;&#x5668;&#x8BED;&#x8A00;&#xFF0C;&#x901A;&#x5E38;&#x5728;-linux-&#x4E0B;&#x5F53;&#x8BA1;&#x7B97;&#x5668;&#x7528;"><a name="bc-&#x547D;&#x4EE4;&#x662F;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x8BA1;&#x7B97;&#x5668;&#x8BED;&#x8A00;&#xFF0C;&#x901A;&#x5E38;&#x5728;-linux-&#x4E0B;&#x5F53;&#x8BA1;&#x7B97;&#x5668;&#x7528;" class="plugin-anchor" href="#bc-&#x547D;&#x4EE4;&#x662F;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x8BA1;&#x7B97;&#x5668;&#x8BED;&#x8A00;&#xFF0C;&#x901A;&#x5E38;&#x5728;-linux-&#x4E0B;&#x5F53;&#x8BA1;&#x7B97;&#x5668;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>bc &#x547D;&#x4EE4;&#x662F;&#x4EFB;&#x610F;&#x7CBE;&#x5EA6;&#x8BA1;&#x7B97;&#x5668;&#x8BED;&#x8A00;&#xFF0C;&#x901A;&#x5E38;&#x5728; linux &#x4E0B;&#x5F53;&#x8BA1;&#x7B97;&#x5668;&#x7528;</h1>
+</li>
+</ul>
+<h1 id="&#x65B9;&#x6CD5;&#x4E8C;&#x3001;"><a name="&#x65B9;&#x6CD5;&#x4E8C;&#x3001;" class="plugin-anchor" href="#&#x65B9;&#x6CD5;&#x4E8C;&#x3001;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x4E8C;&#x3001;</h1>
+<p>$ echo $((8#12)                                                 </p>
+<h1 id="10"><a name="10" class="plugin-anchor" href="#10"><i class="fa fa-link" aria-hidden="true"></i></a>10</h1>
+<pre><code>
+ ## &#x7B49;&#x53F7;&#x4E24;&#x8FB9;&#x4E0D;&#x80FD;&#x6709;&#x7A7A;&#x683C;
+
+ &lt;div align=center&gt;
+  &lt;img src=&quot;./images/nospace1.jpg&quot;&gt;&lt;br/&gt;= &#x542B;&#x6709;&#x7A7A;&#x683C;&#x5BFC;&#x81F4;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;
+ &lt;/div&gt;
+
+ &lt;div align=center&gt;
+  &lt;img src=&quot;./images/nospace2.jpg&quot;&gt;&lt;br/&gt;&#x6B63;&#x786E;
+ &lt;/div&gt;
+
+ ## $( )&#x3001;\` \`&#x3001;${ }&#x3001;$(( ))&#x3001;$[ ] &#x3001;[ ]&#x3001;(( )) &#x548C; [[ ]] &#x8BE6;&#x89E3;
+
+|  | &#x8BF4;&#x660E; | &#x4E3E;&#x4F8B; | &#x4F8B;&#x5B50;&#x8BF4;&#x660E; |
+| --- | --- | --- | --- |
+| $( ) | &#x547D;&#x4EE4;&#x66FF;&#x6362; | `version=$(uname -r)` | &#x5F97;&#x5230;&#x5185;&#x6838;&#x7248;&#x672C;&#x53F7; |
+| \` \` | &#x547D;&#x4EE4;&#x66FF;&#x6362;&#xFF0C;&#x540C; $() | version=\`uname -r\` | &#x540C;&#x4E0A; |
+| ${ } | &#x7528;&#x4E8E;&#x53D8;&#x91CF;&#x66FF;&#x6362; |  `a=1; b=${a}`  &#x5176;&#x5B9E;&#x8FD9;&#x91CC;&#x7528; $a &#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x4F1A;&#x6709;&#x533A;&#x522B; | a &#x8D4B;&#x7ED9; b |
+| $(( )) | &#x8FDB;&#x884C;&#x6570;&#x5B66;&#x8FD0;&#x7B97; | `echo $(( 1+2*3 ))` | &#x8F93;&#x5165; 1+2&#xD7;3 &#x7684;&#x7ED3;&#x679C; |
+| $[ ] | &#x8FDB;&#x884C;&#x6570;&#x5B66;&#x8FD0;&#x7B97; | `echo $[ 1+2*3 ]` | &#x540C;&#x4E0A; |
+| [ ] | test &#x547D;&#x4EE4;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x5F62;&#x5F0F; | `if [ 1 eq 1 ]...` | &#x5B57;&#x9762;&#x610F;&#x601D; |
+| (( )) | &#x662F;`[  ]`&#x7684;&#x9488;&#x5BF9;&#x6570;&#x5B66;&#x6BD4;&#x8F83;&#x8868;&#x8FBE;&#x5F0F;&#x52A0;&#x5F3A;&#x7248; |  |  |
+| [[ ]] | &#x662F;`[  ]`&#x7684;&#x9488;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x52A0;&#x5F3A;&#x7248; | [[ $? != 0 ]] |  |
+
+ * \` \` &#x548C; $( )&#xFF1A;&#x53CD;&#x5F15;&#x53F7;&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x5728;&#x6240;&#x6709; shell &#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x800C;`$( )`&#x6709;&#x4E9B;&#x4E0D;&#x53EF;&#x4EE5;&#xFF1B;&#x591A;&#x5C42;&#x4F7F;&#x7528;&#x53CD;&#x5F15;&#x53F7;&#x9700;&#x8981;&#x52A0;`\`&#xFF0C;`$( )`&#x66F4;&#x6D45;&#x663E;&#x6613;&#x61C2;&#xFF0C;&#x4E0D;&#x6613;&#x51FA;&#x9519;
+ ``` shell
+ $ cat a.txt
+ b.txt
+ $ cat b.txt
+ c.txt
+ $ cat c.txt
+ Hello World!
+ $ cat `cat \`cat a.txt\``   
+ # ``&#x5185;&#x7684;&#x53CD;&#x5F15;&#x53F7;&#x5FC5;&#x987B;&#x4F7F;&#x7528; \`
+ Hello World!
+ $ cat $(cat $(cat a.txt))
+ Hello World!
+</code></pre><ul>
+<li>bash &#x53EA;&#x80FD;&#x4F5C;&#x6574;&#x6570;&#x8FD0;&#x7B97;&#xFF0C;&#x5BF9;&#x4E8E;&#x6D6E;&#x70B9;&#x6570;&#x662F;&#x5F53;&#x4F5C;&#x5B57;&#x7B26;&#x4E32;&#x5904;&#x7406;&#x7684;</li>
+<li><p><code>[ ]</code>&#xFF1A;&#x5FC5;&#x987B;&#x5728;&#x5DE6;&#x62EC;&#x53F7;&#x7684;&#x53F3;&#x4FA7;&#x548C;&#x53F3;&#x62EC;&#x53F7;&#x7684;&#x5DE6;&#x4FA7;&#x5404;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;&#x9519;</p>
+<h3 id="&#x66F4;&#x591A;&#x8D44;&#x6599;"><a name="&#x66F4;&#x591A;&#x8D44;&#x6599;" class="plugin-anchor" href="#&#x66F4;&#x591A;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x591A;&#x8D44;&#x6599;</h3>
+</li>
+</ul>
+<p><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&amp;tid=218853&amp;page=7#pid1617953" target="_blank">http://bbs.chinaunix.net/forum.php?mod=viewthread&amp;tid=218853&amp;page=7#pid1617953</a></p>
+<p><a href="https://www.cnblogs.com/zejin2008/p/8412680.html" target="_blank">https://www.cnblogs.com/zejin2008/p/8412680.html</a></p>
+<h2 id="&#x7528;-cat&#x3001;echo-&#x547D;&#x4EE4;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;"><a name="&#x7528;-cat&#x3001;echo-&#x547D;&#x4EE4;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;" class="plugin-anchor" href="#&#x7528;-cat&#x3001;echo-&#x547D;&#x4EE4;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7528; cat&#x3001;echo &#x547D;&#x4EE4;&#x5411;&#x6587;&#x4EF6;&#x5199;&#x5165;</h2>
+<p><kbd><strong>cat</strong></kbd></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x81EA;&#x52A8;&#x521B;&#x5EFA;</span>
+<span class="hljs-comment"># EOF &#x4E3A;&#x5F00;&#x5934;&#x7ED3;&#x5C3E;&#x6807;&#x8BB0;&#xFF0C;&#x53EF;&#x4EE5;&#x6362;&#x6210;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;</span>
+<span class="hljs-comment"># 1. &#x8986;&#x76D6;</span>
+cat &gt; test.sh &lt;&lt; EOF
+&gt; 1
+&gt; 2
+&gt; EOF
+<span class="hljs-comment"># 2. &#x8FFD;&#x52A0;</span>
+$ cat &gt;&gt; test.sh &lt;&lt; EOF
+&gt; 1
+&gt; 2
+&gt; EOF
+</code></pre>
+<p><kbd><strong>echo</strong></kbd></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x81EA;&#x52A8;&#x521B;&#x5EFA;</span>
+<span class="hljs-comment"># 1. &#x8986;&#x76D6;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;hello
+hello
+world&apos;</span>&gt;hello
+<span class="hljs-comment"># 2. &#x8FFD;&#x52A0;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;hello
+hello
+world&apos;</span> &gt;&gt; hello
+</code></pre>
+<h2 id="&#x6740;&#x6B7B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;"><a name="&#x6740;&#x6B7B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;" class="plugin-anchor" href="#&#x6740;&#x6B7B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6740;&#x6B7B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;</h2>
+<ol>
+<li>ps aux | grep &#x8FDB;&#x7A0B;&#x540D; ---&gt; kill -s 9 &#x8FDB;&#x7A0B;&#x53F7;</li>
+<li>kill -s 9 `ps aux | grep &#x8FDB;&#x7A0B;&#x540D; | grep -v grep | awk &apos;{print $2}&apos;`</li>
+<li>ps aux | grep &#x8FDB;&#x7A0B;&#x540D; | grep -v grep | xrags kill -s 9</li>
+<li>kill -s 9 `pgrep &#x8FDB;&#x7A0B;&#x540D;`</li>
+<li>pkill -s 9 &#x8FDB;&#x7A0B;&#x540D;</li>
+</ol>
+<p><kbd><strong>kill [&#x4FE1;&#x53F7;] [&#x8FDB;&#x7A0B;&#x53F7;]</strong></kbd></p>
+<ul>
+<li>kill &#x7ED9;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x53D1;&#x9001;&#x6307;&#x5B9A;&#x4FE1;&#x53F7;&#xFF0C;&#x9ED8;&#x8BA4;&#x53D1;&#x9001; TERM &#x4FE1;&#x53F7;&#xFF0C;&#x8FD9;&#x56DE;&#x6740;&#x6B7B;&#x4E0D;&#x80FD;&#x6355;&#x83B7;&#x8BE5;&#x4FE1;&#x53F7;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x5355;&#x7EAF; kill &#x6740;&#x4E0D;&#x6B7B;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F7F;&#x7528; kill ( 9 ) &#x4FE1;&#x53F7;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x4FE1;&#x53F7;&#x4E0D;&#x80FD;&#x88AB;&#x4EFB;&#x4F55;&#x8FDB;&#x7A0B;&#x6355;&#x83B7;</li>
+<li>&#x5F53;&#x6211;&#x4EEC;&#x6740;&#x6389;&#x7236;&#x8FDB;&#x7A0B;&#x65F6;&#xFF0C;&#x5176;&#x4E0B;&#x7684;&#x5B50;&#x8FDB;&#x7A0B;&#x4E5F;&#x4F1A;&#x88AB;&#x6740;&#x6B7B;</li>
+<li><code>kill -9</code> &#x5E38;&#x7528;&#x6765;&#x6740;&#x6B7B;&#x50F5;&#x5C38;&#x8FDB;&#x7A0B;</li>
+<li><p><code>pkill -9 &#x8FDB;&#x7A0B;&#x540D;</code> &#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x6027;&#x6740;&#x6B7B;&#x6240;&#x6709;&#x5305;&#x542B; <code>&#x8FDB;&#x7A0B;&#x540D;</code> &#x7684;&#x8FDB;&#x7A0B;</p>
+<ul>
+<li><code>killall -9 &#x8FDB;&#x7A0B;&#x540D;&#x5168;&#x79F0;</code> &#x4E5F;&#x662F;&#x4E00;&#x6B21;&#x6027;&#x6740;&#x6B7B;&#x6240;&#x6709;&#x5305;&#x542B; <code>&#x8FDB;&#x7A0B;&#x540D;</code> &#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x8FDB;&#x7A0B;&#x5B8C;&#x6574;&#x540D;&#x79F0;</li>
+</ul>
+</li>
+<li><p><code>kill -s singal</code> &#x547D;&#x4EE4;&#x6700;&#x957F;&#x4F7F;&#x7528;&#x7684;&#x4FE1;&#x53F7;&#xFF1A;</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Signal Name</th>
+<th style="text-align:center">Single Value</th>
+<th style="text-align:center">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SIGHUP</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">&#x6302;&#x8D77;</td>
+</tr>
+<tr>
+<td style="text-align:center">SIGINT</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">&#x4E2D;&#x65AD;&#xFF08;&#x7B49;&#x540C; Ctrl + C&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">&#x9000;&#x51FA;&#xFF08;&#x540C; Ctrl + \&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:center">SIGKILL</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">&#x53D1;&#x51FA;&#x5F3A;&#x5236;&#x6740;&#x6B7B;&#x4FE1;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:center">SIGTERM</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">&#x9ED8;&#x8BA4;&#xFF0C;&#x53D1;&#x51FA;&#x7EC8;&#x6B62;&#x4FE1;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:center">SIGSTOP</td>
+<td style="text-align:center">17, 19, 23</td>
+<td style="text-align:center">&#x6682;&#x505C;&#xFF08;&#x7B49;&#x540C; Ctrl + Z&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x5220;&#x9664;&#x7A7A;&#x884C;"><a name="&#x5220;&#x9664;&#x7A7A;&#x884C;" class="plugin-anchor" href="#&#x5220;&#x9664;&#x7A7A;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5220;&#x9664;&#x7A7A;&#x884C;</h2>
+<pre><code class="lang-shell"> sed &apos;/^$/d&apos; file
+
+ sed -n &apos;/./p&apos; file
+
+ grep -v ^$ file
+
+ awk &apos;/./ {print}&apos; file 
+
+ awk &apos;{if($0!=&quot;&quot;) print}&apos;
+
+ tr -s &quot;\n&quot;
+</code></pre>
+<h2 id="&#x6587;&#x4EF6;&#x53BB;&#x91CD;"><a name="&#x6587;&#x4EF6;&#x53BB;&#x91CD;" class="plugin-anchor" href="#&#x6587;&#x4EF6;&#x53BB;&#x91CD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6587;&#x4EF6;&#x53BB;&#x91CD;</h2>
+<pre><code class="lang-shell"># 1. awk &#xFF08;&#x4E0D;&#x6392;&#x5E8F;&#x76F4;&#x63A5;&#x53BB;&#x91CD;&#xFF0C;&#x6309;&#x539F;&#x987A;&#x5E8F;&#x8F93;&#x51FA;&#xFF09;
+awk &apos;!a[$0]++&apos; file
+cat file | awk &apos;!a[$0]++&apos;
+
+# 2. sort + uniq (&#x5148;&#x6392;&#x5E8F;&#x518D;&#x53BB;&#x91CD;&#xFF0C;&#x6253;&#x4E71;&#x4E86;&#x987A;&#x5E8F;)
+cat file | sort | uniq
+</code></pre>
+<h2 id="&#x622A;&#x53D6;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x51E0;&#x884C;&#x3001;&#x672B;&#x5C3E;&#x51E0;&#x884C;&#x548C;&#x4E2D;&#x95F4;&#x51E0;&#x884C;"><a name="&#x622A;&#x53D6;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x51E0;&#x884C;&#x3001;&#x672B;&#x5C3E;&#x51E0;&#x884C;&#x548C;&#x4E2D;&#x95F4;&#x51E0;&#x884C;" class="plugin-anchor" href="#&#x622A;&#x53D6;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x51E0;&#x884C;&#x3001;&#x672B;&#x5C3E;&#x51E0;&#x884C;&#x548C;&#x4E2D;&#x95F4;&#x51E0;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x622A;&#x53D6;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x51E0;&#x884C;&#x3001;&#x672B;&#x5C3E;&#x51E0;&#x884C;&#x548C;&#x4E2D;&#x95F4;&#x51E0;&#x884C;</h2>
+<pre><code class="lang-shell"> # &#x622A;&#x53D6;&#x524D; 5 &#x884C; - head&#x3001;sed&#x3001;awk
+ head -5 filename
+ # &#x6216;
+ sed -n &apos;1,5p&apos; filename
+ # &#x6216;
+ awk &apos;NR &lt; 5 {print $0}&apos; filename
+# &#x622A;&#x53D6;&#x6700;&#x540E; 5 &#x884C;
+tail -5 
+# &#x622A;&#x53D6; 5 - 10 &#x884C;
+sed -n &apos;5,10p&apos; filename
+# &#x6216;
+cat filename | head -n 10 | tail -n +5
+        # tail -n +2 : &#x4ECE;&#x7B2C; 2  &#x884C;&#x5F00;&#x59CB;&#x663E;&#x793A;&#x4E4B;&#x540E;&#x7684;&#x884C;
+        # tail -n 2 &#x6216; tail -2 : &#x663E;&#x793A;&#x6700;&#x540E; 2 &#x884C;
+# &#x5148;&#x5185;&#x5BB9;&#x5339;&#x914D;&#x627E;&#x5230;&#x67D0;&#x4E00;&#x884C;&#x884C;&#x53F7;&#xFF0C;&#x518D;&#x663E;&#x793A;&#x6B64;&#x884C;&#x540E; 5 &#x884C;
+# &#x5339;&#x914D;&#x663E;&#x793A; netstat -a &#x8F93;&#x51FA;&#x4E2D;&#x7684;    Active UNIX domain sockets (servers and established) &#x540E; 5 &#x884C;
+netstat -a | tail -n +`netstat -a | sed -n -e &apos;/UNIX/=&apos;` | head -n 5
+&#x6D3B;&#x8DC3;&#x7684;UNIX&#x57DF;&#x5957;&#x63A5;&#x5B57; (&#x670D;&#x52A1;&#x5668;&#x548C;&#x5DF2;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x7684;)
+Proto RefCnt Flags       Type       State         I-Node   &#x8DEF;&#x5F84;
+unix  2      [ ]         &#x6570;&#x636E;&#x62A5;                25378    /var/spool/postfix/dev/log
+unix  2      [ ACC ]     &#x6D41;        LISTENING     38931    /tmp/.ICE-unix/3025
+unix  2      [ ACC ]     &#x6D41;        LISTENING     36700    public/pickup
+</code></pre>
+<h2 id="&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x4EE5;&#x5305;&#x542B;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x547D;&#x540D;"><a name="&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x4EE5;&#x5305;&#x542B;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x547D;&#x540D;" class="plugin-anchor" href="#&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x4EE5;&#x5305;&#x542B;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x547D;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x4EE5;&#x5305;&#x542B;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x547D;&#x540D;</h2>
+<pre><code class="lang-shell">$ ls
+hello_log.txt
+$ mv hello_log.txt $(date +%Y%m%d-%H%M%S)_hello_log.txt
+$ ls
+20191113-205057_hello_log.txt
+$ tar cvf hello_log_$(date +%Y%m%d-%H%M%S).tar.gz 20191113-205057_hello_log.txt 
+20191113-205057_hello_log.txt
+$ ls
+20191113-205057_hello_log.txt  hello_log_20191113-205252.tar.gz
+</code></pre>
+<h2 id="&#x67E5;&#x770B;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x516C;&#x7F51;-ip"><a name="&#x67E5;&#x770B;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x516C;&#x7F51;-ip" class="plugin-anchor" href="#&#x67E5;&#x770B;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x516C;&#x7F51;-ip"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x516C;&#x7F51; IP</h2>
+<pre><code class="lang-shell"># &#x53EA;&#x8FD4;&#x56DE; ip
+$ curl ip.sb 
+$ curl www.pubyun.com/dyndns/getip
+$ curl members.3322.org/dyndns/getip
+
+# &#x8FD4;&#x56DE;&#x4E2D;&#x6587;&#x89E3;&#x6790;&#xFF0C;&#x5305;&#x62EC; IP&#x3001;&#x5730;&#x5740;&#x3001;&#x8FD0;&#x8425;&#x5546;
+$ curl cip.cc
+</code></pre>
+<h2 id="while-&#x65E0;&#x9650;&#x5FAA;&#x73AF;"><a name="while-&#x65E0;&#x9650;&#x5FAA;&#x73AF;" class="plugin-anchor" href="#while-&#x65E0;&#x9650;&#x5FAA;&#x73AF;"><i class="fa fa-link" aria-hidden="true"></i></a>while &#x65E0;&#x9650;&#x5FAA;&#x73AF;</h2>
+<pre><code class="lang-bash"><span class="hljs-keyword">while</span> :
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&#x6211;&#x662F;&#x6B7B;&#x5FAA;&#x73AF;&apos;</span>
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-keyword">while</span> /bin/<span class="hljs-literal">true</span>
+<span class="hljs-keyword">do</span>
+     <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&#x6211;&#x662F;&#x6B7B;&#x5FAA;&#x73AF;&apos;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h2 id="&#x8FDB;&#x7A0B;&#x67E5;&#x7AEF;&#x53E3;&#xFF0C;&#x7AEF;&#x53E3;&#x67E5;&#x8FDB;&#x7A0B;"><a name="&#x8FDB;&#x7A0B;&#x67E5;&#x7AEF;&#x53E3;&#xFF0C;&#x7AEF;&#x53E3;&#x67E5;&#x8FDB;&#x7A0B;" class="plugin-anchor" href="#&#x8FDB;&#x7A0B;&#x67E5;&#x7AEF;&#x53E3;&#xFF0C;&#x7AEF;&#x53E3;&#x67E5;&#x8FDB;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x7A0B;&#x67E5;&#x7AEF;&#x53E3;&#xFF0C;&#x7AEF;&#x53E3;&#x67E5;&#x8FDB;&#x7A0B;</h2>
+<p><kbd><strong>&#x8FDB;&#x7A0B;</strong></kbd> <strong>-&gt;</strong> <kbd><strong>&#x7AEF;&#x53E3;</strong></kbd></p>
+<ol>
+<li><kbd><strong>sudo netstat -tlpn | grep nginx</strong></kbd></li>
+<li><kbd><strong>sudo ss -tlpn | grep nginx</strong></kbd></li>
+<li><kbd><strong>sudo netstat -nap | grep \<pid\></pid\></strong></kbd></li>
+</ol>
+<p><kbd><strong>&#x7AEF;&#x53E3;</strong></kbd> <strong>-&gt;</strong> <kbd><strong>&#x8FDB;&#x7A0B;</strong></kbd></p>
+<ol>
+<li><kbd><strong>lsof -i:\<port\></port\></strong></kbd></li>
+<li><kbd><strong>sudo netstat -nap | grep \<port\></port\></strong></kbd></li>
+</ol>
+<h2 id="&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;"><a name="&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;" class="plugin-anchor" href="#&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;</h2>
+<p><kbd><strong>sudo nmap -sS \<ip\></ip\></strong></kbd></p>
+<pre><code class="lang-bash">$ sudo nmap <span class="hljs-_">-s</span>S 47.101.133.201
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2019-11-26 19:40 CST
+Nmap scan report <span class="hljs-keyword">for</span> 47.101.133.201
+Host is up (0.045s latency).
+Not shown: 995 filtered ports
+PORT     STATE  SERVICE
+22/tcp   open   ssh
+80/tcp   closed http
+443/tcp  closed https
+1080/tcp closed socks
+8080/tcp closed http-proxy
+
+Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 28.81 seconds
+</code></pre>
+<h2 id="&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;"><a name="&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;" class="plugin-anchor" href="#&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;</h2>
+<blockquote>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5F80;&#x5F80;&#x52A8;&#x8F84;&#x51E0;&#x767E;&#x884C;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x53EA;&#x6709;&#x51E0;&#x884C;&#x662F;&#x975E;&#x6CE8;&#x91CA;&#x975E;&#x6362;&#x884C;&#x7684;&#x6709;&#x6548;&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; egrep -v &#x6392;&#x9664;&#x7A7A;&#x884C;&#x548C;&#x6CE8;&#x91CA;&#x884C;&#xFF0C;&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;</p>
+</blockquote>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x67E5;&#x770B; ansible &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6709;&#x6548;&#x914D;&#x7F6E; ( &#x4EE5; # &#x53F7;&#x5F00;&#x5934;&#x662F;&#x6CE8;&#x91CA;&#x884C; )</span>
+$ egrep -v <span class="hljs-string">&quot;(^$|^#)&quot;</span> ./ansible.cfg
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;"><a name="&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;</h2>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x6BD4; touch &#x65B0;&#x5EFA;&#x5C11;&#x8F93;&#x5165;&#x51E0;&#x4E2A;&#x5B57;&#x7B26;&#xFF01;</span>
+$ &gt; new.txt
+</code></pre>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-05-24 15:34:53 </span> </footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Shell">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Shell奇淫技巧.html" class="navigation navigation-next " aria-label="Next page: Shell奇淫技巧">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Shell小知识","level":"1.7.1","depth":2,"next":{"title":"Shell奇淫技巧","level":"1.7.2","depth":2,"path":"Shell/Shell奇淫技巧.md","ref":"Shell/Shell奇淫技巧.md","articles":[]},"previous":{"title":"Shell","level":"1.7","depth":1,"path":"Shell/README.md","ref":"Shell/README.md","articles":[{"title":"Shell小知识","level":"1.7.1","depth":2,"path":"Shell/Shell小知识.md","ref":"Shell/Shell小知识.md","articles":[]},{"title":"Shell奇淫技巧","level":"1.7.2","depth":2,"path":"Shell/Shell奇淫技巧.md","ref":"Shell/Shell奇淫技巧.md","articles":[]},{"title":"grep、sed、awk 详解","level":"1.7.3","depth":2,"path":"Shell/Linux文本操作三大利器-grep、sed、awk.md","ref":"Shell/Linux文本操作三大利器-grep、sed、awk.md","articles":[]},{"title":"Shell文本处理常用工具补遗","level":"1.7.4","depth":2,"path":"Shell/Shell文本处理常用工具补遗.md","ref":"Shell/Shell文本处理常用工具补遗.md","articles":[]},{"title":"句子解析","level":"1.7.5","depth":2,"path":"Shell/句子解析.md","ref":"Shell/句子解析.md","articles":[]},{"title":"识别是否是root用户","level":"1.7.6","depth":2,"path":"Shell/识别是否是root用户.md","ref":"Shell/识别是否是root用户.md","articles":[]},{"title":"识别系统","level":"1.7.7","depth":2,"path":"Shell/识别系统.md","ref":"Shell/识别系统.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Shell/Shell小知识.md","mtime":"2020-05-24T15:34:53.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-24T15:35:44.320Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
