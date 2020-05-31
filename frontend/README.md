@@ -12,3 +12,5 @@
 * [Node 教程 - 阮一峰](https://github.com/wangdoc/node-tutorial)
 * [Git 教程 - 阮一峰](https://github.com/wangdoc/git-tutorial/)
 * [JS前端开发联盟群 - github team](https://github.com/jsfront)
+* [测试网站 SSL 安全性](https://www.ssllabs.com/ssltest/index.html)
+* [数字证书认证机构 Let's Encrypt - 免费申请 SSL 证书](https://letsencrypt.org/)

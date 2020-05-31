@@ -25,3 +25,5 @@
 * [ip.sb](http://ip.sb/)
 * [数据库引擎排行榜](https://db-engines.com/en/ranking)
 * [上海程序员 落户攻略](https://www.cnblogs.com/TankXiao/p/8203819.html)
+* [一个模拟生成 App 商店展示图的在线工具](https://www.storepreviewer.com/)
+* [掘金高级搜索](http://zy2071.com/Fun/jueJinSearch.html)

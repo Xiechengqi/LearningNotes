@@ -2,7 +2,6 @@
   * [技术学习](网络学习资源整理/技术学习.md)
   * [运维博客](网络学习资源整理/运维博客.md)
   * [工具](网络学习资源整理/工具.md)
-
 * [网站搭建](网站搭建/README.md)
   * [静态网站生成器](网站搭建/静态网站生成器.md)
   * [静态网站部署](网站搭建/静态网站部署.md)
@@ -10,12 +9,9 @@
   * [Hugo学习](网站搭建/Hugo学习.md)
   * [图床](网站搭建/图床.md)
   * [网盘](网站搭建/网盘.md)
-
 * [心灵鸡汤](心灵鸡汤/README.md)
-  
   * [语录](心灵鸡汤/心灵鸡汤.md)
 * [Linux](Linux/README.md)
-  
   * [Linux常用命令](Linux/Linux常用命令.md)
   * [平时 linux 遇到的问题解决办法和扩展小知识](Linux/Linux小知识.md)
   * [Linux性能相关常用命令](Linux/Linux性能相关常用命令.md)
@@ -40,7 +36,6 @@
   * [正则表达式](Linux/正则表达式学习.md)
   * [Linux开机启动项学习](Linux/通过Linux开机启动项展开学习.md)
   * [防火墙学习笔记](Linux/防火墙学习.md)
-
 * [Python](Python/README.md)
   * [Python 资源大全](Python/Python资源大全.md)
   * [Python3 BeautifulSoup 学习记录](Python/BeautifulSoup.md)
@@ -55,7 +50,6 @@
   * [图形界面学习.md](Python/图形界面学习.md)
   * [Python3 常用图像库](Python/常用图像库学习.md)
   * [Python3 进阶学习笔记](Python/进阶学习.md)
-
 * [Shell](Shell/README.md)
   * [Shell小知识](Shell/Shell小知识.md)
   * [Shell奇淫技巧](Shell/Shell奇淫技巧.md)
@@ -64,7 +58,6 @@
   * [句子解析](Shell/句子解析.md)
   * [识别是否是root用户](Shell/识别是否是root用户.md)
   * [识别系统](Shell/识别系统.md)
-
 * [Vim](Vim/README.md)
   * [Vim小知识](Vim/Vim小知识.md)
   * [Vim编辑器再学习](Vim/Vim编辑器再学习.md)

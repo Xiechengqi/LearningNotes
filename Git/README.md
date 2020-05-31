@@ -1,6 +1,11 @@
 
 # Git
 
+## 资源
+
+* [GitHub 非官方的代码搜索引擎，支持正则搜索](https://grep.app/)
+* [Git Branching 在线可视化练习](https://learngitbranching.js.org/?demo=&locale=zh_CN)
+
 ## 分布式世界
 
 
