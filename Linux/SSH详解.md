@@ -33,7 +33,14 @@
 **`ssh -vvv <user>@<hostip>`** - 打印最详细的运行情况和调试信息
 
 **`ssh -T git@xxx.com`** - 测试 ssh 密钥连接是否成功
-> 比如测试 github: `ssh -T git@github.com`，gitee: `ssh -T git@gitee.com`
+``` shell
+# github
+$ ssh -T git@github.com
+# gitee
+$ ssh -T git@gitee.com
+# coding
+$ ssh -T git@e.coding.net
+```
 
 **`ssh <user>@<hostip>`** - 登录 host
 

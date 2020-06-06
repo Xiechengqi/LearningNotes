@@ -9,6 +9,8 @@
 所以，希望换一种方式“收藏”自己平时学习时遇到的好文和好料！
 
 
+* [DevOps 和 SRE](https://blog.alswl.com/2018/09/devops-and-sre/)
+* [邮件技术提问的正道](https://www.zhangxinxu.com/wordpress/2015/05/how-to-ask-web-front-question/)
 * [Wangdoc - 阮一峰搭建的静态文档生成器](https://github.com/wangdoc/help/blob/master/docs/how-to-create-a-new-repo.md)
 
 * [Markdown 文档生成工具](https://www.cnblogs.com/52fhy/p/10745719.html)

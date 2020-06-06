@@ -7,6 +7,7 @@
   * [静态网站部署](网站搭建/静态网站部署.md)
   * [静态网站的CI和CD](网站搭建/静态网站的CI和CD.md)
   * [Hugo学习](网站搭建/Hugo学习.md)
+  * [CDN](网站搭建/CDN.md)
   * [图床](网站搭建/图床.md)
   * [网盘](网站搭建/网盘.md)
 * [心灵鸡汤](心灵鸡汤/README.md)
@@ -83,10 +84,8 @@
   * [Git 小技巧](Git/git小技巧.md)
 * [前端](frontend/README.md)
   * [小知识](frontend/小知识.md)
-  
 * [持续集成和部署](持续集成和部署/README.md)
   * [Github Action](持续集成和部署/github-action.md)
-
 * [Redux](Redux/README.md)
 * [Zabbix](Zabbix/README.md)
   * [Docker 安装配置 Zabbix](Zabbix/Docker安装配置Zabbix.md)
@@ -99,7 +98,6 @@
   * [Ubuntu 安装及配置 Navicat](Mysql/Ubuntu安装Navicat.md)
   * [如何替换已忘记的 root 密码](Mysql/忘记root密码.md)
 * [Nginx](Nginx/README.md)
-  
   * [Nginx 学习](Nginx/Nginx学习笔记.md)
 * [闲知](NoClass/README.md)
   * [容易读错的IT术语](NoClass/容易读错的IT术语.md)
@@ -122,7 +120,6 @@
   * [GCP VM](VPS/GCP_VM实例创建和基本配置.md)
   * [ECS和VPS](VPS/ECS和VPS等等.md)
 * [ComputerComposition](ComputerComposition/README.md)
-  
   * [计算机组成原理学习笔记](ComputerComposition/学习笔记.md)
 * [ComputerNetwork](ComputerNetwork/README.md)
   * [术语单词](ComputerNetwork/ProWords.md)

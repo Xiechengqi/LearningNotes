@@ -17,6 +17,9 @@
   * [whereis](#3、whereis)
   * [which](#4、which)
   * [grep](#5、grep)
+  * [ag](#6、ag)
+  * [fd](#7、fd)
+  * [fzf](#8、fzf)
 * [screen](#screen-top)<br/>
 * [wget](#wget-top)<br/>
 * [gcc](#gcc-top)<br/>
@@ -217,6 +220,16 @@ $ which -a java
 
 #### 5、grep
 
+#### 6、af
+
+
+#### 5、grep
+
+#### 8、fzf
+
+* 命令行交互式模糊匹配
+* https://github.com/junegunn/fzf
+
 ## screen [[Top]](#目录)
 
 * **`yum install screen`**
@@ -261,6 +274,8 @@ wget -Q 5m -i filelist.txt
 **爬取整站**
 
 ```
+wget --random-wait -r -p -e robots=off -U mozilla http://www.baidu.com
+
 wget -c -r -npH -k -nv http://www.baidu.com
 
 参数说明

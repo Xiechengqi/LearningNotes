@@ -2,6 +2,7 @@
 
 ## 目录
 
+* [常用组合命令](#常用组合命令)
 * [echo](#echo)
 * [type](#type)
 * [env](#env)
@@ -9,6 +10,33 @@
 * [](#)
 
 
+## 常用组合命令
+
+
+* **`du -h --max-depth=1 .`** - 查看当前文件夹下文件（文件夹）大小
+* **`du -h --max-depth=1 /home/xcq`** - 查看 xcq 用户主目录大小
+* **`df -h`** - 查看所有磁盘大小
+* **`top -d 1 -p [pid,...]`** - 查看进程内存使用情况
+* **`pmap [pid]`** - 查看进程内存使用情况
+* **`ps aux | grep [process_name]`** - 查看 `/proc/process_id/` 文件夹下的 status 文件
+* **`列出本机监听的端口号`**  
+``` shell
+$ netstat -tlnp
+$ netstat -ulnp
+$ netstat -anop
+```
+* **`ssh [user]@[hostip] bash < [path]/[shell脚本]`** - 在远程服务器上运行脚本
+* **`siege -c20 www.baidu.com -b -t30s`** - 负载测试，30 秒内向 baidu 发起 20 个并发连接
+* **``** - 
+* **``** - 
+* **``** - 
+* **``** - 
+* **``** - 
+* **``** - 
+* **``** - 
+* **``** - 
+* **``** - 
+* **``** - 
 
 ## echo
 
