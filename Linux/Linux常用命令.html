@@ -270,7 +270,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../网站搭建/图床.html">
+        <li class="chapter " data-level="1.3.5" data-path="../网站搭建/CDN.html">
+            
+                <a href="../网站搭建/CDN.html">
+            
+                    
+                    CDN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../网站搭建/图床.html">
             
                 <a href="../网站搭建/图床.html">
             
@@ -283,7 +296,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../网站搭建/网盘.html">
+        <li class="chapter " data-level="1.3.7" data-path="../网站搭建/网盘.html">
             
                 <a href="../网站搭建/网盘.html">
             
@@ -1990,6 +2003,9 @@
 <li><a href="#3&#x3001;whereis">whereis</a></li>
 <li><a href="#4&#x3001;which">which</a></li>
 <li><a href="#5&#x3001;grep">grep</a></li>
+<li><a href="#6&#x3001;ag">ag</a></li>
+<li><a href="#7&#x3001;fd">fd</a></li>
+<li><a href="#8&#x3001;fzf">fzf</a></li>
 </ul>
 </li>
 <li><a href="#screen-top">screen</a><br></li>
@@ -2192,6 +2208,13 @@ $ <span class="hljs-built_in">which</span> <span class="hljs-_">-a</span> java
 /usr/bin/java
 </code></pre>
 <h4 id="5&#x3001;grep"><a name="5&#x3001;grep" class="plugin-anchor" href="#5&#x3001;grep"><i class="fa fa-link" aria-hidden="true"></i></a>5&#x3001;grep</h4>
+<h4 id="6&#x3001;af"><a name="6&#x3001;af" class="plugin-anchor" href="#6&#x3001;af"><i class="fa fa-link" aria-hidden="true"></i></a>6&#x3001;af</h4>
+<h4 id="5&#x3001;grep"><a name="5&#x3001;grep" class="plugin-anchor" href="#5&#x3001;grep"><i class="fa fa-link" aria-hidden="true"></i></a>5&#x3001;grep</h4>
+<h4 id="8&#x3001;fzf"><a name="8&#x3001;fzf" class="plugin-anchor" href="#8&#x3001;fzf"><i class="fa fa-link" aria-hidden="true"></i></a>8&#x3001;fzf</h4>
+<ul>
+<li>&#x547D;&#x4EE4;&#x884C;&#x4EA4;&#x4E92;&#x5F0F;&#x6A21;&#x7CCA;&#x5339;&#x914D;</li>
+<li><a href="https://github.com/junegunn/fzf" target="_blank">https://github.com/junegunn/fzf</a></li>
+</ul>
 <h2 id="screen-top"><a name="screen-top" class="plugin-anchor" href="#screen-top"><i class="fa fa-link" aria-hidden="true"></i></a>screen <a href="#&#x76EE;&#x5F55;">[Top]</a></h2>
 <ul>
 <li><strong><code>yum install screen</code></strong></li>
@@ -2234,7 +2257,9 @@ wget -Q 5m -i filelist.txt
 &#x60F3;&#x8981;&#x4E0B;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x8D85;&#x8FC7;5M&#x800C;&#x9000;&#x51FA;&#x4E0B;&#x8F7D;&#xFF0C;-Q &#x53C2;&#x6570;&#x5BF9;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x53EA;&#x80FD;&#x9012;&#x5F52;&#x4E0B;&#x8F7D;&#x65F6;&#x624D;&#x6709;&#x6548;
 </code></pre>
 <p><strong>&#x722C;&#x53D6;&#x6574;&#x7AD9;</strong></p>
-<pre><code>wget -c -r -npH -k -nv http://www.baidu.com
+<pre><code>wget --random-wait -r -p -e robots=off -U mozilla http://www.baidu.com
+
+wget -c -r -npH -k -nv http://www.baidu.com
 
 &#x53C2;&#x6570;&#x8BF4;&#x660E;
 
@@ -2365,7 +2390,7 @@ gcc test1.o test2.o -o test
   - Invert match <span class="hljs-keyword">for</span> excluding specific strings:
     grep -v search_string
 </code></pre>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-05-31 15:00:02 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-06-06 11:59:50 </span> </footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -2409,7 +2434,7 @@ gcc test1.o test2.o -o test
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Linux常用命令","level":"1.5.1","depth":2,"next":{"title":"平时 linux 遇到的问题解决办法和扩展小知识","level":"1.5.2","depth":2,"path":"Linux/Linux小知识.md","ref":"Linux/Linux小知识.md","articles":[]},"previous":{"title":"Linux","level":"1.5","depth":1,"path":"Linux/README.md","ref":"Linux/README.md","articles":[{"title":"Linux常用命令","level":"1.5.1","depth":2,"path":"Linux/Linux常用命令.md","ref":"Linux/Linux常用命令.md","articles":[]},{"title":"平时 linux 遇到的问题解决办法和扩展小知识","level":"1.5.2","depth":2,"path":"Linux/Linux小知识.md","ref":"Linux/Linux小知识.md","articles":[]},{"title":"Linux性能相关常用命令","level":"1.5.3","depth":2,"path":"Linux/Linux性能相关常用命令.md","ref":"Linux/Linux性能相关常用命令.md","articles":[]},{"title":"Linux各种安装下载慢解决方法","level":"1.5.4","depth":2,"path":"Linux/Linux各种安装下载慢解决方法.md","ref":"Linux/Linux各种安装下载慢解决方法.md","articles":[]},{"title":"APT 原理剖析、详解","level":"1.5.5","depth":2,"path":"Linux/APT-剖析详解.md","ref":"Linux/APT-剖析详解.md","articles":[]},{"title":"Linux 主机、虚拟机和docker网络配置","level":"1.5.6","depth":2,"path":"Linux/Linux主机、虚拟机和docker网络配置.md","ref":"Linux/Linux主机、虚拟机和docker网络配置.md","articles":[]},{"title":"Linux文件系统学习","level":"1.5.7","depth":2,"path":"Linux/Linux文件系统学习.md","ref":"Linux/Linux文件系统学习.md","articles":[]},{"title":"Linux用户和用户组管理","level":"1.5.8","depth":2,"path":"Linux/Linux用户和用户组管理.md","ref":"Linux/Linux用户和用户组管理.md","articles":[]},{"title":"Linux用户增删改等学习.md","level":"1.5.9","depth":2,"path":"Linux/Linux用户增删改等学习.md","ref":"Linux/Linux用户增删改等学习.md","articles":[]},{"title":"Linux程序存放目录.md","level":"1.5.10","depth":2,"path":"Linux/Linux程序存放目录.md","ref":"Linux/Linux程序存放目录.md","articles":[]},{"title":"Linux C/C++ 软件包编译、安装原理详解","level":"1.5.11","depth":2,"path":"Linux/Linux编译安装软件包详解.md","ref":"Linux/Linux编译安装软件包详解.md","articles":[]},{"title":"SSH 详解","level":"1.5.12","depth":2,"path":"Linux/SSH详解.md","ref":"Linux/SSH详解.md","articles":[]},{"title":"Tomcat和Ngnix和Apache.md","level":"1.5.13","depth":2,"path":"Linux/Tomcat和Ngnix和Apache.md","ref":"Linux/Tomcat和Ngnix和Apache.md","articles":[]},{"title":"Ubuntu 软件包安装","level":"1.5.14","depth":2,"path":"Linux/UbuntuSoftwareInstall.md","ref":"Linux/UbuntuSoftwareInstall.md","articles":[]},{"title":"YAML 配置文件语言","level":"1.5.15","depth":2,"path":"Linux/YAML-配置文件语言.md","ref":"Linux/YAML-配置文件语言.md","articles":[]},{"title":"bin目录详解.md","level":"1.5.16","depth":2,"path":"Linux/bin目录详解.md","ref":"Linux/bin目录详解.md","articles":[]},{"title":"ffmpeg学习","level":"1.5.17","depth":2,"path":"Linux/ffmpeg详解.md","ref":"Linux/ffmpeg详解.md","articles":[]},{"title":"trans命令","level":"1.5.18","depth":2,"path":"Linux/trans命令.md","ref":"Linux/trans命令.md","articles":[]},{"title":"Yum 和 RPM","level":"1.5.19","depth":2,"path":"Linux/yum和rpm.md","ref":"Linux/yum和rpm.md","articles":[]},{"title":"Linux环境变量详解","level":"1.5.20","depth":2,"path":"Linux/从BashShell启动“窥探”Linux环境变量相关文件.md","ref":"Linux/从BashShell启动“窥探”Linux环境变量相关文件.md","articles":[]},{"title":"新建主机常用初始化配置","level":"1.5.21","depth":2,"path":"Linux/新创建主机常用初始化配置.md","ref":"Linux/新创建主机常用初始化配置.md","articles":[]},{"title":"正则表达式","level":"1.5.22","depth":2,"path":"Linux/正则表达式学习.md","ref":"Linux/正则表达式学习.md","articles":[]},{"title":"Linux开机启动项学习","level":"1.5.23","depth":2,"path":"Linux/通过Linux开机启动项展开学习.md","ref":"Linux/通过Linux开机启动项展开学习.md","articles":[]},{"title":"防火墙学习笔记","level":"1.5.24","depth":2,"path":"Linux/防火墙学习.md","ref":"Linux/防火墙学习.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Linux/Linux常用命令.md","mtime":"2020-05-31T15:00:02.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-31T15:00:48.375Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Linux常用命令","level":"1.5.1","depth":2,"next":{"title":"平时 linux 遇到的问题解决办法和扩展小知识","level":"1.5.2","depth":2,"path":"Linux/Linux小知识.md","ref":"Linux/Linux小知识.md","articles":[]},"previous":{"title":"Linux","level":"1.5","depth":1,"path":"Linux/README.md","ref":"Linux/README.md","articles":[{"title":"Linux常用命令","level":"1.5.1","depth":2,"path":"Linux/Linux常用命令.md","ref":"Linux/Linux常用命令.md","articles":[]},{"title":"平时 linux 遇到的问题解决办法和扩展小知识","level":"1.5.2","depth":2,"path":"Linux/Linux小知识.md","ref":"Linux/Linux小知识.md","articles":[]},{"title":"Linux性能相关常用命令","level":"1.5.3","depth":2,"path":"Linux/Linux性能相关常用命令.md","ref":"Linux/Linux性能相关常用命令.md","articles":[]},{"title":"Linux各种安装下载慢解决方法","level":"1.5.4","depth":2,"path":"Linux/Linux各种安装下载慢解决方法.md","ref":"Linux/Linux各种安装下载慢解决方法.md","articles":[]},{"title":"APT 原理剖析、详解","level":"1.5.5","depth":2,"path":"Linux/APT-剖析详解.md","ref":"Linux/APT-剖析详解.md","articles":[]},{"title":"Linux 主机、虚拟机和docker网络配置","level":"1.5.6","depth":2,"path":"Linux/Linux主机、虚拟机和docker网络配置.md","ref":"Linux/Linux主机、虚拟机和docker网络配置.md","articles":[]},{"title":"Linux文件系统学习","level":"1.5.7","depth":2,"path":"Linux/Linux文件系统学习.md","ref":"Linux/Linux文件系统学习.md","articles":[]},{"title":"Linux用户和用户组管理","level":"1.5.8","depth":2,"path":"Linux/Linux用户和用户组管理.md","ref":"Linux/Linux用户和用户组管理.md","articles":[]},{"title":"Linux用户增删改等学习.md","level":"1.5.9","depth":2,"path":"Linux/Linux用户增删改等学习.md","ref":"Linux/Linux用户增删改等学习.md","articles":[]},{"title":"Linux程序存放目录.md","level":"1.5.10","depth":2,"path":"Linux/Linux程序存放目录.md","ref":"Linux/Linux程序存放目录.md","articles":[]},{"title":"Linux C/C++ 软件包编译、安装原理详解","level":"1.5.11","depth":2,"path":"Linux/Linux编译安装软件包详解.md","ref":"Linux/Linux编译安装软件包详解.md","articles":[]},{"title":"SSH 详解","level":"1.5.12","depth":2,"path":"Linux/SSH详解.md","ref":"Linux/SSH详解.md","articles":[]},{"title":"Tomcat和Ngnix和Apache.md","level":"1.5.13","depth":2,"path":"Linux/Tomcat和Ngnix和Apache.md","ref":"Linux/Tomcat和Ngnix和Apache.md","articles":[]},{"title":"Ubuntu 软件包安装","level":"1.5.14","depth":2,"path":"Linux/UbuntuSoftwareInstall.md","ref":"Linux/UbuntuSoftwareInstall.md","articles":[]},{"title":"YAML 配置文件语言","level":"1.5.15","depth":2,"path":"Linux/YAML-配置文件语言.md","ref":"Linux/YAML-配置文件语言.md","articles":[]},{"title":"bin目录详解.md","level":"1.5.16","depth":2,"path":"Linux/bin目录详解.md","ref":"Linux/bin目录详解.md","articles":[]},{"title":"ffmpeg学习","level":"1.5.17","depth":2,"path":"Linux/ffmpeg详解.md","ref":"Linux/ffmpeg详解.md","articles":[]},{"title":"trans命令","level":"1.5.18","depth":2,"path":"Linux/trans命令.md","ref":"Linux/trans命令.md","articles":[]},{"title":"Yum 和 RPM","level":"1.5.19","depth":2,"path":"Linux/yum和rpm.md","ref":"Linux/yum和rpm.md","articles":[]},{"title":"Linux环境变量详解","level":"1.5.20","depth":2,"path":"Linux/从BashShell启动“窥探”Linux环境变量相关文件.md","ref":"Linux/从BashShell启动“窥探”Linux环境变量相关文件.md","articles":[]},{"title":"新建主机常用初始化配置","level":"1.5.21","depth":2,"path":"Linux/新创建主机常用初始化配置.md","ref":"Linux/新创建主机常用初始化配置.md","articles":[]},{"title":"正则表达式","level":"1.5.22","depth":2,"path":"Linux/正则表达式学习.md","ref":"Linux/正则表达式学习.md","articles":[]},{"title":"Linux开机启动项学习","level":"1.5.23","depth":2,"path":"Linux/通过Linux开机启动项展开学习.md","ref":"Linux/通过Linux开机启动项展开学习.md","articles":[]},{"title":"防火墙学习笔记","level":"1.5.24","depth":2,"path":"Linux/防火墙学习.md","ref":"Linux/防火墙学习.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Linux/Linux常用命令.md","mtime":"2020-06-06T11:59:50.809Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T12:00:38.070Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
