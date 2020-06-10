@@ -2,19 +2,16 @@
 
 ## 目录
 
-* [SSH 介绍](#ssh-介绍-top)
+* **[SSH 介绍](#ssh-介绍-top)**
+* **[应用篇](#应用篇-top)**
+  * **[Linux SSH 相关命令](#linux-ssh-相关命令)**
+  * **[SSH 密码或无密码( 密钥 )登录](#ssh-密码或无密码-密钥-登录)**
+* **[原理篇](#原理篇-top)**
+  * **[密码学加密算法](#密码学加密算法)**
+  * **[SSH 登录原理](#ssh-登录原理)**
+* **[SSH 中间人攻击](#ssh-中间人攻击-top)**
 
-* [应用篇](#应用篇-top)
-  * [Linux SSH 相关命令](#linux-ssh-相关命令)
-  * [SSH 密码或无密码( 密钥 )登录](#ssh-密码或无密码-密钥-登录)
-
-* [原理篇](#原理篇-top)
-  * [密码学加密算法](#密码学加密算法)
-  * [SSH 登录原理](#ssh-登录原理)
-
-* [SSH 中间人攻击](#ssh-中间人攻击-top)
-
-## SSH 介绍 [[Top]](#目录)
+## SSH 介绍
 
 * **Secure Shell**（安全外壳协议，简称 **SSH**）是一种加密的[网络传输协议](https://zh.wikipedia.org/wiki/网络传输协议)，可在不安全的网络中为网络服务提供安全的传输环境
 * SSH 通过在网络中创建[安全隧道](https://zh.wikipedia.org/w/index.php?title=安全隧道&action=edit&redlink=1)来实现 SSH 客户端与服务器之间的连接
@@ -22,17 +19,17 @@
 * SSH使用[客户端-服务器](https://zh.wikipedia.org/wiki/主從式架構)模型，标准端口为 22。服务器端需要开启SSH[守护进程](https://zh.wikipedia.org/wiki/守护进程)以便接受远端的连接，而用户需要使用 SSH 客户端与其创建连接
 * SSH 的经典用途是登录到远程电脑中执行命令。除此之外，SSH 也支持[隧道协议](https://zh.wikipedia.org/wiki/隧道协议)、[端口映射](https://zh.wikipedia.org/wiki/端口映射)和 [X11](https://zh.wikipedia.org/wiki/X_Window系統) 连接。借助 [SFTP](https://zh.wikipedia.org/wiki/SSH文件传输协议) 或 [SCP](https://zh.wikipedia.org/wiki/安全复制) 协议，SSH 还可以传输文件
 
-## 应用篇 [[Top]](#目录)
+## 应用篇
 
 ### Linux SSH 相关命令
 
-**`ssh -v <user>@<hostip>`** - 打印运行情况和调试信息
+* **`ssh -v <user>@<hostip>`** - 打印运行情况和调试信息
 
-**`ssh -vv <user>@<hostip>`** - 打印更详细的运行情况和调试信息
+* **`ssh -vv <user>@<hostip>`** - 打印更详细的运行情况和调试信息
 
-**`ssh -vvv <user>@<hostip>`** - 打印最详细的运行情况和调试信息
+* **`ssh -vvv <user>@<hostip>`** - 打印最详细的运行情况和调试信息
 
-**`ssh -T git@xxx.com`** - 测试 ssh 密钥连接是否成功
+* **`ssh -T git@xxx.com`** - 测试 ssh 密钥连接是否成功
 ``` shell
 # github
 $ ssh -T git@github.com
@@ -42,25 +39,25 @@ $ ssh -T git@gitee.com
 $ ssh -T git@e.coding.net
 ```
 
-**`ssh <user>@<hostip>`** - 登录 host
+* **`ssh <user>@<hostip>`** - 登录 host
 
-**`ssh -J  <跳板机登录用户>@<ip>:<port> <目标机登录用户>@<ip> -p <port> `**- 通过跳板机登录目标机
+* **`ssh -J  <跳板机登录用户>@<ip>:<port> <目标机登录用户>@<ip> -p <port> `**- 通过跳板机登录目标机
 
 > ssh 命令登录失败后，重试时总是卡住，一般在重试前先重启 sshd 服务就可以解决
 
-**`ssh <user>@<hostip> <command>`** - 登录 host 直接执行命令
+* **`ssh <user>@<hostip> <command>`** - 登录 host 直接执行命令
 
-**`ssh <user>@<hostip> 'tar cz file' | tar zxv`** - 本地`~/file` 文件通过 ssh 加密传输到 hostip 的`~` 目录下
+* **`ssh <user>@<hostip> 'tar cz file' | tar zxv`** - 本地`~/file` 文件通过 ssh 加密传输到 hostip 的`~` 目录下
 
-**`ssh <user>@<hostip> 'tar cz file' | tar xzv`** - hostip 的`~/file` 文件通过 ssh 加密传输到本地的 `~` 目录下
+* **`ssh <user>@<hostip> 'tar cz file' | tar xzv`** - hostip 的`~/file` 文件通过 ssh 加密传输到本地的 `~` 目录下
 
-**`scp <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件**到远程
+* **`scp <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件**到远程
 
-**`scp -r <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件夹**到远程
+* **`scp -r <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件夹**到远程
 
-**`scp <user>@<hostip>:<remote_folder_path>  <local_file_path>`** - 通过 scp 命令传下载远程**文件**到本地
+* **`scp <user>@<hostip>:<remote_folder_path>  <local_file_path>`** - 通过 scp 命令传下载远程**文件**到本地
 
-**`scp -r <user>@<hostip>:<remote_folder_path>  <local_file_path>`**- 通过 scp 命令传下载远程**文件**夹到本地
+* **`scp -r <user>@<hostip>:<remote_folder_path>  <local_file_path>`**- 通过 scp 命令传下载远程**文件**夹到本地
 
 ```
 scp -o "ProxyCommand=nc -X connect -x proxy_ip:proxy_port %h %p"  filename  username@target_ip:/target_path
@@ -68,27 +65,30 @@ scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1 
 
 ```
 
-**`ssh-keygen`** - 默认在`~/.ssh/` 下生成 RSA 公私密钥对
+* **`ssh-keygen`** - 默认在`~/.ssh/` 下生成 RSA 公私密钥对
 
-**`ssh-keygen -t dsa`** - 在`~/.ssh/` 下生成 dsa 公私密钥对
+* **`ssh-keygen -t dsa`** - 在`~/.ssh/` 下生成 dsa 公私密钥对
 
-**`ssh-keygen -t rsa -C '电子邮箱'`**
+* **`ssh-keygen -t rsa -C '电子邮箱'`**
 
-**`ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub`** - 如果您有 OpenSSH 私钥（`id_rsa` 文件），则可以使用以下命令生成 OpenSSH 公钥文件
+* **`ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub`** - 如果您有 OpenSSH 私钥（`id_rsa` 文件），则可以使用以下命令生成 OpenSSH 公钥文件
+
+* ** `ssh-keygen -y [私钥]`** - 从私钥生成公钥，反之显而是不行的
  
 
-**`ssh-keyscan`**
+* **`ssh-keyscan`**
 
-**`ssh-add`**
+* **`ssh-add`**
 
-**`ssh-keysign`**
-**`ssh-copy-id <user>@<hostip>`**  -  默认将本地主机公钥 `~/.ssh/id_rsa.pub ` 添加到远程服务器 `<user>/.ssh/authorized_keys` 文件中，实现无密码登录
+* **`ssh-keysign`**
 
-**`ssh-copy-id -i <公钥路径>/id_rsa.pub <user>@<hostip>`** - 将本地主机公钥 `公钥路径` 中的 `id_rsa.pub`  添加到远程服务器 `<user>/.ssh/authorized_keys`  文件中，实现无密码登录
+* **`ssh-copy-id <user>@<hostip>`**  -  默认将本地主机公钥 `~/.ssh/id_rsa.pub ` 添加到远程服务器 `<user>/.ssh/authorized_keys` 文件中，实现无密码登录
 
-**`/etc/ssh/ssh.config`** - 客户端配置文件
+* **`ssh-copy-id -i <公钥路径>/id_rsa.pub <user>@<hostip>`** - 将本地主机公钥 `公钥路径` 中的 `id_rsa.pub`  添加到远程服务器 `<user>/.ssh/authorized_keys`  文件中，实现无密码登录
 
-**`/etc/ssh/sshd.config`** - 服务的配置文件
+* **`/etc/ssh/ssh.config`** - 客户端配置文件
+
+* **`/etc/ssh/sshd.config`** - 服务的配置文件
 
 * **`开启密钥认证登录`**
 
@@ -106,7 +106,7 @@ scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1 
   PasswordAuthentication no
  ```
 
-**`~/.ssh/known_hosts`** - 查看已知主机的公钥
+* **`~/.ssh/known_hosts`** - 查看已知主机的公钥
 
 * **`关闭 hostkeychecking，初次登录时不用输入 yes`**
 
@@ -114,7 +114,7 @@ scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1 
   StrictHostKeyChecking no  
  ```
 
-**`~/.ssh/authorized_keys`** - 存放需要密钥登录本机的 host 公钥
+* **`~/.ssh/authorized_keys`** - 存放需要密钥登录本机的 host 公钥
 
 ### SSH 密码或无密码( 密钥 )登录
 
@@ -122,11 +122,11 @@ scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1 
 
 **`密码登录`**
 
-* [云服务器创建配后置密码登录](https://github.com/Xiechengqi/XcqDailyLearningNotes/blob/master/Linux/VPS/AWS/lightsail.md)
+* [云服务器创建配后配置密码登录](https://github.com/Xiechengqi/XcqDailyLearningNotes/blob/master/Linux/VPS/AWS/lightsail.md)
 
 **`无密码登录`**
 
-1. 生成本地 RSA 或 DSA 密钥对
+1、生成本地 RSA 或 DSA 密钥对
 
 ```bash
 $ ssh-keygen
@@ -135,7 +135,7 @@ $ ssh-keygen
 # 非 root 用户：在自己主目录下的 .ssh/
 ```
 
-2. 将本地公钥内容追加到远程服务器的`/root/.ssh/authorized_keys` 或 用户目录下的`.ssh/authorized_keys`
+2、将本地公钥内容追加到远程服务器的`/root/.ssh/authorized_keys` 或 用户目录下的`.ssh/authorized_keys`
 
 ``` bash
 # 也可以使用 ssh-copy-id
@@ -153,9 +153,9 @@ Now try logging into the machine, with:   "ssh 'root@192.168.56.101'"
 and check to make sure that only the key(s) you wanted were added.
 ```
 
-3. 重启 ssh, 退出再次登陆即可实现无密码登录
+3、重启 ssh, 退出再次登陆即可实现无密码登录
 
-## 原理篇 [[Top]](#目录)
+## 原理篇
 
 ### 密码学加密算法
 
@@ -205,9 +205,9 @@ and check to make sure that only the key(s) you wanted were added.
 4. 远程主机使用分发过来的公钥对加密随机串进行解密
 5. 如果解密成功，就证明用户的登陆信息是正确的，则允许登陆；否则反之
 
-### SSH 中间人攻击 [[Top]](#目录)
+### SSH 中间人攻击
 
-​    由于 SSH 不像 https 协议那样，SSH 协议的公钥是没有证书中心（CA）公证的，也就是说，都是自己签发的。这就导致如果有人截获了登陆请求，然后冒充远程主机，将伪造的公钥发给用户，那么用户很难辨别真伪，用户再通过伪造的公钥加密密码，再发送给冒充主机，此时冒充的主机就可以获取用户的登陆密码了，那么 SSH 的安全机制就荡然无存了，这也就是我们常说的中间人攻击
+由于 SSH 不像 https 协议那样，SSH 协议的公钥是没有证书中心（CA）公证的，也就是说，都是自己签发的。这就导致如果有人截获了登陆请求，然后冒充远程主机，将伪造的公钥发给用户，那么用户很难辨别真伪，用户再通过伪造的公钥加密密码，再发送给冒充主机，此时冒充的主机就可以获取用户的登陆密码了，那么 SSH 的安全机制就荡然无存了，这也就是我们常说的中间人攻击
 
 ## 参考
 

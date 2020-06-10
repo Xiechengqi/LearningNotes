@@ -40,6 +40,7 @@
 ``` shell
 uname -a                          # 查看 Linux 内核版本信息
 cat /proc/version           # 查看内核版本
+cat /etc/os-release    # 查看Linux系统版本
 cat /etc/issue                   # 查看系统版本
 lsb_release -a                   # 查看系统版本，可以带各种参数, -a ALL
 locale -a                              # 列出所有语系
