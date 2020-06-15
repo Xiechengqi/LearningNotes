@@ -2001,25 +2001,53 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="vim-&#x5C0F;&#x77E5;&#x8BC6;"><a name="vim-&#x5C0F;&#x77E5;&#x8BC6;" class="plugin-anchor" href="#vim-&#x5C0F;&#x77E5;&#x8BC6;"><i class="fa fa-link" aria-hidden="true"></i></a>Vim &#x5C0F;&#x77E5;&#x8BC6;</h1>
-<h2 id="&#x5FEB;&#x6377;&#x952E;"><a name="&#x5FEB;&#x6377;&#x952E;" class="plugin-anchor" href="#&#x5FEB;&#x6377;&#x952E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x6377;&#x952E;</h2>
-<p><img src="images/vim_s1.jpg" alt=""></p>
-<p><img src="images/vim_s2.jpg" alt=""></p>
-<h2 id="&#x4F7F;&#x7528;vim&#x7F16;&#x8F91;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x4FDD;&#x5B58;&#x7684;&#x65F6;&#x4FAF;&#x63D0;&#x793A;&#x4F60;&#x6CA1;&#x6709;&#x6743;&#x9650;"><a name="&#x4F7F;&#x7528;vim&#x7F16;&#x8F91;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x4FDD;&#x5B58;&#x7684;&#x65F6;&#x4FAF;&#x63D0;&#x793A;&#x4F60;&#x6CA1;&#x6709;&#x6743;&#x9650;" class="plugin-anchor" href="#&#x4F7F;&#x7528;vim&#x7F16;&#x8F91;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x4FDD;&#x5B58;&#x7684;&#x65F6;&#x4FAF;&#x63D0;&#x793A;&#x4F60;&#x6CA1;&#x6709;&#x6743;&#x9650;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;vim&#x7F16;&#x8F91;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x4FDD;&#x5B58;&#x7684;&#x65F6;&#x4FAF;&#x63D0;&#x793A;&#x4F60;&#x6CA1;&#x6709;&#x6743;&#x9650;</h2>
-<pre><code class="lang-bash">:w !sudo tee %
-</code></pre>
-<h2 id="&#x5168;&#x90E8;tab&#x66FF;&#x6362;&#x4E3A;&#x7A7A;&#x683C;"><a name="&#x5168;&#x90E8;tab&#x66FF;&#x6362;&#x4E3A;&#x7A7A;&#x683C;" class="plugin-anchor" href="#&#x5168;&#x90E8;tab&#x66FF;&#x6362;&#x4E3A;&#x7A7A;&#x683C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x90E8;Tab&#x66FF;&#x6362;&#x4E3A;&#x7A7A;&#x683C;</h2>
-<pre><code class="lang-shell">:set ts=4
+<h2 id="&#x5947;&#x6DEB;&#x6280;&#x5DE7;"><a name="&#x5947;&#x6DEB;&#x6280;&#x5DE7;" class="plugin-anchor" href="#&#x5947;&#x6DEB;&#x6280;&#x5DE7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5947;&#x6DEB;&#x6280;&#x5DE7;</h2>
+<ul>
+<li><p><strong><code>:w !sudo tee %</code></strong> - &#x4FDD;&#x5B58;&#x7684;&#x65F6;&#x63D0;&#x793A;&#x4F60;&#x6CA1;&#x6709;&#x6743;&#x9650;&#xFF0C;&#x53EF;&#x4EE5;&#x4E34;&#x65F6;&#x63D0;&#x6743;&#x4FDD;&#x5B58;</p>
+</li>
+<li><p><strong><code>&#x5168;&#x90E8; tab &#x66FF;&#x6362;&#x4E3A;&#x7A7A;&#x683C;</code></strong></p>
+<pre><code># &#x4E0D;&#x52A0;&#x611F;&#x53F9;&#x53F7;!&#xFF0C;&#x5219;&#x53EA;&#x5904;&#x7406;&#x884C;&#x9996;&#x7684; tab
+:set ts=4
 :set expandtab 
 :%retab!
-# &#x4E0D;&#x52A0;&#x611F;&#x53F9;&#x53F7;!&#xFF0C;&#x5219;&#x53EA;&#x5904;&#x7406;&#x884C;&#x9996;&#x7684;Tab
-</code></pre>
-<h2 id="&#x5168;&#x90E8;&#x7A7A;&#x683C;&#x66FF;&#x6362;&#x4E3A;tab"><a name="&#x5168;&#x90E8;&#x7A7A;&#x683C;&#x66FF;&#x6362;&#x4E3A;tab" class="plugin-anchor" href="#&#x5168;&#x90E8;&#x7A7A;&#x683C;&#x66FF;&#x6362;&#x4E3A;tab"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x90E8;&#x7A7A;&#x683C;&#x66FF;&#x6362;&#x4E3A;Tab</h2>
-<pre><code class="lang-shell">:set ts=4
+</code></pre></li>
+<li><p><strong><code>&#x5168;&#x90E8;&#x7A7A;&#x683C;&#x66FF;&#x6362;&#x4E3A; tab</code></strong></p>
+<pre><code>:set ts=4
 :set noexpandtab
 :%retab!
 # &#x4E0D;&#x52A0;&#x611F;&#x53F9;&#x53F7;!&#xFF0C;&#x5219;&#x53EA;&#x5904;&#x7406;&#x9996;&#x884C;&#x7684;&#x7A7A;&#x683C;
-</code></pre>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-06-06 12:34:49 </span> </footer>
+</code></pre></li>
+<li><p><strong><code>:g/^$/d</code></strong> - &#x5220;&#x9664;&#x7A7A;&#x884C;</p>
+</li>
+<li><p><strong><code>:g/^\s*$/d</code></strong> - &#x5220;&#x9664;&#x7A7A;&#x884C;&#x4EE5;&#x53CA;&#x53EA;&#x6709;&#x7A7A;&#x683C;&#x7684;&#x884C;</p>
+</li>
+<li><p><strong><code>:g/^\s*#/d</code></strong> - &#x5220;&#x9664;&#x4EE5; # &#x5F00;&#x5934;&#x6216; &#x7A7A;&#x683C;# &#x6216; tab# &#x5F00;&#x5934;&#x7684;&#x884C;</p>
+</li>
+<li><p><strong><code>:g/^\s*;/d</code></strong> - &#x5BF9;&#x4E8E; php.ini &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x6CE8;&#x91CA;&#x4E3A; ; &#x5F00;&#x5934;</p>
+</li>
+<li><p><strong><code>:/bbs/d</code></strong> - &#x5982;&#x679C;&#x5F53;&#x524D;&#x884C;&#x5305;&#x542B; bbs &#xFF0C;&#x5219;&#x5220;&#x9664;&#x5F53;&#x524D;&#x884C;</p>
+</li>
+<li><p><strong><code>:2,/bbs/d</code></strong> - &#x5220;&#x9664;&#x4ECE;&#x7B2C;&#x4E8C;&#x884C;&#x5230;&#x5305;&#x542B; bbs &#x7684;&#x533A;&#x95F4;&#x884C;</p>
+</li>
+<li><p><strong><code>:/bbs/,$d</code></strong> - &#x5220;&#x9664;&#x4ECE;&#x5305;&#x542B; bbs &#x7684;&#x884C;&#x5230;&#x6700;&#x540E;&#x4E00;&#x884C;&#x533A;&#x95F4;&#x7684;&#x884C;</p>
+</li>
+<li><p><strong><code>:g/bbs/d</code></strong> - &#x5220;&#x9664;&#x6240;&#x6709;&#x5305;&#x542B; bbs &#x7684;&#x884C;</p>
+</li>
+<li><p><strong><code>:g/.bbs/d</code></strong> - &#x5220;&#x9664;&#x5339;&#x914D; bbs &#x4E14;&#x524D;&#x9762;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x884C;</p>
+</li>
+<li><p><strong><code>:g/^bbs/d</code></strong> - &#x5220;&#x9664;&#x5339;&#x914D; bbs &#x4E14;&#x4EE5;&#x5B83;&#x5F00;&#x5934;&#x7684;&#x884C;</p>
+</li>
+<li><p><strong><code>:g/bbs$/d</code></strong> - &#x5220;&#x9664;&#x5339;&#x914D; bbs &#x4E14;&#x4EE5;&#x5B83;&#x7ED3;&#x5C3E;&#x7684;&#x884C;</p>
+</li>
+<li><p><strong><code>:%s/\;.\+//g</code></strong> - <code>.ini</code> &#x7684;&#x6CE8;&#x91CA;&#x662F;&#x4EE5; ; &#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6CE8;&#x91CA;&#x4E0D;&#x5728;&#x884C;&#x5F00;&#x5934;&#xFF0C;&#x90A3;&#x4E48;&#x5220;&#x9664; ; &#x53CA;&#x4EE5;&#x540E;&#x7684;&#x5B57;&#x7B26;</p>
+</li>
+<li><p><strong><code>%s/\#.*//g</code></strong> - &#x5220;&#x9664; # &#x4E4B;&#x540E;&#x6240;&#x6709;&#x5B57;&#x7B26;</p>
+</li>
+</ul>
+<h2 id="&#x5FEB;&#x6377;&#x952E;"><a name="&#x5FEB;&#x6377;&#x952E;" class="plugin-anchor" href="#&#x5FEB;&#x6377;&#x952E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x6377;&#x952E;</h2>
+<p><img src="images/vim_s1.jpg" alt=""></p>
+<p><img src="images/vim_s2.jpg" alt=""></p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-06-15 01:53:46 </span> </footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -2063,7 +2091,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vim小知识","level":"1.9.1","depth":2,"next":{"title":"Vim编辑器再学习","level":"1.9.2","depth":2,"path":"Vim/Vim编辑器再学习.md","ref":"Vim/Vim编辑器再学习.md","articles":[]},"previous":{"title":"Vim","level":"1.9","depth":1,"path":"Vim/README.md","ref":"Vim/README.md","articles":[{"title":"Vim小知识","level":"1.9.1","depth":2,"path":"Vim/Vim小知识.md","ref":"Vim/Vim小知识.md","articles":[]},{"title":"Vim编辑器再学习","level":"1.9.2","depth":2,"path":"Vim/Vim编辑器再学习.md","ref":"Vim/Vim编辑器再学习.md","articles":[]},{"title":"VimScript 学习笔记","level":"1.9.3","depth":2,"path":"Vim/VimScript学习笔记.md","ref":"Vim/VimScript学习笔记.md","articles":[]},{"title":"Vim 从入门到精通","level":"1.9.4","depth":2,"path":"Vim/vim从入门到精通[转载].md","ref":"Vim/vim从入门到精通[转载].md","articles":[]},{"title":"Vim 插件列表","level":"1.9.5","depth":2,"path":"Vim/插件列表.md","ref":"Vim/插件列表.md","articles":[]},{"title":"YouCompleteMe安装","level":"1.9.6","depth":2,"path":"Vim/YouCompleteMe安装.md","ref":"Vim/YouCompleteMe安装.md","articles":[]},{"title":"vimrc示例","level":"1.9.7","depth":2,"path":"Vim/vimrc示例1.md","ref":"Vim/vimrc示例1.md","articles":[]},{"title":"vimrc备份","level":"1.9.8","depth":2,"path":"Vim/vimrc备份.md","ref":"Vim/vimrc备份.md","articles":[]},{"title":"Tmux快捷键","level":"1.9.9","depth":2,"path":"Vim/Tmux快捷键.md","ref":"Vim/Tmux快捷键.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Vim/Vim小知识.md","mtime":"2020-06-06T12:34:49.286Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T12:35:40.671Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vim小知识","level":"1.9.1","depth":2,"next":{"title":"Vim编辑器再学习","level":"1.9.2","depth":2,"path":"Vim/Vim编辑器再学习.md","ref":"Vim/Vim编辑器再学习.md","articles":[]},"previous":{"title":"Vim","level":"1.9","depth":1,"path":"Vim/README.md","ref":"Vim/README.md","articles":[{"title":"Vim小知识","level":"1.9.1","depth":2,"path":"Vim/Vim小知识.md","ref":"Vim/Vim小知识.md","articles":[]},{"title":"Vim编辑器再学习","level":"1.9.2","depth":2,"path":"Vim/Vim编辑器再学习.md","ref":"Vim/Vim编辑器再学习.md","articles":[]},{"title":"VimScript 学习笔记","level":"1.9.3","depth":2,"path":"Vim/VimScript学习笔记.md","ref":"Vim/VimScript学习笔记.md","articles":[]},{"title":"Vim 从入门到精通","level":"1.9.4","depth":2,"path":"Vim/vim从入门到精通[转载].md","ref":"Vim/vim从入门到精通[转载].md","articles":[]},{"title":"Vim 插件列表","level":"1.9.5","depth":2,"path":"Vim/插件列表.md","ref":"Vim/插件列表.md","articles":[]},{"title":"YouCompleteMe安装","level":"1.9.6","depth":2,"path":"Vim/YouCompleteMe安装.md","ref":"Vim/YouCompleteMe安装.md","articles":[]},{"title":"vimrc示例","level":"1.9.7","depth":2,"path":"Vim/vimrc示例1.md","ref":"Vim/vimrc示例1.md","articles":[]},{"title":"vimrc备份","level":"1.9.8","depth":2,"path":"Vim/vimrc备份.md","ref":"Vim/vimrc备份.md","articles":[]},{"title":"Tmux快捷键","level":"1.9.9","depth":2,"path":"Vim/Tmux快捷键.md","ref":"Vim/Tmux快捷键.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Vim/Vim小知识.md","mtime":"2020-06-15T01:53:46.155Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-15T01:54:39.150Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2014,6 +2014,7 @@
 <li><a href="#8">cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F&quot;:&quot; &apos;{ print $1&quot;|&quot;$3&quot;|&quot;$4 }&apos;</a></li>
 <li><a href="#9">egrep -v &quot;(^$|^#)&quot; /etc/ansible/ansible.cfg</a></li>
 <li><a href="#10">&#x8FD0;&#x884C;&#x5373;&#x5D29;&#x6E83;</a></li>
+<li><a href="#11">df -h | grep -vi &quot;filesystem&quot;</a></li>
 <li><a href="#11"></a></li>
 </ul>
 <p> <span id="1"></span></p>
@@ -2109,7 +2110,43 @@ xcq|1001|1001
 </code></pre><ul>
 <li>&#x89E3;&#x91CA;&#xFF1A;&#x5339;&#x914D;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x4EE5;&#x6B63;&#x89C4; ip &#x5730;&#x5740;&#x4F5C;&#x4E3A;&#x540D;&#x5B57;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x8FD0;&#x884C;&#x5373;&#x5D29;&#x6E83;</li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-06-06 12:34:49 </span> </footer>
+<p><span id="11"></span></p>
+<pre><code class="lang-shell">$ df -h | grep -vi &apos;filesystem&apos;
+df -h | grep -vi &apos;filesystem&apos;
+udev            976M     0  976M   0% /dev
+tmpfs           200M  6.9M  193M   4% /run
+/dev/vda1        40G   16G   23G  42% /
+tmpfs           997M     0  997M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           997M     0  997M   0% /sys/fs/cgroup
+</code></pre>
+<ul>
+<li><code>grep -v</code>&#xFF1A;&#x53CD;&#x5411;&#x5339;&#x914D;</li>
+<li><code>grep -i</code>&#xFF1A;&#x5339;&#x914D;&#x5FFD;&#x7565;&#x5927;&#x5C0F;&#x5199;</li>
+<li>&#x89E3;&#x91CA;&#xFF1A;&#x5BF9;&#x6027;&#x80FD;&#x8F93;&#x51FA;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x526A;&#x5207;&#x65F6;&#x5F80;&#x5F80;&#x5C06;&#x7B2C;&#x4E00;&#x884C;&#x8868;&#x5934;&#x53BB;&#x6389;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x66F4;&#x65B9;&#x4FBF;</li>
+</ul>
+<p><span id=""></span></p>
+<pre><code class="lang-shell">
+
+</code></pre>
+<ul>
+<li>&#x89E3;&#x91CA;&#xFF1A; </li>
+</ul>
+<p><span id=""></span></p>
+<pre><code class="lang-shell">
+
+</code></pre>
+<ul>
+<li>&#x89E3;&#x91CA;&#xFF1A; </li>
+</ul>
+<p><span id=""></span></p>
+<pre><code class="lang-shell">
+
+</code></pre>
+<ul>
+<li>&#x89E3;&#x91CA;&#xFF1A; </li>
+</ul>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-06-15 01:53:46 </span> </footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -2153,7 +2190,7 @@ xcq|1001|1001
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"句子解析","level":"1.8.5","depth":2,"next":{"title":"识别是否是root用户","level":"1.8.6","depth":2,"path":"Shell/识别是否是root用户.md","ref":"Shell/识别是否是root用户.md","articles":[]},"previous":{"title":"Shell文本处理常用工具补遗","level":"1.8.4","depth":2,"path":"Shell/Shell文本处理常用工具补遗.md","ref":"Shell/Shell文本处理常用工具补遗.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Shell/句子解析.md","mtime":"2020-06-06T12:34:49.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-06T12:35:40.671Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"句子解析","level":"1.8.5","depth":2,"next":{"title":"识别是否是root用户","level":"1.8.6","depth":2,"path":"Shell/识别是否是root用户.md","ref":"Shell/识别是否是root用户.md","articles":[]},"previous":{"title":"Shell文本处理常用工具补遗","level":"1.8.4","depth":2,"path":"Shell/Shell文本处理常用工具补遗.md","ref":"Shell/Shell文本处理常用工具补遗.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Shell/句子解析.md","mtime":"2020-06-15T01:53:46.139Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-15T01:54:39.150Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
