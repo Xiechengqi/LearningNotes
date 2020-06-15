@@ -29,6 +29,80 @@
 
 * **`ssh -vvv <user>@<hostip>`** - 打印最详细的运行情况和调试信息
 
+``` shell
+$ ssh root@aliyun -v
+OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to aliyun [106.15.72.140] port 22.
+debug1: Connection established.
+debug1: identity file /home/xcq/.ssh/id_rsa type 0
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/xcq/.ssh/id_rsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/xcq/.ssh/id_dsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/xcq/.ssh/id_dsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/xcq/.ssh/id_ecdsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/xcq/.ssh/id_ecdsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/xcq/.ssh/id_ed25519 type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/xcq/.ssh/id_ed25519-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
+debug1: Remote protocol version 2.0, remote software version OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
+debug1: match: OpenSSH_7.6p1 Ubuntu-4ubuntu0.3 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to aliyun:22 as 'root'
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ecdsa-sha2-nistp256
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ecdsa-sha2-nistp256 SHA256:Shnbq2gjAuoqjUmvnn4fwTRFvByWlHFmxi6WXGAtOPs
+debug1: Host 'aliyun' is known and matches the ECDSA host key.
+debug1: Found key in /home/xcq/.ssh/known_hosts:51
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Offering public key: RSA SHA256:rdOjFLUoUcd66Ni/HuR353ht01sfhYpZh3y1y9lwuwM /home/xcq/.ssh/id_rsa
+debug1: Server accepts key: pkalg rsa-sha2-512 blen 279
+debug1: Authentication succeeded (publickey).
+Authenticated to aliyun ([106.15.72.140]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: network
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: Sending environment.
+debug1: Sending env LC_MEASUREMENT = en_HK.UTF-8
+debug1: Sending env LC_PAPER = en_HK.UTF-8
+debug1: Sending env LC_MONETARY = en_HK.UTF-8
+debug1: Sending env LANG = zh_CN.UTF-8
+debug1: Sending env LC_NAME = en_HK.UTF-8
+debug1: Sending env LC_ADDRESS = en_HK.UTF-8
+debug1: Sending env LC_NUMERIC = en_HK.UTF-8
+debug1: Sending env LC_TELEPHONE = en_HK.UTF-8
+debug1: Sending env LC_IDENTIFICATION = en_HK.UTF-8
+debug1: Sending env LC_TIME = en_HK.UTF-8
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-48-generic x86_64)
+```
+> * `identity file type .../.ssh/id_* type <number>` 中的数字只是 sshkey_types 枚举 的整数值（基于零），-1表示错误
+>  * KEY_RSA, // id_rsa has type 0
+>  * KEY_DSA, // id_dsa has type 1, but as you have no id_dsa key file, -1 is used 
+>  * KEY_ECDSA, // id_ecdsa has type 2
+> * `debug [123]`: 行前缀中的数字表示其后面的消息的调试级别。它对应于您在命令行上给出的 `-v` 的数量（3 是最大值）。即如果设置 `-v`，将打印 debug1 消息，使用 `-vv`，您将获得 debug1 和 debug2，最多是三级，即 `-vvv`
+
 * **`ssh -T git@xxx.com`** - 测试 ssh 密钥连接是否成功
 ``` shell
 # github

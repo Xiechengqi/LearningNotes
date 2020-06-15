@@ -9,6 +9,13 @@
 所以，希望换一种方式“收藏”自己平时学习时遇到的好文和好料！
 
 
+* [中文独立博客](https://feeds.pub/cn-indie)
+* [BlogHub - 个人独立博客推荐](https://bloghub.fun/)
+* [全世界4K云旅游](https://www.thripy.com/)
+* [芝加哥大学50000幅油画](https://www.artic.edu/collection?is_public_domain=1?utm_source=bigezhang.com)
+* [同网页实时聊天-开源](https://yiyechat.com)
+* [全国工资税后计算器](https://hizdm.cn/)
+* [新趣集-发现有趣最新的IT产品](https://xinquji.com/)
 * [DevOps 和 SRE](https://blog.alswl.com/2018/09/devops-and-sre/)
 * [邮件技术提问的正道](https://www.zhangxinxu.com/wordpress/2015/05/how-to-ask-web-front-question/)
 * [Wangdoc - 阮一峰搭建的静态文档生成器](https://github.com/wangdoc/help/blob/master/docs/how-to-create-a-new-repo.md)
