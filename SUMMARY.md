@@ -100,6 +100,8 @@
   * [如何替换已忘记的 root 密码](Mysql/忘记root密码.md)
 * [Nginx](Nginx/README.md)
   * [Nginx 学习](Nginx/Nginx学习笔记.md)
+  * [安装](Nginx/安装.md)
+  * [配置https](Nginx/设置https.md)
 * [闲知](NoClass/README.md)
   * [容易读错的IT术语](NoClass/容易读错的IT术语.md)
   * [Linux electron 学习记录](NoClass/Linux-electron-tutorial.md)
