@@ -2,6 +2,7 @@
 
 ## 目录
 
+* [使用 set 调试 shell 脚本](#使用-set-调试-shell-脚本)
 * [Shell 中的单引号和双引号区别](#shell-中的单引号和双引号区别)
 * [exit 退出值](#exit-退出值)
 * [Shebang 行](#shebang-行)
@@ -29,6 +30,69 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
+
+## 使用 set 调试 shell 脚本
+
+> **参考**：http://www.ruanyifeng.com/blog/2017/11/bash-set.html
+
+**`set -u` 或 `set -o nounset`** - 遇到不存在的变量就会报错，并停止执行
+* 默认遇到不存在的变量，Bash 忽略它。使用 `set -u`，
+
+**`set -x` 或 `set -o xtrace`** - 在运行结果之前，先输出执行的那一行命令
+* 默认情况下，脚本执行后，屏幕只显示运行结果，没有其他内容。如果多个命令连续执行，它们的运行结果就会连续输出。有时会分不清，某一段内容是什么命令产生的
+
+**`set -e` 或 `set -o errexit`** - 脚本只要发生错误，就终止执行
+* 如果脚本里面有运行失败的命令（返回值非0），Bash 默认会继续执行后面的命令
+* `set -e` 根据返回值来判断，一个命令是否运行失败。但是，某些命令的非零返回值可能不表示失败，或者开发者希望在命令失败的情况下，脚本继续执行下去。这时可以暂时关闭 `set -e`，该命令执行结束后，再重新打开 `set -e`
+``` shell
+# set +e 表示关闭 -e 选项，set -e 表示重新打开 -e 选项
+set +e
+command1
+command2
+set -e
+```
+* 不管有没有设置 `set -e`，手动确保命令执行失败退出或继续执行
+```shell
+# 命令失败则一定退出
+command || echo "fail!";exit 1
+# 命令失败也一定继续执行
+command || true
+```
+
+**set -o pipefail** - 只要管道中一个子命令失败，整个管道命令就失败，脚本就会终止执行
+``` shell
+$ cat script.sh
+#!/usr/bin/env bash
+set -eo pipefail
+foo | echo a
+echo bar
+$ bash script.sh
+a
+script.sh:行4: foo: 未找到命令
+```
+* `set -e` 不适用于管道命令。Bash 会把管道最后一个子命令的返回值，作为整个命令的返回值。也就是说，只要最后一个子命令不失败，管道命令总是会执行成功，因此它后面命令依然会执行，`set -e` 就失效了
+```shell
+# 管道连接多个 command，$? 是最后一个 command 的返回值
+$ hello | echo "hello"
+hello
+-bash: hello: 未找到命令
+$ echo $?
+0
+```
+
+**以上四个参数汇总** 
+
+```shell
+# 方法一
+set -euxo pipefail
+
+# 方法二
+set -eux
+set -o pipefail
+
+# 方法三，执行脚本时传入
+$ bash -euxo pipefail script.sh
+```
 
 ## Shell 中的单引号和双引号区别
 
