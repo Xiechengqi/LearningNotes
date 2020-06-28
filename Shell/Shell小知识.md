@@ -2,6 +2,7 @@
 
 ## 目录
 
+* [rpm 离线安装步骤](#rpm-离线安装步骤)
 * [使用 set 调试 shell 脚本](#使用-set-调试-shell-脚本)
 * [Shell 中的单引号和双引号区别](#shell-中的单引号和双引号区别)
 * [exit 退出值](#exit-退出值)
@@ -30,6 +31,23 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
+
+## rpm 离线安装步骤
+
+> Linux 离线部署一般采用 docker 或 rpm 包安装
+
+* yum 只下载不安装软件 rpm 包
+
+``` shell
+# 下载 vim 所有 rpm 包到当前目录下的 vim 文件夹 
+$ yum install --downloadonly --downloaddir=./ vim
+```
+
+* 检测是否还有遗漏的依赖 rpm
+
+``` shell
+$ yum -ivh ./*.rpm
+```
 
 ## 使用 set 调试 shell 脚本
 
