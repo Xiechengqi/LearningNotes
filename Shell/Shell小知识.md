@@ -2,6 +2,8 @@
 
 ## 目录
 
+* [命令后台运行](#命令后台运行)
+* [while read line 和 for](#while-read-line-和-for)
 * [rpm 离线安装步骤](#rpm-离线安装步骤)
 * [使用 set 调试 shell 脚本](#使用-set-调试-shell-脚本)
 * [Shell 中的单引号和双引号区别](#shell-中的单引号和双引号区别)
@@ -31,6 +33,38 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
+
+## 命令后台运行
+
+1、支持后台运行，但是关闭终端的话，程序也会停止。使用 `jobs -l` 查看和使用 `fg` 命令将后台运行调到前台运行
+
+``` shell
+$ [command] &
+```
+
+2、支持后台运行，关闭终端后，程序也会继续运行。使用 `jobs` 命令查看不到，需要使用 `ps aux | grep -v grep | grep [command]` 查看
+
+``` shell
+$ nohup [command] &
+```
+
+## while read line 和 for
+
+* while read line 是一次性将文件的一行读入并赋值给变量 line ，while 中使用重定向机制,文件中的所有信息都被读入并重定向给了整个 while 语句中的 line 变量
+``` shell
+# 从文件读取
+while read line
+do
+command
+done < [文件]
+
+# 从命令输出读取
+command1 | while read line
+do
+command2
+done
+```
+* for 是每次读取文件中一个以空格为分割符的字符串
 
 ## rpm 离线安装步骤
 
