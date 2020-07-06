@@ -1,7 +1,8 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
-* [Linux adduser 与 useradd 区别]
+* [端口、进程名、进程号互查](#端口进程名进程号互查-top)
+* [Linux adduser 与 useradd 区别](#linux-adduser-与-useradd-区别-top)
 * [使用 wget 提示无法建立SSL连接](#使用-wget-提示无法建立ssl连接-top)
 * [通过编译安装软件时：[Error]运行时找不到.so文件](#通过编译安装软件时error运行时找不到so文件-top)
 * [更换 Ubuntu 18.04 LTS 登录界面背景](#更换-ubuntu-1804-lts-登录界面背景-top)
@@ -27,9 +28,39 @@
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
 
+
+## Port、PName、PID互查 [[Top]](#目录)
+
+**Port** -> **PID**
+
+``` shell
+netstat -nlp | grep [Port]
+
+```
+
+**PID** -> **Port**
+
+``` shell
+nestat -nltp | grep [PID]
+```
+
+
+**PName** -> **PID**
+
+``` shell
+ps aux | grep [PName]
+```
+
+**PID** -> **PName**
+
+
+
+**** -> ****
+
+
 ## Linux adduser 与 useradd 区别 [[Top]](#目录)
 
-### 一、De­bian 或 Ubuntu 
+### 一、Debian 或 Ubuntu 
 
 >  主要的区别在使用方式上
 
