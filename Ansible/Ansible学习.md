@@ -1,5 +1,9 @@
 # Ansible 学习笔记
 
+> * [Ansible Galaxy](https://galaxy.ansible.com)
+> * [使用 Ansible 实现数据中心自动化管理](https://www.ibm.com/developerworks/cn/opensource/os-using-ansible-for-data-center-it-automation/index.html)
+> Ansible 的核心组件包括：Modules、Inventory、Playbook、Roles 和 Plugins
+
 ## 目录
 
 * **[单词解释](#单词解释)**

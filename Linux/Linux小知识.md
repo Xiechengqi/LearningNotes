@@ -1,6 +1,8 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
+* [pushd、popd 切换目录](#pushdpopd-切换目录-top)
+* [/etc/motd ssh 登陆后欢迎界面](#etcmotd-ssh-登陆后欢迎界面-top)
 * [端口、进程名、进程号互查](#端口进程名进程号互查-top)
 * [Linux adduser 与 useradd 区别](#linux-adduser-与-useradd-区别-top)
 * [使用 wget 提示无法建立SSL连接](#使用-wget-提示无法建立ssl连接-top)
@@ -28,6 +30,55 @@
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
 
+
+## pushd、popd 切换目录 [[Top]](#目录)
+
+* 使用 cd 切换目录经常想回到之前的目录，但 `cd -` 只能回到上一个目录，使用 pushd、popd 可以以目录堆栈的方式(FILO，先进后出)前进后退切换目录，结合 dirs 查看堆栈内容（最左边的是栈顶），十分方便！
+``` shell
+$ pushd ~/桌面/WORK
+~/桌面/WORK ~/桌面/codeLearn/Shell/kjyw/redis
+xcq@xcq:~/桌面/WORK$ pushd ~/桌面/codeLearn/git/github/
+~/桌面/codeLearn/git/github ~/桌面/WORK ~/桌面/codeLearn/Shell/kjyw/redis
+xcq@xcq:~/桌面/codeLearn/git/github$ dirs
+~/桌面/codeLearn/git/github ~/桌面/WORK ~/桌面/codeLearn/Shell/kjyw/redis
+xcq@xcq:~/桌面/codeLearn/git/github$ popd
+~/桌面/WORK ~/桌面/codeLearn/Shell/kjyw/redis
+xcq@xcq:~/桌面/WORK$ popd
+~/桌面/codeLearn/Shell/kjyw/redis
+xcq@xcq:~/桌面/codeLearn/Shell/kjyw/redis$ dirs
+~/桌面/codeLearn/Shell/kjyw/redis
+```
+
+
+## `/etc/motd` ssh 登陆后欢迎界面 [[Top]](#目录)
+
+> * 通过修改 `/etc/motd` 文件可以自定义 ssh 登录欢迎界面
+> * [常用终端 ASCII 码图](https://blog.csdn.net/whatday/article/details/106002578)
+> * [在线图片转 ASCII 码网站](http://www.makepic.net/Tool/Image2ascii.html)
+
+* aliyun 登录后界面
+``` shell
+$ ssh root@aliyun
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * "If you've been waiting for the perfect Kubernetes dev solution for
+   macOS, the wait is over. Learn how to install Microk8s on macOS."
+
+   https://www.techrepublic.com/article/how-to-install-microk8s-on-macos/
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+Welcome to Alibaba Cloud Elastic Compute Service !
+
+Last login: Fri Jul  3 23:03:28 2020 from 218.82.189.64
+root@xcq:~#
+```
 
 ## Port、PName、PID互查 [[Top]](#目录)
 

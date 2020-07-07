@@ -115,6 +115,8 @@ $ ssh -T git@e.coding.net
 
 * **`ssh <user>@<hostip>`** - 登录 host
 
+* **`ssh <user>@<hostip> "[command]"`** - 登录 host 并执行命令
+
 * **`ssh -J  <跳板机登录用户>@<ip>:<port> <目标机登录用户>@<ip> -p <port> `**- 通过跳板机登录目标机
 
 > ssh 命令登录失败后，重试时总是卡住，一般在重试前先重启 sshd 服务就可以解决
