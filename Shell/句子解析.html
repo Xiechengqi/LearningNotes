@@ -685,6 +685,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.25" data-path="../Linux/本地显示远程服务器上的图形化界面.html">
+            
+                <a href="../Linux/本地显示远程服务器上的图形化界面.html">
+            
+                    
+                    本地显示远程服务器上的图形化界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.26" data-path="../Linux/Linux网络常用命令详解.html">
+            
+                <a href="../Linux/Linux网络常用命令详解.html">
+            
+                    
+                    Linux网络常用命令详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.27" data-path="../Linux/rdesktop安装的坑.html">
+            
+                <a href="../Linux/rdesktop安装的坑.html">
+            
+                    
+                    rdesktop安装的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1460,7 +1499,33 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.17.1" data-path="../KVM/安装配置.html">
+        <li class="chapter " data-level="1.17.1" data-path="../KVM/常用名词解释.html">
+            
+                <a href="../KVM/常用名词解释.html">
+            
+                    
+                    常用名词解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../KVM/安装配置.html">
+            
+                <a href="../KVM/安装配置.html">
+            
+                    
+                    安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" data-path="../KVM/安装配置.html">
             
                 <a href="../KVM/安装配置.html">
             
@@ -1473,12 +1538,77 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17.2" data-path="../KVM/虚拟机网络配置.html">
+        <li class="chapter " data-level="1.17.4" data-path="../KVM/创建虚拟机和安装操作系统.html">
+            
+                <a href="../KVM/创建虚拟机和安装操作系统.html">
+            
+                    
+                    创建虚拟机和安装操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.5" data-path="../KVM/常用命令行工具详解.html">
+            
+                <a href="../KVM/常用命令行工具详解.html">
+            
+                    
+                    常用命令行工具详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.6" data-path="../KVM/磁盘镜像格式.html">
+            
+                <a href="../KVM/磁盘镜像格式.html">
+            
+                    
+                    磁盘镜像格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.7" data-path="../KVM/虚拟机网络配置.html">
             
                 <a href="../KVM/虚拟机网络配置.html">
             
                     
-                    Bridged 桥接模式
+                    虚拟机网络配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.8" >
+            
+                <span>
+            
+                    
+                    [存储池和存储卷](KVM/存储池和存储卷.md）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.9" data-path="../KVM/KVM安装wins2016.html">
+            
+                <a href="../KVM/KVM安装wins2016.html">
+            
+                    
+                    KVM安装wins2016
             
                 </a>
             
@@ -2061,13 +2191,14 @@
 <li><a href="#4">for i in {1..5} ; do echo -n &quot;$i &quot;; done</a></li>
 <li><a href="#5"> hash $1 &amp;&gt; /dev/null</a></li>
 <li><a href="#6"> echo &quot;`date +%F&apos; &apos;%H:%M:%S`&quot; </a></li>
-<li><a href="#7"> [ -d $dirname ] || mkdir -p $dirname &amp;&gt; /dev/null<br>
-[ -e ${dirname}${filename} ] || touch ${dirname}${filename} &amp;&gt; /dev/null</a></li>
+<li>[ [ -d $dirname ] || mkdir -p $dirname &amp;&gt; /dev/null<br></li>
+<li><a href="#7"> -e ${dirname}${filename} ] || touch ${dirname}${filename} &amp;&gt; /dev/null</a></li>
 <li><a href="#8">cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F&quot;:&quot; &apos;{ print $1&quot;|&quot;$3&quot;|&quot;$4 }&apos;</a></li>
 <li><a href="#9">egrep -v &quot;(^$|^#)&quot; /etc/ansible/ansible.cfg</a></li>
 <li><a href="#10">&#x8FD0;&#x884C;&#x5373;&#x5D29;&#x6E83;</a></li>
 <li><a href="#11">df -h | grep -vi &quot;filesystem&quot;</a></li>
 <li><a href="#12">[ ! -d &quot;${INSTALL_DIR}&quot; ] &amp;&amp; mkdir -p ${INSTALL_DIR}</a></li>
+<li><a href="#13">kill <code>pgrep java</code></a></li>
 </ul>
 <p> <span id="1"></span></p>
 <pre><code class="lang-shell"> [ $# -lt 1 ] &amp;&amp; echo &quot;please input the income file&quot; &amp;&amp; exit -1
@@ -2186,12 +2317,11 @@ tmpfs           997M     0  997M   0% /sys/fs/cgroup
 <li><code>[ -f xxx ]</code>&#xFF1A;&#x68C0;&#x6D4B;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x4F7F;&#x7528; <code>man test</code> &#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x76F8;&#x5173;&#x547D;&#x4EE4;</li>
 <li>&#x89E3;&#x91CA;&#xFF1A;&#x68C0;&#x6D4B; <code>${INSTALL_DIR}</code> &#x76EE;&#x5F55;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x521B;&#x5EFA;</li>
 </ul>
-<p><span id=""></span></p>
-<pre><code class="lang-shell">
-
+<p><span id="13"></span></p>
+<pre><code class="lang-shell">kill `pgrep java`
 </code></pre>
 <ul>
-<li>&#x89E3;&#x91CA;&#xFF1A; </li>
+<li>&#x89E3;&#x91CA;&#xFF1A;<code>pgrep &#x8FDB;&#x7A0B;&#x540D;</code> &#x8FD4;&#x56DE;&#x5339;&#x914D;&#x5230;&#x7684;&#x8FDB;&#x7A0B;&#x7684; PID</li>
 </ul>
 <p><span id=""></span></p>
 <pre><code class="lang-shell">
@@ -2200,7 +2330,7 @@ tmpfs           997M     0  997M   0% /sys/fs/cgroup
 <ul>
 <li>&#x89E3;&#x91CA;&#xFF1A; </li>
 </ul>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-07-07 21:07:05 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-07-19 06:23:54 </span> </footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -2244,7 +2374,7 @@ tmpfs           997M     0  997M   0% /sys/fs/cgroup
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"句子解析","level":"1.8.5","depth":2,"next":{"title":"识别是否是root用户","level":"1.8.6","depth":2,"path":"Shell/识别是否是root用户.md","ref":"Shell/识别是否是root用户.md","articles":[]},"previous":{"title":"Shell文本处理常用工具补遗","level":"1.8.4","depth":2,"path":"Shell/Shell文本处理常用工具补遗.md","ref":"Shell/Shell文本处理常用工具补遗.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Shell/句子解析.md","mtime":"2020-07-07T21:07:05.049Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-07T21:07:56.046Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"句子解析","level":"1.8.5","depth":2,"next":{"title":"识别是否是root用户","level":"1.8.6","depth":2,"path":"Shell/识别是否是root用户.md","ref":"Shell/识别是否是root用户.md","articles":[]},"previous":{"title":"Shell文本处理常用工具补遗","level":"1.8.4","depth":2,"path":"Shell/Shell文本处理常用工具补遗.md","ref":"Shell/Shell文本处理常用工具补遗.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Shell/句子解析.md","mtime":"2020-07-19T06:23:54.533Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-19T06:24:43.319Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
