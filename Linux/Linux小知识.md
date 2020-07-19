@@ -1,6 +1,9 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
+* [CentOS net-tools 软件包详解](#centos-net-tools-软件包详解)
+* [CentOS 7.6图形化界面中文显示乱码的问题](#centos-7.6图形化界面中文显示乱码的问题)
+* [解决远程链接的`Gtk-WARNING **: cannot open display`或`Cannot connect to display`问题](#解决远程链接的gtk-warning-**-cannot-open-display或cannot connect-to-display问题)
 * [pushd、popd 切换目录](#pushdpopd-切换目录-top)
 * [/etc/motd ssh 登陆后欢迎界面](#etcmotd-ssh-登陆后欢迎界面-top)
 * [端口、进程名、进程号互查](#端口进程名进程号互查-top)
@@ -30,6 +33,17 @@
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
 
+## CentOS net-tools 软件包详解
+
+* net-tools 包里有 ifconfig、netstat、whois 等命令
+* CentOS 7 默认没有安装该软件包，`yum intall -y net-tools` 安装
+
+
+## centos 7.6图形化界面中文显示乱码的问题
+
+https://blog.csdn.net/linxue110/article/details/85293022
+
+## 解决远程链接的`Gtk-WARNING **: cannot open display;`或`Cannot connect to display;`问题 [[Top]](#目录)
 
 ## pushd、popd 切换目录 [[Top]](#目录)
 

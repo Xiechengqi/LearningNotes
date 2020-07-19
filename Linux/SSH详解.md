@@ -113,6 +113,7 @@ $ ssh -T git@gitee.com
 $ ssh -T git@e.coding.net
 ```
 
+
 * **`ssh <user>@<hostip>`** - 登录 host
 
 * **`ssh <user>@<hostip> "[command]"`** - 登录 host 并执行命令
@@ -150,6 +151,8 @@ scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1 
 * **`ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub`** - 如果您有 OpenSSH 私钥（`id_rsa` 文件），则可以使用以下命令生成 OpenSSH 公钥文件
 
 * ** `ssh-keygen -y [私钥]`** - 从私钥生成公钥，反之显而是不行的
+
+* **`ssh-keygen -R <hostip>`** - 从 SSH 的 known_hosts 文件中删除特定的主机密钥
  
 
 * **`ssh-keyscan`**
