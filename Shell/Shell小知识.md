@@ -2,6 +2,8 @@
 
 ## 目录
 
+* [变量替换](#变量替换)
+* [shift](#shift)
 * [nohup 和 & 区别](#nohup-和-&-区别)
 * [数组](#数组)
 * [命令后台运行](#命令后台运行)
@@ -35,6 +37,39 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
+## 变量替换
+
+* 变量替换可以根据变量的状态（是否为空、是否定义等）来改变它的值
+
+
+| 形式 | 说明 |
+| --- | --- |
+| `${var}` | 变量本来的值 |
+| `${var:-word}` | 如果变量 var 为空或已被删除(unset)，那么返回 word，但不改变 var 的值 |
+| `${var:=word}` | 如果变量 var 为空或已被删除(unset)，那么返回 word，并将 var 的值设置为 word |
+| `${var:?message}` | 如果变量 var 为空或已被删除(unset)，那么将消息 message  送到标准错误输出，可以用来检测变量 var 是否可以被正常赋值，若此替换出现在Shell脚本中，那么脚本将停止运行 |
+| `${var:+word}` | 如果变量 var 被定义，那么返回 word，但不改变 var 的值 |
+| `${value:offset}` 或 `${value:offset:length}` |  从变量中提取子串，这里 offset 和 length 可以是算术表达式 |
+| `${#value}` | 变量的字符个数 (变量的字符个数，并不是变量个数） |
+| `${value#pattern}` 或 `${value##pattern}` | 去掉 `value` 中与 `pattern` 相匹配的部分,条件是 `value` 的开头与 `pattern` 相匹配。#与##的区别：`#`是最短匹配模式，而`##`是最长匹配模式 |
+| `${value％pattern}` 或 `${value％％pattern}` | 去掉 `value` 中与 `pattern` 相匹配的部分,条件是从 `value` 的尾部于 `pattern` 相匹配,`%`与`%%`的区别：`%`是最短匹配模式,而`%%`是最长匹配模式 |
+| `${value/pattern/string}` 或 `${value//pattern/string}` | 进行变量内容的替换,把与 `pattern` 匹配的部分替换为 `string` 的内容,`/` 和 `//` 的区别：`/` 是只替换第一个，而 `//` 替换所有的 |
+| `${var/#pattern/string}` 或 `${var/%pattern/string}` | 进行变量内容的替换,把与 `pattern` 匹配的部分替换为 `string` 的内容，`%` 和 `#` 的区别是：`#` 是从前面开始匹配，`%` 是从后面开始匹配 |
+|  |  |
+
+## shift
+
+* shift 命令用于对脚本传入参数的移动(左移)，通常用于在不知道传入参数个数的情况下依次遍历每个参数然后进行相应处理（常见于Linux中各种程序的启动脚本）
+
+`**run.sh**`
+``` shell
+#!/bin/bash
+while [ $# != 0 ]
+do
+echo "第一个参数为：$1,参数个数为：$#"
+shift
+done
+```
 
 ## nohup 和 & 区别
 

@@ -136,6 +136,12 @@ $ ssh -T git@e.coding.net
 
 * **`scp -r <user>@<hostip>:<remote_folder_path>  <local_file_path>`**- 通过 scp 命令传下载远程**文件**夹到本地
 
+* **Linux 和　Windows 实现 scp 互传文件＊＊
+* 因为 Windows 系统本身不支持 ssh 协议，所以要想实现两者 scp 互传文件，必须在 Windows 客户端安装 `ssh for windows` 的客户端软件，比如 winsshd，使 Windows 系统支持 ssh 协议
+* **`scp /root/README.md administrator@192.168.7.12:/d:/test/`** - 通过 scp 命令上传本地 (Linux) **文件**到远程 (Windows) 上
+
+* **`scp administrator@192.168.7.12:/d:/test/README.md /root/`** - 通过 scp 命令下载远程 (Windows) **文件**到本地 (Linux)
+
 ```
 scp -o "ProxyCommand=nc -X connect -x proxy_ip:proxy_port %h %p"  filename  username@target_ip:/target_path
 scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1  root@54.250.52.188:/root
@@ -153,6 +159,8 @@ scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1 
 * ** `ssh-keygen -y [私钥]`** - 从私钥生成公钥，反之显而是不行的
 
 * **`ssh-keygen -R <hostip>`** - 从 SSH 的 known_hosts 文件中删除特定的主机密钥
+
+* **`ssh-keygen -f "/home/xcq/.ssh/known_hosts" -R "192.168.7.47"`** - 删除指定 known_hosts 文件中的主机公钥
  
 
 * **`ssh-keyscan`**

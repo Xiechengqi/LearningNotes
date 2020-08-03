@@ -27,3 +27,9 @@ dpkg --get-selections | grep hold
 ``` shell
 sudo apt-mark unhold rdesktop
 ```
+
+## 使用
+
+``` shell
+$ rdesktop -g 50% -u administrator 192.168.7.19
+```

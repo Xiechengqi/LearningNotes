@@ -33,14 +33,23 @@
 * 缺点：管理起来不方便
 
 #### 2、基于 mysqld_multi
+> * [mysqld_multi - 管理多个MySQL服务器](http://www.deituicms.com/mysql8cn/cn/programs.html#mysqld-multi)
 
 > * [基于mysqld_multi实现MySQL 5.7.24多实例多进程配置](https://blog.csdn.net/w892824196/article/details/104067734)
+
+* 对于某些Linux平台，从RPM或Debian软件包安装MySQL包括用于管理MySQL服务器启动和关闭的systemd支持。 在这些平台上， 没有安装 mysqld_multi， 因为它是不必要的
 
 * 通过官方自带的 mysqld_multi 工具，使用单独配置文件来实现多实例
 * 优点：便于集中管理管理
 * 缺点：不方便针对每个实例配置进行定制
 
-#### 3、基于 IM
+#### 3、基于 systemd
+
+> * [Configuring Multiple MySQL Instances Using systemd](https://dev.mysql.com/doc/refman/5.7/en/using-systemd.html#systemd-multiple-mysql-instances)
+
+
+
+#### 4、基于 IM
 * 使用 MySQL 实例管理器（MYSQLMANAGER），这个方法好像比较好不过也有点复杂
 * 优点：便于集中管理
 * 缺点：耦合度高。IM 一挂，实例全挂
