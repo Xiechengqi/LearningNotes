@@ -26,7 +26,7 @@
 * [paping](#paping-top)<br/>
 * [nmap](#nmap-top)<br/>
 * [tldr](#tldr-top)<br/>
-* []()<br/>
+* [du](#du)<br/>
 * []()<br/>
 * []()<br/>
 * []()<br/>
@@ -402,4 +402,14 @@ $ tldr grep
   - Invert match for excluding specific strings:
     grep -v search_string
 ```
+
+## du
+
+* `du -sh *`
+* `du -d 0 -h`
+* `du -d 1 -h`
+
+## htop
+
+## crontab
 

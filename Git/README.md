@@ -6,6 +6,7 @@
 * [GitHub 非官方的代码搜索引擎，支持正则搜索](https://grep.app/)
 * [Git Branching 在线可视化练习](https://learngitbranching.js.org/?demo=&locale=zh_CN)
 * [Git 交互式终端](https://github.com/bigH/git-fuzzy)
+* [Git入门之形象化理解checkout](https://segmentfault.com/a/1190000015143371)
 
 ## 分布式世界
 

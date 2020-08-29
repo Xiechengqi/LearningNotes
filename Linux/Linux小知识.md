@@ -1,6 +1,14 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
+* [Linux终端颜色设置](#linux终端颜色设置)
+* [Linux系统时钟和硬件时钟](#linux系统时钟和硬件时钟)
+* [Linux用户见shell实时同步](#Linux用户见shell实时同步)
+* [ssh反向代理实现内网穿透](#ssh反向代理实现内网穿透)
+* [Linux修改时区](#linux修改时区)
+* [yum 快速找到软件包名](#yum-快速找到软件包名)
+* [应用权限最小化执行](#应用权限最小化执行)
+* [创建一个无家目录无登录权限的应用用户](#创建一个无家目录无登录权限的应用用户)
 * [CentOS net-tools 软件包详解](#centos-net-tools-软件包详解)
 * [CentOS 7.6图形化界面中文显示乱码的问题](#centos-7.6图形化界面中文显示乱码的问题)
 * [解决远程链接的`Gtk-WARNING **: cannot open display`或`Cannot connect to display`问题](#解决远程链接的gtk-warning-**-cannot-open-display或cannot connect-to-display问题)
@@ -32,6 +40,171 @@
 * [文件权限 777](#文件权限-777-top)
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
+
+
+## Linux终端颜色设置
+> * [命令提示符 - 阮一峰](https://wangdoc.com/bash/prompt.html)
+> * 如果需要设置永久，将一下两行写入 `~/.bashrc`，之后 `source ~/.bashrc` 即可
+
+* `ls` 文件颜色 - **`alias ls='ls --color=auto'`**
+* 命令提示符颜色 - **` PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[0;36m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'`
+
+## Linux系统时钟和硬件时钟
+
+> * [Linux系统时间同步的两种方法](https://www.centos.bz/2017/08/linux-time-sync/)
+> * [国内外常用公共NTP网络时间服务器](https://blog.csdn.net/weixin_42588262/article/details/82501488)
+> * 之前装 Grafana+Prometheus 时候，恢复快照后 Grafana 就无法展示内容，折腾了一两天，发现是恢复快照后软硬件时间不同步导致的，`ntpdate ntp.aliyun.com | hwclock -w` 后就可以了。最近，jenkins 触发编译查看日志发现时间又有偏差，看来确实需要整理一下 Linux 时钟问题。
+
+* Linux 时钟分为：系统时钟（System Clock）和 硬件时钟（Real Time Clock，简称 RTC）
+* 默认情况下，系统时间和硬件时间并不会自动同步。系统运行过程中，系统时间和硬件时间异步计时，互不干扰
+* 系统时钟是当前 Linux Kernel 的时钟，而硬件时钟是主板上由电池供电的时钟，硬件时钟可在 BIOS 中设置。当 Linux 启动时，硬件时钟会去读取系统时钟的设置，并独立于硬件时间进行计时
+* Linux 中的所有命令（包括函数）均采用**系统时钟**
+* Linux 中，时钟相关的命令主要有 `date` 和 `hwclock`
+
+### 相关命令
+
+**`date`**
+
+**`tzselect`**
+
+**`ntpdate`**
+
+**`hwclock`**
+
+``` shell
+# 将系统时间写入硬件时间
+hwclock --systohc
+
+# 将硬件时间写入系统时间
+hwclock --hctosys
+
+# 将当前时间写入BIOS 避免重启后失效
+hwclock -w
+```
+
+## Linux用户见shell实时同步
+
+1、`yum install - y tcl expect`
+
+2、查看当前在线用户
+
+``` shell
+w
+# 或
+who
+```
+
+3、使用kibitz命令发起同步（连接）
+
+``` shell
+# kibitz -tty pts/[数字] [用户]
+asking bailong to type:  kibitz -1534
+```
+
+* 另一端可以看到：
+
+``` shell
+Message from root@LingYun on pts/4 at 10:09 ...
+Can we talk? Run: kibitz -1534
+EOF
+```
+
+* 另一端如果想要接受邀请同步，按下回车后输入
+``` shell
+[bailong@LingYun ~]$ kibitz -1534
+Escape sequence is ^]
+```
+
+* 此时，终端实现了实时共享，（双方都以root用户执行命令且过程同步输出到两个终端）无论哪方希望退出， 只需要输入 exit即可退出共享的shell终端
+
+
+
+## ssh反向代理实现内网穿透
+
+> * 内网主机 A，可以连接公网但没有公网 ip
+> * 有公网 ip 的主机 B
+> * 实现任意主机上登陆主机 A
+
+1、修改服务器 B 的 `/etc/sshd_config` 配置文件
+``` shell
+GatewayPorts yes
+```
+
+2、重启 ssh 服务
+
+3、登录服务器 A 执行如下命令，实现连接到服务器 B 开启反向端口代理，其中 22 为 A 的本地端口，2222 为 B 的监听端口（执行后会要求输入服务器 B 的密码）
+``` shell
+ssh -CqTfnN -R :2222:localhost:22 root@60.95.190.137
+```
+4、登陆 B 可以看到 2222 端口的 sshd 监听进程
+``` shell
+netstat -anp | grep :2222
+```
+
+5、使用 2222 端口登陆 B 主机即会提示输入 A 主机密码，输入后即可登陆 A
+``` shell
+ssh -p 2222 root@[hostA]
+```
+
+## Linux修改时区
+
+``` shell
+sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+
+## yum 快速找到软件包名
+
+``` shell
+# yum provides vim
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.bfsu.edu.cn
+ * extras: mirrors.huaweicloud.com
+ * updates: mirrors.huaweicloud.com
+https://yum.dockerproject.org/repo/main/centos/7/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: yum.dockerproject.org; Unknown error"
+Trying other mirror.
+2:vim-enhanced-7.4.629-6.el7.x86_64 : A version of the VIM editor which includes recent enhancements
+Repo        : base
+Matched from:
+Provides    : vim = 7.4.629-6.el7
+2:vim-enhanced-7.4.629-6.el7.x86_64 : A version of the VIM editor which includes recent enhancements
+Repo        : installed
+Matched from:
+Provides    : vim = 7.4.629-6.el7
+```
+
+## 应用权限最小化执行
+
+比如执行 Prometheus
+
+1、创建用于执行 prometheus 的普通用户
+
+``` shell
+sudo useradd --no-create-home --shell /usr/sbin/nologin prometheus
+```
+
+2、创建用于存储 Prometheus 可执行文件和相关配置的目录
+
+``` shell
+sudo mkdir /etc/prometheus
+sudo mkdir /var/lib/prometheus
+```
+
+3、将以上目录属主和属组设置为 prometheus 用户，确保 prometheus 用户有访问目录权限
+
+``` shell
+sudo chown prometheus:prometheus /etc/prometheus
+sudo chown prometheus:prometheus /var/lib/prometheus
+```
+
+
+## 创建一个无家目录无登录权限的应用用户
+
+Linux 安装运行用户往往会新创建一个对应的用户，这也是处于安全考虑，常用的创建用户命令就是：
+
+``` shell
+sudo useradd --no-create-home --shell /usr/sbin/nologin prometheus
+```
 
 ## CentOS net-tools 软件包详解
 

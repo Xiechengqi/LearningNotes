@@ -2,6 +2,10 @@
 
 ## 目录
 
+* [打印主机ip](#打印主机ip)
+* [通过端口判断服务是否启动](#通过端口判断服务是否启动)
+* [Shell常用调试方法](#shell常用调试方法)
+* [tar zxvf 的坑](#tar-zxvf-的坑)
 * [变量替换](#变量替换)
 * [shift](#shift)
 * [nohup 和 & 区别](#nohup-和-&-区别)
@@ -36,6 +40,93 @@
 * [查看其他主机开放的端口](#查看其他主机开放的端口)
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
+
+
+## 打印主机ip
+
+``` shell
+# hostname -I
+192.168.7.12 172.17.0.1
+
+# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens192: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:0c:29:70:19:ed brd ff:ff:ff:ff:ff:ff
+    inet 192.168.7.12/19 brd 192.168.31.255 scope global noprefixroute dynamic ens192
+       valid_lft 25955sec preferred_lft 25955sec
+    inet6 fe80::e6c4:2316:88fe:9d85/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+3: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:42:f4:62:f5:a4 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:f4ff:fe62:f5a4/64 scope link
+       valid_lft forever preferred_lft forever
+33: veth03e6e07@if32: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP group default
+    link/ether 2a:2f:f6:08:96:9b brd ff:ff:ff:ff:ff:ff link-netnsid 1
+    inet6 fe80::282f:f6ff:fe08:969b/64 scope link
+       valid_lft forever preferred_lft forever
+```
+
+## 通过端口判断服务是否启动
+
+* 以前判断服务是否启动都是使用 `ps aux | grep -v grep | grep xxx` 去且服务名，但有时不太准确。而通过切端口判断服务是否启动是一个很好的办法，但服务的端口一般可以改变，所以通过一下方法可以用 `端口` + `服务名` 双重判定服务是否启动
+
+``` shell
+# 判断 jenkins 是否启动，假设端口修改为 12345
+jenkins_pid=`netstat -ntlp | grep :12345 | awk '{print $7}' | awk -F"/" '{ print $1 }'`
+[ $jenkins_pid ] && echo 'jenkins 启动了'
+```
+
+## Shell常用调试方法
+
+> * Maven - https://archive.apache.org/dist/maven/maven-3/
+* 常用的三种 Shell 脚本调试方法：
+1、执行脚本时候 - `bash -ex test.sh`
+2、脚本开头中添加 - `set -ex`
+3、使用 `bashdb` 工具，可以设置断点、按行执行等
+
+* bashdb
+``` shell
+#下载软件
+wget --no-check-certificate https://nchc.dl.sourceforge.net/project/bashdb/bashdb/4.2-0.92/bashdb-4.4-0.92.tar.gz
+
+#第二步：解压并进入目录
+tar -zxvf  4.4-0.92.tar.gz
+cd  4.4-0.92
+#第三步：配置及编译安装
+./configure
+make && make install
+
+# bashdb --debug 脚本名
+一、列出代码和查询代码类：
+l  列出当前行以下的10行
+-  列出正在执行的代码行的前面10行
+.  回到正在执行的代码行
+/pat/ 向后搜索pat
+？pat？向前搜索pat
+二、Debug控制类：
+h     帮助
+help  命令 得到命令的具体信息 q     退出bashdb x     算数表达式 计算算数表达式的值，并显示出来 !!    空格Shell命令 参数 执行shell命令 使用bashdb进行debug的常用命令(cont.) 三、控制脚本执行类：
+n   执行下一条语句，遇到函数，不进入函数里面执行，将函数当作黑盒
+s n 单步执行n次，遇到函数进入函数里面
+b   行号n 在行号n处设置断点
+del 行号n 撤销行号n处的断点
+c   行号n 一直执行到行号n处
+R   重新启动当前调试脚本
+Finish 执行到程序最后
+cond n expr 条件断点
+```
+
+## tar zxvf 的坑
+
+执行 `tar zxvf test.tar.gz -C /opt/`，如果 `/opt/` 下已经有 test.tar.gz 解压后的内容（比如解压后是 test 目录），在未删除直接执行解压命令，则只会覆盖 `test.tar.gz` 解压出来的相同文件，最好是提前判断解压路径下有无 test 目录，有的话提前删除
+
 
 ## 变量替换
 
