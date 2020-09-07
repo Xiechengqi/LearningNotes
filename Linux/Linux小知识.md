@@ -1,6 +1,7 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
+* [yum group install "Development Tools"]()
 * [Linux终端颜色设置](#linux终端颜色设置)
 * [Linux系统时钟和硬件时钟](#linux系统时钟和硬件时钟)
 * [Linux用户见shell实时同步](#Linux用户见shell实时同步)
@@ -40,6 +41,9 @@
 * [文件权限 777](#文件权限-777-top)
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
+
+
+## yum group install "Development Tools" 
 
 
 ## Linux终端颜色设置
