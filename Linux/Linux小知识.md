@@ -2,6 +2,8 @@
 ## 目录
 
 * [yum group install "Development Tools"]()
+* [adduser 和 useradd 区别](#adduser-和-useradd-区别)
+* [sudo su 和 su 区别](#sudo-su-和-su-区别)
 * [Linux终端颜色设置](#linux终端颜色设置)
 * [Linux系统时钟和硬件时钟](#linux系统时钟和硬件时钟)
 * [Linux用户见shell实时同步](#Linux用户见shell实时同步)
@@ -45,6 +47,61 @@
 
 ## yum group install "Development Tools" 
 
+## adduser 和 useradd 区别
+
+> * 对于 CentOS 来说是没有区别的，`adduser` 通过符号链接指向 `useradd`，即 CentOS 只有 `useradd`
+
+**创建一个用户背后的实际操作**
+* 在 `/etc/passwd` 和 `/etc/shadow` 中创建对应用户名 - `useradd newuser`
+* 设置用户密码 - `passwd newuser`
+* 创建家目录 - `mkdir /home/newuser`
+* 复制 `/etc/skel` 目录下所有文件到用户家目录 - `cp -r /etc/skel/* /home/newuser`
+* 更改家目录属主 - `chown -R newuser:newuser /home/newuser`
+* 指定 shell - `usermod -s /bin/bash newuser`
+
+**`adduser`** - 交互式创建用户
+
+* **`adduser`** 是一个 perl 脚本，通过交互式菜单设定一些用户参数。在输入 adduser 用户名后，会自动创建用户主目录（并复制 `/etc/skel`` 目录下的文件）、指定系统 shell，提示输入用户密码，很简单的就添加了一个标准的普通用户
+
+``` shell
+Adding user `p3terx' ...
+Adding new group `p3terx' (1002) ...
+Adding new user `p3terx' (1001) with group `p3terx' ...
+Creating home directory `/home/p3terx' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for p3terx
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n]
+```
+
+**`useradd`** - 带参数创建用户
+
+* **`useradd**` 是一个指令，如果不使用任何选项，创建的用户将无密码、无主目录、没有指定 shell。如果你需要正常使用这个账户，就还需要设置密码、创建家目录等额外操作
+
+1、指定用户家目录和 shell
+* `useradd -m -s /bin/bash newuser`
+  * `-m` -  自动创建用户的家目录，并将 `/etc/skel` 中的文件复制到家目录中
+  * `-s` -  指定用户登入后所使用的 shell
+
+2、设置用户密码
+* `passwd newnser`
+
+**删除用户**
+1、结束用户所有进程 - `pkill -u newuser`
+2、删除用户及用户家目录 - `userdel -r newuser`
+
+## sudo su 和 su 区别
+
+* **`sudo su`** - 切换输入的是当前用户的密码，因为当前用户拥有 root 权限，所以可以使用 `sudo su` 使用 root 权限的命令
+* **`su`** - 输入的是 root 的密码
 
 ## Linux终端颜色设置
 > * [命令提示符 - 阮一峰](https://wangdoc.com/bash/prompt.html)
