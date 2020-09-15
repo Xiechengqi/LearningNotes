@@ -2,6 +2,29 @@
 
 > * [commandlinefu.com](https://www.commandlinefu.com/)
 
+
+## 拥有 root 权限的普通用户使用 sudo 非交互式创建其他非 root 用户
+
+> * 用户：xcq
+> * 密码：xiechengqi
+> * 新建用户：xie
+> * `xie` 密码：xiechengqi
+
+``` shell
+$ echo -e 'xiechengqi/nxiechengqi/nxiechengqi/n' | sudo -S ls &> /dev/null && sudo useradd xie && echo 'xie:xiechengqi' | sudo chpasswd
+```
+
+## 拥有 root 权限的普通用户使用 sudo 非交互式修改其他非 root 用户密码
+
+> * 用户：xcq
+> * 密码：xiechengqi
+> * 其他用户：xie
+> * `xie` 修改后密码：xiechengqi
+
+``` shell
+echo -e 'xiechengqi/nxiechengqi/nxiechengqi/n' | sudo -S ls &> /dev/null && echo 'xie:xiechengqi' | sudo chpasswd
+```
+
 ## 匹配变量名
 
 `${!string*}`或`${!string@}`返回所有匹配给定字符串 string 的变量名
