@@ -1,6 +1,7 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
+* [&&就类似一个bash](#&&就类似一个bash)
 * [yum group install "Development Tools"]()
 * [adduser 和 useradd 区别](#adduser-和-useradd-区别)
 * [sudo su 和 su 区别](#sudo-su-和-su-区别)
