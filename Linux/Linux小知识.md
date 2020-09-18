@@ -1,6 +1,7 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
+* [Linux 密码破解](#linux-密码破解)
 * [&&就类似一个bash](#&&就类似一个bash)
 * [yum group install "Development Tools"]()
 * [adduser 和 useradd 区别](#adduser-和-useradd-区别)
@@ -45,6 +46,15 @@
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
 
+
+## Linux 密码破解
+
+* 启动后一直按 `e` 键进入可编辑的页面
+* 在可编辑页面，找到 `linux16` 开头那一行的 `LANG=en_US.UTF-8` 后面加上 `init=/bin/sh`，注意最后不要有空格
+* `mount -o remount,rw /`
+* `passwd root`
+* `touch /.authorelabel` - 更新系统信息
+* `exec /sbin/init` 直接进入系统或 `exec /sbin/reboot` 重启进入即可生效
 
 ## yum group install "Development Tools" 
 
