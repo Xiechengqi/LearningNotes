@@ -89,6 +89,8 @@
   * [Git 学习笔记](Git/git学习.md)
   * [Git 小技巧](Git/git小技巧.md)
   * [Git入门之形象化理解checkout](Git/Git入门之形象化理解checkout.md)
+* [GitLab](GitLab/README.md)
+  * [记录一次GitLab迁移](GitLab/记录一次GitLab迁移.md)
 * [前端](frontend/README.md)
   * [小知识](frontend/小知识.md)
 * [持续集成和部署](持续集成和部署/README.md)
