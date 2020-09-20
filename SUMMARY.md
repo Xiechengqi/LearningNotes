@@ -91,6 +91,7 @@
   * [Git入门之形象化理解checkout](Git/Git入门之形象化理解checkout.md)
 * [GitLab](GitLab/README.md)
   * [记录一次GitLab迁移](GitLab/记录一次GitLab迁移.md)
+  * [GitLab备份脚本](GitLab/GitLab备份脚本.md)
 * [前端](frontend/README.md)
   * [小知识](frontend/小知识.md)
 * [持续集成和部署](持续集成和部署/README.md)
