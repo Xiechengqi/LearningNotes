@@ -1,5 +1,7 @@
 # Jenkins
 
+![](./images/CI.png)
+
 ## 名词解释
 
 > * [Jenkins 术语表](https://www.jenkins.io/zh/doc/book/glossary/)
