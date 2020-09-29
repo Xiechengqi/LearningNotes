@@ -2,6 +2,7 @@
 
 ## 目录
 
+* [if 条件判断的坑](#if-条件判断的坑)
 * [打印主机ip](#打印主机ip)
 * [通过端口判断服务是否启动](#通过端口判断服务是否启动)
 * [Shell常用调试方法](#shell常用调试方法)
@@ -41,6 +42,21 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
+
+## if 条件判断的坑
+> Shell 的条件判断一直用的是 `if then ... else ... fi`，之前没遇到需要多加判断分支的情况，所以一直没遇到这个小坑: **`elif` 后天需要加 `then`**
+
+``` shell
+if [ $year -eq 2020 ]
+then
+echo 'Happy 2020 Year!'
+elif [ $year -eq 2021 ]
+then
+echo 'Happy Next Year!'
+else
+echo 'Day Day Happy!'
+fi
+```
 
 ## 打印主机ip
 
