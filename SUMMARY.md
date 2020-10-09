@@ -62,6 +62,7 @@
 * [Shell](Shell/README.md)
   * [Shell小知识](Shell/Shell小知识.md)
   * [Shell奇淫技巧](Shell/Shell奇淫技巧.md)
+  * [Shell通用开头](Shell/Shell通用开头.md)
   * [Shell百宝箱](Shell/Shell百宝箱.md)
   * [grep、sed、awk详解](Shell/Linux文本操作三大利器-grepsedawk.md)
   * [Shell文本处理常用工具补遗](Shell/Shell文本处理常用工具补遗.md)

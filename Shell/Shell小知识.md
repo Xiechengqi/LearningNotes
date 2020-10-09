@@ -2,7 +2,7 @@
 
 ## 目录
 
-* [脚本常用通用方法](#脚本常用通用方法)
+* [LANG 对正则表达式的影响](#LANG-对正则表达式的影响)
 * [快速切出当前路径的目录名](#快速切出当前路径的目录名)
 * [计算脚本执行时间](#计算脚本执行时间)
 * [if 条件判断的坑](#if-条件判断的坑)
@@ -45,53 +45,30 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
-## 通用脚本开头
+
+
+## LANG 对正则表达式的影响
+
+* 不同国家的字符编码很有可能不同，例如：
+  * `LANG=C`：A B C D ... Z a b c d ...z
+  * `LANG=zh_TW`：a A b B c C d D ... z Z
+> 当采用第二种编码时，`[A-Z]` 之间会包括小写字母 `b-z`。为了避免这种问题，出现了特殊符号
 
 ``` shell
-# Check Root
-[ $(id -u) != "0" ] && RED "Error: You must be root to run this script" && exit 1
+[:alnum:]  ：  即0-9,a-z,A-Z，英文大小写字符和数字
+[:alpha:]   ：  即a-z,A-Z，任何英文大小写字符
+[:digit:]      ：  即0-9，所有数字
+[:upper:]   ：  即A-Z，所有大写字符
+[:lower:]     :   即a-z,，所有小写字符
+[:space:]   :  任何会产生空白的字符，包括空格，Tab和CR等
+[:blank:]    :  空格和tab
+[:cntrl:]     ： 键盘上的控制按键，包括C,LF,Tab,Del等
+```
+* 所以，Shell 中遇到需要使用正则表达式的命令，需要在最前面加上 `LANG=C`
 
-# Script Path
-export BASEPATH=`dirname $(readlink -f ${BASH_SOURCE[0]})` && cd $BASEPATH
-
-# Time
-export TIME=`date  +%Y%m%d_%H%M`
-
-# Information Notify
-function info() {
-  (>&2 echo -e "[\e[34m\e[1mINFO\e[0m] $*")
-}
-
-function error() {
-  (>&2 echo -e "[\e[33m\e[1mERROR\e[0m] $*")
-}
-
-function ok() {
-  (>&2 echo -e "[\e[32m\e[1m OK \e[0m] $*")
-}
-
-# LogFile
-function log() {
-  (>&2 echo `date +"%Y-%m-%d %H:%M:%S"`'  '"$@" >>"$BASEPATH"'/update.log')
-}
-
-# Color Fonts
-function GREEN() {
-echo -e "\033[32m $@ \033[0m"
-}
-function GREENF() {
-echo -en "\033[32m $@ \033[0m"
-}
-function RED() {
-echo -e "\033[31m $@ \033[0m"
-}
-function REDF() {
-echo -en "\033[31m $@ \033[0m"
-}
-
-function print_delim() {
-  echo '============================'
-}
+```shell
+LANG=C df -hPl | grep -wvE '\-|none|tmpfs|devtmpfs|by-uuid|chroot|Filesystem|udev|docker' | awk '{print $2}' )
+LANG=C dd if=/dev/zero of=benchtest_$$ bs=64k count=16k conv=fdatasync && rm -f benchtest_$$
 ```
 
 ## 快速切出当前路径的目录名
