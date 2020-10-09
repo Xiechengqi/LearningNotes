@@ -57,11 +57,11 @@ You can turn off this feature to get a quicker startup with -A
  
 Database changed
 
-# MySQL 5.7 下，user 表已经没有 Password 字段
+# MySQL < 5.7
 mysql> update user set password=PASSWORD('123') where user='root';
 ERROR 1054 (42S22): Unknown column 'password' in 'field list'
 
-# 加密后的用户密码存储于 authentication_string 字段
+# MySQL >= 5.7，user 表已经没有 Password 字段
 mysql> update mysql.user set authentication_string=password('123') where user='root';
 Query OK, 1 row affected, 1 warning (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 1
