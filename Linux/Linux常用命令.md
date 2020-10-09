@@ -27,8 +27,8 @@
 * [nmap](#nmap-top)<br/>
 * [tldr](#tldr-top)<br/>
 * [du](#du)<br/>
-* []()<br/>
-* []()<br/>
+* [top](#top-top)<br/>
+* [htop](#htop-top)<br/>
 * []()<br/>
 
 ## 系统信息 [[Top]](#目录)
@@ -409,7 +409,17 @@ $ tldr grep
 * `du -d 0 -h`
 * `du -d 1 -h`
 
-## htop
+## top [[Top]](#目录)
+
+``` shell
+# 查看某一个进程
+$ top -p [pid]
+```
+
+
+
+
+## htop [[Top]](#目录)
 
 ## crontab
 
