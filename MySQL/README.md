@@ -4,6 +4,8 @@
 * [MySQL Community Server (Archived Versions)](https://downloads.mysql.com/archives/community/)
 * [Installing and Upgrading MySQL](https://nowjava.com/docs/mysql-8.0-en/installing.html#linux-installation-yum-repo)
 * [MySQL 8.0 中文参考手册](http://www.deituicms.com/mysql8cn/cn/index.html)
+* [使用Mysqldump备份和恢复MySQL数据库](http://blog.itpub.net/31516067/viewspace-2690413/)
+* [mysqldump备份所有数据库，恢复单个库的场景预演](https://my.oschina.net/rootliu/blog/1819708)
 
 
 ## MySQL DataBase 各个发行版本

@@ -2,6 +2,9 @@
 
 ## 目录
 
+* [脚本常用通用方法](#脚本常用通用方法)
+* [快速切出当前路径的目录名](#快速切出当前路径的目录名)
+* [计算脚本执行时间](#计算脚本执行时间)
 * [if 条件判断的坑](#if-条件判断的坑)
 * [打印主机ip](#打印主机ip)
 * [通过端口判断服务是否启动](#通过端口判断服务是否启动)
@@ -42,6 +45,72 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
+## 通用脚本开头
+
+``` shell
+# Check Root
+[ $(id -u) != "0" ] && RED "Error: You must be root to run this script" && exit 1
+
+# Script Path
+export BASEPATH=`dirname $(readlink -f ${BASH_SOURCE[0]})` && cd $BASEPATH
+
+# Time
+export TIME=`date  +%Y%m%d_%H%M`
+
+# Information Notify
+function info() {
+  (>&2 echo -e "[\e[34m\e[1mINFO\e[0m] $*")
+}
+
+function error() {
+  (>&2 echo -e "[\e[33m\e[1mERROR\e[0m] $*")
+}
+
+function ok() {
+  (>&2 echo -e "[\e[32m\e[1m OK \e[0m] $*")
+}
+
+# LogFile
+function log() {
+  (>&2 echo `date +"%Y-%m-%d %H:%M:%S"`'  '"$@" >>"$BASEPATH"'/update.log')
+}
+
+# Color Fonts
+function GREEN() {
+echo -e "\033[32m $@ \033[0m"
+}
+function GREENF() {
+echo -en "\033[32m $@ \033[0m"
+}
+function RED() {
+echo -e "\033[31m $@ \033[0m"
+}
+function REDF() {
+echo -en "\033[31m $@ \033[0m"
+}
+
+function print_delim() {
+  echo '============================'
+}
+```
+
+## 快速切出当前路径的目录名
+
+``` shell
+$ basename `pwd`
+```
+
+## 计算脚本执行时间
+
+``` shell
+START_TIME=$(($(date +%s%N)/1000000))
+......
+function print_time() {
+  END_TIME=$(($(date +%s%N)/1000000))
+  ELAPSED_TIME=$(echo "scale=3; ($END_TIME - $START_TIME) / 1000" | bc -l)
+  MESSAGE="Took ${ELAPSED_TIME} seconds"
+}
+```
 
 ## if 条件判断的坑
 > Shell 的条件判断一直用的是 `if then ... else ... fi`，之前没遇到需要多加判断分支的情况，所以一直没遇到这个小坑: **`elif` 后天需要加 `then`**

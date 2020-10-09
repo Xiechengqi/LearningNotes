@@ -6,6 +6,7 @@
 * **[应用篇](#应用篇-top)**
   * **[Linux SSH 相关命令](#linux-ssh-相关命令)**
   * **[SSH 密码或无密码( 密钥 )登录](#ssh-密码或无密码-密钥-登录)**
+  * **[OpenSSH升级到最新 openssh8 的坑](#openssh升级到最新-openssh8-的坑)
 * **[原理篇](#原理篇-top)**
   * **[密码学加密算法](#密码学加密算法)**
   * **[SSH 登录原理](#ssh-登录原理)**
@@ -241,6 +242,14 @@ and check to make sure that only the key(s) you wanted were added.
 ```
 
 3、重启 ssh, 退出再次登陆即可实现无密码登录
+
+
+### OpenSSH升级到最新 openssh8 的坑
+
+官网升级教程 - http://www.linuxfromscratch.org/blfs/view/9.0-systemd/postlfs/openssh.html
+entOS7升级OpenSSH 到8.3版本 - https://www.hncldz.com/?p=625
+如果使用默认的源码，make install 安装到Ubuntu16.04或者Centos7，在默认使用systemd管理sshd时，你会发现，启动命令会卡起，稍后用systemctl 查看status发现卡在正在启动的阶段 - http://blog.chinaunix.net/uid-28813320-id-5786956.html
+服务启动成功，用户密码也都对，就是无法建立连接，可能是UsePAM和SELinux的问题 - https://segmentfault.com/a/1190000018629266
 
 ## 原理篇
 

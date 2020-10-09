@@ -42,6 +42,7 @@
   * [本地显示远程服务器上的图形化界面](Linux/本地显示远程服务器上的图形化界面.md)
   * [Linux网络常用命令详解](Linux/Linux网络常用命令详解.md)
   * [rdesktop安装的坑](Linux/rdesktop安装的坑.md)
+  * [VNC Server](Linux/vncserver.md)
 * [Python](Python/README.md)
   * [Python 资源大全](Python/Python资源大全.md)
   * [Python多环境管理工具](Python/Python多环境管理工具.md)
