@@ -743,6 +743,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.28" data-path="../Linux/vncserver.html">
+            
+                <a href="../Linux/vncserver.html">
+            
+                    
+                    VNC Server
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2087,9 +2100,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.23.1" data-path="../Tomcat/Tomcat 学习.html">
+        <li class="chapter " data-level="1.23.1" data-path="../Tomcat/Tomcat 学习.md">
             
-                <a href="../Tomcat/Tomcat 学习.html">
+                <span>
             
                     
                     Tomcat 学习
@@ -2327,6 +2340,9 @@
                                 <h1 id="linux-shell-&#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;"><a name="linux-shell-&#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;" class="plugin-anchor" href="#linux-shell-&#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;"><i class="fa fa-link" aria-hidden="true"></i></a>Linux Shell &#x5B66;&#x4E60;&#x65F6;&#x7684;&#x5C0F;&#x77E5;&#x8BC6;</h1>
 <h2 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="plugin-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x5F55;</h2>
 <ul>
+<li><a href="#&#x811A;&#x672C;&#x5E38;&#x7528;&#x901A;&#x7528;&#x65B9;&#x6CD5;">&#x811A;&#x672C;&#x5E38;&#x7528;&#x901A;&#x7528;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#&#x5FEB;&#x901F;&#x5207;&#x51FA;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684;&#x76EE;&#x5F55;&#x540D;">&#x5FEB;&#x901F;&#x5207;&#x51FA;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684;&#x76EE;&#x5F55;&#x540D;</a></li>
+<li><a href="#&#x8BA1;&#x7B97;&#x811A;&#x672C;&#x6267;&#x884C;&#x65F6;&#x95F4;">&#x8BA1;&#x7B97;&#x811A;&#x672C;&#x6267;&#x884C;&#x65F6;&#x95F4;</a></li>
 <li><a href="#if-&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x7684;&#x5751;">if &#x6761;&#x4EF6;&#x5224;&#x65AD;&#x7684;&#x5751;</a></li>
 <li><a href="#&#x6253;&#x5370;&#x4E3B;&#x673A;ip">&#x6253;&#x5370;&#x4E3B;&#x673A;ip</a></li>
 <li><a href="#&#x901A;&#x8FC7;&#x7AEF;&#x53E3;&#x5224;&#x65AD;&#x670D;&#x52A1;&#x662F;&#x5426;&#x542F;&#x52A8;">&#x901A;&#x8FC7;&#x7AEF;&#x53E3;&#x5224;&#x65AD;&#x670D;&#x52A1;&#x662F;&#x5426;&#x542F;&#x52A8;</a></li>
@@ -2367,6 +2383,64 @@
 <li><a href="#&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;">&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x6548;&#x914D;&#x7F6E;&#x884C;</a></li>
 <li><a href="#&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;">&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;</a></li>
 </ul>
+<h2 id="&#x901A;&#x7528;&#x811A;&#x672C;&#x5F00;&#x5934;"><a name="&#x901A;&#x7528;&#x811A;&#x672C;&#x5F00;&#x5934;" class="plugin-anchor" href="#&#x901A;&#x7528;&#x811A;&#x672C;&#x5F00;&#x5934;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x901A;&#x7528;&#x811A;&#x672C;&#x5F00;&#x5934;</h2>
+<pre><code class="lang-shell"># Check Root
+[ $(id -u) != &quot;0&quot; ] &amp;&amp; RED &quot;Error: You must be root to run this script&quot; &amp;&amp; exit 1
+
+# Script Path
+export BASEPATH=`dirname $(readlink -f ${BASH_SOURCE[0]})` &amp;&amp; cd $BASEPATH
+
+# Time
+export TIME=`date  +%Y%m%d_%H%M`
+
+# Information Notify
+function info() {
+  (&gt;&amp;2 echo -e &quot;[\e[34m\e[1mINFO\e[0m] $*&quot;)
+}
+
+function error() {
+  (&gt;&amp;2 echo -e &quot;[\e[33m\e[1mERROR\e[0m] $*&quot;)
+}
+
+function ok() {
+  (&gt;&amp;2 echo -e &quot;[\e[32m\e[1m OK \e[0m] $*&quot;)
+}
+
+# LogFile
+function log() {
+  (&gt;&amp;2 echo `date +&quot;%Y-%m-%d %H:%M:%S&quot;`&apos;  &apos;&quot;$@&quot; &gt;&gt;&quot;$BASEPATH&quot;&apos;/update.log&apos;)
+}
+
+# Color Fonts
+function GREEN() {
+echo -e &quot;\033[32m $@ \033[0m&quot;
+}
+function GREENF() {
+echo -en &quot;\033[32m $@ \033[0m&quot;
+}
+function RED() {
+echo -e &quot;\033[31m $@ \033[0m&quot;
+}
+function REDF() {
+echo -en &quot;\033[31m $@ \033[0m&quot;
+}
+
+function print_delim() {
+  echo &apos;============================&apos;
+}
+</code></pre>
+<h2 id="&#x5FEB;&#x901F;&#x5207;&#x51FA;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684;&#x76EE;&#x5F55;&#x540D;"><a name="&#x5FEB;&#x901F;&#x5207;&#x51FA;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684;&#x76EE;&#x5F55;&#x540D;" class="plugin-anchor" href="#&#x5FEB;&#x901F;&#x5207;&#x51FA;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684;&#x76EE;&#x5F55;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x901F;&#x5207;&#x51FA;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684;&#x76EE;&#x5F55;&#x540D;</h2>
+<pre><code class="lang-shell">$ basename `pwd`
+</code></pre>
+<h2 id="&#x8BA1;&#x7B97;&#x811A;&#x672C;&#x6267;&#x884C;&#x65F6;&#x95F4;"><a name="&#x8BA1;&#x7B97;&#x811A;&#x672C;&#x6267;&#x884C;&#x65F6;&#x95F4;" class="plugin-anchor" href="#&#x8BA1;&#x7B97;&#x811A;&#x672C;&#x6267;&#x884C;&#x65F6;&#x95F4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BA1;&#x7B97;&#x811A;&#x672C;&#x6267;&#x884C;&#x65F6;&#x95F4;</h2>
+<pre><code class="lang-shell">START_TIME=$(($(date +%s%N)/1000000))
+......
+function print_time() {
+  END_TIME=$(($(date +%s%N)/1000000))
+  ELAPSED_TIME=$(echo &quot;scale=3; ($END_TIME - $START_TIME) / 1000&quot; | bc -l)
+  MESSAGE=&quot;Took ${ELAPSED_TIME} seconds&quot;
+}
+</code></pre>
 <h2 id="if-&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x7684;&#x5751;"><a name="if-&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x7684;&#x5751;" class="plugin-anchor" href="#if-&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x7684;&#x5751;"><i class="fa fa-link" aria-hidden="true"></i></a>if &#x6761;&#x4EF6;&#x5224;&#x65AD;&#x7684;&#x5751;</h2>
 <blockquote>
 <p>Shell &#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x4E00;&#x76F4;&#x7528;&#x7684;&#x662F; <code>if then ... else ... fi</code>&#xFF0C;&#x4E4B;&#x524D;&#x6CA1;&#x9047;&#x5230;&#x9700;&#x8981;&#x591A;&#x52A0;&#x5224;&#x65AD;&#x5206;&#x652F;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x76F4;&#x6CA1;&#x9047;&#x5230;&#x8FD9;&#x4E2A;&#x5C0F;&#x5751;: <strong><code>elif</code> &#x540E;&#x5929;&#x9700;&#x8981;&#x52A0; <code>then</code></strong></p>
@@ -3285,7 +3359,7 @@ $ egrep -v <span class="hljs-string">&quot;(^$|^#)&quot;</span> ./ansible.cfg
 <pre><code class="lang-bash"><span class="hljs-comment"># &#x6BD4; touch &#x65B0;&#x5EFA;&#x5C11;&#x8F93;&#x5165;&#x51E0;&#x4E2A;&#x5B57;&#x7B26;&#xFF01;</span>
 $ &gt; new.txt
 </code></pre>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-09-29 07:33:56 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-10-09 10:04:27 </span> </footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -3329,7 +3403,7 @@ $ &gt; new.txt
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shell小知识","level":"1.8.1","depth":2,"next":{"title":"Shell奇淫技巧","level":"1.8.2","depth":2,"path":"Shell/Shell奇淫技巧.md","ref":"Shell/Shell奇淫技巧.md","articles":[]},"previous":{"title":"Shell","level":"1.8","depth":1,"path":"Shell/README.md","ref":"Shell/README.md","articles":[{"title":"Shell小知识","level":"1.8.1","depth":2,"path":"Shell/Shell小知识.md","ref":"Shell/Shell小知识.md","articles":[]},{"title":"Shell奇淫技巧","level":"1.8.2","depth":2,"path":"Shell/Shell奇淫技巧.md","ref":"Shell/Shell奇淫技巧.md","articles":[]},{"title":"Shell百宝箱","level":"1.8.3","depth":2,"path":"Shell/Shell百宝箱.md","ref":"Shell/Shell百宝箱.md","articles":[]},{"title":"grep、sed、awk详解","level":"1.8.4","depth":2,"path":"Shell/Linux文本操作三大利器-grepsedawk.md","ref":"Shell/Linux文本操作三大利器-grepsedawk.md","articles":[]},{"title":"Shell文本处理常用工具补遗","level":"1.8.5","depth":2,"path":"Shell/Shell文本处理常用工具补遗.md","ref":"Shell/Shell文本处理常用工具补遗.md","articles":[]},{"title":"句子解析","level":"1.8.6","depth":2,"path":"Shell/句子解析.md","ref":"Shell/句子解析.md","articles":[]},{"title":"识别是否是root用户","level":"1.8.7","depth":2,"path":"Shell/识别是否是root用户.md","ref":"Shell/识别是否是root用户.md","articles":[]},{"title":"识别系统","level":"1.8.8","depth":2,"path":"Shell/识别系统.md","ref":"Shell/识别系统.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Shell/Shell小知识.md","mtime":"2020-09-29T07:33:56.822Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-29T07:34:59.262Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shell小知识","level":"1.8.1","depth":2,"next":{"title":"Shell奇淫技巧","level":"1.8.2","depth":2,"path":"Shell/Shell奇淫技巧.md","ref":"Shell/Shell奇淫技巧.md","articles":[]},"previous":{"title":"Shell","level":"1.8","depth":1,"path":"Shell/README.md","ref":"Shell/README.md","articles":[{"title":"Shell小知识","level":"1.8.1","depth":2,"path":"Shell/Shell小知识.md","ref":"Shell/Shell小知识.md","articles":[]},{"title":"Shell奇淫技巧","level":"1.8.2","depth":2,"path":"Shell/Shell奇淫技巧.md","ref":"Shell/Shell奇淫技巧.md","articles":[]},{"title":"Shell百宝箱","level":"1.8.3","depth":2,"path":"Shell/Shell百宝箱.md","ref":"Shell/Shell百宝箱.md","articles":[]},{"title":"grep、sed、awk详解","level":"1.8.4","depth":2,"path":"Shell/Linux文本操作三大利器-grepsedawk.md","ref":"Shell/Linux文本操作三大利器-grepsedawk.md","articles":[]},{"title":"Shell文本处理常用工具补遗","level":"1.8.5","depth":2,"path":"Shell/Shell文本处理常用工具补遗.md","ref":"Shell/Shell文本处理常用工具补遗.md","articles":[]},{"title":"句子解析","level":"1.8.6","depth":2,"path":"Shell/句子解析.md","ref":"Shell/句子解析.md","articles":[]},{"title":"识别是否是root用户","level":"1.8.7","depth":2,"path":"Shell/识别是否是root用户.md","ref":"Shell/识别是否是root用户.md","articles":[]},{"title":"识别系统","level":"1.8.8","depth":2,"path":"Shell/识别系统.md","ref":"Shell/识别系统.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Shell/Shell小知识.md","mtime":"2020-10-09T10:04:27.066Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-09T10:05:19.401Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
