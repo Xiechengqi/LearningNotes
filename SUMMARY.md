@@ -64,7 +64,7 @@
   * [Shell奇淫技巧](Shell/Shell奇淫技巧.md)
   * [Shell通用开头](Shell/Shell通用开头.md)
   * [Shell百宝箱](Shell/Shell百宝箱.md)
-  * [grep、sed、awk详解](Shell/Linux文本操作三大利器-grepsedawk.md)
+  * [grep、sed、awk详解](Shell/Linux文本操作三大利器-grep、sed、awk.md)
   * [Shell文本处理常用工具补遗](Shell/Shell文本处理常用工具补遗.md)
   * [句子解析](Shell/句子解析.md)
   * [识别是否是root用户](Shell/识别是否是root用户.md)
