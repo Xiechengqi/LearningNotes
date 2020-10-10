@@ -29,6 +29,7 @@
 * [du](#du)<br/>
 * [top](#top-top)<br/>
 * [htop](#htop-top)<br/>
+* [dd]()<br/>
 * []()<br/>
 
 ## 系统信息 [[Top]](#目录)
@@ -423,3 +424,16 @@ $ top -p [pid]
 
 ## crontab
 
+``` shell
+# 查看当前用户设置的定时任务
+crontab -l
+
+# 编辑当前用户的定时任务
+crontab -e
+
+# 清空当前用户的所有定时任务
+crontab -r
+
+# 指定执行 crontab 的用户
+crontab -u root -l
+```
