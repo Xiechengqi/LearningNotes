@@ -2,6 +2,7 @@
 
 ## 目录
 
+* [使用 iptables 做端口转发](#使用-iptables-做端口转发)
 * [查找字符串所在行并输出行号](#查找字符串所在行并输出行号)
 * [如何在 awk 中写变量](#如何在-awk-中写变量)
 * [lshw 查看硬件信息](#lshw-查看硬件信息)
@@ -48,6 +49,14 @@
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
 
+
+## 使用 iptables 做端口转发
+
+``` shell
+# 默认为8443（HTTPS）和8080（HTTP），改成 443 和 80
+iptables -A PREROUTING -t nat -p tcp --dport 443 -j REDIRECT --to-ports 8443
+iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080
+```
 
 
 ## 查找字符串所在行并输出行号

@@ -44,6 +44,7 @@
   * [Linux网络常用命令详解](Linux/Linux网络常用命令详解.md)
   * [rdesktop安装的坑](Linux/rdesktop安装的坑.md)
   * [VNC Server](Linux/vncserver.md)
+  * [用户组权限管理](Linux/用户组权限管理.md)
 * [Python](Python/README.md)
   * [Python 资源大全](Python/Python资源大全.md)
   * [Python多环境管理工具](Python/Python多环境管理工具.md)
