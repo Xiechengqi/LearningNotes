@@ -129,6 +129,8 @@ $ ssh -T git@e.coding.net
 
 * **`ssh <user>@<hostip> 'tar cz file' | tar xzv`** - hostip 的`~/file` 文件通过 ssh 加密传输到本地的 `~` 目录下
 
+* **`ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no <user>@<hostip>` 不验证 host key 登录
+
 * **`scp <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件**到远程
 
 * **`scp -r <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件夹**到远程
