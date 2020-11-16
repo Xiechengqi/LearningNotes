@@ -1758,14 +1758,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.19.8" >
+        <li class="chapter " data-level="1.19.8" data-path="../KVM/存储池和存储卷.html">
             
-                <span>
+                <a href="../KVM/存储池和存储卷.html">
             
                     
-                    [存储池和存储卷](KVM/存储池和存储卷.md）
+                    存储池和存储卷
             
-                </span>
+                </a>
             
 
             
@@ -2418,7 +2418,10 @@
                                 <h1 id="&#x5E73;&#x65F6;-linux-&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x548C;&#x6269;&#x5C55;&#x5C0F;&#x77E5;&#x8BC6;"><a name="&#x5E73;&#x65F6;-linux-&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x548C;&#x6269;&#x5C55;&#x5C0F;&#x77E5;&#x8BC6;" class="plugin-anchor" href="#&#x5E73;&#x65F6;-linux-&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x548C;&#x6269;&#x5C55;&#x5C0F;&#x77E5;&#x8BC6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E73;&#x65F6; linux &#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x548C;&#x6269;&#x5C55;&#x5C0F;&#x77E5;&#x8BC6;</h1>
 <h2 id="&#x76EE;&#x5F55;"><a name="&#x76EE;&#x5F55;" class="plugin-anchor" href="#&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76EE;&#x5F55;</h2>
 <ul>
-<li><a href="#linux-&#x5BC6;&#x7801;&#x7834;&#x89E3;">Linux &#x5BC6;&#x7801;&#x7834;&#x89E3;</a></li>
+<li><p><a href="#centos7-&#x5347;&#x7EA7;&#x5185;&#x6838;">centos7 &#x5347;&#x7EA7;&#x5185;&#x6838;</a></p>
+</li>
+<li><p><a href="#linux-&#x5BC6;&#x7801;&#x7834;&#x89E3;">Linux &#x5BC6;&#x7801;&#x7834;&#x89E3;</a></p>
+</li>
 <li><a href="#&amp;&amp;&#x5C31;&#x7C7B;&#x4F3C;&#x4E00;&#x4E2A;bash">&amp;&amp;&#x5C31;&#x7C7B;&#x4F3C;&#x4E00;&#x4E2A;bash</a></li>
 <li><a href="">yum group install &quot;Development Tools&quot;</a></li>
 <li><a href="#adduser-&#x548C;-useradd-&#x533A;&#x522B;">adduser &#x548C; useradd &#x533A;&#x522B;</a></li>
@@ -2463,6 +2466,20 @@
 <li><a href="#tmp-&#x76EE;&#x5F55;&#x81EA;&#x52A8;&#x6E05;&#x7406;-top">/tmp &#x76EE;&#x5F55;&#x81EA;&#x52A8;&#x6E05;&#x7406;</a></li>
 <li><a href="#&#x4FEE;&#x6539;&#x65F6;&#x533A;-top">&#x4FEE;&#x6539;&#x65F6;&#x533A;</a></li>
 </ul>
+<h2 id="centos7-&#x5347;&#x7EA7;&#x5185;&#x6838;"><a name="centos7-&#x5347;&#x7EA7;&#x5185;&#x6838;" class="plugin-anchor" href="#centos7-&#x5347;&#x7EA7;&#x5185;&#x6838;"><i class="fa fa-link" aria-hidden="true"></i></a>centos7 &#x5347;&#x7EA7;&#x5185;&#x6838;</h2>
+<blockquote>
+<p>CentOS 7.x &#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684; 3.10.x &#x5185;&#x6838;&#x5B58;&#x5728;&#x4E00;&#x4E9B; Bugs&#xFF0C;&#x5BFC;&#x81F4;&#x8FD0;&#x884C;&#x7684; Docker&#x3001;Kubernetes &#x4E0D;&#x7A33;&#x5B9A;</p>
+</blockquote>
+<pre><code class="lang-shell">rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+# &#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x68C0;&#x67E5; /boot/grub2/grub.cfg &#x4E2D;&#x5BF9;&#x5E94;&#x5185;&#x6838; menuentry &#x4E2D;&#x662F;&#x5426;&#x5305;&#x542B; initrd16 &#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x518D;&#x5B89;&#x88C5;&#x4E00;&#x6B21;&#xFF01;
+yum --enablerepo=elrepo-kernel install -y kernel-lt
+# &#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x4ECE;&#x65B0;&#x5185;&#x6838;&#x542F;&#x52A8;
+grub2-set-default &apos;CentOS Linux (4.4.243-1.el7.elrepo.x86_64) 7 (Core)&apos;
+</code></pre>
+<p>&#x91CD;&#x542F;&#x68C0;&#x67E5;&#x5185;&#x6838;:</p>
+<pre><code class="lang-shell">uname -r
+4.4.243-1.el7.elrepo.x86_64
+</code></pre>
 <h2 id="linux-&#x5BC6;&#x7801;&#x7834;&#x89E3;"><a name="linux-&#x5BC6;&#x7801;&#x7834;&#x89E3;" class="plugin-anchor" href="#linux-&#x5BC6;&#x7801;&#x7834;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>Linux &#x5BC6;&#x7801;&#x7834;&#x89E3;</h2>
 <ul>
 <li>&#x542F;&#x52A8;&#x540E;&#x4E00;&#x76F4;&#x6309; <code>e</code> &#x952E;&#x8FDB;&#x5165;&#x53EF;&#x7F16;&#x8F91;&#x7684;&#x9875;&#x9762;</li>
@@ -3523,7 +3540,7 @@ Please select a continent, ocean, <span class="hljs-string">&quot;coord&quot;</s
 # Don&apos;t generate .pyc files
 export PYTHONDONTWRITEBYTECODE=1
 </code></pre>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-11-12 14:53:06 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> <a href="https://github.com/Xiechengqi" target="_blank">Xiechengqi</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <strong>&#x6700;&#x65B0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</strong> 2020-11-16 13:14:05 </span> </footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -3567,7 +3584,7 @@ export PYTHONDONTWRITEBYTECODE=1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"平时 linux 遇到的问题解决办法和扩展小知识","level":"1.7.2","depth":2,"next":{"title":"Linux性能相关常用命令","level":"1.7.3","depth":2,"path":"Linux/Linux性能相关常用命令.md","ref":"Linux/Linux性能相关常用命令.md","articles":[]},"previous":{"title":"Linux常用命令","level":"1.7.1","depth":2,"path":"Linux/Linux常用命令.md","ref":"Linux/Linux常用命令.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Linux/Linux小知识.md","mtime":"2020-11-12T14:53:06.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-12T14:53:58.094Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"平时 linux 遇到的问题解决办法和扩展小知识","level":"1.7.2","depth":2,"next":{"title":"Linux性能相关常用命令","level":"1.7.3","depth":2,"path":"Linux/Linux性能相关常用命令.md","ref":"Linux/Linux性能相关常用命令.md","articles":[]},"previous":{"title":"Linux常用命令","level":"1.7.1","depth":2,"path":"Linux/Linux常用命令.md","ref":"Linux/Linux常用命令.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","expandable-chapters","popup","pageview-count","code","back-to-top-button","hide-element","github-buttons","github","splitter","search-pro","anchors","page-footer-ex","advanced-emoji","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xiechengqi/LearningNotes"},"page-footer-ex":{"copyright":"[Xiechengqi](https://github.com/Xiechengqi)","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<strong>最新修订时间：</strong>"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Xiechengqi","repo":"LearningNotes","type":"star","size":"small","count":true}]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"日常学习笔记","language":"zh-hans","gitbook":"*","description":"日常学习笔记"},"file":{"path":"Linux/Linux小知识.md","mtime":"2020-11-16T13:14:05.219Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-16T13:15:04.637Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
