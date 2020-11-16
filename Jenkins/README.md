@@ -96,3 +96,31 @@ Jenkins的通知方式非常多，具体如下：
 
 2015年9月28日 22:13
 ```
+
+* 不允许并行执行Pipeline,可用于防止同时访问共享资源等。例如：options { disableConcurrentBuilds() }
+
+* pipeline保持构建的最大个数。例如：options { buildDiscarder(logRotator(numToKeepStr: '1')) }
+
+* 默认跳过来自源代码控制的代码。例如：options { skipDefaultCheckout() }
+
+* 一旦构建状态进入了“Unstable”状态，就跳过此stage。例如：options { skipStagesAfterUnstable() }
+
+* 设置Pipeline运行的超时时间。例如：options { timeout(time: 1, unit: 'HOURS') }
+
+* 失败后，重试整个Pipeline的次数。例如：options { retry(3) }
+
+* 预定义由Pipeline生成的所有控制台输出时间。例如：options { timestamps() }
+
+* 限制 node 资源执行 job 数量上线，同时
+
+  ```javascript
+  options {
+          lock(label: 'PreDevENV', quantity: 1)
+      }
+  ```
+
+* 优先考虑使用自定义函数，如果此函数出现在了至少三个项目中，考虑移到共享库里，当发现项目的pipeline非常相似，考虑使用pipeline模块
+
+* 写 pipeline 就是写 Groovy 代码，Jenkins pipeline 其实就是基于Groovy语言实现的一种DSL
+
+* piepeline 插件是基于一种语言— Apache Groovy开发的。

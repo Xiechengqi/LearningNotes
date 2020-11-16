@@ -11,3 +11,15 @@
 
  WebHook的本质就是从GitLab发了一条请求，Jenkins配置了一个终端地址（endpoint）来接收，从而实现了两个步骤的串联
 
+![](./images/globalLib.webp)
+
+
+
+
+
+*pipeline* 中可以使用 `archiveArtifacts` 命令存档文件。
+存档的文件会保存到 *Jenkins* 的 *jobs/JOB_NAME/builds/BUILD_NO* 目录下。
+
+```groovy
+archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+```

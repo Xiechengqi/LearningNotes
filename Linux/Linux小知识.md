@@ -1,6 +1,8 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
+* [centos7 升级内核](#centos7-升级内核)
+
 * [Linux 密码破解](#linux-密码破解)
 * [&&就类似一个bash](#&&就类似一个bash)
 * [yum group install "Development Tools"]()
@@ -45,6 +47,25 @@
 * [文件权限 777](#文件权限-777-top)
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
+
+## centos7 升级内核
+
+> CentOS 7.x 系统自带的 3.10.x 内核存在一些 Bugs，导致运行的 Docker、Kubernetes 不稳定
+
+```shell
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+# 安装完成后检查 /boot/grub2/grub.cfg 中对应内核 menuentry 中是否包含 initrd16 配置，如果没有，再安装一次！
+yum --enablerepo=elrepo-kernel install -y kernel-lt
+# 设置开机从新内核启动
+grub2-set-default 'CentOS Linux (4.4.243-1.el7.elrepo.x86_64) 7 (Core)'
+```
+
+重启检查内核:
+
+``` shell
+uname -r
+4.4.243-1.el7.elrepo.x86_64
+```
 
 
 ## Linux 密码破解

@@ -115,7 +115,7 @@
   * [常用命令行工具详解](KVM/常用命令行工具详解.md)
   * [磁盘镜像格式](KVM/磁盘镜像格式.md)
   * [虚拟机网络配置](KVM/虚拟机网络配置.md)
-  * [存储池和存储卷](KVM/存储池和存储卷.md）
+  * [存储池和存储卷](KVM/存储池和存储卷.md)
   * [KVM安装wins2016](KVM/KVM安装wins2016.md)
 * [MySQL](MySQL/README.md)
   * [MySQL 学习笔记](MySQL/MySQL学习笔记.md)
