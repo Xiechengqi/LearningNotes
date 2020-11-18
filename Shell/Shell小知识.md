@@ -2,8 +2,11 @@
 
 ## 目录
 
-* [timeout - 设置命令超时](#time---设置命令超时)
+* [判断 ip 是否合适](#判断-ip-是否合适)
 
+* [实现按任意键继续](#实现按任意键继续)
+
+* [timeout - 设置命令超时](#time---设置命令超时)
 * [grep 默认模糊匹配的坑](#grep-默认模糊匹配的坑)
 * [使用 iptables 做端口转发](#使用-iptables-做端口转发)
 * [查找字符串所在行并输出行号](#查找字符串所在行并输出行号)
@@ -51,6 +54,33 @@
 * [查看其他主机开放的端口](#查看其他主机开放的端口)
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
+
+## 判断 ip 是否合适
+
+``` shell
+function check_ip() {
+    IP=$1
+    if [[ $IP =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+        FIELD1=$(echo $IP|cut -d. -f1)
+        FIELD2=$(echo $IP|cut -d. -f2)
+        FIELD3=$(echo $IP|cut -d. -f3)
+        FIELD4=$(echo $IP|cut -d. -f4)
+        if [ $FIELD1 -le 255 -a $FIELD2 -le 255 -a $FIELD3 -le 255 -a $FIELD4 -le 255 ]; then
+            echo "IP $IP available."
+        else
+            echo "IP $IP 校验失败,请确认拿下你的IP格式是不是合法的!"
+        fi
+    else
+        echo "IP format error!"
+    fi
+}
+```
+
+## 实现按任意键继续
+
+``` shell
+read -s -n1 -p "按任意键继续 ... "
+```
 
 ## timeout - 设置命令超时
 
