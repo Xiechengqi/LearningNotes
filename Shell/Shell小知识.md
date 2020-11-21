@@ -6,7 +6,7 @@
 
 * [实现按任意键继续](#实现按任意键继续)
 
-* [timeout - 设置命令超时](#time---设置命令超时)
+* [timeout - 设置命令超时](#timeout---设置命令超时)
 * [grep 默认模糊匹配的坑](#grep-默认模糊匹配的坑)
 * [使用 iptables 做端口转发](#使用-iptables-做端口转发)
 * [查找字符串所在行并输出行号](#查找字符串所在行并输出行号)
@@ -36,13 +36,13 @@
 * [exit 0 和 exit 1](#exit-0和exit-1)
 * [特殊变量](#特殊变量)
 * [让一个变量获得命令输出的结果](#让一个变量获得命令输出的结果)
-* [`命令 > /dev/null 2 > &1`和`命令 &> /dev/null`](#命令--devnull-2--1和命令--devnull)
+* [重定向到空](#重定向到空)
 * [数值比较](#数值比较)
 * [几种数值计算方法](#几种数值计算方法)
 * [数值进制间相互转换](#数值进制间相互转换)
 * [等号两边不能有空格](#等号两边不能有空格)
-* [ $( )、\` \`、${ }、$(( ))、$[ ] 、[ ]、(( )) 和 [[ ]] 详解]（#---------和---详解)
-* [用 cat、echo 命令向文件写入](#用-cat-命令向文件写入)
+* [ 条件判断中的各种括号](#条件判断中的各种括号)
+* [字符串写入文件](#字符串写入文件)
 * [杀死一个进程](#杀死一个进程)
 * [删除空行](#删除空行)
 * [文件去重](#文件去重)
@@ -87,7 +87,8 @@ read -s -n1 -p "按任意键继续 ... "
 > 有时候，启动一个服务会占用很长时间，这就需要设置命令超时结束
 
 ```shell
-$ timeout systemctl start mysqld	
+# 设置 10 s 限制
+$ timeout 10 systemctl start mysqld	
 ```
 
 ## grep 默认模糊匹配的坑
@@ -191,6 +192,7 @@ $ basename `pwd`
 ## 计算脚本执行时间
 
 ``` shell
+# 方法一、记录开始结束时间，作差
 START_TIME=$(($(date +%s%N)/1000000))
 ......
 function print_time() {
@@ -198,6 +200,8 @@ function print_time() {
   ELAPSED_TIME=$(echo "scale=3; ($END_TIME - $START_TIME) / 1000" | bc -l)
   MESSAGE="Took ${ELAPSED_TIME} seconds"
 }
+# 方法二、使用 time
+time bash xxx.sh
 ```
 
 ## if 条件判断的坑
@@ -597,7 +601,7 @@ $ ./script.sh "a b"
 a b
 ```
 
-### `$*` 和 `$@`区别
+### `$*` 和  `$@` 区别
 ``` shell 
 #!/bin/bash
 # This script is to verify the difference between $* and $@
@@ -698,16 +702,13 @@ i=`ls 123.txt`
 echo $i
 ```
 
-## `命令 > /dev/null 2 > &1`和`命令 &> /dev/null`
+## 重定向到空
 
 > 解释：无提示（包括 stdin 和 stderr ）执行
 
-<br/>
-<div align=center>
-  <img src="./images/shell_wj.jpg"><br/>
- </div>
+![](./images/shell_wj.jpg)
 
- ### 文件描述符
+**`文件描述符`**
 
  * 文件描述符是与文件输入、输出关联的整数。它们用来跟踪已打开的文件
  * 最常见的文件描述符是 stidin、stdout、和 stderr
@@ -717,15 +718,9 @@ echo $i
   
  * 我们可以将某个文件描述符的内容重定向到另外一个文件描述符中
 
-<br/>
-<div align=center>
-  <img src="./images/shell_stdout.jpg"><br/>stdout （标准输出）
- </div>
+![](./images/shell_stdout.jpg)
 
- <br/>
-<div align=center>
-  <img src="./images/shell_stderr.jpg"><br/>stderr （标准错误）
- </div>
+![](./images/shell_stderr.jpg)
 
  ### `/dev/null`
 
@@ -790,17 +785,17 @@ $ ls 123.txt > output.txt 2>&1
  * `let`，`expr`，`bc` 都可以用来求模，运算符都是 `%`，而 `let` 和 `bc`可以用来求幂，运算符不一样，前者是` **`，后者是 `^ `
  * `(())` 的运算效率最高，而 `let` 作为 `Shell` 内置命令，效率也很高，但是 `expr`，`bc`，`awk` 的计算效率就比较低
 * `let` 和 `expr` 都无法进行浮点运算，但是 `bc` 和 `awk` 可以
- ``` shell
- $ echo "scale=3; 1/12" | bc
- # 0.083
- 
- $ echo "1 12" | awk '{printf("%0.3f\n",$1/$2)}'
- # 0.083
- ```
+
+``` shell
+echo "scale=3; 1/12" | bc
+# 0.083
+echo "1 12" | awk '{printf("%0.3f\n",$1/$2)}'
+# 0.083
+```
 
  ## 数值进制间相互转换
 
- ``` shell
+```  shell
 # 八进制 12 转换为十进制
 # 方法一、
 $ echo "obase=8;ibase=10;12" | bc            
@@ -812,7 +807,7 @@ $ echo "obase=8;ibase=10;12" | bc
 # 方法二、
 $ echo $((8#12)                                                 
 # 10
- ```
+```
 
  ## 等号两边不能有空格
 
@@ -824,7 +819,10 @@ $ echo $((8#12)
   <img src="./images/nospace2.jpg"><br/>正确
  </div>
 
- ## $( )、\` \`、${ }、$(( ))、$[ ] 、[ ]、(( )) 和 [[ ]] 详解
+ ## 条件判断中的各种括号
+
+> * [Shell十三问](http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=218853&page=7#pid1617953)
+> * [完全总结bash中的条件判断test](https://www.cnblogs.com/zejin2008/p/8412680.html)
 
 |  | 说明 | 举例 | 例子说明 |
 | --- | --- | --- | --- |
@@ -854,15 +852,9 @@ $ echo $((8#12)
  * bash 只能作整数运算，对于浮点数是当作字符串处理的
  * `[ ]`：必须在左括号的右侧和右括号的左侧各加一个空格，否则会报错
 
- ### 更多资料
+## 字符串写入文件
 
-http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=218853&page=7#pid1617953
-
-https://www.cnblogs.com/zejin2008/p/8412680.html
-
-## 用 cat、echo 命令向文件写入
-
-<kbd>**cat**</kbd>
+**`cat`**
 
 ``` bash
 # 文件不存在则自动创建
@@ -879,7 +871,7 @@ $ cat >> test.sh << EOF
 > EOF
 ```
 
-<kbd>**echo**</kbd>
+**`echo`**
 
 ``` bash
 # 文件不存在则自动创建
@@ -901,9 +893,7 @@ world' >> hello
 4. kill -s 9 \`pgrep 进程名\`
 5. pkill -s 9 进程名
 
-
-
-<kbd>**kill [信号] [进程号]**</kbd>
+**`kill [信号] [进程号]`**
 
 * kill 给指定进程发送指定信号，默认发送 TERM 信号，这回杀死不能捕获该信号的进程，对于单纯 kill 杀不死的进程，可能需要使用 kill ( 9 ) 信号，因为该信号不能被任何进程捕获
 * 当我们杀掉父进程时，其下的子进程也会被杀死
@@ -925,20 +915,13 @@ world' >> hello
 ## 删除空行
 
 ``` shell
- sed '/^$/d' file
-
- sed -n '/./p' file
-
- grep -v ^$ file
-
- awk '/./ {print}' file 
-
- awk '{if($0!="") print}'
-
- tr -s "\n"
+sed '/^$/d' file
+sed -n '/./p' file
+grep -v ^$ file
+awk '/./ {print}' file 
+awk '{if($0!="") print}'
+tr -s "\n"
 ```
-
-
 
 ## 文件去重
 
@@ -951,25 +934,23 @@ cat file | awk '!a[$0]++'
 cat file | sort | uniq
 ```
 
-
-
 ## 截取文件开头几行、末尾几行和中间几行
 
 ``` shell
- # 截取前 5 行 - head、sed、awk
- head -5 filename
- # 或
- sed -n '1,5p' filename
- # 或
- awk 'NR < 5 {print $0}' filename
+# 截取前 5 行 - head、sed、awk
+head -5 filename
+# 或
+sed -n '1,5p' filename
+# 或
+awk 'NR < 5 {print $0}' filename
 # 截取最后 5 行
 tail -5 
 # 截取 5 - 10 行
 sed -n '5,10p' filename
 # 或
 cat filename | head -n 10 | tail -n +5
-        # tail -n +2 : 从第 2  行开始显示之后的行
-        # tail -n 2 或 tail -2 : 显示最后 2 行
+# tail -n +2 : 从第 2  行开始显示之后的行
+# tail -n 2 或 tail -2 : 显示最后 2 行
 # 先内容匹配找到某一行行号，再显示此行后 5 行
 # 匹配显示 netstat -a 输出中的    Active UNIX domain sockets (servers and established) 后 5 行
 netstat -a | tail -n +`netstat -a | sed -n -e '/UNIX/='` | head -n 5
@@ -979,8 +960,6 @@ unix  2      [ ]         数据报                25378    /var/spool/postfix/de
 unix  2      [ ACC ]     流        LISTENING     38931    /tmp/.ICE-unix/3025
 unix  2      [ ACC ]     流        LISTENING     36700    public/pickup
 ```
-
-
 
 ## 修改文件以包含当前时间命名
 
@@ -995,8 +974,6 @@ $ tar cvf hello_log_$(date +%Y%m%d-%H%M%S).tar.gz 20191113-205057_hello_log.txt
 $ ls
 20191113-205057_hello_log.txt  hello_log_20191113-205252.tar.gz
 ```
-
-
 
 ## 查看当前主机公网 IP
 
@@ -1026,20 +1003,23 @@ done
 
 ## 进程查端口，端口查进程
 
-<kbd>**进程**</kbd> **->** <kbd>**端口**</kbd>
+* **`进程 -> 端口`**
 
-1. <kbd>**sudo netstat -tlpn | grep nginx**</kbd>
-2. <kbd>**sudo ss -tlpn | grep nginx**</kbd>
-3. <kbd>**sudo netstat -nap | grep \<pid\>**</kbd>
+1、`sudo netstat -tlpn | grep nginx`
 
-<kbd>**端口**</kbd> **->** <kbd>**进程**</kbd>
+2、`sudo ss -tlpn | grep nginx`
 
-1. <kbd>**lsof -i:\<port\>**</kbd>
-2. <kbd>**sudo netstat -nap | grep \<port\>**</kbd>
+3、`sudo netstat -nap | grep <pid>`
+
+* **`端口 -> 进程`**
+
+1、`lsof -i:<port>`
+
+2、`sudo netstat -nap | grep <port>`
 
 ## 查看其他主机开放的端口
 
-<kbd>**sudo nmap -sS \<ip\>**</kbd>
+**`sudo nmap -sS <ip>`**
 
 ```bash
 $ sudo nmap -sS 47.101.133.201
