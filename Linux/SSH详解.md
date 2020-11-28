@@ -2,15 +2,35 @@
 
 ## 目录
 
+* **[参考](#参考)**
+
 * **[SSH 介绍](#ssh-介绍-top)**
 * **[应用篇](#应用篇-top)**
-  * **[Linux SSH 相关命令](#linux-ssh-相关命令)**
-  * **[SSH 密码或无密码( 密钥 )登录](#ssh-密码或无密码-密钥-登录)**
-  * **[OpenSSH升级到最新 openssh8 的坑](#openssh升级到最新-openssh8-的坑)
+  * **[ssh 常用命令](#ssh-常用命令)**
+  * **[ssh-keygen 常用命令](#ssh-keygen-常用命令)**
+  * **[ssh-copy-id 常用命令](#ssh-copy-id-常用命令)**
+  * **[scp 常用命令](#scp-常用命令)**
+  * **[ssh 常用配置](#ssh-常用配置)**
+  * **[OpenSSH 升级到最新 openssh8 的坑](#openssh升级到最新-openssh8-的坑)**
 * **[原理篇](#原理篇-top)**
   * **[密码学加密算法](#密码学加密算法)**
   * **[SSH 登录原理](#ssh-登录原理)**
 * **[SSH 中间人攻击](#ssh-中间人攻击-top)**
+
+## 参考
+
+* [SSH Kung Fu](https://blog.tjll.net/ssh-kung-fu/)
+* [scp 跨机远程拷贝](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html)
+* [如何透过 SSH 代理穿越跳板机](https://www.hi-linux.com/posts/929.html)
+* [数字签名是什么？- 阮一峰](http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html)
+* [SSH原理与运用 - 阮一峰](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
+* [SSH原理与运用（一）：远程登录 - 阮一峰](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
+* [SSH原理与运用（二）：远程操作与端口转发 - 阮一峰](https://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)
+* [详解SSH原理 - 果冻想](https://www.jellythink.com/archives/555)
+* [Linux ssh命令详解 - 小a玖拾柒](https://www.cnblogs.com/ftl1012/p/ssh.html)
+
+* [实战 SSH 端口转发 - IBM](https://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/)
+* [SSH 端口转发教程](https://lotabout.me/2019/SSH-Port-Forwarding/)
 
 ## SSH 介绍
 
@@ -22,7 +42,7 @@
 
 ## 应用篇
 
-### Linux SSH 相关命令
+### SSH 常用命令
 
 * **`ssh -v <user>@<hostip>`** - 打印运行情况和调试信息
 
@@ -37,66 +57,7 @@ debug1: Reading configuration data /etc/ssh/ssh_config
 debug1: /etc/ssh/ssh_config line 19: Applying options for *
 debug1: Connecting to aliyun [106.15.72.140] port 22.
 debug1: Connection established.
-debug1: identity file /home/xcq/.ssh/id_rsa type 0
-debug1: key_load_public: No such file or directory
-debug1: identity file /home/xcq/.ssh/id_rsa-cert type -1
-debug1: key_load_public: No such file or directory
-debug1: identity file /home/xcq/.ssh/id_dsa type -1
-debug1: key_load_public: No such file or directory
-debug1: identity file /home/xcq/.ssh/id_dsa-cert type -1
-debug1: key_load_public: No such file or directory
-debug1: identity file /home/xcq/.ssh/id_ecdsa type -1
-debug1: key_load_public: No such file or directory
-debug1: identity file /home/xcq/.ssh/id_ecdsa-cert type -1
-debug1: key_load_public: No such file or directory
-debug1: identity file /home/xcq/.ssh/id_ed25519 type -1
-debug1: key_load_public: No such file or directory
-debug1: identity file /home/xcq/.ssh/id_ed25519-cert type -1
-debug1: Local version string SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
-debug1: Remote protocol version 2.0, remote software version OpenSSH_7.6p1 Ubuntu-4ubuntu0.3
-debug1: match: OpenSSH_7.6p1 Ubuntu-4ubuntu0.3 pat OpenSSH* compat 0x04000000
-debug1: Authenticating to aliyun:22 as 'root'
-debug1: SSH2_MSG_KEXINIT sent
-debug1: SSH2_MSG_KEXINIT received
-debug1: kex: algorithm: curve25519-sha256
-debug1: kex: host key algorithm: ecdsa-sha2-nistp256
-debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
-debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
-debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
-debug1: Server host key: ecdsa-sha2-nistp256 SHA256:Shnbq2gjAuoqjUmvnn4fwTRFvByWlHFmxi6WXGAtOPs
-debug1: Host 'aliyun' is known and matches the ECDSA host key.
-debug1: Found key in /home/xcq/.ssh/known_hosts:51
-debug1: rekey after 134217728 blocks
-debug1: SSH2_MSG_NEWKEYS sent
-debug1: expecting SSH2_MSG_NEWKEYS
-debug1: SSH2_MSG_NEWKEYS received
-debug1: rekey after 134217728 blocks
-debug1: SSH2_MSG_EXT_INFO received
-debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521>
-debug1: SSH2_MSG_SERVICE_ACCEPT received
-debug1: Authentications that can continue: publickey,password
-debug1: Next authentication method: publickey
-debug1: Offering public key: RSA SHA256:rdOjFLUoUcd66Ni/HuR353ht01sfhYpZh3y1y9lwuwM /home/xcq/.ssh/id_rsa
-debug1: Server accepts key: pkalg rsa-sha2-512 blen 279
-debug1: Authentication succeeded (publickey).
-Authenticated to aliyun ([106.15.72.140]:22).
-debug1: channel 0: new [client-session]
-debug1: Requesting no-more-sessions@openssh.com
-debug1: Entering interactive session.
-debug1: pledge: network
-debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
-debug1: Sending environment.
-debug1: Sending env LC_MEASUREMENT = en_HK.UTF-8
-debug1: Sending env LC_PAPER = en_HK.UTF-8
-debug1: Sending env LC_MONETARY = en_HK.UTF-8
-debug1: Sending env LANG = zh_CN.UTF-8
-debug1: Sending env LC_NAME = en_HK.UTF-8
-debug1: Sending env LC_ADDRESS = en_HK.UTF-8
-debug1: Sending env LC_NUMERIC = en_HK.UTF-8
-debug1: Sending env LC_TELEPHONE = en_HK.UTF-8
-debug1: Sending env LC_IDENTIFICATION = en_HK.UTF-8
-debug1: Sending env LC_TIME = en_HK.UTF-8
-Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-48-generic x86_64)
+...
 ```
 > * `identity file type .../.ssh/id_* type <number>` 中的数字只是 sshkey_types 枚举 的整数值（基于零），-1表示错误
 >  * KEY_RSA, // id_rsa has type 0
@@ -125,96 +86,83 @@ $ ssh -T git@e.coding.net
 
 * **`ssh <user>@<hostip> <command>`** - 登录 host 直接执行命令
 
-* **`ssh <user>@<hostip> 'tar cz file' | tar zxv`** - 本地`~/file` 文件通过 ssh 加密传输到 hostip 的`~` 目录下
-
-* **`ssh <user>@<hostip> 'tar cz file' | tar xzv`** - hostip 的`~/file` 文件通过 ssh 加密传输到本地的 `~` 目录下
-
-* **`ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no <user>@<hostip>` 不验证 host key 登录
-
-* **`scp <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件**到远程
-
-* **`scp -r <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 通过 scp 命令上传本地**文件夹**到远程
-
-* **`scp <user>@<hostip>:<remote_folder_path>  <local_file_path>`** - 通过 scp 命令传下载远程**文件**到本地
-
-* **`scp -r <user>@<hostip>:<remote_folder_path>  <local_file_path>`**- 通过 scp 命令传下载远程**文件**夹到本地
-
-* **Linux 和　Windows 实现 scp 互传文件＊＊
-* 因为 Windows 系统本身不支持 ssh 协议，所以要想实现两者 scp 互传文件，必须在 Windows 客户端安装 `ssh for windows` 的客户端软件，比如 winsshd，使 Windows 系统支持 ssh 协议
-* **`scp /root/README.md administrator@192.168.7.12:/d:/test/`** - 通过 scp 命令上传本地 (Linux) **文件**到远程 (Windows) 上
-
-* **`scp administrator@192.168.7.12:/d:/test/README.md /root/`** - 通过 scp 命令下载远程 (Windows) **文件**到本地 (Linux)
-
-```
-scp -o "ProxyCommand=nc -X connect -x proxy_ip:proxy_port %h %p"  filename  username@target_ip:/target_path
-scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1  root@54.250.52.188:/root
-
+``` shell
+# 本地 ~/file 文件通过 ssh 加密传输到 hostip 的 ~ 目录下
+$ ssh <user>@<hostip> 'tar cz file' | tar zxv
+# hostip 的 ~/file 文件通过 ssh 加密传输到本地的 ~ 目录下
+$ ssh <user>@<hostip> 'tar cz file' | tar xzv
 ```
 
-* **`ssh-keygen`** - 默认在`~/.ssh/` 下生成 RSA 公私密钥对
+* **`ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no <user>@<hostip>`** - 不验证 host key 登录
+* **`ssh -L <port_a>:<remote host>:<port_b> user_b@ip_b`** - 本地端口转发
 
-* **`ssh-keygen -t dsa`** - 在`~/.ssh/` 下生成 dsa 公私密钥对
+![](./images/local-port-forwarding-single.svg)
 
+* **`ssh -R <port_a>:<remote host>:<port_a> user_a@ip_a`** - 远程端口转发
+
+![](./images/remote-port-forwarding.svg)
+
+* **`ssh -g -L <port_a>:<remote host>:<port_b> user_b@ip_b`** - 路由转发
+
+![](./images/local-port-forwarding-gateway.svg)
+
+* **`ssh -D <port> user@remote_ip`** - 动态端口转发
+
+![](./images/dynamic-port-forwarding.svg)
+
+### ssh-keygen 常用命令
+
+* **`ssh-keygen`** - 默认在 `~/.ssh/` 下生成 RSA 公私密钥对
+* **`ssh-keygen -t dsa`** - 在 `~/.ssh/` 下生成 dsa 公私密钥对
 * **`ssh-keygen -t rsa -C '电子邮箱'`**
+* **`ssh-keygen -y -f [私钥路径] > [公钥路径]`** - 私钥生成公钥
 
-* **`ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub`** - 如果您有 OpenSSH 私钥（`id_rsa` 文件），则可以使用以下命令生成 OpenSSH 公钥文件
-
-* ** `ssh-keygen -y [私钥]`** - 从私钥生成公钥，反之显而是不行的
-
-* **`ssh-keygen -R <hostip>`** - 从 SSH 的 known_hosts 文件中删除特定的主机密钥
+``` shell
+$ ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
+```
 
 * **`ssh-keygen -f "/home/xcq/.ssh/known_hosts" -R "192.168.7.47"`** - 删除指定 known_hosts 文件中的主机公钥
- 
+
 
 * **`ssh-keyscan`**
-
+* **`ssh-keysign`**
 * **`ssh-add`**
 
-* **`ssh-keysign`**
+### ssh-copy-id 常用命令
 
 * **`ssh-copy-id <user>@<hostip>`**  -  默认将本地主机公钥 `~/.ssh/id_rsa.pub ` 添加到远程服务器 `<user>/.ssh/authorized_keys` 文件中，实现无密码登录
 
 * **`ssh-copy-id -i <公钥路径>/id_rsa.pub <user>@<hostip>`** - 将本地主机公钥 `公钥路径` 中的 `id_rsa.pub`  添加到远程服务器 `<user>/.ssh/authorized_keys`  文件中，实现无密码登录
 
+### SCP 常用命令
+
+* **`scp <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 上传本地**文件**到远程
+* **`scp -r <local_file_path> <user>@<hostip>:<remote_folder_path>`** - 上传本地**文件夹**到远程
+* **`scp <user>@<hostip>:<remote_folder_path>  <local_file_path>`** - 下载远程**文件**到本地
+* **`scp -r <user>@<hostip>:<remote_folder_path>  <local_file_path>`**- 下载远程**文件夹**到本地
+* **Linux 和 Windows 实现 scp 互传文件**
+
+> 因为 Windows 系统本身不支持 ssh 协议，所以要想实现两者 scp 互传文件，必须在 Windows 客户端安装 `ssh for windows` 的客户端软件，比如 winsshd，使 Windows 系统支持 ssh 协议
+
+* **`scp /root/README.md administrator@<winIP>:/d:/test/`** - 通过 scp 命令上传**本地 (Linux) **文件到**远程 (Windows) **上
+* **`scp administrator@<winIP>:/d:/test/README.md /root/`** - 通过 scp 命令下载**远程 (Windows) **文件到**本地 (Linux)**
+
+```shell
+scp -o "ProxyCommand=nc -X connect -x <proxy_ip>:<proxy_port> %h %p"  filename  <username>@<target_ip>:/<target_path>
+scp -o "ProxyCommand=nc -X connect -x 47.101.133.201:22 %h %p"  /home/xcq/test1  root@54.250.52.188:/root
+```
+
+## ssh 常用配置
+
+#### 常用配置文件
+
+
 * **`/etc/ssh/ssh.config`** - 客户端配置文件
-
 * **`/etc/ssh/sshd.config`** - 服务的配置文件
-
-* **`开启密钥认证登录`**
-
- ```bash
-  # 开启密钥验证
-  RSAAuthentication yes
-  PubkeyAuthentication yes RSAAuthentication yes
-  # 制定公钥文件路径
-  AuthorsizedKeysFile $h/.ssh/authorized_keys
- ```
-
-* **`关闭密码登录`** 
-
- ```bash
-  PasswordAuthentication no
- ```
-
 * **`~/.ssh/known_hosts`** - 查看已知主机的公钥
-
-* **`关闭 hostkeychecking，初次登录时不用输入 yes`**
-
- ```bash
-  StrictHostKeyChecking no  
- ```
-
 * **`~/.ssh/authorized_keys`** - 存放需要密钥登录本机的 host 公钥
 
-### SSH 密码或无密码( 密钥 )登录
-
-* SSH 登录通常有**密码登录**和**密钥登录 ( 或无密码直接登录 )**
-
-**`密码登录`**
-
-* [云服务器创建配后配置密码登录](https://github.com/Xiechengqi/XcqDailyLearningNotes/blob/master/Linux/VPS/AWS/lightsail.md)
-
-**`无密码登录`**
+#### 一、配置密钥登录
 
 1、生成本地 RSA 或 DSA 密钥对
 
@@ -229,9 +177,7 @@ $ ssh-keygen
 
 ``` bash
 # 也可以使用 ssh-copy-id
-$ ssh-copy-id root@目标节点IP
-
-# ssh-copy-id root@192.168.56.101
+$ ssh-copy-id root@192.168.56.101
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
 /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
@@ -243,15 +189,44 @@ Now try logging into the machine, with:   "ssh 'root@192.168.56.101'"
 and check to make sure that only the key(s) you wanted were added.
 ```
 
-3、重启 ssh, 退出再次登陆即可实现无密码登录
+3、重启 ssh，退出再次登陆即可实现无密码登录
+
+#### 二、开启密钥认证登录
+
+ ```bash
+  # 开启密钥验证
+  RSAAuthentication yes
+  PubkeyAuthentication yes RSAAuthentication yes
+  # 制定公钥文件路径
+  AuthorsizedKeysFile $h/.ssh/authorized_keys
+ ```
+
+#### 三、开启密码登录
+
+ ```yaml
+PasswordAuthentication yes
+ ```
+
+#### 四、开启 root 登录
+
+``` yaml
+PermitRootLogin yes
+```
+
+####   五、关闭 hostkeychecking，初次登录时不用输入 yes
+
+``` shell
+StrictHostKeyChecking no  
+```
 
 
 ### OpenSSH升级到最新 openssh8 的坑
 
-官网升级教程 - http://www.linuxfromscratch.org/blfs/view/9.0-systemd/postlfs/openssh.html
-entOS7升级OpenSSH 到8.3版本 - https://www.hncldz.com/?p=625
-如果使用默认的源码，make install 安装到Ubuntu16.04或者Centos7，在默认使用systemd管理sshd时，你会发现，启动命令会卡起，稍后用systemctl 查看status发现卡在正在启动的阶段 - http://blog.chinaunix.net/uid-28813320-id-5786956.html
-服务启动成功，用户密码也都对，就是无法建立连接，可能是UsePAM和SELinux的问题 - https://segmentfault.com/a/1190000018629266
+* 官网升级教程 - http://www.linuxfromscratch.org/blfs/view/9.0-systemd/postlfs/openssh.html
+* CentOS7升级OpenSSH 到8.3版本 - https://www.hncldz.com/?p=625
+* 如果使用默认的源码，make install 安装到Ubuntu16.04或者Centos7，在默认使用systemd管理sshd时，你会发现，启动命令会卡起，稍后用systemctl 查
+* 看status发现卡在正在启动的阶段 - http://blog.chinaunix.net/uid-28813320-id-5786956.html
+* 服务启动成功，用户密码也都对，就是无法建立连接，可能是 UsePAM 和 SELinux 的问题 - https://segmentfault.com/a/1190000018629266
 
 ## 原理篇
 
@@ -306,19 +281,3 @@ entOS7升级OpenSSH 到8.3版本 - https://www.hncldz.com/?p=625
 ### SSH 中间人攻击
 
 由于 SSH 不像 https 协议那样，SSH 协议的公钥是没有证书中心（CA）公证的，也就是说，都是自己签发的。这就导致如果有人截获了登陆请求，然后冒充远程主机，将伪造的公钥发给用户，那么用户很难辨别真伪，用户再通过伪造的公钥加密密码，再发送给冒充主机，此时冒充的主机就可以获取用户的登陆密码了，那么 SSH 的安全机制就荡然无存了，这也就是我们常说的中间人攻击
-
-## 参考
-
-* **[SSH Kung Fu](https://blog.tjll.net/ssh-kung-fu/)**
-
-* [scp 跨机远程拷贝](https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html)
-
-* [如何透过 SSH 代理穿越跳板机](https://www.hi-linux.com/posts/929.html)
-
-* [数字签名是什么？- 阮一峰](http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html)
-* [SSH原理与运用 - 阮一峰](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
-* [SSH原理与运用（一）：远程登录 - 阮一峰](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
-* [SSH原理与运用（二）：远程操作与端口转发 - 阮一峰](https://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)
-
-* [详解SSH原理 - 果冻想](https://www.jellythink.com/archives/555)
-* [Linux ssh命令详解 - 小a玖拾柒](https://www.cnblogs.com/ftl1012/p/ssh.html)
