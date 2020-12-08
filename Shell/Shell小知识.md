@@ -2,6 +2,11 @@
 
 ## 目录
 
+* [tar 去除顶层目录结构](#tar-去除顶层目录结构)
+
+* [getopts 获取命令参数](#getopts-获取命令参数)
+
+* [csv 和 xlsx 文件格式互相转换](csv-和-xlsx-文件格式互相转换)
 * [判断字符串是否为空](#判断字符串是否为空)
 * [变量设置默认值](#变量设置默认值)
 * [判断 ip 是否合适](#判断-ip-是否合适)
@@ -54,6 +59,83 @@
 * [查看其他主机开放的端口](#查看其他主机开放的端口)
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
+
+## tar 去除顶层目录结构
+
+``` shell
+tar zxvf example.tar.gz -C /opt --strip-components 1
+```
+
+## getopts 获取命令参数
+
+* 格式：**`getopts [option_string] [variable]`**
+
+> * option_string 选项名称
+> * variable 选项的值
+
+* 选项之间使用冒号 `:` 分隔，也可以直接连接， `:`  表示选项后面有传值
+* 当 getopts 命令发现冒号后，会从命令行该选项后读取该值。如该值存在，将保存在特殊的变量 OPTARG 中
+* getopts 包含两个内置变量，OPTARG (保存选项后的参数值) 和 OPTIND (表示命令行下一个选项或参数的索引)
+
+``` shell
+while getopts a:b:c:d opts; do
+    case $opts in
+        a) a=$OPTARG ;;
+        b) b=$OPTARG ;;
+        c) c=$OPTARG ;;
+        d) d=$OPTARG ;;
+        ?) ;;
+    esac
+done
+
+echo "a=$a"
+echo "b=$b"
+echo "c=$c"
+echo "d=$d"
+
+
+while getopts "f:d:icmk:?h" opt; do
+	case $opt in
+		f)
+			flannel_env=$OPTARG
+			;;
+		d)
+			docker_env=$OPTARG
+			;;
+		i)
+			indiv_opts=true
+			;;
+		c)
+			combined_opts=true
+			;;
+		m)
+			ipmasq=false
+			;;
+		k)
+			combined_opts_key=$OPTARG
+			;;
+		[\?h])
+			usage
+			;;
+	esac
+done
+```
+
+## csv 和 xlsx 文件格式互相转换
+
+**`csv 转 xlsx`**
+
+```shell
+$ unix2dos example.csv
+$ ssconvert example.csv example.xlsx
+$ ssconvert example.csv example.xls
+```
+
+**`xlsx 转 csv`**
+
+``` shell
+$ ssconvert example.xlsx example.csv
+```
 
 ## 判断字符串是否为空
 
