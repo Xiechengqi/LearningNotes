@@ -1,8 +1,9 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
-* [centos7 升级内核](#centos7-升级内核)
+* [Ubuntu 20.04 输入法简体繁体切换解决](ubuntu-2004-输入法简体繁体切换解决)
 
+* [centos7 升级内核](#centos7-升级内核)
 * [Linux 密码破解](#linux-密码破解)
 * [&&就类似一个bash](#&&就类似一个bash)
 * [yum group install "Development Tools"]()
@@ -47,6 +48,12 @@
 * [文件权限 777](#文件权限-777-top)
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
+
+## Ubuntu 20.04 输入法简体繁体切换解决
+
+1、放弃搜狗、百度，容易出各种问题，[rime](https://rime.im/download/#linux)
+
+2、F4 切出输入法选择，选择简体
 
 ## centos7 升级内核
 
@@ -859,6 +866,25 @@ purge 关键字（而不是 remove ）将删除与要卸载的软件包关联的
  > `/var/spool/cron/crontabs`目录需要切换到 root 权限才能打开
 
 ## crontab 文件详解
+
+### 示例
+
+``` shell
+# 每周一到周五的早上八点到晚上十一点每隔一小时执行一次
+1 8-23/1 * * 1-5 bash /opt/backup.sh
+
+# 每周日执行晚上 23:59 分执行一次
+59 23 * * 0 bash /opt/backup.sh
+
+# 毎月1日从 17:00到7:10 毎隔1分钟 执行
+0-10 17 1 * * bash /opt/backup.sh
+
+# 每隔10分 执行
+*/10 * * * * bash /opt/backup.sh
+
+# 毎时 0 分 每隔 1 小时 执行
+0 */1 * * * 或 0 * * * *
+```
 
 ### `/etc/crontab`文件源代码
 
