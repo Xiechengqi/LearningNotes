@@ -4,6 +4,7 @@
   * [工具](网络学习资源整理/工具.md)
 * [DevOps](DevOps/README.md)
   * [运维职位知识图谱](DevOps/Ops.md)
+  * [mvn命令参数](DevOps/mvn命令参数)
 * [运维最佳实践](运维最佳实践/README.md)
 * [网站搭建](网站搭建/README.md)
   * [静态网站生成器](网站搭建/静态网站生成器.md)
