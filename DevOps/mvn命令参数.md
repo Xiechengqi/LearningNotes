@@ -29,3 +29,6 @@
 | mvn -emp      | --encrypt-master-password <password> 加密主安全密码,存储到Maven settings文件里; |
 | mvn -ep       | --encrypt-password <password> 加密服务器密码,存储到Maven settings文件里; |
 | mvn -npr      | --no-plugin-registry 对插件版本不使用~/.m2/plugin-registry.xml(插件注册表)里的配置; |
+
+
+
