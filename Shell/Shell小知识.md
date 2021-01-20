@@ -2,10 +2,12 @@
 
 ## 目录
 
+* [进入执行脚本所在文件夹](#进入执行脚本所在文件夹)
+
+* [替换字符串方法](#替换字符串方法)
+* [删除空格](#删除空格)
 * [awk 获取第 n 列以后所有列](#awk-获取第-n-列以后所有列)
-
 * [for 循环高级玩法](#for-循环高级玩法)
-
 * [从 1 到 n 的循环](#从-1-到-n-的循环)
 * [tar 去除顶层目录结构](#tar-去除顶层目录结构)
 * [getopts 获取命令参数](#getopts-获取命令参数)
@@ -62,6 +64,58 @@
 * [查看其他主机开放的端口](#查看其他主机开放的端口)
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
+
+## 进入执行脚本所在文件夹
+
+``` shell
+$ cd `dirname $0`
+
+$ BASEPATH=`dirname $(readlink -f ${BASH_SOURCE[0]})` && cd $BASEPATH
+```
+
+## 替换字符串方法
+
+### 一、${}
+
+``` shell
+$ a='asdf'
+$ a=${a/as/$a}
+$ echo $a
+asdfdf
+
+$ echo ${a/hduser302/hdpusr400} 　　#变量a中的第一个匹配的字符串会被替换
+
+$ echo ${a//hduser302/hdpusr400}　　#变量a中所有匹配的字符串都会被替换
+```
+
+### sed
+
+``` shell
+$ echo $a | sed 's/hduser302/hdpusr400/' 　　#sed 's///' 用来替换第一个匹配的字符串
+
+$ echo $a | sed 's/hduser302/hdpusr400/g' 　　#sed 's///g'用来替换所有匹配的字符串
+```
+
+### awk
+
+``` shell
+$ echo $a | awk '{gsub(/hduser302/,"hdpusr400",$3);print $0}' #指定替换第一个
+
+$ echo $a | awk '{gsub(/hduser302/,"hdpusr400");print $0}' 　　#全部替
+```
+
+##　删除空格
+
+``` shell
+# 删除首行空格
+sed 's/^[ \t]*//g'
+
+# 删除行末空格
+sed 's/[ \t]*$//g'
+
+# 删除所有空格	
+sed s/[[:space:]]//g
+```
 
 ## awk 获取第 n 列以后所有列
 

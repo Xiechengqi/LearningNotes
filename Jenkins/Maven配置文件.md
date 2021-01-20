@@ -2,14 +2,15 @@
 
 > * https://ehlxr.me/2020/03/02/maven-setting-config/
 
+* `settings.xml` 是 `maven` 的配置文件，用户配置文件存放于 `${user.home}/.m2/` 目录下，系统全局配置文件放置于 `${maven.home}/conf/` 目录下，`pom.xml` 是 `maven` 的项目的配置文件
+
 * Maven 配置文件有以下三处，**优先级由高到低，同时存在：不同内容合并，相同内容优先级最高的生效**：
   * 项目配置: `项目根目录/pom.xml`
   * 用户配置: `$HOME/.m2/settings.xml`，没有的话，可自行创建
   * 全局配置: `$MAVEN_HOME/conf/settings.xml`，也可以使用 `mvn -X` 命令查看
-
 * 配置详解
 
-`**settings.xml中的顶级元素**`
+**`settings.xml 中的顶级元素`**
 
 ``` xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
