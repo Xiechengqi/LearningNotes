@@ -107,6 +107,10 @@ $ echo $a | awk '{gsub(/hduser302/,"hdpusr400");print $0}' 　　#全部替
 ##　删除空格
 
 ``` shell
+# 删除字符串中空格
+a=". "
+echo ${a//[[:space:]]/}
+
 # 删除首行空格
 sed 's/^[ \t]*//g'
 
@@ -267,11 +271,10 @@ $ ssconvert example.xlsx example.csv
 ## 判断字符串是否为空
 
 ``` shell
-a=''
 # 方法一
-[ ".$a" = "" ] && echo 'a is empty'
+[ ".${a//[[:space:]]/}" = "" ] && echo 'a is empty'
 # 方法二
-[[ -n "$a" ]] && echo 'a is empty'
+[[ -n "${a//[[:space:]]/}" ]] && echo 'a is empty'
 ```
 
 ## 变量设置默认值
