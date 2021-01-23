@@ -156,7 +156,27 @@ lrwxrwxrwx 1 root root 16 Oct  4 12:56 K01polipo -> ../init.d/polipo
 
 #### systemctl
 
-* `相关文件` - `/etc/systemd/system`、`/lib/systemd/system`(ubuntu)、`/usr/lib/systemd/system`(RedHat) 等等
+* **`相关文件`** - `/etc/systemd/system`、`/run/systemd/system`、`/lib/systemd/system`、`/usr/lib/systemd/system` 等等
+
+> **`/usr/lib`** 和 **`/lib`** 其实是同一个目录，在根目录使用 `ls -l` 查看可知 **`/lib`** 是 **`/usr/lib`** 的软链接
+
+* **`systemd/system`** 都是存放通过 systemd 管理的软件包单元文件，只不过优先级不同
+* 优先级：**`/etc/systemd/system` > `/run/systemd/system` > `[/usr]/lib/systemd/system`**
+
+``` shell
+Table 1.  Load path when running in system mode (--system).
+┌────────────────────────┬─────────────────────────────┐
+│Path                    │ Description                 │
+├────────────────────────┼─────────────────────────────┤
+│/etc/systemd/system     │ Local configuration         │
+├────────────────────────┼─────────────────────────────┤
+│/run/systemd/system     │ Runtime units               │
+├────────────────────────┼─────────────────────────────┤
+│/lib/systemd/system     │ Units of installed packages │
+└────────────────────────┴─────────────────────────────┘
+```
+
+
 * 可使用 `man systemd.unit` 查看各个文件解释
 * systemctl 是 Linux 系统最新初始化系统的守护进程 **systemd**  对应的进程管理命令
 * 对于那些支持 systemd 的软件，安装的时候，会自动在 `/usr/lib/systemd/system` 目录添加一个配置文件
