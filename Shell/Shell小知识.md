@@ -2,8 +2,9 @@
 
 ## 目录
 
-* [进入执行脚本所在文件夹](#进入执行脚本所在文件夹)
+* [根据某列排序](#根据某列排序)
 
+* [进入执行脚本所在文件夹](#进入执行脚本所在文件夹)
 * [替换字符串方法](#替换字符串方法)
 * [删除空格](#删除空格)
 * [awk 获取第 n 列以后所有列](#awk-获取第-n-列以后所有列)
@@ -64,6 +65,61 @@
 * [查看其他主机开放的端口](#查看其他主机开放的端口)
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
+
+## 根据某列排序
+
+**`awk`**
+
+``` shell
+$ cat demo.txt
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+bin:x:1:1:bin:/bin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+sync:x:5:0:sync:/sbin:/bin/sync
+
+# 以 : 做为分隔符，按照第三列排序
+$ cat a | awk -F ':' '{print $3,$0}' | sort | awk '{print $2}'
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+sshd:x:74:74:Privilege-separated
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+```
+
+**`sort`**
+
+``` shell
+$ cat demo.txt
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+bin:x:1:1:bin:/bin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+root:x:0:0:root:/root:/bin/bash
+sync:x:5:0:sync:/sbin:/bin/sync
+
+# 以 : 做为分隔符，按照第三列排序
+# -t 指定文本分隔符
+# -k 指定排序列
+# -n 按数字进行排序
+# -r 从大到小排序
+# -u 去重
+$ sort -t ':' -k 3n
+```
 
 ## 进入执行脚本所在文件夹
 
