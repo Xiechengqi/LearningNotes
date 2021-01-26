@@ -17,6 +17,7 @@
 * [心灵鸡汤](心灵鸡汤/README.md)
   * [语录](心灵鸡汤/心灵鸡汤.md)
 * [Jenkins](#jenkins/README.md)
+  * [Jenkins 小知识](#jenkins/Jenkins小知识.md)
 * [Linux](Linux/README.md)
   * [Linux常用命令](Linux/Linux常用命令.md)
   * [平时 linux 遇到的问题解决办法和扩展小知识](Linux/Linux小知识.md)

@@ -1,6 +1,60 @@
 # Jenkins 小知识
 
-## 并行任务和任务流
+## 目录
+
+* [获取 job 持续时间](#获取-job-持续时间)
+* [pipeline 中使用 archiveArtifacts 存档文件](#pipeline-中使用-archiveArtifacts-存档文件)
+* [并行任务和并行任务流](#并行任务和并行任务流)
+
+
+
+## pipeline 获取 job 持续时间
+
+* 安装插件：Build Timestamp Plugin - This plugin adds BUILD_TIMESTAMP to Jenkins variables and system properties
+* 
+
+## pipeline 中使用 archiveArtifacts 存档文件
+
+* pipeline 中可以使用 `archiveArtifacts` 命令存档文件
+* 存档的文件会保存到 Jenkins 的 `jobs/JOB_NAME/builds/BUILD_NUMBER` 目录下
+* `**` 表示匹配任意数目路径节点
+
+**`steps 中使用 archiveArtifacts`**
+
+``` shell
+pipeline {
+    agent any
+    stages {
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+            }
+        }
+    }
+}
+```
+
+**`post 中使用 archiveArtifacts`**
+
+``` shell
+post{
+	always{
+		script{
+        	node(win_node){
+				//delete report file
+				println "Start to delete old html report file."
+				bat("del /s /q C:\\JenkinsNode\\workspace\\selenium-pipeline-demo\\test-output\\*.html")
+				//list the log files on jenkins ui
+				archiveArtifacts artifacts: 'log/*.*'
+			}
+		}
+	}
+}
+```
+
+
+
+## 并行任务和并行任务流
 
 **并行任务**
 
