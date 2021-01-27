@@ -4,6 +4,7 @@
 > * [运维职业中所用到的技能技巧知识](https://github.com/leops-china/leops-cheatsheet/tree/master/website/docs/cheatsheet)
 > * [热门应用的常用配置](https://github.com/leops-china/leops-cheatsheet/tree/master/website/docs/conf)
 > * [日常运维的常用脚本](https://github.com/leops-china/leops-cheatsheet/tree/master/website/docs/scripts)
+> * [lework 脚本](https://github.com/lework/script)
 
 * Bash 只有一种数据类型，就是字符串。不管用户输入什么数据，Bash 都视为字符串
 * Bash 没有数据类型的概念，所有的变量值都是字符串

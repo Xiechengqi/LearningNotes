@@ -2,8 +2,13 @@
 
 ## 目录
 
-* [根据某列排序](#根据某列排序)
+* [两种脚本识别参数套路](#两种脚本识别参数套路)
 
+* [POSIX 常用字符集合](#POSIX-常用字符集合)
+
+* [确保脚本下载完全](#确保脚本下载完全)
+
+* [根据某列排序](#根据某列排序)
 * [进入执行脚本所在文件夹](#进入执行脚本所在文件夹)
 * [替换字符串方法](#替换字符串方法)
 * [删除空格](#删除空格)
@@ -65,6 +70,148 @@
 * [查看其他主机开放的端口](#查看其他主机开放的端口)
 * [快速查看配置文件中有效配置行](#快速查看配置文件中有效配置行)
 * [使用重定向新建文件](#使用重定向新建文件)
+
+## 两种脚本识别参数套路
+
+#### 一、用 shift 不断弹出 $1 获取参数
+
+``` shell
+function usage {
+    echo "Download the Google docker image through the proxy node"
+    echo
+    echo "Usage: $0 [[[-p proxy] [-i image] | [-t tag] | [-f file]] | [-h]]"
+    echo "  -p,--proxy      Specify proxy node url"
+    echo "  -i,--image      Specify the image name"
+    echo "  -t,--tag        Specify the image tag and download the k8s family bucket."
+    echo "  -f,--file       Specify a file path containing the name"
+    echo "  -h,--help       View help"
+    echo
+    echo
+    echo "Example:"
+    echo "  $0 gcr.io/google_containers/pause-amd64:3.1"
+    echo "  $0 \"k8s.gcr.io/kube-{apiserver,controller-manager,proxy,scheduler}:v1.14.3\""
+    echo "  $0 -i k8s.gcr.io/pause-amd64:3.1"
+    echo "  $0 -p registry.aliyuncs.com/google_containers -i k8s.gcr.io/pause-amd64:3.1"
+    echo "  $0 -t v1.14.3"
+    echo "  $0 -f ./images.txt"
+    echo
+    exit 1
+}
+
+
+######################################################################################################
+# main 
+######################################################################################################
+
+check
+
+[ "$#" == "0" ] && usage
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -p | --proxy )          shift
+                                unset proxy
+                                proxy=$1
+                                ;;
+        -i | --image )          shift
+				image_url=$1
+                                ;;
+        -t | --tag )            shift
+				tag=$1
+                                ;;
+        -f | --file )           shift
+				file=$1
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        *\.* | *\/*)            image_url=$1
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
+```
+
+#### 二、getopts 获取参数
+
+``` shell
+_usage() {
+echo "Usage:"
+echo "feishu.sh [-u repoUrl] [-b branch] [-d db] [-v version] [-c projectName] [-p productId] [-n name] [-h help]"
+echo "Description:"
+echo "-u, 必选-gitlab 仓库地址"
+echo "-v, 必选-禅道版本号"
+echo "-c, 必选-禅道项目名"
+echo "-p, 必选-禅道产品 id"
+echo "-n, 必选-创建人名"
+echo "-b, 可选-分支名，默认为 master"
+echo "-d, 可选-数据库名，默认为 mysql"
+echo "-h / -help，选择-打印此帮助信息"
+}
+
+db=''
+
+while getopts 'u:v:c:p:n:b:d:h' OPT
+do
+case $OPT in
+u)
+repoUrl="$OPTARG"
+;;
+b)
+branch="$OPTARG"
+;;
+d)
+db="$db $OPTARG"
+;;
+v)
+version="$OPTARG"
+;;
+c)
+projectName="$OPTARG"
+echo "projectName: $projectName"
+;;
+p)
+productId="$OPTARG"
+;;
+n)
+name="$OPTARG"
+;;
+h)
+_usage
+exit 0
+;;
+?)
+_usage
+exit 0
+;;
+esac
+done
+```
+
+## POSIX 常用字符集合
+
+|    类型     |        匹配字符        |      |
+| :---------: | :--------------------: | ---- |
+| `[:space:]` | 空白 (whitespace) 字符 |      |
+| `[:alnum:]` |          字母          |      |
+| `[:lower:]` |        小写字母        |      |
+| `[:upper:]` |        大写字母        |      |
+| `[:digit:]` |          数字          |      |
+|             |                        |      |
+
+## 确保脚本下载完全
+
+* 有些脚本会通过 `curl -SsL xxx.sh | bash` 调用，这时应该确保下载执行的脚本是完整的，可以通过将整个脚本内容放进 `{}` 内实现
+
+```shell
+#!/usr/bin/env bash
+
+{ # this ensures the entire script is downloaded #
+ ...
+} # this ensures the entire script is downloaded #
+```
 
 ## 根据某列排序
 
@@ -161,6 +308,8 @@ $ echo $a | awk '{gsub(/hduser302/,"hdpusr400");print $0}' 　　#全部替
 ```
 
 ##　删除空格
+
+> **`[[:space:]]`** : POSIX 字符类 `[:space:]` 表示空白字符，把 `[:space:]` 放在 `[]` 里面，会成为正则表达式，表示匹配在 `[] `里面的字符
 
 ``` shell
 # 删除字符串中空格

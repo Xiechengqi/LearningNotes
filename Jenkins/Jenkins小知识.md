@@ -37,18 +37,22 @@ pipeline {
 **`post 中使用 archiveArtifacts`**
 
 ``` shell
-post{
-	always{
-		script{
-        	node(win_node){
-				//delete report file
-				println "Start to delete old html report file."
-				bat("del /s /q C:\\JenkinsNode\\workspace\\selenium-pipeline-demo\\test-output\\*.html")
-				//list the log files on jenkins ui
-				archiveArtifacts artifacts: 'log/*.*'
-			}
-		}
-	}
+always{
+    script{
+        node(win_node){
+            // delete report file
+            println "Start to delete old html report file."
+            bat("del /s /q C:\\JenkinsNode\\workspace\\selenium-pipeline-demo\\test-output\\*.html")
+            // list the log files on jenkins ui
+            archiveArtifacts artifacts: 'log/*.*'
+        }
+    }
+}
+
+
+always {
+	archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+	junit 'build/reports/**/*.xml'
 }
 ```
 
