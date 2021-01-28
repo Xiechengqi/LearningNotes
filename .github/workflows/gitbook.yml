@@ -22,8 +22,8 @@ jobs:
         gitbook build
         pwd
         ls
-      env:
-        CI: true
+#       env:
+#         CI: true
 
 #     - name: Deploy to gh-pages branch
 #       uses: JamesIves/github-pages-deploy-action@releases/v3
