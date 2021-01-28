@@ -20,21 +20,22 @@ jobs:
         npm install -g gitbook-cli
         gitbook install
         gitbook build
+        pwd
       env:
         CI: true
 
-    - name: Deploy to gh-pages branch
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: _book/
+#     - name: Deploy to gh-pages branch
+#       uses: JamesIves/github-pages-deploy-action@releases/v3
+#       with:
+#         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#         BRANCH: gh-pages
+#         FOLDER: _book/
 
-    - name: Deploy to Aliyun oss
-      uses: manyuanrong/setup-ossutil@v2.0
-      with:
-        endpoint: "oss-cn-shanghai.aliyuncs.com"
-        access-key-id: ${{ secrets.ALI_ACCESS_KEY_ID }}
-        access-key-secret: ${{ secrets.ALI_ACCESS_KEY_SECRET }}
-        sts-token: ""
-    - run: ossutil cp -rf ./_book oss://gitbooks/
+#     - name: Deploy to Aliyun oss
+#       uses: manyuanrong/setup-ossutil@v2.0
+#       with:
+#         endpoint: "oss-cn-shanghai.aliyuncs.com"
+#         access-key-id: ${{ secrets.ALI_ACCESS_KEY_ID }}
+#         access-key-secret: ${{ secrets.ALI_ACCESS_KEY_SECRET }}
+#         sts-token: ""
+#     - run: ossutil cp -rf ./_book oss://gitbooks/
