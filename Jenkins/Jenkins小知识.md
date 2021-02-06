@@ -2,6 +2,8 @@
 
 ## 目录
 
+* https://blog.csdn.net/liumiaocn/article/details/104586482
+
 * [获取 job 持续时间](#获取-job-持续时间)
 * [pipeline 中使用 archiveArtifacts 存档文件](#pipeline-中使用-archiveArtifacts-存档文件)
 * [并行任务和并行任务流](#并行任务和并行任务流)
