@@ -1,11 +1,17 @@
 # Jenkins 小知识
 
+> * **[Jenkins Pipeline 插件列表](https://www.jenkins.io/doc/pipeline/steps/)**
 > * Jenkins 作为使用最为广泛的 CI/CD 平台，网上流传着无数的脚本和攻略，在学习和开发的时候一定要从基本出发，了解内部原理，多看官方的文档，不要拿到一段代码就开始用，这样才能不会迷失在各式各样的脚本之中。
 > * 更重要的是要结合自己的业务需求，开发和定制属于自己的流程，不要被 Jenkins 的框架限制住。比如我们是否可以定义一个自己的 YAML 配置文件，然后根据 YAML 来生成 Pipeline，不需要业务自己写 Pipeline 脚本，规范使用，提前检查不合法的脚本，核心的模块共同升级，避免了一个流程小改动需要所有项目组同步更新
 
 ## 目录
 
 * https://blog.csdn.net/liumiaocn/article/details/104586482
+* [Jenkins 官方使用的 Jenkins 地址](#jenkins-官方使用的-jenkins-地址)
+* [徽章](#徽章)
+* [Sonar 扫描](#soanr-扫描)
+* [单元测试](#单元测试)
+* [freestyle](#freestyle)
 * [Jenkins 权限控制](#jenkins-权限控制)
 * [Pipeline Post](pipeline-post)
 * [Pipeline 合法的 DSL 标签](#pipeline 合法的-dsl-标签)
@@ -19,6 +25,298 @@
 * [并行任务和并行任务流](#并行任务和并行任务流)
 
 
+
+![](http://xcq.cn:38084/buildStatus/icon?job=Pipeline-test&config=%E6%88%90%E5%8A%9F%E5%8F%91%E5%B8%83%E7%89%88%E6%9C%AC)
+
+## Jenkins 官方使用的 Jenkins 地址
+
+* **https://ci.jenkins.io/**
+* Jenkins 相关插件 Job 地址: https://ci.jenkins.io/job/Plugins/
+* 要是有个只读帐号能进去学习学习就好了 。。。
+
+## 徽章
+
+![](./images/jenkins_badge.jpg)
+
+* 一个高大上的 Git 仓库一定要有一行自动化徽章
+
+#### Jenkins 相关徽章
+
+> * 插件: https://plugins.jenkins.io/embeddable-build-status/
+> * Jenkins 插件装好后，Job 页侧边栏会有 `embeddable-build-status` 标签，有 `build` 默认标签，还可以自定义标签，使用开袋即食
+
+```
+all params
+id: A unique id for the configuration
+subject: A subject text
+status: A status text
+color: A valid color (RGB-HEX: RRGGBB or valid SVG color name)
+animatedOverlayColor: A valid color (RGB-HEX: RRGGBB or valid SVG color name)
+link: The link to be opened upon clicking.
+
+addEmbeddableBadgeConfiguration(id: <string>, subject: <string>, status: <string>, color: <string>, animatedOverlayColor: <string>, link: <string>)
+```
+
+![](./images/Jenkins_Bdage.jpg)
+
+#### SonarQube 相关徽章
+
+> * SonarQube 徽章在 Web UI 项目信息下的徽章即可找到
+
+![](./images/SonarQube_Badge.jpg)
+
+
+
+## Sonar 扫描
+
+```groovy
+ stage ("SonarQube analysis") {
+    steps {
+       withSonarQubeEnv('SonarQube') {
+          sh "mvn clean test sonar:sonar"   
+       }
+ 
+       def qualitygate = waitForQualityGate()
+       if (qualitygate.status != "OK") {
+          error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+       }
+    }
+ }
+```
+
+## 单元测试
+
+> * https://zhuanlan.zhihu.com/p/50935348
+> * https://www.cnblogs.com/cac2020/p/13691505.html
+
+* maven 插件: **maven-surefire-plugin**
+
+* maven-surefire-plugin 的 test 目标会自动执行测试源码路径（默认为src/test/java/）下所有符合一组命名模式的测试类
+
+* 这组模式为：
+
+
+  **/Test*.java：任何子目录下所有命名以Test开关的Java类。
+  **/*Test.java：任何子目录下所有命名以Test结尾的Java类。
+  **/*TestCase.java：任何子目录下所有命名以TestCase结尾的Java类。
+
+``` XML
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>2.20.1</version>
+<configuration>
+<skipTests>false</skipTests>>
+</configuration>
+</plugin>
+</plugins>  
+```
+
+测试套件 - suit
+
+* 随着项目的开展，测试用例会越写越多，在测试时一个一个的点测试用例显然是不可行的。JUnit提供了测试套件，可以实现批量测试的功能
+
+
+
+### 单元测试覆盖率
+
+这里所讲的`覆盖率`是指测试代码的覆盖率，这个指标有多种计算方式，如下是比较常用的有：
+
+- 行覆盖率：执行代码行数 / 总代码行数，判断有多少行代码被测试执行；
+- 类覆盖率：执行的类 / 代码中类总个数；
+- 分支覆盖率：执行的逻辑分支数 / 总的分支数，一般用于检测是不是`lf/else`都有测试覆盖；
+- 方法覆盖率：执行的方法数 / 代码总方法数，检测是否有方法被遗漏，构造方法也看作为方法。
+- 圈复杂度：用于判断代码结构的复杂程序，`JaCoCo`不考虑异常处理的分支；一般认为圈复杂度大于10，就存在比较大的风险，严格要求不可大于15
+
+Jacoco
+
+执行`JaCoCo`有多种方式：
+
+（1）直接通过命令执行：https://www.eclemma.org/jacoco/trunk/doc/agent.html
+
+（2）Ant执行：https://www.eclemma.org/jacoco/trunk/doc/ant.html
+
+（3）Maven执行：https://www.eclemma.org/jacoco/trunk/doc/maven.html
+
+（4）集成IDE执行：https://www.eclemma.org/
+
+Maven 执行
+
+在`pom.xml`中引入 JaCoCo 插件
+
+``` xml
+<plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.2</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+        </execution>
+        <!-- change phase from verify to test -->
+        <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+当运行mvn clean test时，jacoco-maven-plugin插件会依次运行：
+
+首先运行prepare-agent goal（默认phase是initialize）收集maven-surefire-plugin插件运行测试产生的测试覆盖率信息，并写入target/jacoco.exec文件
+运行reportgoal（默认phase是verfiry，这里指定phase为test）读取target/jacoco.exec中的测试覆盖率信息，并生成测试覆盖率报告到target/site/jacoco目录，包括html, xml和csv格式
+
+查看mvn clean test运行日志，关键步骤的执行顺序如下：
+
+1. maven-clean-plugin:clean # delete target folder
+2. jacoco-maven-plugin:prepare-agent # prepare and run JaCoCo agent
+3. maven-compiler-plugin:compile # compile source code
+4. maven-compiler-plugin:testCompile # compile test code
+5. maven-surefire-plugin:test # run tests
+6. jacoco-maven-plugin:report # generate code test coverage reports
+
+
+
+
+``` shell
+<plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.3</version>
+                <configuration>
+                    <skip>false</skip>
+                    <destFile>target/coverage-reports/jacoco.exec</destFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <!--jacoco执行数据的文件路径-->
+                            <dataFile>target/coverage-reports/jacoco.exec</dataFile>
+                            <!--输出报告路径-->
+                            <outputDirectory>target/coverage-reports</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+```
+
+``` groovy
+pipeline{
+    agent any
+    options {
+        ansiColor('xterm')
+    }
+    stages{
+        stage("单元测试"){
+            steps {
+                sh "mvn clean install -Dmaven.test.skip=false"
+                jacoco(
+                        //代码覆盖率统计执行文件路径 Ant风格路径
+                        execPattern: 'target/coverage-reports/jacoco.exec',
+                        //class文件位置 Ant风格路径
+                        classPattern: 'target/classes',
+                        //源代码位置 Ant风格路径
+                        sourcePattern: 'src/main/java',
+                        //排除分析的位置 Ant风格路径
+                        exclusionPattern: 'src/test*',
+                        //是否禁用每行覆盖率的源文件显示
+                        skipCopyOfSrcFiles: false,
+                        //true则对各维度的覆盖率进行比较 如果任何一个维度的当前覆盖率小于最小覆盖率阈值 则构建状态为失败；
+                        //如果介于最大最小阈值之间则构建状态为不稳定；如果大于最大阈值则构建成功
+                        changeBuildStatus: true,
+                        //字节码指令覆盖率
+                        minimumInstructionCoverage: '30',
+                        maximumInstructionCoverage: '70',
+                        //行覆盖率
+                        minimumLineCoverage: '30',
+                        maximumLineCoverage: '70',
+                        //圈复杂度覆盖率
+                        minimumComplexityCoverage: '30',
+                        maximumComplexityCoverage: '70',
+                        //方法覆盖率
+                        minimumMethodCoverage: '30',
+                        maximumMethodCoverage: '70',
+                        //类覆盖率
+                        minimumClassCoverage: '30',
+                        maximumClassCoverage: '70',
+                        //分支覆盖率
+                        minimumBranchCoverage: '30',
+                        maximumBranchCoverage: '70',
+                        //如果为true 则只有所有维度的覆盖率变化量的绝对值小于小于相应的变化量阈值时构建结果才成功
+                        buildOverBuild: true,
+                        //各个维度覆盖率的变化量阈值
+                        deltaInstructionCoverage: '80',
+                        deltaLineCoverage: '80',
+                        deltaComplexityCoverage: '80',
+                        deltaMethodCoverage: '80',
+                        deltaClassCoverage: '80',
+                        deltaBranchCoverage: '80'
+                )
+            }
+        }
+    }
+    //将JUnit步骤放在post always中 当测试环境不通过时 依然可以收集到测试报告
+    post{
+        always{
+            script{
+                junit "**/target/surefire-reports/*.xml"
+            }
+        }
+    }
+
+}
+```
+
+
+
+
+
+## freestyle
+
+![](./images/jenkins_freestyle.jpg)
+
+* General
+  　　项目基本配置
+    　　项目名字,描述,参数,禁用项目,并发构建,限制构建默认node等
+*  Source code managemet
+    　　代码库信息,支持Git,Subversion等
+* Build Triggers
+  　　构建触发方式
+    　　周期性构建,poll scm,远程脚本触发构建,其他项目构建结束后触发等
+* Build Environment
+  　　构建环境相关设置
+    　　构建前删除workspace,向Console输出添加时间戳,设置构建名称,插入环境变量等
+* Build
+  　　项目构建任务
+    　　添加1个或者多个构建步骤
+* Post-build Actions
+  　　构建后行为
+    　　Artifact归档,邮件通知,发布单元测试报告,触发下游项目等
 
 ## Jenkins 权限控制
 

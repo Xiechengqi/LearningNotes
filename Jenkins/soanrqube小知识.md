@@ -2,9 +2,17 @@
 
 ## 目录
 
+* [通过 API 获取指标](通过-api-获取指标)
+
 * [sonar 错误排查](#sonar-错误排查)
 
 * [ sonar 指定分支](#sonar-指定分支)
+
+
+
+
+
+## 通过 API 获取指标
 
 
 
@@ -105,6 +113,13 @@ sonar.jacoco.reportPath=target/coverage-reports/jacoco.exec
 # 这个没搞懂，官方示例是配置成jacoco.exec文件路径
 sonar.jacoco.itReportPath=target/coverage-reports/jacoco.exec
 
+sonar.core.codeCoveragePlugin=jacoco
+sonar.coverage.jacoco.xmlReportPaths=/jacoco/report.xml # 最好写成绝对路径
+
+sonar.java.coveragePlugin=jacoco
+sonar.jacoco.itReportPath=jacoco.exec
+sonar.junit.reportsPath=target/surefire-reports
+sonar.surefire.reportsPath=target/surefire-reports
 
 # required metadata
 # 项目key
