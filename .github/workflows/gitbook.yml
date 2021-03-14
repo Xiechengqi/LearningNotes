@@ -25,8 +25,7 @@ jobs:
         echo "npm -v" && npm -v
         npm install gitbook-cli -g
         echo "gitbook -V" && gitbook -V
-        npm install
-        gitbook build
+        gitbook build ./ --log=debug --debug
         pwd
         ls -l
         
