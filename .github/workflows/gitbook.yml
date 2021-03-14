@@ -21,6 +21,7 @@ jobs:
         echo "node -v" && node -v
         echo "npm -v" && npm -v
         sudo npm install gitbook-cli@2.3.2 --global
+        sudo npm install graceful-fs@latest --save
         echo "gitbook -V" && gitbook -V
         sudo gitbook build ./ --log=debug --debug --gitbook=2.3.2
         pwd
