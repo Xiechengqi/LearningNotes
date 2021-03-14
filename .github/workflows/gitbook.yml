@@ -18,7 +18,7 @@ jobs:
     - name: build gitbook
       run: |
         cat /etc/os-release && whoami
-        sudo rm -rf _book
+        [ -d _book ] && sudo rm -rf _book
         sudo mkdir -p _book
         sudo docker run -ti --rm -v `pwd`:/docs humangeo/gitbook _book
         pwd
