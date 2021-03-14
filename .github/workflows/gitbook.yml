@@ -21,7 +21,8 @@ jobs:
         [ -d _book ] && sudo rm -rf _book
         sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook ls /
         pwd
-        ls -l
+
+#ls -l
         
 #        echo "node -v" && node -v
 #        echo "npm -v" && npm -v
