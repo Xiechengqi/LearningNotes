@@ -25,6 +25,7 @@ jobs:
         sudo npm install graceful-fs@latest --save
         cd -
         echo "gitbook -V" && gitbook -V
+        sudo gitbook install --log=debug --debug
         sudo gitbook build ./ --log=debug --debug
         pwd
         ls -l
