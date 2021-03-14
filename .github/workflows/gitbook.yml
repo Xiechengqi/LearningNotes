@@ -22,7 +22,9 @@ jobs:
         cd LearningNotes
         echo "node -v" && node -v
         echo "npm -v" && npm -v
-        ls
+        npm install gitbook-cli -g
+        echo "gitbook -V" && gitbook -V
+        gitbook build
         pwd
         ls
         
