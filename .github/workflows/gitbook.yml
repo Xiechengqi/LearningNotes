@@ -20,6 +20,8 @@ jobs:
         git clone -b master https://github.com/Xiechengqi/LearningNotes.git
         ls
         cd LearningNotes
+        echo "node -v" && node -v
+        echo "npm -v" && npm -v
         ls
         pwd
         ls
