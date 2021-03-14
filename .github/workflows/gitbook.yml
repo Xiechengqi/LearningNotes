@@ -20,7 +20,7 @@ jobs:
         cat /etc/os-release && whoami
         echo "node -v" && node -v
         echo "npm -v" && npm -v
-        sudo npm install gitbook-cli -g
+        sudo npm i gitbook -g
         echo "gitbook -V" && gitbook -V
         sudo gitbook build ./ --log=debug --debug
         pwd
