@@ -18,9 +18,8 @@ jobs:
     - name: build gitbook
       run: |
         cat /etc/os-release
-        timeout 20 curl -SsL bench.sh | bash
         git clone -b master https://github.com/Xiechengqi/LearningNotes.git
-        ls
+        ls -l
         cd LearningNotes
         echo "node -v" && node -v
         echo "npm -v" && npm -v
@@ -28,7 +27,7 @@ jobs:
         echo "gitbook -V" && gitbook -V
         gitbook build
         pwd
-        ls
+        ls -l
         
         
 #        npm install -g gitbook-cli
