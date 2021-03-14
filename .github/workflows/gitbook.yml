@@ -18,6 +18,8 @@ jobs:
     - name: build gitbook
       run: |
         cat /etc/os-release && whoami
+        docker ps
+        docker -h
         echo "node -v" && node -v
         echo "npm -v" && npm -v
         sudo npm install gitbook-cli@2.3.2 --global
