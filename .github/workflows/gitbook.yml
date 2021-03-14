@@ -21,13 +21,15 @@ jobs:
         echo "node -v" && node -v
         echo "npm -v" && npm -v
         sudo npm install gitbook-cli@2.3.2 --global
-        sudo sed -i '62,64d' /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js
+        cd /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules
+        sudo npm install graceful-fs@latest --save
+        cd -
         echo "gitbook -V" && gitbook -V
         sudo gitbook build ./ --log=debug --debug
         pwd
         ls -l
         
-       
+#        sudo sed -i '62,64d' /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js
 #        npm install -g gitbook-cli
 #        gitbook install
 #        gitbook build
