@@ -20,11 +20,14 @@ jobs:
         git clone -b master https://github.com/Xiechengqi/LearningNotes.git
         ls
         cd LearningNotes
-        npm install -g gitbook-cli
-        gitbook install
-        gitbook build
+        ls
         pwd
         ls
+        
+        
+#        npm install -g gitbook-cli
+#        gitbook install
+#        gitbook build
 #       env:
 #         CI: true
 
