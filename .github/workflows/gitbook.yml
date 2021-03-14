@@ -19,8 +19,7 @@ jobs:
       run: |
         cat /etc/os-release && whoami
         [ -d _book ] && sudo rm -rf _book
-        sudo mkdir -p _book
-        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook cd /docs && gitbook build ./ --log-debug --debug
+        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook bash -c "cd /docs && gitbook build ./ --log-debug --debug"
         pwd
         ls -l
         
