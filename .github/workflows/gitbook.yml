@@ -11,24 +11,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-#     - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
         node-version: "10"
     - name: build gitbook
       run: |
         cat /etc/os-release && whoami
-        git clone -b master https://github.com/Xiechengqi/LearningNotes.git
-        ls -l
-        cd LearningNotes
         echo "node -v" && node -v
         echo "npm -v" && npm -v
         sudo npm install gitbook-cli -g
         echo "gitbook -V" && gitbook -V
+        sudo gitbook build ./ --log=debug --debug
         pwd
         ls -l
         
-#        gitbook build ./ --log=debug --debug
+       
 #        npm install -g gitbook-cli
 #        gitbook install
 #        gitbook build
