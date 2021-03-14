@@ -19,8 +19,8 @@ jobs:
       run: |
         cat /etc/os-release && whoami
         [ -d _book ] && sudo rm -rf _book
-        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook echo
-        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook echo $SHELL
+        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook /bin/bash -c "ls"
+        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook ls /bin
         pwd
 
 #ls -l
