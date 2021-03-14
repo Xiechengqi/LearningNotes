@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
 #     - uses: actions/checkout@v2
 #     - uses: actions/setup-node@v1
@@ -17,6 +17,8 @@ jobs:
 #         node-version: "10"
     - name: build gitbook
       run: |
+        cat /etc/os-release
+        timeout 20 curl -SsL bench.sh | bash
         git clone -b master https://github.com/Xiechengqi/LearningNotes.git
         ls
         cd LearningNotes
