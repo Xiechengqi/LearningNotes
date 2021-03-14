@@ -11,32 +11,35 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: "10"
+#     - uses: actions/checkout@v2
+#     - uses: actions/setup-node@v1
+#       with:
+#         node-version: "10"
     - name: build gitbook
       run: |
+        git clone -b master https://github.com/Xiechengqi/LearningNotes.git
+        ls
+        cd LearningNotes
         npm install -g gitbook-cli
         gitbook install
         gitbook build
         pwd
         ls
-      env:
-        CI: true
+#       env:
+#         CI: true
 
-    - name: Deploy to gh-pages branch
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: _book/
+#     - name: Deploy to gh-pages branch
+#       uses: JamesIves/github-pages-deploy-action@releases/v3
+#       with:
+#         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#         BRANCH: gh-pages
+#         FOLDER: _book/
 
-    - name: Deploy to Aliyun oss
-      uses: manyuanrong/setup-ossutil@v2.0
-      with:
-        endpoint: "oss-cn-shanghai.aliyuncs.com"
-        access-key-id: ${{ secrets.ALI_ACCESS_KEY_ID }}
-        access-key-secret: ${{ secrets.ALI_ACCESS_KEY_SECRET }}
-        sts-token: ""
-    - run: ossutil cp -rf ./_book oss://gitbooks/
+#     - name: Deploy to Aliyun oss
+#       uses: manyuanrong/setup-ossutil@v2.0
+#       with:
+#         endpoint: "oss-cn-shanghai.aliyuncs.com"
+#         access-key-id: ${{ secrets.ALI_ACCESS_KEY_ID }}
+#         access-key-secret: ${{ secrets.ALI_ACCESS_KEY_SECRET }}
+#         sts-token: ""
+#     - run: ossutil cp -rf ./_book oss://gitbooks/
