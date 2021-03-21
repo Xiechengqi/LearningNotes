@@ -9,34 +9,51 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: "10"
+        node-version: "12.15.0"
     - name: build gitbook
       run: |
-        npm install -g gitbook-cli
-        gitbook install
-        gitbook build
+        cat /etc/os-release && whoami
+        [ -d _book ] && sudo rm -rf _book
+        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook gitbook help
         pwd
-        ls
-      env:
-        CI: true
 
-    - name: Deploy to gh-pages branch
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: _book/
+#ls -l
+        
+#        echo "node -v" && node -v
+#        echo "npm -v" && npm -v
+#        sudo npm install gitbook-cli@2.3.2 --global
+#        cd /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules
+#        sudo npm install graceful-fs@latest --save
+#        cd -
+#        echo "gitbook -V" && gitbook -V
+#        sudo gitbook install --log=debug --debug
+#        sudo gitbook build ./ --log=debug --debug
+        
+        
+#        sudo sed -i '62,64d' /usr/local/lib/node_modules/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js
+#        npm install -g gitbook-cli
+#        gitbook install
+#        gitbook build
+#       env:
+#         CI: true
 
-    - name: Deploy to Aliyun oss
-      uses: manyuanrong/setup-ossutil@v2.0
-      with:
-        endpoint: "oss-cn-shanghai.aliyuncs.com"
-        access-key-id: ${{ secrets.ALI_ACCESS_KEY_ID }}
-        access-key-secret: ${{ secrets.ALI_ACCESS_KEY_SECRET }}
-        sts-token: ""
-    - run: ossutil cp -rf ./_book oss://gitbooks/
+#     - name: Deploy to gh-pages branch
+#       uses: JamesIves/github-pages-deploy-action@releases/v3
+#       with:
+#         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#         BRANCH: gh-pages
+#         FOLDER: _book/
+
+#     - name: Deploy to Aliyun oss
+#       uses: manyuanrong/setup-ossutil@v2.0
+#       with:
+#         endpoint: "oss-cn-shanghai.aliyuncs.com"
+#         access-key-id: ${{ secrets.ALI_ACCESS_KEY_ID }}
+#         access-key-secret: ${{ secrets.ALI_ACCESS_KEY_SECRET }}
+#         sts-token: ""
+#     - run: ossutil cp -rf ./_book oss://gitbooks/
