@@ -2,6 +2,8 @@
 
 ## 目录
 
+* [查看当前环境所有环境变量](#查看当前环境所有环境变量)
+
 * [按分割符取最后一列](#按分割符取最后一列)
 
 * [两种脚本识别参数套路](#两种脚本识别参数套路)
@@ -71,6 +73,44 @@
 * [使用重定向新建文件](#使用重定向新建文件)
 
 
+
+
+
+## 查看当前环境所有环境变量
+
+``` shell
+$ sudo export
+declare -x CLUTTER_IM_MODULE="fcitx"
+declare -x COLORTERM="truecolor"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+declare -x DEFAULTS_PATH="/usr/share/gconf/ubuntu.default.path"
+declare -x DESKTOP_AUTOSTART_ID="10a2c25379f087c45d16158603309651400000022820017"
+declare -x DESKTOP_SESSION="ubuntu"
+declare -x DISPLAY=":0"
+declare -x GDK_BACKEND="x11"
+declare -x GDMSESSION="ubuntu"
+declare -x GIO_LAUNCHED_DESKTOP_FILE="/home/xcq/.config/autostart/guake.desktop"
+declare -x GIO_LAUNCHED_DESKTOP_FILE_PID="2520"
+declare -x GNOME_DESKTOP_SESSION_ID="this-is-deprecated"
+declare -x GNOME_SHELL_SESSION_MODE="ubuntu"
+declare -x GO111MODULE="on"
+declare -x GOPROXY="https://goproxy.io"
+declare -x GPG_AGENT_INFO="/run/user/1000/gnupg/S.gpg-agent:0:1"
+declare -x GTK_IM_MODULE="fcitx"
+declare -x GTK_MODULES="gail:atk-bridge"
+declare -x HOME="/home/xcq"
+declare -x IM_CONFIG_PHASE="1"
+declare -x INVOCATION_ID="c27c1079599247de8f9419e7082faa05"
+declare -x JOURNAL_STREAM="9:43903"
+declare -x LANG="zh_CN.UTF-8"
+declare -x LANGUAGE="zh_CN:zh:en_US:en"
+declare -x LC_ADDRESS="zh_CN.UTF-8"
+declare -x LC_IDENTIFICATION="zh_CN.UTF-8"
+declare -x LC_MEASUREMENT="zh_CN.UTF-8"
+declare -x LC_MONETARY="zh_CN.UTF-8"
+declare -x LC_NAME="zh_CN.UTF-8"
+......
+```
 
 ## 按分割符取最后一列
 

@@ -110,6 +110,11 @@ sonar.junit.reportsPath=target/surefire-reports
 sonar.java.coveragePlugin=jacoco
 # jacoco.exec文件路径
 sonar.jacoco.reportPath=target/coverage-reports/jacoco.exec
+<sonar.jacoco.reportPath>target/jacoco.exec</sonar.jacoco.reportPath>
+<sonar.jacoco.itReportPath>target/jacoco-it.exec</sonar.jacoco.itReportPath>
+<sonar.language>java</sonar.language>
+<sonar.verbose>true</sonar.verbose>
+<sonar.java.source>8</sonar.java.source>
 # 这个没搞懂，官方示例是配置成jacoco.exec文件路径
 sonar.jacoco.itReportPath=target/coverage-reports/jacoco.exec
 
@@ -117,7 +122,7 @@ sonar.core.codeCoveragePlugin=jacoco
 sonar.coverage.jacoco.xmlReportPaths=/jacoco/report.xml # 最好写成绝对路径
 
 sonar.java.coveragePlugin=jacoco
-sonar.jacoco.itReportPath=jacoco.exec
+sonar.jacoco.itReportPath=target/jacoco.exec
 sonar.junit.reportsPath=target/surefire-reports
 sonar.surefire.reportsPath=target/surefire-reports
 
