@@ -121,7 +121,142 @@ declare -x CI_SHARED_ENVIRONMENT="true"
 
 
 
-### GitLab Runner 注册到 GitLab
+### GitLab Runner 配置文件
+
+* `~/.gitlab-runner/config.toml` - Linux 非 root 用户配置文件
+* `/etc/gitlab-runner/config.toml` - Linux root 用户配置文件
+* `./config.toml` - 非 Linux 配置文件
+
+
+
+### GitLab Runner 命令
+
+> * **[GitLab Runner commands](https://gitlab.com/gitlab-org/gitlab-runner/-/blob/master/docs/commands/README.md)**
+
+``` shell
+# 查看帮助
+gitlab-runner --help / gitlab-runner <command> --help
+
+# 调试模式运行
+gitlab-runner --debug <command>
+
+# 默认交互模式下使用，非交互模式添加 --non-interactive
+gitlab-runner register  
+
+# 此命令列出了保存在配置文件中的所有运行程序
+gitlab-runner list
+
+# 此命令检查注册的 runner 是否可以连接，但不验证 GitLab 服务是否正在使用runner。--delete 删除
+gitlab-runner verify
+
+# 该命令使用 GitLab 取消已注册的 runner
+gitlab-runner unregister
+
+# 使用 token 注销
+gitlab-runner unregister --url http://gitlab.example.com/ --token t0k3n
+
+# 使用名称注销（同名删除第一个）
+gitlab-runner unregister --name test-runner
+
+# 注销所有
+gitlab-runner unregister --all-runners
+
+# 将 gitlab-runner 注册为 service，使用 systemctl status gitlab-runner 管理
+gitlab-runner install
+
+# 去掉 gitlab-runner service
+gitlab-runner uninstall
+
+# 常规操作 gitlab-runner
+gitlab-runner status | start | stop | restart
+```
+
+#### 注册 GitLab Runner
+
+![](./images/GitLab-Runner-0.jpg)
+
+**`交互式注册`**
+
+* 格式：**`gitlab-runner regesitry 参数`**
+
+``` shell
+$ sudo gitlab-runner register
+
+# 也可以提前传入
+$ sudo gitlab-runner register --name my-runner --url http://gitlab.example.com --registration-token my-registration-token
+# 或
+$ export CI_SERVER_URL=http://gitlab.example.com
+$ export RUNNER_NAME=my-runner
+$ export REGISTRATION_TOKEN=my-registration-token
+$ export REGISTER_NON_INTERACTIVE=true
+$ sudo gitlab-runner register
+
+```
+
+`参数`
+
+* `--non-interactivec` - 非交互式注册，默认是交互式
+* `--executor "shell"` - 执行器
+* `--url "http://gitlab.paraview.cn/"` - GitLab 地址
+* `--registration-token "yhiarw4saBG-EzAC-vzT"` - 注册 token
+* `--description "devops-runner"` - 描述
+* ` --tag-list "build,deploy"` - tag 列表
+* `--run-untagged="true"`
+* `--locked="false"` - 
+* `--access-level="not_protected"` - 
+* `--template-config /tmp/test-config.template.toml` -
+* `--docker-image ruby:2.6` - 
+
+**`非交互式注册`**
+
+* 格式：**`gitlab-runner regesitry --non-interactive 参数`**
+
+``` shell
+$ sudo gitlab-runner register \
+  --non-interactive \
+  --url "https://gitlab.com" \
+  --registration-token "$REGISTRATION_TOKEN" \
+  --template-config /tmp/test-config.template.toml \
+  --description "gitlab-ce-ruby-2.6" \
+  --executor "docker" \
+  --docker-image ruby:2.6
+
+
+export REGISTER_NON_INTERACTIVE=true
+gitlab-runner register
+```
+
+
+
+
+#### 删除 GitLab Runner
+
+``` shell
+# 先取消注册
+gitlab-runner unregister --url http://gitlab.paraview.cn --token _ww3Rk4HZmTvyfy9JnRo
+
+# 再删除
+root@javaBuildMachine:~# gitlab-runner verify
+Runtime platform                                    arch=amd64 os=linux pid=18494 revision=54944146 version=13.10.0
+Running in system-mode.                            
+                                                   
+ERROR: Verifying runner... is removed               runner=_ww3Rk4H
+Verifying runner... is alive                        runner=nUYFnZsC
+FATAL: Failed to verify runners                    
+root@javaBuildMachine:~# gitlab-runner verify --delete
+Runtime platform                                    arch=amd64 os=linux pid=18504 revision=54944146 version=13.10.0
+Running in system-mode.                            
+                                                   
+ERROR: Verifying runner... is removed               runner=_ww3Rk4H
+Verifying runner... is alive                        runner=nUYFnZsC
+Updated /etc/gitlab-runner/config.toml             
+root@javaBuildMachine:~# gitlab-runner verify
+Runtime platform                                    arch=amd64 os=linux pid=18513 revision=54944146 version=13.10.0
+Running in system-mode.                            
+                                                   
+Verifying runner... is alive
+
+```
 
 ### GitLab Runner 由于 git 版本过低报错
 
@@ -130,9 +265,9 @@ declare -x CI_SHARED_ENVIRONMENT="true"
 * centos7 默认版本为 1.8.x，升级为 2.x 版本即可
 * 升级 git 后需要重新注册 GitLab Runner 到 GitLab
 
-### Shared Runner 和 Specific Runner
+### Shared Runner 、Group Runner 和 Specific Runner
 
-> GitLab-Runner 可以分类两种类型：**Shared Runner（共享型）**和**Specific Runner（指定型）**
+> GitLab-Runner 可以分类两种类型：**Shared Runner（共享型）**和 **Specific Runner（指定型）**
 
 * **Shared Runner：**这种 Runner（工人）是所有工程都能够用的。只有系统管理员能够创建 Shared Runner。
 * **Specific Runner：**这种 Runner（工人）只能为指定的工程服务。拥有该工程访问权限的人都能够为该工程创建 specific runner
