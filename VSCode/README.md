@@ -1,20 +1,29 @@
-VSCode 学习
+# VSCode 学习
 
-**`快捷键`**
+## 目录
 
-| 键位 | 全名 | 解释 |
-| :---: | --- |--- |
-| C p |  | 搜索文件 |
-| C / |  | 行注释 |
-| C enter |  | 直接跳到下一行 |
-| CS p | Command Palette | 命令面板 |
-| CS x | Extensions pane | 扩展面板 |
+* **[快捷键](#快捷键)**
+* **[安装插件](#安装插件)**
+* **[]()**
+* **[]()**
+* **[]()**
 
-**`自定义补全`**
+## 快捷键
 
-``` shell
-cs p + snippets + go
-```
+| 键位 | 解释 |
+| :---: |:-: |
+| **`Ctrl p`** | 搜索文件 |
+| **`Ctrk Shift k`** | 删除行 |
+| **`Ctrl /`** | 注释行 |
+| **`Ctrl Enter`** | 直接跳到下一行 |
+| **`Ctrl Shift p`** | 命令面板 |
+| **`Ctrl Shift x`** | 扩展面板 |
+
+
+
+## 安装插件
+
+> * **[官方插件市场](https://marketplace.visualstudio.com/VSCode)**
 
 
 
