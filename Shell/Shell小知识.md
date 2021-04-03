@@ -2,6 +2,8 @@
 
 ## 目录
 
+* [curl 结合 sh 直接执行脚本](#curl-集合-sh-直接执行脚本)
+
 * [查看当前环境所有环境变量](#查看当前环境所有环境变量)
 
 * [按分割符取最后一列](#按分割符取最后一列)
@@ -74,7 +76,14 @@
 
 
 
+## curl 结合 sh 直接执行脚本
 
+``` shell
+## 替换 docker 镜像源为 DaoCloud 源
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
+```
+
+* `sh -s <stdin>`  - 读取标准输入
 
 ## 查看当前环境所有环境变量
 
