@@ -111,3 +111,15 @@ sha256:07e33465974800ce65751acc279adc6ed2dc5ed4e0838f8b86f0c87aa1795214
 * **`docker load -i alpine-latest.tar.gz`** - 加载镜像
 * **`docker save <镜像名> | bzip2 | pv | ssh <用户名>@<主机名> 'cat | docker load'`** - 从一个机器将镜像迁移到另一个机器，并且带进度条的功能
 
+
+
+## docker volume
+
+* **`docker volume create my-vol`** - 创建数据卷
+* **`docker volume ls`** - 查看所有数据卷
+* **`docker volume inspect my-vol`** - 查看指定数据卷信息
+* **`docker run -d -P --name web --mount source=my-vol,target=/usr/share/nginx/html nginx:alpine`** - 容器启动时挂载一个数据卷
+* **`docker volume rm my-vol`** - 删除数据卷
+* **`docker rm -v 容器名`** - 删除容器时一同删除挂载的数据卷，默认删除容器也不会删除数据卷
+* **`docker volume prune`** - 删除未使用的数据卷
+
