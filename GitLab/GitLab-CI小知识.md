@@ -1,5 +1,7 @@
 # GitLab CI 学习
 
+> * **[GitLab CI流水线配置文件.gitlab-ci.yml详解](https://meigit.readthedocs.io/en/latest/gitlab_ci_.gitlab-ci.yml_detail.html)**
+
 ## 目录
 
 * **[Job 语法](#job-语法)**
@@ -169,6 +171,10 @@ declare -x CI_SHARED_ENVIRONMENT="true"
 ![](./images/gitlab-ci-0.jpg)
 
 ### GitLab Runner 安装
+
+> * **[Registering runners](https://docs.gitlab.com/runner/register/index.html)**
+
+
 
 
 

@@ -75,3 +75,63 @@ after_script:
   - echo "after-script"
 ```
 
+
+
+```yaml
+stages:
+- build
+- cleanup_build
+- test
+- deploy
+- cleanup
+
+build_job:
+  stage: build
+  script:
+  - make build
+
+cleanup_build_job:
+  stage: cleanup_build
+  script:
+  - cleanup build when failed
+  when: on_failure
+
+test_job:
+  stage: test
+  script:
+  - make test
+
+deploy_job:
+  stage: deploy
+  script:
+  - make deploy
+  when: manual
+
+cleanup_job:
+  stage: cleanup
+  script:
+  - cleanup after jobs
+  when: always
+```
+
+
+
+
+
+```yaml
+job1:
+  stage: test
+  script:
+  - execute_script_that_will_fail
+  allow_failure: true
+
+job2:
+  stage: test
+  script:
+  - execute_script_that_will_succeed
+
+job3:
+  stage: deploy
+  script:
+  - deploy_to_staging
+```
