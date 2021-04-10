@@ -83,6 +83,90 @@ CMD ["nginx", "-g", "daemon off;"]
 * `ENTRYPOINT` 的目的和 `CMD` 一样，都是在指定容器启动程序及参数
 * 当指定了 `ENTRYPOINT` 后，`CMD` 的含义就发生了改变，不再是直接的运行其命令，而是将 `CMD` 的内容作为参数传给 `ENTRYPOINT` 指令
 
+### `ENV`
+
+* 使用 `ENV` 设置的环境变量将一直存在于构建镜像时以及镜像容器运行时，可以使用 `docker inspect` 查看设置变量
+
+- 空格格式: **`ENV <key> <value>`**
+- 赋值格式: **`ENV <key1>=<value1> <key2>=<value2>...`**
+
+``` yaml
+ENV VERSION=1.0 DEBUG=on NAME="Happy Feet"
+```
+
+### `ARG`
+
+* `ARG` 设置的变量只存在于镜像构建的时候，一旦镜像构建完成就失效了
+
+* 格式: **`ARG <参数名>[=<默认值>]`**
+
+* 默认值可以在构建命令 `docker build` 中用 `--build-arg <参数名>=<值>` 来覆盖
+
+
+
+> * **只在构建镜像时用到的环境变量，使用 `ARG`；若容器运行时也用到才使用 `ENV`**
+> * **使用 `ENV` 指令定义的环境变量会覆盖同名的 `ARG` 指令定义的变量**
+> * **在多阶段构建过程中，可以在 `FROM` 之前定义 `ARG`，这样定义的变量只能用在所有的 `FROM` 指令中间
+
+``` yaml
+# 多阶段构建
+ARG DOCKER_USERNAME=library
+FROM ${DOCKER_USERNAME}/alpine
+# 在FROM 之后使用变量，必须在每个阶段分别指定
+ARG DOCKER_USERNAME=library
+RUN set -x ; echo ${DOCKER_USERNAME}
+FROM ${DOCKER_USERNAME}/alpine
+# 在FROM 之后使用变量，必须在每个阶段分别指定
+ARG DOCKER_USERNAME=library
+RUN set -x ; echo ${DOCKER_USERNAME}
+```
+
+### `VOLUME`
+
+* 为了防止运行时用户忘记将动态文件所保存目录挂载为卷，在 `Dockerfile` 中，我们可以事先指定某些目录挂载为匿名卷，这样在运行时如果用户不指定挂载，其应用也可以正常运行，不会向容器存储层写入大量数据
+
+- 格式: **`VOLUME ["<路径1>", "<路径2>"...]`**
+- **`VOLUME /data`** - 这里的 `/data` 目录就会在容器运行时自动挂载为匿名卷，任何向 `/data` 中写入的信息都不会记录进容器存储层，从而保证了容器存储层的无状态化
+- 运行容器时可以覆盖 `VOLUME` 设置的挂载，例如：**`docker run -d -v mydata:/data xxxx`**
+
+### `EXPOSE`
+
+* 声明容器运行时提供服务的端口
+* **`EXPOSE <端口1> [<端口2>...]`**
+* **`docker run -P xxx`** - 自动随机映射 EXPOSE 的端口
+
+### `WORKDIR`
+
+* 指定之后指令的工作目录，若目录不存在则自动创建
+* **`WORKDIR <工作目录路径>**`
+
+### `USER`
+
+* 指定之后指令执行的用户，若用户不存在，则无法切换。所以需要提前创建好用户
+* **`USER <用户名>[:<用户组>]`**
+
+### `HEALTHCHECK`
+
+* 判断容器的状态是否正常
+* **`HEALTHCHECK [选项] CMD <命令>`** - 设置检查容器健康状况的命令
+* **`HEALTHCHECK NONE`** - 如果基础镜像有健康检查指令，使用这行可以屏蔽掉其健康检查指令
+
+``` yaml
+FROM nginx
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://localhost/ || exit 1
+```
+
+### `ONBUILD`
+
+
+* **`ONBUILD <其它指令>`**
+
+
+
+
+
+
 ## Demo
 
 ### Redis
@@ -102,5 +186,21 @@ RUN set -x; buildDeps='gcc libc6-dev make wget' \
     && rm redis.tar.gz \
     && rm -r /usr/src/redis \
     && apt-get purge -y --auto-remove $buildDeps
+```
+
+
+
+### Node
+
+``` yaml
+ENV NODE_VERSION 7.2.0
+
+RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
+  && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
+  && gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc \
+  && grep " node-v$NODE_VERSION-linux-x64.tar.xz\$" SHASUMS256.txt | sha256sum -c - \
+  && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
+  && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
+  && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 ```
 
