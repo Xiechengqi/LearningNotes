@@ -2,12 +2,52 @@
 
 ## 目录
 
+* **[Dockerfile 基础镜像更换国内软件源](#dockerfile-基础镜像更换国内软件源)**
+
+* **[Dockerfile 时区问题](#dockerfile-时区问题)**
+
 * [虚悬镜像](#虚悬镜像)
 
 * [连接 docker 容器](#连接-docker-容器)
 * [更换阿里云镜像](#更换阿里云镜像)
 
 
+
+
+
+## Dockerfile 基础镜像更换国内软件源
+
+``` yaml
+# Ubuntu
+FROM ubuntu:latest
+MAINTAINER xiecq "xiecq@paraview.cn"
+RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN  apt-get clean
+RUN apt-get update
+
+# CentOS
+FROM centos:latest
+MAINTAINER xiecq "xiecq@paraview.cn"
+RUN sed -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.tuna.tsinghua.edu.cn|g' -i.bak /etc/yum.repos.d/CentOS-*.repo \
+ && yum makecache
+```
+
+
+
+## Dockerfile 时区问题
+
+``` yaml
+# CentOS
+RUN mkdir -p /usr/share/zoneinfo/Asia/
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo 'Asia/Shanghai' >/etc/timezone
+    
+# Ubuntu
+RUN mkdir -p /usr/share/zoneinfo/Asia/
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo 'Asia/Shanghai' >/etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+```
 
 
 

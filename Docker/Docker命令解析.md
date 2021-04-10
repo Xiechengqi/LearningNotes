@@ -123,3 +123,9 @@ sha256:07e33465974800ce65751acc279adc6ed2dc5ed4e0838f8b86f0c87aa1795214
 * **`docker rm -v 容器名`** - 删除容器时一同删除挂载的数据卷，默认删除容器也不会删除数据卷
 * **`docker volume prune`** - 删除未使用的数据卷
 
+## docker inspect
+
+* **`docker inspect 容器名`** - 查看指定容器信息
+
+## docker logs
+
