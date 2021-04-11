@@ -19,8 +19,12 @@ jobs:
       run: |
         cat /etc/os-release && whoami
         [ -d _book ] && sudo rm -rf _book
-        sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook gitbook help
-        pwd
+        echo "node -v" && node -v
+        echo "npm -v" && npm -v
+        sudo npm install gitbook-cli@2.3.2 --global 
+        
+# sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook gitbook help
+# pwd
 
 #ls -l
         
