@@ -23,6 +23,7 @@ jobs:
         echo "npm -v" && npm -v
         sudo npm install gitbook-cli --global
         echo "gitbook -V" && gitbook -V
+        chmod -R 777 ./*
         gitbook install --log=debug --debug
         gitbook build
 
