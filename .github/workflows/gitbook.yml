@@ -24,6 +24,7 @@ jobs:
         sudo npm install gitbook-cli --global
         echo "gitbook -V" && gitbook -V
         chmod -R 777 ./*
+        rm -f package-lock.json package.json
         gitbook install --log=debug --debug
         gitbook build --log=debug --debug
 
