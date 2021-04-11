@@ -21,9 +21,11 @@ jobs:
         [ -d _book ] && sudo rm -rf _book
         echo "node -v" && node -v
         echo "npm -v" && npm -v
-        sudo npm install gitbook-cli@2.3.2 --global
+        sudo npm install gitbook-cli --global
         echo "gitbook -V" && gitbook -V
-        sudo gitbook install --log=debug --debug
+        gitbook build
+
+#sudo gitbook install --log=debug --debug
         
 # sudo docker run -i --rm -v `pwd`:/docs humangeo/gitbook gitbook help
 # pwd
