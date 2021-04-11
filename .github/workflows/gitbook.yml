@@ -25,7 +25,7 @@ jobs:
         echo "gitbook -V" && gitbook -V
         chmod -R 777 ./*
         gitbook install --log=debug --debug
-        gitbook build
+        gitbook build --log=debug --debug
 
 
         
