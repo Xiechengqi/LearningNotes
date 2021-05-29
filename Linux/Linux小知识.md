@@ -1,8 +1,9 @@
 # 平时 linux 遇到的问题解决办法和扩展小知识
 ## 目录
 
-* [Ubuntu 20.04 输入法简体繁体切换解决](ubuntu-2004-输入法简体繁体切换解决)
+* [CentOS8 安装 yarn](#centos8-安装-yarn)
 
+* [Ubuntu 20.04 输入法简体繁体切换解决](ubuntu-2004-输入法简体繁体切换解决)
 * [centos7 升级内核](#centos7-升级内核)
 * [Linux 密码破解](#linux-密码破解)
 * [&&就类似一个bash](#&&就类似一个bash)
@@ -48,6 +49,34 @@
 * [文件权限 777](#文件权限-777-top)
 * [/tmp 目录自动清理](#tmp-目录自动清理-top)
 * [修改时区](#修改时区-top)
+
+
+
+## CentOS8 安装 yarn
+
+1、如果你的系统上未安装Node.js，请输入以下命令安装Node.js软件包：
+
+sudo dnf install @nodejs
+
+参考：[在CentOS 8系统中安装Node.js 10.16.3和npm 12.13.0的方法](https://ywnz.com/linuxjc/6020.html)。
+
+在选写本文时，Centos8存储库中的Node.js版本为v10.x。
+
+2、启用Yarn存储库并导入存储库的GPG密钥：
+
+curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+
+sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
+
+官方的Yarn存储库会得到持续维护，并提供最新版本。
+
+3、启用存储库后，安装Yarn：
+
+sudo dnf install yarn
+
+4、通过打印Yarn版本号来验证安装：
+
+yarn --version
 
 ## Ubuntu 20.04 输入法简体繁体切换解决
 

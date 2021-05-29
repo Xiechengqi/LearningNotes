@@ -8,7 +8,121 @@
 
 * [ sonar 指定分支](#sonar-指定分支)
 
+* 根据 merge request 触发
+* 同步状态到 gitlab
+* jenkins 变量查看
+* jenkins 常用 option
 
+
+
+## jenkins 常用 options
+
+``` yaml
+// 在 Jenkinsfile 中配置以跳过默认的 checkout 行为
+options {
+  skipDefaultCheckout true
+}
+```
+
+
+
+
+
+
+
+## jenkins 变量查看
+
+* **[Jenkins地址]/env-vars.html** - http://pipeline.paraview.cn/env-vars.html/
+
+
+
+## 同步状态到 gitlab
+
+* 配置好 gitlab 插件，在 Pipeline 中指定 `options`：
+
+``` yaml
+// Jenkisfile
+options {
+  gitLabConnection('gitlab')
+}
+```
+
+* 然后就可以在 post 中根据不同的状态来更新 gitlab 了：
+
+``` yaml
+// Jenkisfile
+failure {
+  updateGitlabCommitStatus name: 'build', state: 'failed'
+}
+success {
+  updateGitlabCommitStatus name: 'build', state: 'success'
+}
+```
+
+
+
+## 根据 merge request 触发
+
+安装 `Gitlab` 插件 - https://github.com/jenkinsci/gitlab-plugin
+
+配置GitLab Connection:
+
+``` yaml
+options {
+	gitLabConnection('GitlabAccess')
+}
+```
+
+* 拉代码并合并源分支到目标分支，之后在目标分支构建并测试
+
+``` yaml
+// 其中PreBuildMerge会在拉取source branch的代码后，在Jenkins workspace下做一个本地的git merge操作
+stage('Checkout') {
+	steps {
+        checkout changelog: true, poll: true, scm: [
+          $class: 'GitSCM',
+          branches: [[name: "origin/${env.gitlabSourceBranch}"]],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [[
+            $class: 'PreBuildMerge',
+            options: [
+              fastForwardMode: 'FF',
+              mergeRemote: 'origin',
+              mergeStrategy: 'default',
+              mergeTarget: "${env.gitlabTargetBranch}"
+            ]
+          ]],
+          extensions: [[
+            $class: 'UserIdentity', 
+            email: "${env.gitlabUserEmail}", 
+            name: "${env.gitlabUserName}"
+          ]],
+          submoduleCfg: [],
+          userRemoteConfigs: [[
+            credentialsId: "${GIT_CREDENTIALS_ID}",
+            name: 'origin',
+            url: "${env.gitlabSourceRepoURL}"
+          ]]
+        ]
+    }
+}
+```
+
+更新GitLab状态的post-actions：
+
+``` yaml
+post{
+    success {
+        updateGitlabCommitStatus(name: 'build', state: 'success')
+    }
+    failure {
+        updateGitlabCommitStatus(name: 'build', state: 'failed')
+        addGitLabMRComment comment: "Something unexpected happened. Please inspect Jenkins logs."
+    }        
+}
+```
+
+注意：如果一个GitLab merge request还在open状态，每次往这个merge request的source branch提交代码，都会触发一个新的merge request event通知到Jenkins
 
 
 

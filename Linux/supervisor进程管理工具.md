@@ -17,6 +17,8 @@
 
 ``` shell
 $ yum install -y epel-release && yum install -y supervisor
+$ systemctl enable supervisord # 开机自启动
+$ systemctl start supervisord # 启动supervisord服务
 ```
 
 #### Python
